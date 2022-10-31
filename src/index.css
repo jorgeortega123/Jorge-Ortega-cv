@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+   input[type="number"]::-webkit-inner-spin-button,
+   input[type="number"]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+   }
+ }
+ html, body
+ {
+     width: 100%;
+     height: 100%;
+ }
+ body
+ {
+   
+     background-attachment: fixed;
+     background-size: cover;
+ }
+
+.sadjasdkasmdasd{
+  background-color: #171f96b9;
+}
+
+.principal-Background { 
+  background: linear-gradient(-45deg, #3f3b3a, #726a6d, #14799e, #3f4443);
+  background-size: contain;
+}
+.foo {
+     
+     display: flex;
+     margin: 5px;
+     border: 1px solid rgba(0, 0, 0, .2);
+  }
+
+.infoAndcolors{ 
+   text-transform: capitalize;
+   column-rule: 2
+}
+
+.eerror-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23f0b608' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23e6d710' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23e7af05' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23e7d808' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d8a408' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23f1e213' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23f0b607' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23e4d506' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23eab822' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23e8da14' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23e8b008' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23edde14' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+}
+.tracking-tighter-less {
+  letter-spacing: -0.75rem;
+}
+.text-shadow {
+  text-shadow: -8px 0 0 rgb(102 123 242);
+}
+
+.blockAllSelect { 
+  user-select:none;
+}
+.index0{ 
+  z-index: 1;
+}
+.removeAlloulines { 
+  border: none;
+  resize: none;
+  outline: none;
+}
+.removeOUTLINES {
+  resize: none;
+  outline: none;
+}
+
+.removeArrowSelect select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.hiddenDis { 
+  visibility: hidden;
+}
+.visibleDis {
+  visibility: visible;
+}
+
+.between { 
+  justify-content: space-between;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.piechartToEdit:active { 
+ 
+ animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+
+	to {
+    transform: rotate(360deg);
+}
+}
+
+.holaaa {
+  min-height: 100vh;
+  font-family: Roboto, Arial;
+  color: #ADAFB6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(249, 251, 255,0.6);  
+  }
+ .initM { 
+  font-family: 'Nunito', sans-serif;
+ }
+  .init { 
+    font-family: 'Abyssinica SIL', serif;
+  }
+  .initLogo { 
+    font-family: 'Abyssinica SIL', serif;
+
+  }
+
+.anim {
+  border-style: dashed;
+  border-color: rgb(25, 119, 202);
+  animation: spin1 7s linear infinite;
+}
+  @keyframes spin1 {
+    0% { 
+      transform: rotate(300deg);
+      border-color: rgb(25, 119, 202);
+    }
+    10% { 
+      transform: rotate(250deg);
+      border-color: rgb(25, 119, 202);
+    }
+    20% { 
+      transform: rotate(200deg);
+      border-color: rgb(255, 21, 0);
+    }
+    40% { 
+      transform: rotate(150deg);
+      border-color: rgb(255, 247, 0);
+    }
+    60% { 
+      transform: rotate(-200deg);
+      border-color: rgb(0, 255, 30);
+    }
+    100% {
+        transform: rotate(200deg);
+    }
+}
+
+.loadServer { 
+  position: absolute;
+  z-index: 0;
+  width: 20%;
+  left: 0;
+  animation: charging 0.6s linear infinite;
+}
+.bodyLetter { 
+  font-family: 'Lato', sans-serif;
+}
+
+@keyframes charging {
+  50% { 
+  left: 100%;
+   transform: translateX(calc(-100% - 3px));
+
+  }
+
+}
