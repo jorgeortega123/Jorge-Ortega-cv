@@ -1,4 +1,3 @@
-import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { lang } from "./langs";
@@ -20,6 +19,7 @@ import PinchToZoom from "react-pinch-and-zoom";
 import Modals from "./Modals";
 import FileView from "./FileView";
 import axios from "axios";
+import { Parallax, useParallax } from "react-scroll-parallax";
 const staticInf = lang.static;
 const CvMain = () => {
   const [showMenu, setshowMenu] = useState(false);
@@ -36,7 +36,8 @@ const CvMain = () => {
   const [showLineFromTextarea, setshowLineFromTextarea] = useState(false);
   const [onFocusTextarea, setonFocusTextarea] = useState(false);
   const [isLoadedBody, setisLoadedBody] = useState(false);
-  const [showLineWhenFileIsDownloading, setshowLineWhenFileIsDownloading] = useState(false)
+  const [showLineWhenFileIsDownloading, setshowLineWhenFileIsDownloading] =
+    useState(false);
   const [imgSrc, setimgSrc] = useState(
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
@@ -51,8 +52,8 @@ const CvMain = () => {
         "text",
         ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
       );
-    }, 1500);
-    document.body.style.overflow = "hidden"
+    }, 2500);
+    document.body.style.overflow = "hidden";
   }, []);
 
   function consoleText(words, id, colors) {
@@ -201,39 +202,40 @@ const CvMain = () => {
     }, 3500);
   };
   ///
-  const changeHandlerBodyLoaded = () => { 
+  const changeHandlerBodyLoaded = () => {
     setTimeout(() => {
       setisLoadedBody(true);
       document.body.style.overflow = "auto";
-    }, 1500);  
-    
-
-  }
-  const handlerChangeByDownload = () => { 
-    alert("ASD")
-    setshowLineWhenFileIsDownloading(true)
-    setshowDownload(false)
+    }, 1200);
+  };
+  const handlerChangeByDownload = () => {
+    alert("ASD");
+    setshowLineWhenFileIsDownloading(true);
+    setshowDownload(false);
     setTimeout(() => {
-      setshowLineWhenFileIsDownloading(false)
+      setshowLineWhenFileIsDownloading(false);
     }, 3500);
-  }
+  };
+
   return (
     <div className="main-container init relative ">
-      {showLineWhenFileIsDownloading &&  <div className="continuous-1 sticky z-[5] w-full h-[3px] top-0"></div> }
-     
+      {showLineWhenFileIsDownloading && (
+        <div className="continuous-1 sticky z-[5] w-full h-[3px] top-0"></div>
+      )}
+
       {showDownload && (
         <Modals title="Indica el idioma del CV">
           <FileView
             title={"" + staticInf.name + "_cv.pdf"}
             cv={staticInf.cv.en.cv_pdf}
-            handlerChangeByDownload = {handlerChangeByDownload}
+            handlerChangeByDownload={handlerChangeByDownload}
           >
             {staticInf.cv.en.text}
           </FileView>
           <FileView
             title={staticInf.name + "_cv.pdf"}
             cv={staticInf.cv.es.cv_pdf}
-            handlerChangeByDownload = {handlerChangeByDownload}
+            handlerChangeByDownload={handlerChangeByDownload}
           >
             {staticInf.cv.es.text}
           </FileView>
@@ -254,7 +256,7 @@ const CvMain = () => {
           <span className="line l2"></span>
           <span className="line l3"></span>
         </div>
-        <div className="flex blockAllSelect ">
+        <div className="flex blockAllSelect relative ">
           <div>
             <img
               src={DownloadSvg}
@@ -379,13 +381,16 @@ const CvMain = () => {
           >
             <div className=" z-[7] absolute w-full h-screen bg-black text-[54px] flex justify-center items-center">
               <span className="bg-white"></span>
+              <div className="relative w-24 h-1 rounded-2xl bg-[#ffffff22]">
+                <div className=" loadServer h-1 bg-white rounded-2xl"></div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
       <div
         onLoad={() => {
-          changeHandlerBodyLoaded()
+          changeHandlerBodyLoaded();
         }}
         className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full "
       >
@@ -439,58 +444,64 @@ const CvMain = () => {
                 </div>
               </div>
             )}
-            <div className="pt-4     ">
-              <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ type: "tween", duration: 1 }}
-                className=""
-              >
-                <div className=" w-max h-max nameFontBold  ">
-                  <h1 className="title-name-cv text-[34px] lg:text-[54px] lg:font-bold">
-                    Jorge Ortega
-                  </h1>{" "}
-                </div>
-              </motion.div>
+            <div className="flex justify-center items-center relative">
+              <div className="pt-4 z-[1]     ">
+                <motion.div
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: "tween", duration: 1 }}
+                  className=""
+                >
+                  <div className=" w-max h-max nameFontBold  ">
+                    <h1 className="title-name-cv text-[34px] lg:text-[54px] lg:font-bold">
+                      Jorge Ortega
+                    </h1>
+                  </div>
+                </motion.div>
 
-              <div className="pt-[13px] pb-[13px] text-[24px] flex">
-                <p className="pt-[3px] lg:text-[28px] ">Developer</p>
-                <img className="fill-slate-200 pl-1" src={KeyboardSvg} alt="" />
-              </div>
-            </div>
-            <div className="flex items-center">
-              <div className="flex flex-col ml-2 mt-[17px] ">
-                <SocialNetworks
-                  url={"https://www.instagram.com/jorgeandresyts/"}
-                  img={InstagramSGV}
-                  classNamee={"ml-2"}
-                  number={1}
-                ></SocialNetworks>
-
-                <SocialNetworks
-                  url={"https://www.facebook.com/mateo.garrido.5268"}
-                  img={FacebookSVG}
-                  classNamee={"ml-[-4px]"}
-                  number={2}
-                ></SocialNetworks>
-                <SocialNetworks
-                  url={"https://github.com/jorgeortega123"}
-                  img={LinkedinSGV}
-                  classNamee={"ml-2"}
-                  number={3}
-                ></SocialNetworks>
-              </div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ type: "tween", duration: 2 }}
-                className="mt-[18px] relative w-[110px] h-[110px] lg:w-[148px] lg:h-[148px] flex flex-col justify-center items-center"
-              >
-                <div className="cvImage  w-full h-full flex flex-col items-center ">
-                  <div className="hidden absolute z-[0] animated-text"></div>
-                  <div className=" w-full h-full border-[3px] border-dashed  rounded-full"></div>
+                <div className="pt-[13px] pb-[13px] text-[24px] flex">
+                  <p className="pt-[3px] lg:text-[28px] ">Developer</p>
+                  <img
+                    className="fill-slate-200 pl-1"
+                    src={KeyboardSvg}
+                    alt=""
+                  />
                 </div>
-              </motion.div>
+              </div>
+              <div className="flex items-center">
+                <div className="flex flex-col ml-2 mt-[17px] ">
+                  <SocialNetworks
+                    url={"https://www.instagram.com/jorgeandresyts/"}
+                    img={InstagramSGV}
+                    classNamee={"ml-2"}
+                    number={1}
+                  ></SocialNetworks>
+
+                  <SocialNetworks
+                    url={"https://www.facebook.com/mateo.garrido.5268"}
+                    img={FacebookSVG}
+                    classNamee={"ml-[-4px]"}
+                    number={2}
+                  ></SocialNetworks>
+                  <SocialNetworks
+                    url={"https://github.com/jorgeortega123"}
+                    img={LinkedinSGV}
+                    classNamee={"ml-2"}
+                    number={3}
+                  ></SocialNetworks>
+                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ type: "tween", duration: 2 }}
+                  className="mt-[18px] relative w-[110px] h-[110px] lg:w-[148px] lg:h-[148px] flex flex-col justify-center items-center"
+                >
+                  <div className="cvImage  w-full h-full flex flex-col items-center ">
+                    <div className="hidden absolute z-[0] animated-text"></div>
+                    <div className=" w-full h-full border-[3px] border-dashed  rounded-full"></div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
           <div className="lg:hidden console-containerr w-full flex justify-center">
