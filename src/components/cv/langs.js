@@ -5,8 +5,7 @@ export const lang = {
       proyects: "Proyectos",
       contact: "Contactar",
       developer: "Desarrollador",
-      aboutInfo:
-        "Hola, soy desarrollador <span class='text-bold'>frontend</span>, desde los 14 he estado en el mundo de la programacion conozco varios frameworks y tecnologias web. Como: <span class='text-bold'>ReactJs</span>, <span class='text-bold'>TailwindCss</span> (Tambien manejo Css nativo y Vanila JS).  a un nivel avanzado. Tambien manejo plataformas como Cloudfare, Azure y Google Cloud, He trabajado con <span class='text-bold'>Apis</span> de Google y telegram. ",
+      aboutInfo: `Hola, soy desarrollador <span class="text-bold mark-1">frontend</span>, comencé a escribir mi primer código desde los 14 años. Siempre he buscado la manera de solucionar problemas cotidanos a través del maravilloso mundo de la programcion. Actualmente tengo 18 y me doy cuenta que realmente esto es lo que me gusta y deseo vivir de ello.<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
     },
     contact: {
       about:
@@ -52,6 +51,20 @@ export const lang = {
         web: "https://www.llampukaq.com",
         onGroup: true,
       },
+      {
+        title: "Files Manager",
+        about: "Aplicacion sencilla creada a partir de Batch Scripting (Windows) Gestionaba docuementos (.docx, .pdf) en carpetas con el nombre de alguna materia escolar . A inicios de pandemia desarrolle esto como un metodo para hacer mas facil el metodo online en el colegio.",
+        tags: [
+          "Batch",
+          "Python",
+          "Windows"
+        ],
+        img: [
+          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+        ],
+        web: "https://www.llampukaq.com",
+        onGroup: true,
+      },
     ],
     functions: {
       copy: {
@@ -90,11 +103,10 @@ export const lang = {
       proyects: "Proyects",
       contact: "Contact",
       developer: "Develoepr",
-      aboutInfo:
-        "Hello, I am a developer, since I was 14 I have been in the world of programming, I know several frameworks and web technologies. Like: , TailwindCss (I also handle native Css and Vanila JS). at an advanced level. I also manage platforms such as Cloudfare, Azure and Google Cloud. I have worked with Google Apis and Telegram.",
+      aboutInfo: `Hi, I'm a <span class="text-bold mark-1">frontend</span> developer, I started writing my first code since I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and I realize that this is really what I like and I want to live from it. I know several frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>,{" "} <span class="text-bold mark-1">TailwindCss</span> (I also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
     },
     contact: {
-      about: "If you want to contact me, you can send a message trought:",
+      about: "Keep in touch:",
       number: "+593962716235",
       email: "garridomateo74@gmail.com",
     },
@@ -159,7 +171,7 @@ export const lang = {
       },
       {
         name: "linkedin",
-        url: "https://www.facebook.com/mateo.garrido.5268",
+        url: "https://www.linkedin.com/in/jorge-ortega-b87442254/",
       },
       {
         name: "git hub",
@@ -170,7 +182,7 @@ export const lang = {
   static: {
     cv: {
       es: {
-        text: "Cv en espanol",
+        text: "Cv en español",
         cv_pdf:
           "https://drive.google.com/uc?id=1TDcETxzZjS9ofo7lknGcp51TXd0TuAHd&export=download",
       },

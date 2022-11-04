@@ -53,7 +53,7 @@ const CvMain = () => {
         ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
       );
     }, 2500);
-    document.body.style.overflow = "hidden";
+   // document.body.style.overflow = "hidden";
   }, []);
 
   function consoleText(words, id, colors) {
@@ -218,7 +218,29 @@ const CvMain = () => {
   };
 
   return (
-    <div className="main-container init relative ">
+    <div
+      className="main-container init relative "
+      onLoad={() => {
+        changeHandlerBodyLoaded();
+      }}
+    >
+      <AnimatePresence>
+        {!isLoadedBody && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: "tween" }}
+          >
+            <div className=" z-[7] absolute top-0 w-full h-screen bg-black text-[54px] flex justify-center items-center">
+              <span className="bg-white"></span>
+              <div className="relative w-24 h-1 rounded-2xl bg-[#ffffff22]">
+                <div className=" loadServer h-1 bg-white rounded-2xl"></div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {showLineWhenFileIsDownloading && (
         <div className="continuous-1 sticky z-[5] w-full h-[3px] top-0"></div>
       )}
@@ -371,29 +393,8 @@ const CvMain = () => {
           </motion.div>
         </div>
       </div>
-      <AnimatePresence>
-        {!isLoadedBody && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: "tween" }}
-          >
-            <div className=" z-[7] absolute w-full h-screen bg-black text-[54px] flex justify-center items-center">
-              <span className="bg-white"></span>
-              <div className="relative w-24 h-1 rounded-2xl bg-[#ffffff22]">
-                <div className=" loadServer h-1 bg-white rounded-2xl"></div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <div
-        onLoad={() => {
-          changeHandlerBodyLoaded();
-        }}
-        className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full "
-      >
+
+      <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
         <AnimatePresence>
           {showMenu && (
             <motion.div
@@ -470,22 +471,23 @@ const CvMain = () => {
               </div>
               <div className="flex items-center">
                 <div className="flex flex-col ml-2 mt-[17px] ">
+
                   <SocialNetworks
-                    url={"https://www.instagram.com/jorgeandresyts/"}
-                    img={InstagramSGV}
+                    url={staticInf.social[2].url}
+                    img={LinkedinSGV}
                     classNamee={"ml-2"}
                     number={1}
                   ></SocialNetworks>
 
                   <SocialNetworks
-                    url={"https://www.facebook.com/mateo.garrido.5268"}
-                    img={FacebookSVG}
+                    url={staticInf.social[3].url}
+                    img={GithubSVG}
                     classNamee={"ml-[-4px]"}
                     number={2}
                   ></SocialNetworks>
                   <SocialNetworks
                     url={"https://github.com/jorgeortega123"}
-                    img={LinkedinSGV}
+                    img={InstagramSGV}
                     classNamee={"ml-2"}
                     number={3}
                   ></SocialNetworks>
