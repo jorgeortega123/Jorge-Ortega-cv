@@ -230,7 +230,9 @@ export const lang = {
       {
         title: "LLK",
         all: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862022/Screenshot_from_2022-11-07_17-59-26_aqiqth.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862021/Screenshot_from_2022-11-07_17-59-38_echfmv.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862021/Screenshot_from_2022-11-07_17-59-54_cbljgh.png"
         ],
       },
       {

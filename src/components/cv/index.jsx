@@ -20,6 +20,7 @@ import Modals from "./Modals";
 import FileView from "./FileView";
 import axios from "axios";
 import { Parallax, useParallax } from "react-scroll-parallax";
+import RoundedCarrousel from "./RoundedCarrousel";
 const staticInf = lang.static;
 const CvMain = () => {
   const [showMenu, setshowMenu] = useState(false);
@@ -224,6 +225,13 @@ const CvMain = () => {
         changeHandlerBodyLoaded();
       }}
     >
+      <div className="absolute w-full h-full">
+        <div className="part relative w-full h-full">
+          <span className="absolute part-1"></span>
+          <span className="absolute part-2"></span>
+          <span className="absolute part-3"></span>
+        </div>
+      </div>
       <AnimatePresence>
         {!isLoadedBody && (
           <motion.div
@@ -453,15 +461,15 @@ const CvMain = () => {
                   transition={{ type: "tween", duration: 1 }}
                   className=""
                 >
-                  <div className=" w-max h-max nameFontBold  ">
+                  <div className="relative w-max h-max nameFontBold  ">
                     <h1 className="title-name-cv text-[34px] lg:text-[54px] lg:font-bold">
                       Jorge Ortega
                     </h1>
                   </div>
                 </motion.div>
 
-                <div className="pt-[13px] pb-[13px] text-[24px] flex">
-                  <p className="pt-[3px] lg:text-[28px] ">Developer</p>
+                <div className="pt-[13px] pb-[13px] text-[22px] flex">
+                  <p className="pt-[3px] lg:text-[28px] ">Web Developer</p>
                   <img
                     className="fill-slate-200 pl-1"
                     src={KeyboardSvg}
@@ -524,23 +532,28 @@ const CvMain = () => {
               <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
                 <p className="titleText">{dataText.headers.about}</p>
                 <div
-                  className="normalText containerText"
+                  className="font-[100] bg-[#00000038] text-[19px] italic p-[10px] rounded-[10px]"
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
                 ></div>
               </div>
-              <div id="knowledge" className="textWrote w-12/12 lg:full mx-auto ">
+              <div
+                id="knowledge"
+                className="textWrote w-12/12 lg:full mx-auto "
+              >
                 <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
-                <p className="titleText">{dataText.headers.knowledge}</p>
-                <div
-                  className="normalText containerText"
-                  dangerouslySetInnerHTML={{
-                    __html: dataText.headers.aboutInfo2,
-                  }}
-                ></div>
+                  <p className="titleText">{dataText.headers.knowledge}</p>
+
+                  <div
+                    className="normalText containerText"
+                    dangerouslySetInnerHTML={{
+                      __html: dataText.headers.aboutInfo2,
+                    }}
+                  ></div>
                 </div>
               </div>
+              <RoundedCarrousel></RoundedCarrousel>
             </div>
             <div id="proyects">
               <p className="titleText mb-5 mt-1 ">Proyects</p>
@@ -565,7 +578,7 @@ const CvMain = () => {
               <p className="titleText mt-5 mb-3 ">{dataText.headers.contact}</p>
               <div className="m-2 ">
                 <p className="mb-3">{dataText.contact.about}</p>
-                <div className="bg-[#3672ffe9] rounded-[15px] w-full items-center flex flex-col justify-center">
+                <div className="bg-transparent border-[1px] border-cyan-300 rounded-[11px] w-full items-center flex flex-col justify-center">
                   <div
                     className="flex cursor-pointer"
                     onClick={() => copyToClipBoard("number")}
@@ -577,9 +590,12 @@ const CvMain = () => {
                         alt=""
                       />
                     </div>
-                    <p className="text-[16px] pt-[5px] pl-2 w-[238px] text-center hover:text-green-400">
+                    <a
+                      href={`${"tel:" + "+593 9627  16235"}`}
+                      className="text-[16px] pt-[5px] pl-2 w-[238px] text-center hover:text-green-400"
+                    >
                       {"+593 9627  16235"}
-                    </p>
+                    </a>
                     <img
                       className="w-[22px] h-[22px] mt-[2px]"
                       src={CopySGV}
@@ -591,9 +607,12 @@ const CvMain = () => {
                     onClick={() => copyToClipBoard("email")}
                   >
                     <img className="w-[36px] h-[36px]" src={MailSVG} alt="" />
-                    <p className="text-[16px] pt-[5px]  w-[238px]  pl-2 underline hover:text-green-400">
+                    <a
+                      href={`${"mailto:" + dataText.contact.email}`}
+                      className="text-[16px] pt-[5px]  w-[238px]  pl-2 underline hover:text-green-400"
+                    >
                       {dataText.contact.email}
-                    </p>
+                    </a>
                     <div className="w-[22px] h-[22px]  mt-[2px] fill:[#21319203]">
                       <img
                         className="w-[22px] h-[22px] mt-[2px]"
@@ -612,7 +631,7 @@ const CvMain = () => {
                     que especifiques tu nombre o alguna manera de indentificarte
                   </div>
                 )}
-                <div className="w-full flex relative overflow-x-hidden overflow-y-auto ">
+                <div className="pt-12 w-[80%] flex flex-col relative overflow-x-hidden overflow-y-auto ">
                   {showLineFromTextarea && (
                     <div className="transition continuous-2 absolute z-[5] w-full h-[1px] bottom-0 right-[48px]"></div>
                   )}
@@ -620,7 +639,7 @@ const CvMain = () => {
                     id="textareOfFooter"
                     placeholder={dataText.extras.footer.input}
                     value={userTextWrote}
-                    className="focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600 h-max  border-[1px] rounded-t-[6px] "
+                    className="focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600 h-max  border-[1px] rounded-[4px] "
                     type="text"
                     name=""
                     onFocus={() => {
@@ -636,18 +655,10 @@ const CvMain = () => {
                   <div className="active:text-blue-700">
                     <div
                       onClick={() => sendText()}
-                      className="fill-cyan-400 active:fill-blue-700 text-center"
+                      className=" relative border-[1px]  fill-cyan-400 active:fill-blue-700 text-center flex items-center justify-center"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill=""
-                        height="48"
-                        width="48"
-                      >
-                        <path d="M8 37V11l30.85 13Zm1.55-2.4L34.85 24 9.55 13.3v8.4L19.3 24l-9.75 2.25Zm0 0V13.3v12.95Z" />
-                      </svg>
                       <p className="text-[16px] font-serif  cursor-pointer">
-                        {!showLineFromTextarea ? "Send" : "..."}
+                        {!showLineFromTextarea ? "Send" : "Sending..."}
                       </p>
                     </div>
                   </div>
