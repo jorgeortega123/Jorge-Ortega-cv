@@ -5,7 +5,9 @@ export const lang = {
       proyects: "Proyectos",
       contact: "Contactar",
       developer: "Desarrollador",
-      aboutInfo: `Hola, soy desarrollador <span class="text-bold mark-1">frontend</span>, comencé a escribir mi primer código desde los 14 años. Siempre he buscado la manera de solucionar problemas cotidanos a través del maravilloso mundo de la programcion. Actualmente tengo 18 y me doy cuenta que realmente esto es lo que me gusta y deseo vivir de ello.<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
+      knowledge: "Conocimiento",
+      aboutInfo: `Hola, soy desarrollador <span class="text-bold mark-1">frontend</span>, comencé a escribir mi primer código desde los 14 años. Siempre he buscado la manera de solucionar problemas cotidanos a través del maravilloso mundo de la programcion. Actualmente tengo 18 y me doy cuenta que realmente esto es lo que me gusta y deseo vivir de ello.`,
+     aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`
     },
     contact: {
       about:
@@ -63,7 +65,7 @@ export const lang = {
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
         web: "https://www.llampukaq.com",
-        onGroup: true,
+        onGroup: false,
       },
     ],
     functions: {
@@ -102,8 +104,10 @@ export const lang = {
       about: "About",
       proyects: "Proyects",
       contact: "Contact",
-      developer: "Develoepr",
-      aboutInfo: `Hi, I'm a <span class="text-bold mark-1">frontend</span> developer, I started writing my first code since I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and I realize that this is really what I like and I want to live from it. I know several frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>,{" "} <span class="text-bold mark-1">TailwindCss</span> (I also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
+      developer: "Developer",
+      knowledge: "Knowledge",
+      aboutInfo: `Hi, I'm a <span class="text-bold mark-1">frontend</span> developer, I started writing my first code since I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and I realize that this is really what I like and I want to live from it.`,
+      aboutInfo2: ` I know several frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>,{" "} <span class="text-bold mark-1">TailwindCss</span> (I also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
     },
     contact: {
       about: "Keep in touch:",
@@ -225,6 +229,12 @@ export const lang = {
       },
       {
         title: "LLK",
+        all: [
+          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+        ],
+      },
+      {
+        title: "Files Manager",
         all: [
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],

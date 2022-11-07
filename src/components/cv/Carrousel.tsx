@@ -40,7 +40,7 @@ function HeroMain({
     <div className="min-w-[300px] max-w-full max-h-full overflow-hidden mx-auto relative rounded-xl overflow-y-hidden">
        <div onClick={()=>{if (index===0) {return;}  setIndex(index - 1)}}  className="cursor-pointer z-[5] absolute flex justify-center left-0 items-center w-12 carrousel-pilar bg-[#69696920] hover:bg-[#69696949] hover:text-green-300 ">{"<"}</div>
        
-       <div onClick={()=>{if (index >= images?.length) {return;} setIndex(index + 1)}} className="cursor-pointer z-[5] absolute flex justify-center right-0 items-center w-12 carrousel-pilar2 bg-[#69696920] hover:bg-[#69696949] hover:text-green-300  ">{"<"}</div>
+       <div onClick={()=>{if (index < images?.length) {return;} setIndex(index + 1)}} className="cursor-pointer z-[5] absolute flex justify-center right-0 items-center w-12 carrousel-pilar2 bg-[#69696920] hover:bg-[#69696949] hover:text-green-300  ">{">"}</div>
        <div
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         className="whitespace-nowrap duration-1000"

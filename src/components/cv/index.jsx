@@ -53,7 +53,7 @@ const CvMain = () => {
         ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
       );
     }, 2500);
-   // document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   }, []);
 
   function consoleText(words, id, colors) {
@@ -232,10 +232,10 @@ const CvMain = () => {
             exit={{ opacity: 0 }}
             transition={{ type: "tween" }}
           >
-            <div className=" z-[7] absolute top-0 w-full h-screen bg-black text-[54px] flex justify-center items-center">
+            <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
               <span className="bg-white"></span>
-              <div className="relative w-24 h-1 rounded-2xl bg-[#ffffff22]">
-                <div className=" loadServer h-1 bg-white rounded-2xl"></div>
+              <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
+                <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
               </div>
             </div>
           </motion.div>
@@ -246,7 +246,7 @@ const CvMain = () => {
       )}
 
       {showDownload && (
-        <Modals title="Indica el idioma del CV">
+        <Modals title="Select language">
           <FileView
             title={"" + staticInf.name + "_cv.pdf"}
             cv={staticInf.cv.en.cv_pdf}
@@ -471,7 +471,6 @@ const CvMain = () => {
               </div>
               <div className="flex items-center">
                 <div className="flex flex-col ml-2 mt-[17px] ">
-
                   <SocialNetworks
                     url={staticInf.social[2].url}
                     img={LinkedinSGV}
@@ -531,6 +530,17 @@ const CvMain = () => {
                   }}
                 ></div>
               </div>
+              <div id="knowledge" className="textWrote w-12/12 lg:full mx-auto ">
+                <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
+                <p className="titleText">{dataText.headers.knowledge}</p>
+                <div
+                  className="normalText containerText"
+                  dangerouslySetInnerHTML={{
+                    __html: dataText.headers.aboutInfo2,
+                  }}
+                ></div>
+                </div>
+              </div>
             </div>
             <div id="proyects">
               <p className="titleText mb-5 mt-1 ">Proyects</p>
@@ -551,7 +561,7 @@ const CvMain = () => {
                 })}
               </div>
             </div>
-            <div id="contact" className="mb-[40px] lg:w-[600px]">
+            <div id="contact" className="mb-[40px] lg:w-[600px] w-full">
               <p className="titleText mt-5 mb-3 ">{dataText.headers.contact}</p>
               <div className="m-2 ">
                 <p className="mb-3">{dataText.contact.about}</p>
