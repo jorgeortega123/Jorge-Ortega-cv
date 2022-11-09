@@ -623,7 +623,7 @@ const CvMain = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative w-full flex justify-center mt-3 ml-2">
+              <div className="relative w-full flex justify-center mt-3">
                 {onFocusTextarea && (
                   <div className="px-2 indent-9 absolute bottom-[-50px] rounded-md z-[4]  text-[12px] text-black bg-[#ffd000] rectangule">
                     Todo lo que escribas aqui sera enviado de{" "}
@@ -631,15 +631,17 @@ const CvMain = () => {
                     que especifiques tu nombre o alguna manera de indentificarte
                   </div>
                 )}
-                <div className="pt-12 w-[80%] flex flex-col relative overflow-x-hidden overflow-y-auto ">
+                <div className="pt-12 w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
                   {showLineFromTextarea && (
-                    <div className="transition continuous-2 absolute z-[5] w-full h-[1px] bottom-0 right-[48px]"></div>
+                    <>
+                    <div className="transition continuous-2 absolute z-[5] w-full h-[1px] bottom-0"></div>
+                    <div className="transition delay-500 continuous-2 absolute z-[5] w-full h-[1px] bottom-[25px]"></div></>
                   )}
                   <textarea
                     id="textareOfFooter"
                     placeholder={dataText.extras.footer.input}
                     value={userTextWrote}
-                    className="focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600 h-max  border-[1px] rounded-[4px] "
+                    className="w-full focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600 h-max  border-[1px] rounded-t-[4px] "
                     type="text"
                     name=""
                     onFocus={() => {
@@ -652,15 +654,14 @@ const CvMain = () => {
                       setuserTextWrote(e.target.value);
                     }}
                   />
-                  <div className="active:text-blue-700">
-                    <div
-                      onClick={() => sendText()}
-                      className=" relative border-[1px]  fill-cyan-400 active:fill-blue-700 text-center flex items-center justify-center"
-                    >
-                      <p className="text-[16px] font-serif  cursor-pointer">
-                        {!showLineFromTextarea ? "Send" : "Sending..."}
-                      </p>
-                    </div>
+
+                  <div
+                    onClick={() => sendText()}
+                    className="border-b-[1px] border-x-[1px]  text-center w-full cursor-pointer h-[25px]"
+                  >
+                    <p className="text-[16px] font-serif  ">
+                      {!showLineFromTextarea ? "Send" : "Sending..."}
+                    </p>
                   </div>
                 </div>
               </div>
