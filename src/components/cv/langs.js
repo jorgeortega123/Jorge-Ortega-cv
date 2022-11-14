@@ -105,9 +105,9 @@ export const lang = {
       proyects: "Proyects",
       contact: "Contact",
       developer: "Developer",
-      knowledge: "Knowledge",
+      knowledge: "Skills",
       aboutInfo: `Hi, I'm a <span class="text-bold mark-1">frontend</span> developer, I started writing my first code since I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and I realize that this is really what I like and I want to live from it.`,
-      aboutInfo2: ` I know several frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>,{" "} <span class="text-bold mark-1">TailwindCss</span> (I also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
+      aboutInfo2: ` I know how use frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>, <span class="text-bold mark-1">TailwindCss</span> (also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
     },
     contact: {
       about: "Keep in touch:",
@@ -186,12 +186,12 @@ export const lang = {
   static: {
     cv: {
       es: {
-        text: "Cv en español",
+        text: "Español",
         cv_pdf:
           "https://drive.google.com/uc?id=1TDcETxzZjS9ofo7lknGcp51TXd0TuAHd&export=download",
       },
       en: {
-        text: "Cv english",
+        text: "English",
         cv_pdf:
           "https://drive.google.com/uc?id=1TDcETxzZjS9ofo7lknGcp51TXd0TuAHd&export=download",
       },

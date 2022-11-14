@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 //@ts-ignore
-import newWindow from "../../assets/svg/newWindow.svg";
-import inGroupSVG from "../../assets/svg/group.svg";
-import inSoloSVG from "../../assets/svg/person.svg";
-import { lang } from "./langs";
-import HeroMain from "./Carrousel";
+import newWindow from "../../../assets/svg/newWindow.svg";
+import inGroupSVG from "../../../assets/svg/group.svg";
+import inSoloSVG from "../../../assets/svg/person.svg";
+import { lang } from "../langs";
+import HeroMain from "../carrousel/Carrousel";
 const imagesFrom = lang.static.images
 export default function ContainerProyects({
   title = "Semaforos ",

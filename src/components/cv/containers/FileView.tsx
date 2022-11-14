@@ -1,14 +1,16 @@
 import React from "react";
-import DownloadSvg from "./../../assets/svg/download.svg";
+import DownloadSvg from "../../../assets/svg/figma/button_pdf.svg";
 export default function FileView({
   title = "as",
   children = "",
   cv,
+  index=0,
   handlerChangeByDownload
 }: {
   title: string;
   children: any;
   cv: string
+  index: number
   handlerChangeByDownload: ()=>void
 }) {
   ///function = {handlerChangeByDownload}
@@ -21,22 +23,21 @@ export default function FileView({
   }
  
   return (
-    <div className="cursor-pointer text-white w-full hover:border-green-400 hover:bg-slate-700 my-2 rounded-[3px] p-1 flex border-[1px] border-cyan-400 justify-center items-center">
+    <div className={`bg-white ${index % 2 === 0 ?'bg-[#0f0f0f]': "bg-[#0f0f0fc2]"} hover:bg-gray-900 text-white w-full  my-2 rounded-[3px] p-1 flex justify-center items-center`}>
       <div className="grow flex flex-col">
-        <a href={cv} download="Asadasd.pdf" className="font-normal  ">
+        <a href={cv} download="Asadasd.pdf" className="font-normal text-blue-600  ">
           {title}
         </a>
         <p className="font-[Montserrat] text-[13px] ">{children}</p>
       </div>
-      <div className="">
+      <div className=" flex items-center pr-1">
         <button
           type="button"
-          className="bg-transparent mr-[2px] text-white rounded-lg ring-[1.2px] ring-white focus:ring-red-400 p-[2px] hover:ring-green-400 inline-flex h-8 w-8 "
+          className="bg-black rounded-[6px] border-[1px] "
           data-dismiss-target="#alert-1"
           aria-label="Close"
         >
-          <span className="sr-only">Close</span>
-          <img onClick={()=>{download(cv)}} src={DownloadSvg} className="w-12" alt="" />
+          <img onClick={()=>{download(cv)}} src={DownloadSvg} className="" alt="" />
         </button>
       </div>
     </div>
