@@ -52,13 +52,13 @@ const CvMain = () => {
   useEffect(() => {
     var langUse = dataText;
     //setdataText(lang[defaultLang])
-    setTimeout(() => {
-      consoleText(
-        ["ReactJs", "Scss", "Javascript", "Python", "Typescript", "Figma", "Tailwind", "Node", "Git", "Git Hub"],
-        "text",
-        ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
-      );
-    }, 2500);
+    // setTimeout(() => {
+    //   consoleText(
+    //     ["ReactJs", "Scss", "Javascript", "Python", "Typescript", "Figma", "Tailwind", "Node", "Git", "Git Hub"],
+    //     "text",
+    //     ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
+    //   );
+    // }, 2500);
     document.body.style.overflowX = "hidden";
   }, []);
   document.body.style.overflowX = "hidden";
@@ -110,10 +110,10 @@ const CvMain = () => {
   ///
   const downloadCv = () => {
     if (showDownload === false) {
-      document.body.style.overflow='hidden'
+      document.body.style.overflow = "hidden";
       setshowDownload(true);
     } else {
-      document.body.style.overflow='auto'
+      document.body.style.overflow = "auto";
       setshowDownload(false);
     }
   };
@@ -576,20 +576,23 @@ const CvMain = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:hidden console-containerr w-full flex justify-center">
-              {
-                //<span className="absolute rigth-[40px]">{">> "}</span>
-              }{" "}
-              <div className="w-[200px] flex justify-center">
-                <span id="text" className=" "></span>
-                <div
-                  className="w-full console-underscoree bg-transparent"
-                  id="console"
-                >
-                  |
-                </div>
-              </div>
-            </div>
+            {
+              // <div className="lg:hidden console-containerr w-full flex justify-center">
+              //   {
+              //     //<span className="absolute rigth-[40px]">{">> "}</span>
+              //   }{" "}
+              //   <div className="w-[200px] flex justify-center">
+              //     <span id="text" className=" "></span>
+              //     <div
+              //       className="w-full console-underscoree bg-transparent"
+              //       id="console"
+              //     >
+              //       |
+              //     </div>
+              //   </div>
+              // </div>
+            }
+
             <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
               <div className="w-full flex flex-col  justify-center items-center">
                 <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
@@ -614,13 +617,14 @@ const CvMain = () => {
                         __html: dataText.headers.aboutInfo2,
                       }}
                     ></div>
-                    <Parallax translateX={[-5,0]}>
-                    <div className="absolute bottom-0 right-0 text-[14px] flex items-center cv-button ">
-                      <div><img className="w-5 mx-1" src={cvICON} alt="" /></div>
-                      Curriculum Vitae
-                    </div>
+                    <Parallax translateX={[-5, 0]}>
+                      <div className="absolute bottom-0 right-0 text-[14px] flex items-center cv-button ">
+                        <div>
+                          <img className="w-5 mx-1" src={cvICON} alt="" />
+                        </div>
+                        Curriculum Vitae
+                      </div>
                     </Parallax>
-                    
                   </div>
                 </div>
                 <RoundedCarrousel></RoundedCarrousel>
