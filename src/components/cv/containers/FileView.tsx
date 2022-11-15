@@ -25,7 +25,7 @@ export default function FileView({
   return (
     <div className={`bg-white ${index % 2 === 0 ?'bg-[#0f0f0f]': "bg-[#0f0f0fc2]"} hover:bg-gray-900 text-white w-full  my-2 rounded-[3px] p-1 flex justify-center items-center`}>
       <div className="grow flex flex-col">
-        <a href={cv} download="Asadasd.pdf" className="font-normal text-blue-600  ">
+        <a href={cv} download="Asadasd.pdf" className="font-normal text-blue-600 px-[9px] ">
           {title}
         </a>
         <p className="font-[Montserrat] text-[13px] ">{children}</p>

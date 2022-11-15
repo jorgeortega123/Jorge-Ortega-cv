@@ -9,13 +9,13 @@ import DownloadSvg from "./../../assets/svg/download.svg";
 import LangSvg from "./../../assets/svg/lang.svg";
 import InstagramSGV from "./../../assets/svg/instagram_.svg";
 import FacebookSVG from "./../../assets/svg/facebook_.svg";
-import GithubSVG from "./../../assets/svg/github.svg";
+import GithubSVG from "./../../assets/github.png";
+import cvICON from "./../../assets/cv.png";
 import MailSVG from "./../../assets/svg/mail.svg";
 import CallSVG from "./../../assets/svg/call.svg";
 import CopySGV from "./../../assets/svg/copy.svg";
 import SendSGV from "./../../assets/svg/send.svg";
 import LinkedinSGV from "./../../assets/svg/linkedin_.svg";
-import PinchToZoom from "react-pinch-and-zoom";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
 import axios from "axios";
@@ -25,6 +25,7 @@ import bubble_1 from "./../../assets/svg/backGround/bubble_1.svg";
 import bubble_2 from "./../../assets/svg/backGround/bubble_2.svg";
 import bubble_3 from "./../../assets/svg/backGround/bubble_3.svg";
 import star_1 from "./../../assets/svg/backGround/star_1.svg";
+import Background from "./Background";
 const staticInf = lang.static;
 const CvMain = () => {
   const [showMenu, setshowMenu] = useState(false);
@@ -53,14 +54,14 @@ const CvMain = () => {
     //setdataText(lang[defaultLang])
     setTimeout(() => {
       consoleText(
-        ["React JS", "Css", "Javascript", "Python", "Google", "Ok"],
+        ["ReactJs", "Scss", "Javascript", "Python", "Typescript", "Figma", "Tailwind", "Node", "Git", "Git Hub"],
         "text",
         ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
       );
     }, 2500);
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflowX = "hidden";
   }, []);
-
+  document.body.style.overflowX = "hidden";
   function consoleText(words, id, colors) {
     if (colors === undefined) colors = ["#fff"];
     var visible = true;
@@ -109,8 +110,10 @@ const CvMain = () => {
   ///
   const downloadCv = () => {
     if (showDownload === false) {
+      document.body.style.overflow='hidden'
       setshowDownload(true);
     } else {
+      document.body.style.overflow='auto'
       setshowDownload(false);
     }
   };
@@ -185,7 +188,7 @@ const CvMain = () => {
   };
   const showImage = (src) => {
     setshowImg(true);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
     setimgSrc(src);
   };
   const sendText = () => {
@@ -221,29 +224,27 @@ const CvMain = () => {
 
   return (
     <div
-      className="main-container init relative "
+      className="main-container init "
       onLoad={() => {
         changeHandlerBodyLoaded();
       }}
     >
-      <div className="w-full h-full absolute overflow-hidden">
-
-        <Parallax speed={50} translateX rotateZ={[0, 360]}>
-        <img
-          src={star_1}
-          className="w-[20px] mt-[540px] left-0 top-12"
-          alt=""
-        />
+      <div className="absolute h-screen flex items-center justify-center opacity-25">
+        <Parallax speed={10} translateX rotateY={[0, 10]}>
+          <Background></Background>
         </Parallax>
       </div>
-      <img
-        className="absolute z-0 top-[75px] right-[52px] w-[110px]"
-        src={bubble_1}
-        alt=""
-        srcset=""
-      />
-      <div className="useBackdrop z-0">
-        <div className="absolute w-full h-full left">
+      <div className="w-full h-full absolute overflow-hidden">
+        <Parallax translateY={[0, -60]}>
+          <img
+            src={star_1}
+            className="w-[20px] mt-[585px] ml-[22px] left-1 opacity-30"
+            alt=""
+          />
+        </Parallax>
+      </div>
+      <div className="">
+        <div className="fixed w-full h-full left">
           <div className="part relative w-full h-full">
             <span className="absolute part-1"></span>
             <span className="absolute part-2"></span>
@@ -509,9 +510,8 @@ const CvMain = () => {
                       >
                         CLOSE
                       </div>
-                      <PinchToZoom>
-                        <img className="w-screen" src={imgSrc} alt="" />
-                      </PinchToZoom>
+
+                      <img className="w-screen" src={imgSrc} alt="" />
                     </div>
                   </div>
                 </div>
@@ -541,7 +541,7 @@ const CvMain = () => {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="flex flex-col ml-2 mt-[17px] ">
+                  <div className="flex flex-col ml-2 mt-[17px] animation-init ">
                     <SocialNetworks
                       url={staticInf.social[2].url}
                       img={LinkedinSGV}
@@ -603,7 +603,7 @@ const CvMain = () => {
                 </div>
                 <div
                   id="knowledge"
-                  className="textWrote w-12/12 lg:full mx-auto "
+                  className="textWrote w-12/12 lg:full mx-auto relative "
                 >
                   <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
                     <p className="titleText">{dataText.headers.knowledge}</p>
@@ -614,9 +614,13 @@ const CvMain = () => {
                         __html: dataText.headers.aboutInfo2,
                       }}
                     ></div>
-                    <button className="absolute bottom-0 right-0 text-[12px]">
+                    <Parallax translateX={[-5,0]}>
+                    <div className="absolute bottom-0 right-0 text-[14px] flex items-center cv-button ">
+                      <div><img className="w-5 mx-1" src={cvICON} alt="" /></div>
                       Curriculum Vitae
-                    </button>
+                    </div>
+                    </Parallax>
+                    
                   </div>
                 </div>
                 <RoundedCarrousel></RoundedCarrousel>
