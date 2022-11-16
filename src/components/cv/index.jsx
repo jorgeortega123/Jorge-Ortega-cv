@@ -311,6 +311,7 @@ const CvMain = () => {
           <div className="flex blockAllSelect relative ">
             <div className="items-center flex">
               <div
+              className=""
                 title={"Download cv"}
                 onClick={() => {
                   downloadCv();
@@ -331,6 +332,7 @@ const CvMain = () => {
                         d="M43.6667 73V98.6667H102.333V73"
                         stroke="white"
                         stroke-width="7.33333"
+                        
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />

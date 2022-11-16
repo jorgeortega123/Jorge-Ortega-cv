@@ -1,84 +1,25 @@
-
-
-.carrousel
-{
-	-webkit-perspective: 250px;
-	-moz-perspective: 50px;
-	width: 300px;
-	height: 100px;
-	position: relative;
-	margin: 0 auto;
-}
-
-@-webkit-keyframes carrousel
-{
-  from
-  {
-	  -webkit-transform: rotateY( 360deg ) translateZ( 100px ) rotateY( -360deg );
-	  -moz-transform: rotateY( 360deg ) translateZ( 100px ) rotateY( -360deg );
-	  z-index: 10;
-	  opacity: 0.9
-  }
-  50%
-  {
-    z-index: -10;
-  }
-  to 
-  {
-	  -webkit-transform: rotateY( 0deg ) translateZ( 100px ) rotateY( 0deg );
-    -moz-transform: rotateY( 0deg ) translateZ( 100px ) rotateY( 0deg );
-	  z-index: 10;
-	  opacity: 0.9
-  }
-}
-
-@-moz-keyframes carrousel
-{
-  from
-  {
-	  -moz-transform: rotateY( 360deg ) translateZ( 100px ) rotateY( -360deg );
-	  z-index: 10;
-	  opacity: 0.9
-  }
-  50%
-  {
-    z-index: -10;
-  }
-  to
-  {
-	  -moz-transform: rotateY( 0deg ) translateZ( 100px ) rotateY( 0deg );
-	  z-index: 10;
-	  opacity: 0.9
-  }
-}
-
-.card
-{
-	width: 50px;
-	height: max-content;
+.carrousel {
+	padding-top: 5px;
+	display: flex;
+	gap: .25rem;
+	height: 60px;
+    width: 100%;
 	background-color: transparent;
-  font-size: 40px;
-	opacity: 0;
-	position: absolute;
-	top:25px;
-	left:125px;
-  text-align: center;
-  -webkit-animation-name: carrousel;
-  -moz-animation-name: carrousel;
-  -webkit-animation-duration: 8s;
-  -moz-animation-duration: 8s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
- }
-
-.card:hover
-{
-  border: solid #4466cc 1px;
-  box-shadow: 0px 0px 10px #4466cc;
+	position: relative;
+	overflow-x: hidden;
 }
 
+.carrousel img {
+	width: 50px;
+	animation: rool 7s linear infinite;
+	position: absolute;
+	transition: all 5s;
+}
+#c7
+{
+	-webkit-animation-delay: -3s;
+	-moz-animation-delay: -3s;
+}
 #c6
 {
 	-webkit-animation-delay: -1s;
@@ -115,4 +56,11 @@
 	-moz-animation-delay: -7s;
 }
 
-
+@keyframes rool {
+	0% { 
+		right: -100px;
+	}
+	100% { 
+		right: 110%;
+	}
+}
