@@ -231,7 +231,6 @@ const CvMain = () => {
     >
       <div className="absolute h-screen flex items-center justify-center opacity-25">
         
-          <Background></Background>
     
       </div>
       <div className="w-full h-full absolute overflow-hidden">
