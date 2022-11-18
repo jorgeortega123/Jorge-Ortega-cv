@@ -230,18 +230,18 @@ const CvMain = () => {
       }}
     >
       <div className="absolute h-screen flex items-center justify-center opacity-25">
-        <Parallax speed={10} translateX rotateY={[0, 10]}>
+        
           <Background></Background>
-        </Parallax>
+    
       </div>
       <div className="w-full h-full absolute overflow-hidden">
-        <Parallax translateY={[0, -60]}>
+       
           <img
             src={star_1}
             className="w-[20px] mt-[585px] ml-[22px] left-1 opacity-30"
             alt=""
           />
-        </Parallax>
+        
       </div>
       <div className="">
         <div className="fixed w-full h-full left">
