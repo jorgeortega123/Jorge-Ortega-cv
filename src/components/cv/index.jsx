@@ -229,18 +229,13 @@ const CvMain = () => {
         changeHandlerBodyLoaded();
       }}
     >
-      <div className="absolute h-screen flex items-center justify-center opacity-25">
-        
-    
-      </div>
+      <div className="absolute h-screen flex items-center justify-center opacity-25"></div>
       <div className="w-full h-full absolute overflow-hidden">
-       
-          <img
-            src={star_1}
-            className="w-[20px] mt-[585px] ml-[22px] left-1 opacity-30"
-            alt=""
-          />
-        
+        <img
+          src={star_1}
+          className="w-[20px] mt-[585px] ml-[22px] left-1 opacity-30"
+          alt=""
+        />
       </div>
       <div className="">
         <div className="fixed w-full h-full left">
@@ -310,7 +305,7 @@ const CvMain = () => {
           <div className="flex blockAllSelect relative ">
             <div className="items-center flex">
               <div
-              className=""
+                className=""
                 title={"Download cv"}
                 onClick={() => {
                   downloadCv();
@@ -331,7 +326,6 @@ const CvMain = () => {
                         d="M43.6667 73V98.6667H102.333V73"
                         stroke="white"
                         stroke-width="7.33333"
-                        
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
@@ -499,11 +493,17 @@ const CvMain = () => {
               id="home"
             >
               {showImg && (
-                <div className="z-[8] fixed w-full overflow-auto h-full bg-[#222222e0] backdrop-blur-lg  bottom-0 top-[44px]  flex justify-center">
+                <div
+                  onClick={() => {
+                    setshowImg(false);
+                    document.body.style.overflow = "auto";
+                  }}
+                  className="z-[6] fixed w-full overflow-auto h-full bg-[#222222e0] backdrop-blur-lg  bottom-0 top-[44px]  flex justify-center"
+                >
                   <div className=" w-11/12 flex flex-col items-center justify-center">
                     <div className="relative">
                       <div
-                        className="right-0 top-[-28px] lg:top-[140px] z-[8] absolute cursor-pointer hover:text-black backdrop-blur-2xl px-2 text-[19px] rounded-[5px] font-bold bg-[#fe0000db] "
+                        className=" right-0 top-[-28px] lg:top-[140px] z-[7] absolute cursor-pointer hover:text-black backdrop-blur-2xl px-2 text-[19px] rounded-[5px] font-bold bg-[#fe0000db] "
                         onClick={() => {
                           setshowImg(false);
                           document.body.style.overflow = "auto";
@@ -511,8 +511,14 @@ const CvMain = () => {
                       >
                         CLOSE
                       </div>
-
-                      <img className="w-screen" src={imgSrc} alt="" />
+                      <img
+                        onClick={(e) => {
+                          e.preventDefault();
+                        }}
+                        className="w-screen z-[8] border-2"
+                        src={imgSrc}
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -628,7 +634,9 @@ const CvMain = () => {
                     </Parallax>
                   </div>
                 </div>
-                <RoundedCarrousel></RoundedCarrousel>
+                <div className="w-full lg:w-5/12 ">
+                  <RoundedCarrousel></RoundedCarrousel>
+                </div>
               </div>
               <div id="proyects" className="relative">
                 <p className="titleText mb-5 mt-1 ">Proyects</p>
@@ -709,18 +717,18 @@ const CvMain = () => {
                       indentificarte
                     </div>
                   )}
-                  <div className="pt-12 w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
+                  <div className="pt-12 space-y-2  w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
                     {showLineFromTextarea && (
                       <>
                         <div className="transition continuous-2 absolute z-[5] w-full h-[1px] bottom-0"></div>
-                        <div className="transition delay-500 continuous-2 absolute z-[5] w-full h-[1px] bottom-[25px]"></div>
+                        <div className="transition-all delay-500 continuous-2 absolute z-[5] w-full h-[1px] bottom-[25px]"></div>
                       </>
                     )}
                     <textarea
                       id="textareOfFooter"
                       placeholder={dataText.extras.footer.input}
                       value={userTextWrote}
-                      className="w-full focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600 h-max  border-[1px] rounded-t-[4px] "
+                      className="w-10/12 h-[200px] focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600  border-[1px] rounded-[8px]  "
                       type="text"
                       name=""
                       onFocus={() => {
@@ -736,7 +744,7 @@ const CvMain = () => {
 
                     <div
                       onClick={() => sendText()}
-                      className="border-b-[1px] border-x-[1px]  text-center w-full cursor-pointer h-[25px]"
+                      className="border-[1px] border-[aqua] text-center w-[50px] cursor-pointer h-[25px] rounded-md transition-all hover:text-[aqua]"
                     >
                       <p className="text-[16px] font-serif  ">
                         {!showLineFromTextarea ? "Send" : "Sending..."}
