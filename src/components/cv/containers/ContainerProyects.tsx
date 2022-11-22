@@ -141,8 +141,8 @@ export default function ContainerProyects({
           )}
           {showGroup && (
             <>
-              <div className=" flex items-center justify-center rounded-t-[7px] left-[-115px] lg:left-[-115px] lg:top-[-22px] lg:h-[90px]  px-[2px] top-[-50px] absolute bg-[#408198] lg:bg-transparent lg:rounded-sm lg:border-l-[1px] lg:border-yellow-300 lg:backdrop-blur-3xl  text-[14px] text-slate-800 w-[110px]">
-                <p className="text-center text-yellow-200">
+              <div className=" flex items-center justify-center rounded-t-[7px] left-[-115px] lg:left-[-115px] lg:top-[-22px] lg:h-[90px]  px-[2px] top-[-50px] absolute bg-[#408198] lg:bg-transparent lg:rounded-sm lg:border-l-[1px] lg:border-blue-900 lg:backdrop-blur-3xl  text-[14px] text-slate-800 w-[110px]">
+                <p className="text-center text-black">
                   App desarrollada de manera{" "}
                   {!inGroup ? <span>individual</span> : <span>grupal</span>}
                 </p>{" "}
@@ -162,7 +162,7 @@ export default function ContainerProyects({
           ></span>
         </div>
         <p
-          className="pt-[1px] hover:text-yellow-300 pb-[1px] cursor-pointer lg:text-[42px] lg:my-4 container-proyects"
+          className="pt-[1px pb-[1px] cursor-pointer lg:text-[42px] lg:my-4 container-proyects"
           onClick={() => {
             var link = document.createElement("a");
             link.href = web;

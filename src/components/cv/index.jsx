@@ -25,9 +25,12 @@ import bubble_1 from "./../../assets/svg/backGround/bubble_1.svg";
 import bubble_2 from "./../../assets/svg/backGround/bubble_2.svg";
 import bubble_3 from "./../../assets/svg/backGround/bubble_3.svg";
 import star_1 from "./../../assets/svg/backGround/star_1.svg";
-import Background from "./Background";
+import Background from "./background";
+import useMainContext from "./context/useMainContext";
+import ContactComponent from "./Essencials/Foooter/Contact/Contact";
 const staticInf = lang.static;
 const CvMain = () => {
+  const { data } = useMainContext();
   const [showMenu, setshowMenu] = useState(false);
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
@@ -47,9 +50,11 @@ const CvMain = () => {
   const [imgSrc, setimgSrc] = useState(
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
+ 
 
   ///
   useEffect(() => {
+  
     var langUse = dataText;
     //setdataText(lang[defaultLang])
     // setTimeout(() => {
@@ -183,7 +188,6 @@ const CvMain = () => {
         }
       }
     }
-    console.log(number);
     setnumberSplit(number);
   };
   const showImage = (src) => {
@@ -191,24 +195,7 @@ const CvMain = () => {
     document.body.style.overflowY = "hidden";
     setimgSrc(src);
   };
-  const sendText = () => {
-    setshowLineFromTextarea(true);
-    axios
-      .post("https://mymone.azurewebsites.net" + "/telegramCV", {
-        text: userTextWrote,
-      })
-      .then((e) => {
-        console.log(e.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    setuserTextWrote("");
-    setTimeout(() => {
-      setshowLineFromTextarea(false);
-    }, 3500);
-  };
+  
   ///
   const changeHandlerBodyLoaded = () => {
     setisLoadedBody(true);
@@ -221,14 +208,15 @@ const CvMain = () => {
       setshowLineWhenFileIsDownloading(false);
     }, 3500);
   };
-
+  const text_color = data.text
   return (
     <div
-      className="main-container init "
+      className={`main-container init text-${text_color}`}
       onLoad={() => {
         changeHandlerBodyLoaded();
       }}
     >
+      <Background></Background>
       <div className="absolute h-screen flex items-center justify-center opacity-25"></div>
       <div className="w-full h-full absolute overflow-hidden">
         <img
@@ -237,7 +225,7 @@ const CvMain = () => {
           alt=""
         />
       </div>
-      <div className="">
+      <div className="sheet-body">
         <div className="fixed w-full h-full left">
           <div className="part relative w-full h-full">
             <span className="absolute part-1"></span>
@@ -605,7 +593,7 @@ const CvMain = () => {
                 <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
                   <p className="titleText">{dataText.headers.about}</p>
                   <div
-                    className="font-[100] bg-[#00000038] text-[19px] italic p-[10px] rounded-[10px]"
+                    className={`font-[100] bg-[#ffd334] text-[19px] italic p-[10px] rounded-[10px] text-${text_color}`}
                     dangerouslySetInnerHTML={{
                       __html: dataText.headers.aboutInfo,
                     }}
@@ -619,7 +607,7 @@ const CvMain = () => {
                     <p className="titleText">{dataText.headers.knowledge}</p>
 
                     <div
-                      className="normalText containerText"
+                      className={`normalText containerText text-${text_color}`}
                       dangerouslySetInnerHTML={{
                         __html: dataText.headers.aboutInfo2,
                       }}
@@ -657,100 +645,16 @@ const CvMain = () => {
                   })}
                 </div>
               </div>
-              <div id="contact" className="mb-[40px] lg:w-[600px] w-full">
+              <div
+                id="contact"
+                className="mb-[40px] lg:w-[800px] w-full 201211"
+              >
                 <p className="titleText mt-5 mb-3 ">
                   {dataText.headers.contact}
                 </p>
                 <div className="m-2 ">
                   <p className="mb-3">{dataText.contact.about}</p>
-                  <div className="bg-transparent border-[1px] border-cyan-300 rounded-[11px] w-full items-center flex flex-col justify-center">
-                    <div
-                      className="flex cursor-pointer"
-                      onClick={() => copyToClipBoard("number")}
-                    >
-                      <div className="">
-                        <img
-                          className="w-[36px] h-[36px] "
-                          src={CallSVG}
-                          alt=""
-                        />
-                      </div>
-                      <a
-                        href={`${"tel:" + "+593 9627  16235"}`}
-                        className="text-[16px] pt-[5px] pl-2 w-[238px] text-center hover:text-green-400"
-                      >
-                        {"+593 9627  16235"}
-                      </a>
-                      <img
-                        className="w-[22px] h-[22px] mt-[2px]"
-                        src={CopySGV}
-                        alt=""
-                      />
-                    </div>
-                    <div
-                      className="flex cursor-pointer"
-                      onClick={() => copyToClipBoard("email")}
-                    >
-                      <img className="w-[36px] h-[36px]" src={MailSVG} alt="" />
-                      <a
-                        href={`${"mailto:" + dataText.contact.email}`}
-                        className="text-[16px] pt-[5px]  w-[238px]  pl-2 underline hover:text-green-400"
-                      >
-                        {dataText.contact.email}
-                      </a>
-                      <div className="w-[22px] h-[22px]  mt-[2px] fill:[#21319203]">
-                        <img
-                          className="w-[22px] h-[22px] mt-[2px]"
-                          src={CopySGV}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative w-full flex justify-center mt-3">
-                  {onFocusTextarea && (
-                    <div className="px-2 indent-9 absolute bottom-[-50px] rounded-md z-[4]  text-[12px] text-black bg-[#ffd000] rectangule">
-                      Todo lo que escribas aqui sera enviado de{" "}
-                      <span className="font-bold">manera anonima</span> . A no
-                      ser que especifiques tu nombre o alguna manera de
-                      indentificarte
-                    </div>
-                  )}
-                  <div className="pt-12 space-y-2  w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
-                    {showLineFromTextarea && (
-                      <>
-                        <div className="transition continuous-2 absolute z-[5] w-full h-[1px] bottom-0"></div>
-                        <div className="transition-all delay-500 continuous-2 absolute z-[5] w-full h-[1px] bottom-[25px]"></div>
-                      </>
-                    )}
-                    <textarea
-                      id="textareOfFooter"
-                      placeholder={dataText.extras.footer.input}
-                      value={userTextWrote}
-                      className="w-10/12 h-[200px] focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600  border-[1px] rounded-[8px]  "
-                      type="text"
-                      name=""
-                      onFocus={() => {
-                        setonFocusTextarea(true);
-                      }}
-                      onBlur={() => {
-                        setonFocusTextarea(false);
-                      }}
-                      onChange={(e) => {
-                        setuserTextWrote(e.target.value);
-                      }}
-                    />
-
-                    <div
-                      onClick={() => sendText()}
-                      className="border-[1px] border-[aqua] text-center w-[50px] cursor-pointer h-[25px] rounded-md transition-all hover:text-[aqua]"
-                    >
-                      <p className="text-[16px] font-serif  ">
-                        {!showLineFromTextarea ? "Send" : "Sending..."}
-                      </p>
-                    </div>
-                  </div>
+                 <ContactComponent dataText={dataText}></ContactComponent>
                 </div>
               </div>
             </div>

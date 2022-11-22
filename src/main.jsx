@@ -6,10 +6,13 @@ import "./components/cv/rounded_carrousel/carrousel.scss";
 import "./components/cv/svg.scss";
 import CvMain from "./components/cv";
 import { ParallaxProvider } from "react-scroll-parallax";
+import MainContextComponent from "./components/cv/context/MainContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <MainContextComponent>
       <ParallaxProvider>
         <CvMain />
-        </ParallaxProvider>
+      </ParallaxProvider>
+    </MainContextComponent>
   </React.StrictMode>
 );
