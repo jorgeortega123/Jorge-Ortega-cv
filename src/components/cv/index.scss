@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400&display=swap');
+$base-color-h1: rgb(0, 255, 42);
+$base-color-h1-hover: #f6ff00;
 html {
   scroll-behavior: smooth;
 }
 //#201211
 .main-container {
   width: 100%;
-  background-color:  #281716;
+  background-color:  #0f2d51;
+}
+.useNavLetter { 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 .sadds {
   color: rgba(255, 255, 255, 0.476);
 }
 .sheet-body { 
   backdrop-filter: blur(3px);
+  position: relative;
 }
 .main-page {
   position: relative;
@@ -20,14 +28,13 @@ html {
   color: rgb(255, 255, 255);
 }
 .menu-items {
-  position: fixed;
   user-select: none;
   text-align: left;
   padding-top: 60px;
   padding-left: 15px;
   right: 0;
   width: 200px;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(38, 41, 43, 0.961);
   backdrop-filter: 10px;
   z-index: 1;
@@ -55,7 +62,7 @@ html {
 h1 {
   color: transparent;
   letter-spacing: 0.5px;
-  color: #000;
+  color: rgb(255, 255, 255);
   font-family: "IBM Plex Sans", sans-serif;
   background-clip: text;
   animation: name-title-animation 10s infinite linear;
@@ -91,11 +98,12 @@ h2 {
   text-indent: 8px;
   position: relative;
   transition: all .3s;
-  color: #3B3486;
+  color: $base-color-h1;
   font-weight: 800;
 }
 .titleText:hover { 
-  color:  #000000;
+  color:  $base-color-h1-hover;
+  cursor: pointer;
 }
 .titleText::before {
   content: "";
@@ -125,12 +133,7 @@ h2 {
   justify-items: center;
   align-items: center;
 }
-.cvImage {
-  position: absolute;
-  background-image: url("../../assets/image/cv/cv.jpg");
-  background-size: cover;
-  border-radius: 300px;
-}
+
 .Social {
   position: relative;
   width: 32px;
@@ -148,13 +151,10 @@ h2 {
 }
 .nav {
   width: 100%;
-  height: 45px;
-  background-color: #201211;
-  display: flex;
-  flex-direction: column;
+  background-color: #00295f;
   align-items: flex-start;
   z-index: 2;
-  box-shadow: 5px 5px 7px #201211;
+  box-shadow: 1px 5px 7px #111720;
 
 }
 .button-nav {
