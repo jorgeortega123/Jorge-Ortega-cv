@@ -8,7 +8,7 @@ function MainContextComponent({ children }) {
   }, [])
   const [write, setWrite] = useState("");
   var data = {
-    color: "#281716",
+    color: "#0f2d51",
     color_asent: "#201211",
     text: "#fff",
   };
