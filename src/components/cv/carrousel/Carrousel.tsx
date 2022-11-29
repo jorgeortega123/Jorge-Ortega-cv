@@ -10,7 +10,7 @@ function HeroMain({
   className?: string;
   showImage: (data: string) => void;
 }) {
-  const delay = 2500;
+  const delay = 3600;
   const [index, setIndex] = React.useState(0);
   const timeoutRef = React.useRef(null);
 
