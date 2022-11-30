@@ -84,8 +84,9 @@
   width:90px;
   height:90px;
   left:25%;
-  animation-duration:70s;
-  animation-delay:4s;
+  animation-duration:72s;
+  animation-delay:0s;
+  animation-direction: alternate-reverse;
 }
 @keyframes rise{
   0%{
@@ -93,10 +94,10 @@
     transform:translateX(0);
   }
   50%{
-    transform:translate(100px);
+    transform:translate(100%);
   }
   100%{
     bottom:1080px;
-    transform:translateX(-200px);
+    transform:translateX(-100%);
   }
 }

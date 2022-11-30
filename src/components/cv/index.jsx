@@ -1,9 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { lang } from "./langs";
-import ContainerProyects from "./containers/ContainerProyects";
-import SocialNetworks from "./SocialNetworks";
-//import { ReactComponent as Logo }i
+// svg's icons
 import KeyboardSvg from "./../../assets/svg/keyboard.svg";
 import DownloadSvg from "./../../assets/svg/download.svg";
 import LangSvg from "./../../assets/svg/lang.svg";
@@ -16,30 +14,35 @@ import CallSVG from "./../../assets/svg/call.svg";
 import CopySGV from "./../../assets/svg/copy.svg";
 import SendSGV from "./../../assets/svg/send.svg";
 import LinkedinSGV from "./../../assets/svg/linkedin_.svg";
+import star_1 from "./../../assets/svg/backGround/star_1.svg";
+import cvIMAGEN from "../../assets/image/cv/cv.jpg";
+// Components
+import MainContainer from "./containers/MainContainer";
+import ContainerProyects from "./containers/ContainerProyects";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
-import axios from "axios";
-import { Parallax, useParallax } from "react-scroll-parallax";
 import RoundedCarrousel from "./rounded_carrousel/RoundedCarrousel";
-import bubble_1 from "./../../assets/svg/backGround/bubble_1.svg";
-import bubble_2 from "./../../assets/svg/backGround/bubble_2.svg";
-import bubble_3 from "./../../assets/svg/backGround/bubble_3.svg";
-import star_1 from "./../../assets/svg/backGround/star_1.svg";
+import Button from "./Essentials/Button";
+import SocialNetworks from "./SocialNetworks";
+import ContactComponent from "./Essentials/Foooter/Contact/Contact";
 import Background from "./background";
+// Context
 import useMainContext from "./context/useMainContext";
-import ContactComponent from "./Essencials/Foooter/Contact/Contact";
+import TranslateView from "./Essentials/TranslateView";
+import LoadingScreenView from "./Essentials/LoadingScreenView";
+import NavView from "./Essentials/NavView";
+import Footer from "./Essentials/Foooter/Footer";
+import ImageView from "./Essentials/ImageView";
+
 const staticInf = lang.static;
 const CvMain = () => {
-  const { data } = useMainContext();
-  const [showMenu, setshowMenu] = useState(false);
+  console.log(SendSGV)
+  const { data, goToUrl, changeOverflowY } = useMainContext();
+  const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
+  const [dataText, setdataText] = useState(lang.en);
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
-  const [numberSplit, setnumberSplit] = useState("");
-  const [textOnNavbar, settextOnNavbar] = useState("");
-  const [userTextWrote, setuserTextWrote] = useState("");
-  const [dataText, setdataText] = useState(lang.en);
-  const [defaultLang, setdefaultLang] = useState("en");
   const [showImg, setshowImg] = useState(false);
   const [showLineFromDownload, setshowLineFromDownload] = useState(false);
   const [showLineFromTextarea, setshowLineFromTextarea] = useState(false);
@@ -47,78 +50,26 @@ const CvMain = () => {
   const [isLoadedBody, setisLoadedBody] = useState(false);
   const [showLineWhenFileIsDownloading, setshowLineWhenFileIsDownloading] =
     useState(false);
+  const [textOnNavbar, settextOnNavbar] = useState("");
+  const [defaultLang, setdefaultLang] = useState("en");
+
   const [imgSrc, setimgSrc] = useState(
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
- 
 
-  ///
+  const Callicon = () => { 
+    return (<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="48" width="48"><path d="M37.75 39.75q-5.05 0-10.325-2.725-5.275-2.725-9.575-7-4.3-4.275-7.025-9.525Q8.1 15.25 8.1 10.15q0-.9.6-1.525Q9.3 8 10.25 8h4.4q.85 0 1.475.525.625.525.775 1.375l1.05 4.45q.15.8-.025 1.425T17.25 16.8l-4.4 4.15q2.95 4.95 6.475 8.425Q22.85 32.85 27.6 35.45L31.9 31q.5-.55 1.075-.775.575-.225 1.275-.075L38 31q.9.15 1.4.8.5.65.5 1.55v4.25q0 .95-.6 1.55-.6.6-1.55.6ZM12.05 19.6l4.2-3.9q.15-.15.2-.425.05-.275 0-.525l-1-4.6q-.05-.3-.275-.45-.225-.15-.525-.15h-4.5q-.25 0-.4.15-.15.15-.15.4-.05 1.95.6 4.35.65 2.4 1.85 5.15Zm17 16.55q2.05 1.05 4.525 1.575 2.475.525 4.275.525.25 0 .4-.15.15-.15.15-.35v-4.5q0-.3-.15-.5t-.5-.25l-3.9-.8q-.25-.05-.425 0t-.325.2Zm-17-16.55Zm17 16.55Z"/></svg>)
+  }
+
   useEffect(() => {
-  
-    var langUse = dataText;
-    //setdataText(lang[defaultLang])
-    // setTimeout(() => {
-    //   consoleText(
-    //     ["ReactJs", "Scss", "Javascript", "Python", "Typescript", "Figma", "Tailwind", "Node", "Git", "Git Hub"],
-    //     "text",
-    //     ["tomato", "rebeccapurple", "lightblue", "rebeccapurple", "cadetblue"]
-    //   );
-    // }, 2500);
     document.body.style.overflowX = "hidden";
   }, []);
-  document.body.style.overflowX = "hidden";
-  function consoleText(words, id, colors) {
-    if (colors === undefined) colors = ["#fff"];
-    var visible = true;
-    var con = document.getElementById("console");
-    var letterCount = 1;
-    var x = 1;
-    var waiting = false;
-    var target = document.getElementById(id);
-    target.setAttribute("style", "color:" + colors[0]);
-    window.setInterval(function () {
-      if (letterCount === 0 && waiting === false) {
-        waiting = true;
-        target.innerHTML = words[0].substring(0, letterCount);
-        window.setTimeout(function () {
-          var usedColor = colors.shift();
-          colors.push(usedColor);
-          var usedWord = words.shift();
-          words.push(usedWord);
-          x = 1;
-          target.setAttribute("style", "color:" + colors[0]);
-          letterCount += x;
-          waiting = false;
-        }, 1000);
-      } else if (letterCount === words[0].length + 1 && waiting === false) {
-        waiting = true;
-        window.setTimeout(function () {
-          x = -1;
-          letterCount += x;
-          waiting = false;
-        }, 1000);
-      } else if (waiting === false) {
-        target.innerHTML = words[0].substring(0, letterCount);
-        letterCount += x;
-      }
-    }, 120);
-    window.setInterval(function () {
-      if (visible === true) {
-        con.className = "console-underscore hidden";
-        visible = false;
-      } else {
-        con.className = "console-underscore";
-        visible = true;
-      }
-    }, 400);
-  }
-  ///
   const downloadCv = () => {
     if (showDownload === false) {
-      document.body.style.overflow = "hidden";
+      changeOverflowY();
       setshowDownload(true);
     } else {
-      document.body.style.overflow = "auto";
+      changeOverflowY();
       setshowDownload(false);
     }
   };
@@ -129,12 +80,12 @@ const CvMain = () => {
       setshowMenuTranslate(false);
     }
   };
-  const ChangeLang = (langByUser) => {
+  const changeLang = (langByUser) => {
     setdataText(lang[langByUser]);
     setdefaultLang(langByUser);
     setshowMenuTranslate(false);
   };
-  const SelectedLang = (e) => {
+  const selectedLang = (e) => {
     if (defaultLang === e) {
       return "text-blue-500";
     } else {
@@ -142,61 +93,12 @@ const CvMain = () => {
     }
   };
 
-  const copyToClipBoard = (elements) => {
-    switch (elements) {
-      case "number":
-        navigator.clipboard.writeText(dataText.contact.number);
-        settextOnNavbar(dataText.functions.copy.number);
-        setshowTextOnNavbar(true);
-        setTimeout(() => {
-          setshowTextOnNavbar(false);
-        }, 1600);
-        break;
-      case "email":
-        navigator.clipboard.writeText(dataText.contact.email);
-        settextOnNavbar(dataText.functions.copy.email);
-        setshowTextOnNavbar(true);
-        setTimeout(() => {
-          setshowTextOnNavbar(false);
-        }, 1600);
-        break;
-    }
-  };
-  const goToUrl = (linkOpen) => {
-    var link = document.createElement("a");
-    link.href = linkOpen;
-    link.target = "_blank";
-    link.click();
-  };
-  const split = (s) => {
-    var patron = [4, 4, 5];
-    var number = "";
-    var num = 0;
-    var le = 0;
-    var arr = dataText.contact.number.split("");
-    console.log(arr);
-    for (let x = 0; x < patron.length; x++) {
-      for (let i = 0; i < patron[x]; i++) {
-        number = number + " ";
-        for (let a = num; a < patron[i] + le; a++) {
-          le = le + a;
-          console.log(num);
-          number = number + arr[a];
-          console.log(number);
-          if (a > arr.length) return;
-          num = a;
-        }
-      }
-    }
-    setnumberSplit(number);
-  };
   const showImage = (src) => {
     setshowImg(true);
-    document.body.style.overflowY = "hidden";
+    changeOverflowY();
     setimgSrc(src);
   };
-  
-  ///
+
   const changeHandlerBodyLoaded = () => {
     setisLoadedBody(true);
   };
@@ -208,10 +110,10 @@ const CvMain = () => {
       setshowLineWhenFileIsDownloading(false);
     }, 3500);
   };
-  const text_color = data.text
+  const text_color = data?.text || "#fff";
   return (
     <div
-      className={`main-container init text-${text_color}`}
+      className={`main-container init text-${text_color} relative`}
       onLoad={() => {
         changeHandlerBodyLoaded();
       }}
@@ -225,7 +127,7 @@ const CvMain = () => {
           alt=""
         />
       </div>
-      <div className="sheet-body">
+      <div className="">
         <div className="fixed w-full h-full left">
           <div className="part relative w-full h-full">
             <span className="absolute part-1"></span>
@@ -233,309 +135,99 @@ const CvMain = () => {
             <span className="absolute part-3"></span>
           </div>
         </div>
-
         <AnimatePresence>
-          {!isLoadedBody && (
-            <motion.div
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "tween" }}
-            >
-              <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
-                <span className="bg-white"></span>
-                <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
-                  <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
-                </div>
-              </div>
-            </motion.div>
-          )}
+          {!isLoadedBody && <LoadingScreenView />}
         </AnimatePresence>
         {showLineWhenFileIsDownloading && (
           <div className="continuous-1 sticky z-[5] w-full h-[3px] top-0"></div>
         )}
-
-        {showDownload && (
-          <Modals title="Download curriculum vitae">
-            <FileView
-              title={"" + staticInf.name + "_cv.pdf"}
-              cv={staticInf.cv.en.cv_pdf}
-              handlerChangeByDownload={handlerChangeByDownload}
-              index={1}
-            >
-              {staticInf.cv.en.text}
-            </FileView>
-            <FileView
-              title={staticInf.name + "_cv.pdf"}
-              cv={staticInf.cv.es.cv_pdf}
-              handlerChangeByDownload={handlerChangeByDownload}
-              index={2}
-            >
-              {staticInf.cv.es.text}
-            </FileView>
-          </Modals>
-        )}
-        <div className="nav sticky top-0 blockAllSelect">
-          <button
-            className=" button-nav visible lg:invisible"
-            onClick={() => {
-              if (showMenu === true) {
-                setshowMenu(false);
-              } else {
-                setshowMenu(true);
-              }
-            }}
-          >
-            <div className="line l1"></div>
-            <div className="line l2"></div>
-            <div className="line l3"></div>
-          </button>
-          <div className="flex blockAllSelect relative ">
-            <div className="items-center flex">
-              <div
-                className=""
-                title={"Download cv"}
-                onClick={() => {
-                  downloadCv();
-                }}
-              >
-                <svg
-                  width="42"
-                  height="42"
-                  viewBox="0 0 146 146"
-                  fill="none"
-                  className="dowload_svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="Group_4">
-                    <g id="Icon / Download">
-                      <path
-                        id="Vector-3"
-                        d="M43.6667 73V98.6667H102.333V73"
-                        stroke="white"
-                        stroke-width="7.33333"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <g id="Group">
-                        <path
-                          id="Vector"
-                          d="M73 41.836L73 78.5027"
-                          stroke="white"
-                          stroke-width="7.33333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          id="Vector_2"
-                          d="M73 78.5027L85.375 66.1277"
-                          stroke="white"
-                          stroke-width="7.33333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          id="Vector_3"
-                          d="M73 78.5027L60.625 66.1277"
-                          stroke="white"
-                          stroke-width="7.33333"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <AnimatePresence>
-                {/*showDownload && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: "tween" }}
-                  className="z-0 absolute bg-black ml-[4px] mt-[-5px] w-[180px] h-[20px] text-slate-100 blockAllSelect "
-                >
-                  <p className="text-[12px] pl-[3px] pt-[2px] ">
-                    {dataText.functions.download}
-                  </p>
-                </motion.div>
-              )*/}
-              </AnimatePresence>
-            </div>
-            <div>
-              <img
-                src={LangSvg}
-                title={"Translate"}
-                fill="red"
-                stroke="green"
-                className="svgDefaultColor w-[30px] h-[30px] m-2 z-[1]"
-                alt=""
-                onClick={() => {
-                  showMenuTranslateFunc();
-                }}
-              />
-              <AnimatePresence>
-                {showMenuTranslate && (
-                  <motion.div
-                    initial={{ opacity: 0, x: 150 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 0 }}
-                    transition={{ type: "tween" }}
-                    className="z-[0] flex-col left-[67px] text-[12px] pt-[5px] absolute top-0 pl-3 w-[140px] ml-3 text-slate-100  blockAllSelect "
-                  >
-                    <div
-                      className={`m-0 ${SelectedLang(
-                        "en"
-                      )}  hover:text-green-400`}
-                      onClick={() => {
-                        ChangeLang("en");
-                      }}
-                    >
-                      &raquo; English
-                    </div>{" "}
-                    <div
-                      className={`m-0 ${SelectedLang(
-                        "es"
-                      )}   hover:text-green-400 z-[0] `}
-                      onClick={() => {
-                        ChangeLang("es");
-                      }}
-                    >
-                      &raquo; Español
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <AnimatePresence>
-              {showTextOnNavbar && (
-                <motion.div
-                  initial={{ opacity: 0, x: 0 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 0 }}
-                  transition={{ type: "tween" }}
-                  className="absolute right-[100px]"
-                >
-                  <p className=" text-green-400 pt-[14px] text-[12px] ">
-                    {textOnNavbar}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          <div className="invisible h-full pr-5 flex justify-center items-center lg:visible absolute text-slate-100 right-0 ">
+        <AnimatePresence>
+          {showDownload && (
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ type: "tween" }}
-              className="capitalize flex space-x-5 text-[18px]"
+              transition={{ type: "tween", duration: 1 }}
             >
-              <li className="hover:text-cyan-300">
-                <a href="#home">Home</a>
-              </li>
-              <li className="hover:text-cyan-300">
-                <a href="#about">{dataText.headers.about}</a>
-              </li>
-
-              <li className="hover:text-cyan-300">
-                <a href="#proyects">{dataText.headers.proyects}</a>
-              </li>
-              <li className="hover:text-cyan-300">
-                <a href="#contact">{dataText.headers.contact}</a>
-              </li>
+              <Modals title="Download curriculum vitae">
+                <FileView
+                  title={"" + staticInf.name + "_cv.pdf"}
+                  cv={staticInf.cv.en.cv_pdf}
+                  handlerChangeByDownload={handlerChangeByDownload}
+                  index={1}
+                >
+                  {staticInf.cv.en.text}
+                </FileView>
+                <FileView
+                  title={staticInf.name + "_cv.pdf"}
+                  cv={staticInf.cv.es.cv_pdf}
+                  handlerChangeByDownload={handlerChangeByDownload}
+                  index={2}
+                >
+                  {staticInf.cv.es.text}
+                </FileView>
+              </Modals>
             </motion.div>
-          </div>
-        </div>
-
-        <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
+          )}
+        </AnimatePresence>
+        <NavView
+          LangSvg={LangSvg}
+          showMenuTranslateFunc={showMenuTranslateFunc}
+          showMenuTranslate={showMenuTranslate}
+          changeLang={changeLang}
+          selectedLang={selectedLang}
+          showTextOnNavbar={showTextOnNavbar}
+          dataText={dataText}
+        />
+        <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full relative ">
           <AnimatePresence>
-            {showMenu && (
+            {showMenuNavbar && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ type: "tween" }}
-                className="menu-items capitalize top-0 fixed"
+                className="menu-items capitalize top-0 fixed right-0"
               >
-                <li>
+                <p>
                   <a href="#home">Home</a>
-                </li>
-                <li>
+                </p>
+                <p>
                   <a href="#about">{dataText.headers.about}</a>
-                </li>
+                </p>
 
-                <li>
+                <p>
                   <a href="#proyects">{dataText.headers.proyects}</a>
-                </li>
-                <li>
+                </p>
+                <p>
                   <a href="#contact">{dataText.headers.contact}</a>
-                </li>
+                </p>
               </motion.div>
             )}
           </AnimatePresence>
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-            <div
-              className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative"
-              id="home"
-            >
-              {showImg && (
-                <div
-                  onClick={() => {
-                    setshowImg(false);
-                    document.body.style.overflow = "auto";
-                  }}
-                  className="z-[6] fixed w-full overflow-auto h-full bg-[#222222e0] backdrop-blur-lg  bottom-0 top-[44px]  flex justify-center"
-                >
-                  <div className=" w-11/12 flex flex-col items-center justify-center">
-                    <div className="relative">
-                      <div
-                        className=" right-0 top-[-28px] lg:top-[140px] z-[7] absolute cursor-pointer hover:text-black backdrop-blur-2xl px-2 text-[19px] rounded-[5px] font-bold bg-[#fe0000db] "
-                        onClick={() => {
-                          setshowImg(false);
-                          document.body.style.overflow = "auto";
-                        }}
-                      >
-                        CLOSE
-                      </div>
-                      <img
-                        onClick={(e) => {
-                          e.preventDefault();
-                        }}
-                        className="w-screen z-[8] border-2"
-                        src={imgSrc}
-                        alt=""
-                      />
-                    </div>
-                  </div>
+            <div className="flex space-x-2 space-y-8 justify-center lg:pt-[140px] w-full">
+              <div className=" flex flex-col justify-center relative ">
+                <h1 className="text-[50px]">
+                  Hi, I am <br></br> Jorge <br></br> Ortega
+                </h1>
+                <div className="altura-letras mt-6">
+                  <p className="text-slate-400 text-[24px] font-semibold">
+                    Frontend Developer
+                  </p>
+                  <p className="text-slate-400">Currencly open to work!</p>
                 </div>
-              )}
-              <div className="flex justify-center items-center relative ">
-                <div className="pt-4 z-[1]     ">
-                  <motion.div
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ type: "tween", duration: 1 }}
-                    className=""
-                  >
-                    <div className="relative w-max h-max nameFontBold  ">
-                      <h1 className="title-name-cv text-[34px] lg:text-[54px] lg:font-bold">
-                        Jorge Ortega
-                      </h1>
-                    </div>
-                  </motion.div>
 
-                  <div className="pt-[13px] pb-[13px] text-[22px] flex">
-                    <p className="pt-[3px] lg:text-[28px] ">Web Developer</p>
-                    <img
-                      className="fill-slate-200 pl-1"
-                      src={KeyboardSvg}
-                      alt=""
-                    />
-                  </div>
+                <div className="absolute bottom-0">
+                  <Button
+                    text="Contactar"
+                    icon={CallSVG}
+                    onClick={() => {
+                      goToUrl("#contact", "no-external");
+                    }}
+                  ></Button>
                 </div>
-                <div className="flex items-center">
+                <div className="absolute left-[-100px]">
                   <div className="flex flex-col ml-2 mt-[17px] animation-init ">
                     <SocialNetworks
                       url={staticInf.social[2].url}
@@ -557,152 +249,117 @@ const CvMain = () => {
                       number={3}
                     ></SocialNetworks>
                   </div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ type: "tween", duration: 2 }}
-                    className="mt-[18px] relative w-[110px] h-[110px] lg:w-[148px] lg:h-[148px] flex flex-col justify-center items-center"
-                  >
-                    <div className="cvImage  w-full h-full flex flex-col items-center ">
-                      <div className="hidden absolute z-[0] animated-text"></div>
-                      <div className=" w-full h-full border-[3px] border-dashed  rounded-full"></div>
-                    </div>
-                  </motion.div>
                 </div>
               </div>
+              <div className=" border-2 w-[500px] h-[400px] text-center items-center flex justify-center">
+                IMG
+              </div>
             </div>
-            {
-              // <div className="lg:hidden console-containerr w-full flex justify-center">
-              //   {
-              //     //<span className="absolute rigth-[40px]">{">> "}</span>
-              //   }{" "}
-              //   <div className="w-[200px] flex justify-center">
-              //     <span id="text" className=" "></span>
-              //     <div
-              //       className="w-full console-underscoree bg-transparent"
-              //       id="console"
-              //     >
-              //       |
-              //     </div>
-              //   </div>
-              // </div>
-            }
 
+            <div
+              className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative"
+              id="home"
+            >
+              {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
+            </div>
             <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
-              <div className="w-full flex flex-col  justify-center items-center">
-                <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
-                  <p className="titleText">{dataText.headers.about}</p>
+              <div className="w-full flex flex-col  justify-center items-center max-w-[800px]">
+                <MainContainer className="flex" title={dataText.headers.about}>
                   <div
-                    className={`font-[100] bg-[#ffd334] text-[19px] italic p-[10px] rounded-[10px] text-${text_color}`}
+                    className={`font-[100] normalText italic p-[10px] rounded-[10px] text-${text_color}`}
                     dangerouslySetInnerHTML={{
                       __html: dataText.headers.aboutInfo,
                     }}
                   ></div>
-                </div>
-                <div
-                  id="knowledge"
-                  className="textWrote w-12/12 lg:full mx-auto relative "
+                  <div className="flex justify-center items-center relative ">
+                    <div className="pt-4 z-[1]     "></div>
+                    <div className="flex items-center">
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ type: "tween", duration: 2 }}
+                        className="mt-[18px] relative w-[110px] h-[110px] lg:w-[148px] lg:h-[148px] flex flex-col justify-center items-center"
+                      >
+                        <div className="w-full h-full flex flex-col items-center ">
+                          <img src={cvIMAGEN} alt="" />
+                          <div className="hidden absolute z-[0] animated-text"></div>
+                          <div className=" w-full h-full border-[3px] border-dashed  rounded-full"></div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </MainContainer>
+                <MainContainer
+                  className="flex"
+                  title={dataText.headers.knowledge}
                 >
-                  <div className="relative flex flex-col space-y-5 mb-5 w-full lg:lg:w-5/12">
-                    <p className="titleText">{dataText.headers.knowledge}</p>
-
+                  <div
+                    id="knowledge"
+                    className="textWrote w-12/12 lg:w-full mx-auto relative "
+                  >
                     <div
                       className={`normalText containerText text-${text_color}`}
                       dangerouslySetInnerHTML={{
                         __html: dataText.headers.aboutInfo2,
                       }}
                     ></div>
-                    <Parallax translateX={[-5, 0]}>
-                      <div className="absolute bottom-0 right-0 text-[14px] flex items-center cv-button ">
-                        <div>
-                          <img className="w-5 mx-1" src={cvICON} alt="" />
-                        </div>
-                        Curriculum Vitae
-                      </div>
-                    </Parallax>
+                    <div className="absolute bottom-[-26px] right-0 flex items-center ">
+                      <Button
+                        imageSize={20}
+                        spaceY={3}
+                        text="Curriculum Vitae"
+                        icon={cvICON}
+                      ></Button>
+                    </div>
                   </div>
-                </div>
+                </MainContainer>
                 <div className="w-full lg:w-5/12 ">
                   <RoundedCarrousel></RoundedCarrousel>
                 </div>
               </div>
-              <div id="proyects" className="relative">
-                <p className="titleText mb-5 mt-1 ">Proyects</p>
-                <div className="flex-col space-y-4 lg:space-y-7 w-full">
-                  {dataText.proyects.map((e, n) => {
-                    return (
-                      <ContainerProyects
-                        index={n}
-                        title={e.title}
-                        about={e.about}
-                        img={e.img}
-                        web={e.web}
-                        langs={e.tags}
-                        inGroup={e.onGroup}
-                        showImage={showImage}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-              <div
-                id="contact"
-                className="mb-[40px] lg:w-[800px] w-full 201211"
+              <MainContainer
+                id="proyects"
+                className="flex "
+                title={dataText.headers.proyects}
               >
-                <p className="titleText mt-5 mb-3 ">
-                  {dataText.headers.contact}
-                </p>
-                <div className="m-2 ">
-                  <p className="mb-3">{dataText.contact.about}</p>
-                 <ContactComponent dataText={dataText}></ContactComponent>
+                <div className="relative mt-6">
+                  <div className="flex-col space-y-4 lg:space-y-7 w-full">
+                    {dataText.proyects.map((e, n) => {
+                      return (
+                        <ContainerProyects
+                          index={n}
+                          title={e.title}
+                          about={e.about}
+                          img={e.img}
+                          web={e.web}
+                          langs={e.tags}
+                          inGroup={e.onGroup}
+                          showImage={showImage}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
+              </MainContainer>
+              <div id="contact" className="w-full max-w-[800px]">
+                <MainContainer
+                  className="flex"
+                  title={dataText.headers.contact}
+                >
+                  <div className="m-2 ">
+                    <p className="mb-3">{dataText.contact.about}</p>
+                    <ContactComponent dataText={dataText}></ContactComponent>
+                  </div>
+                </MainContainer>
               </div>
             </div>
           </div>
         </div>
-        <div
-          id="bottomPage"
-          className="text-slate-50 px-1 text-[12px] lg:text-[13px] flex flex-col mt-[20px] mb-[20px] bg-[#03224a] justify-center items-center "
-        >
-          <div className="flex">
-            <div className="w-[250px] mb-[40px]">
-              <p className="pb-3">Gracias por visitar el portafolio</p>
-              <p>
-                Si quieres dejar alguna recomendacion, critica o propuesta de
-                trabajo puedes mandar un{" "}
-                <span
-                  onClick={() =>
-                    document.getElementById("textareOfFooter").focus()
-                  }
-                  className="underline cursor-pointer"
-                >
-                  mensaje aqui:
-                </span>{" "}
-              </p>
-            </div>
-            <div className="flex-col capitalize ">
-              <p className="mb-2">Redes sociales:</p>
-              {staticInf.social.map((socialMedia, indexNum) => {
-                return (
-                  <div
-                    onClick={() => {
-                      goToUrl(socialMedia.url);
-                    }}
-                    className="underline hover:text-green-400 cursor-pointer"
-                    key={"socialData" + indexNum}
-                  >
-                    {socialMedia.name}
-                    <img src={socialMedia.svg} alt="" />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="underline">Jorge Ortega 2022</div>
-        </div>
+        <Footer staticInf={staticInf} goToUrl={goToUrl}></Footer>
       </div>
     </div>
   );
 };
 
 export default CvMain;
+3;

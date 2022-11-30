@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import newWindow from "../../../assets/svg/newWindow.svg";
 import inGroupSVG from "../../../assets/svg/group.svg";
 import inSoloSVG from "../../../assets/svg/person.svg";
+import back from "../../../assets/svg/backGround/titles.svg";
 import { lang } from "../langs";
 import HeroMain from "../carrousel/Carrousel";
 const imagesFrom = lang.static.images
@@ -161,8 +162,9 @@ export default function ContainerProyects({
             className={`linesTitle thrTitle w-[${index * 4.7 + 0.2 * 100}px]`}
           ></span>
         </div>
+        <div className="relative ">
         <p
-          className="pt-[1px pb-[1px] cursor-pointer lg:text-[42px] lg:my-4 container-proyects"
+          className="pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 container-proyects"
           onClick={() => {
             var link = document.createElement("a");
             link.href = web;
@@ -171,7 +173,7 @@ export default function ContainerProyects({
           }}
         >
           {title}
-        </p>
+        </p></div>
         <img
           className=" w-7 h-7 ml-1 mt-[-2px] cursor-pointer"
           src={newWindow}
@@ -190,7 +192,7 @@ export default function ContainerProyects({
         </div>
         <div className="normalText text-[12px] h-full lg:p-10 lg:w-8/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div
-            className="normalText text-[18px] lg:text-[24px]"
+            className="normalText altura-letras text-[18px] lg:text-[24px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div

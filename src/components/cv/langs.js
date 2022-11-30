@@ -110,7 +110,7 @@ export const lang = {
       aboutInfo2: ` I know how use frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>, <span class="text-bold mark-1">TailwindCss</span> (also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
     },
     contact: {
-      about: "Keep in touch:",
+      about: "Get in touch:",
       number: "+593962716235",
       email: "garridomateo74@gmail.com",
     },
