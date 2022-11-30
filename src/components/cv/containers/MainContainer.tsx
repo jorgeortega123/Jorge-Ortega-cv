@@ -21,7 +21,7 @@ export default function MainContainer({
       id={id}
     >
       <p className="titleText text-left mt-4 mb-1">{title}</p>
-      <div className={`relative ${className} ${props} justify-center items-center space-y-5 w-full`}>
+      <div className={`relative ${JSON.stringify(props)} justify-center items-center space-y-5 w-full  ${className} `}>
         {children}
       </div>
     </div>

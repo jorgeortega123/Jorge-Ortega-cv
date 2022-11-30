@@ -130,8 +130,7 @@ h2 {
 }
 
 .normalText {
-  font-weight: 2px;
-  font-size: 27px;
+  font-weight: 100px;
 }
 .textWrote {
   display: flex;
@@ -185,7 +184,7 @@ h2 {
   transition: all 0.6s;
   transform-origin: left;
 }
-.button-nav:hover div:first-child {
+.button-nav  div:first-child {
   transform: rotate(33deg);
 }
 .button-nav:hover div:nth-child(2) {
@@ -231,27 +230,17 @@ h2 {
   left: 10px;
 }
 .linesTitle {
-  display: block;
-  position: absolute;
-  margin: 1px;
+
   height: 5px;
   background-color: rgb(0, 174, 255);
   border-radius: 10px;
   left: 5px;
 }
 
-.oneTitle {
-  top: 5px;
-}
-.twoTitle {
-  top: -2px;
-}
-.thrTitle {
-  bottom: 2px;
-}
+
 .rotate180 {
   transform: rotate(180deg);
-}
+}nav
 .rotate180-alternate {
   transform: rotate(90deg);
 }
@@ -302,6 +291,8 @@ h2 {
 }
 .target-p-contact {
   margin-top: -12px;
+  font-size: 17px;
+  letter-spacing: .02rem;
 }
 .wobbling-3 {
   border-radius: 40px;

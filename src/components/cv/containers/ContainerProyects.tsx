@@ -6,7 +6,7 @@ import inSoloSVG from "../../../assets/svg/person.svg";
 import back from "../../../assets/svg/backGround/titles.svg";
 import { lang } from "../langs";
 import HeroMain from "../carrousel/Carrousel";
-const imagesFrom = lang.static.images
+const imagesFrom = lang.static.images;
 export default function ContainerProyects({
   title = "Semaforos ",
   img = [],
@@ -112,7 +112,7 @@ export default function ContainerProyects({
   };
   return (
     <div className="w-full border shadow-xl lg:border-0 pl-2 pr-2 lg:shadow-2xl">
-      <div className="items-center flex justify-center pl-[20px] relative">
+      <div className="items-center flex justify-center relative">
         <div
           onClick={() => {
             changeHandle();
@@ -151,20 +151,9 @@ export default function ContainerProyects({
             </>
           )}
         </div>
-        <div className="w-max h-max flex rotate180 flex-col-reverse justify-right mt-[4px]">
-          <span
-            className={`linesTitle oneTitle w-[${index * 2 + 0.4 * 100}px]`}
-          ></span>
-          <span
-            className={`linesTitle twoTitle w-[${index * 2.7 + 0.6 * 100}px]`}
-          ></span>
-          <span
-            className={`linesTitle thrTitle w-[${index * 4.7 + 0.2 * 100}px]`}
-          ></span>
-        </div>
-        <div className="relative ">
-        <p
-          className="pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 container-proyects"
+       
+        <div
+          className="pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
           onClick={() => {
             var link = document.createElement("a");
             link.href = web;
@@ -172,10 +161,9 @@ export default function ContainerProyects({
             link.click();
           }}
         >
-          {title}
-        </p></div>
-        <img
-          className=" w-7 h-7 ml-1 mt-[-2px] cursor-pointer"
+          <p>{title}</p>
+          <img
+          className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-31px]"
           src={newWindow}
           alt=""
           onClick={() => {
@@ -185,10 +173,26 @@ export default function ContainerProyects({
             link.click();
           }}
         />
+         <div className="absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px]  left-[-45px]">
+          <div
+            className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
+          ></div>
+          <div
+             className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
+          ></div>
+          <div
+              className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
+          ></div>
+        </div>
+        </div>
+     
       </div>
       <div className="flex-col sm:flex-row w-full lg:flex lg:items-center">
         <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12  items-center flex justify-center px-2">
-          <HeroMain images={imagesFrom[index].all} showImage={showImage}></HeroMain>
+          <HeroMain
+            images={imagesFrom[index].all}
+            showImage={showImage}
+          ></HeroMain>
         </div>
         <div className="normalText text-[12px] h-full lg:p-10 lg:w-8/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div

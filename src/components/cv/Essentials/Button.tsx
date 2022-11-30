@@ -27,7 +27,7 @@ export default function Button({
     <div
      onClick={onClick}
       {...props}
-      className={`cv-button overflow-x-hidden font-[subtitle] bg-[#3add11] text-[#0f2d51] flex  items-center text-[15px] cursor-pointer rounded-[6px] p-[${spaceY}px] px-[18px] ${className}`}
+      className={`cv-button blockAllSelect overflow-x-hidden font-[subtitle] bg-[#3add11] text-[#0f2d51] flex  items-center text-[15px] cursor-pointer rounded-[6px] p-[${spaceY}px] px-[18px] ${className}`}
     >
       <p className="">{text}</p>
       <div className="">

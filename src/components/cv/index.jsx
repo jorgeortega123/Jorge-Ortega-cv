@@ -33,7 +33,7 @@ import LoadingScreenView from "./Essentials/LoadingScreenView";
 import NavView from "./Essentials/NavView";
 import Footer from "./Essentials/Foooter/Footer";
 import ImageView from "./Essentials/ImageView";
-
+import {CallIcon} from "./../../assets/svg.jsx";
 const staticInf = lang.static;
 const CvMain = () => {
   console.log(SendSGV)
@@ -206,10 +206,10 @@ const CvMain = () => {
             )}
           </AnimatePresence>
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-            <div className="flex space-x-2 space-y-8 justify-center lg:pt-[140px] w-full">
-              <div className=" flex flex-col justify-center relative ">
-                <h1 className="text-[50px]">
-                  Hi, I am <br></br> Jorge <br></br> Ortega
+            <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:pt-[140px] w-full">
+              <div className="p-2 flex flex-col justify-center relative ">
+                <h1 className="text-[50px] w-10/12 sm:w-5/10">
+                  Hi, I am Jorge Ortega
                 </h1>
                 <div className="altura-letras mt-6">
                   <p className="text-slate-400 text-[24px] font-semibold">
@@ -218,14 +218,15 @@ const CvMain = () => {
                   <p className="text-slate-400">Currencly open to work!</p>
                 </div>
 
-                <div className="absolute bottom-0">
+                <div className="absolute bottom-[-50px] lg:bottom-0">
                   <Button
                     text="Contactar"
                     icon={CallSVG}
+                    svg={true}
                     onClick={() => {
                       goToUrl("#contact", "no-external");
                     }}
-                  ></Button>
+                  ><CallIcon></CallIcon></Button>
                 </div>
                 <div className="absolute left-[-100px]">
                   <div className="flex flex-col ml-2 mt-[17px] animation-init ">
@@ -251,7 +252,7 @@ const CvMain = () => {
                   </div>
                 </div>
               </div>
-              <div className=" border-2 w-[500px] h-[400px] text-center items-center flex justify-center">
+              <div className=" border-2 w-12/12 mr-2 h-auto sm:w-[300px] lg:w-[500px]  text-center items-center flex justify-center">
                 IMG
               </div>
             </div>
@@ -343,11 +344,11 @@ const CvMain = () => {
               </MainContainer>
               <div id="contact" className="w-full max-w-[800px]">
                 <MainContainer
-                  className="flex"
+                  className=""
                   title={dataText.headers.contact}
                 >
                   <div className="m-2 ">
-                    <p className="mb-3">{dataText.contact.about}</p>
+                    <p className="hidden mb-3 font-bold text-[28px]">{dataText.contact.about}</p>
                     <ContactComponent dataText={dataText}></ContactComponent>
                   </div>
                 </MainContainer>

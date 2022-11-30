@@ -50,8 +50,8 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className="bg-transparent flex lg:space-x-5 flex-col lg:flex-row rounded-[11px] w-full items-center">
-      <div className="flex flex-col items-start space-y-2 ">
+    <div className="bg-transparent flex lg:space-x-5 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
+      <div className="flex flex-col justify-start items-start space-y-2 w-full ">
         {dataContact.map((e) => {
           return (
             <div className="flex justify-center items-center ">
@@ -69,8 +69,8 @@ export default function ContactComponent({
         })}
       </div>
       <div className="relative w-full flex justify-center">
-        <div className="pt-12 space-y-7  w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
-          <div className="flex space-x-3  lg:space-x-6 w-full">
+        <div className="pt-10 space-y-1  sm:space-y-7  w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
+          <div className="flex flex-col space-y-1 sm:space-y-0  lg:space-x-6 w-full">
             <div className="border-[2px] flex-col input-contact w-full">
               <p className="text-[13px] target-p-contact">Name</p>
               <input
