@@ -72,28 +72,28 @@ export default function ContactComponent({
         <div className="pt-10 space-y-1  sm:space-y-7  w-full flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
           <div className="flex flex-col space-y-1 sm:space-y-0  lg:space-x-6 w-full">
             <div className="border-[2px] flex-col input-contact w-full">
-              <p className="text-[13px] target-p-contact">Name</p>
+              <p className="text-[13px] target-p-contact blockAllSelect">Name</p>
               <input
                 onChange={(e) => {
                   setname(e.target.value);
                 }}
-                className="input-sender bg-transparent  "
+                className="input-sender bg-transparent w-full  "
                 type="text"
               />
             </div>
             <div className="border-[2px] flex-col input-contact w-full">
-              <p className="text-[13px] target-p-contact">Email</p>
+              <p className="text-[13px] target-p-contact blockAllSelect">Email</p>
               <input
                 onChange={(e) => {
                   setemail(e.target.value);
                 }}
                 type="email"
-                className="input-sender bg-transparent "
+                className="input-sender bg-transparent w-full "
               />
             </div>
           </div>
           <div className="border-[2px] flex-col w-full input-contact ">
-            <p className="text-[13px] target-p-contact">Subject</p>
+            <p className="text-[13px] target-p-contact blockAllSelect">Subject</p>
             <input
               onChange={(e) => {
                 setsubject(e.target.value);

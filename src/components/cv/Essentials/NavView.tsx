@@ -2,6 +2,7 @@ import React from 'react'
 import { AnimatePresence, motion } from "framer-motion";
 import useMainContext from '../context/useMainContext';
 import TranslateView from './TranslateView';
+import AnimationsLoader from './AnimationsLoader/AnimationsLoader';
 export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTranslate, changeLang, selectedLang, showTextOnNavbar, dataText}) {
   const {showMenuNavbar, setshowMenuNavbar} = useMainContext()
   return (
@@ -25,7 +26,9 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
               <div className="flex blockAllSelect relative w-[100px]">
                 <div className="items-center flex">
                 </div>
+                
                 <div>
+                <AnimationsLoader duration={3} moveX={10}>
                   <img
                     src={LangSvg}
                     title={"Translate"}
@@ -34,7 +37,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
                     onClick={() => {
                       showMenuTranslateFunc();
                     }}
-                  />
+                  /></AnimationsLoader>
                   <AnimatePresence>
                     {showMenuTranslate && (
                       <TranslateView

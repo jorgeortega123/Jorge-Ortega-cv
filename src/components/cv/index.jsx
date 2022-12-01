@@ -16,6 +16,7 @@ import SendSGV from "./../../assets/svg/send.svg";
 import LinkedinSGV from "./../../assets/svg/linkedin_.svg";
 import star_1 from "./../../assets/svg/backGround/star_1.svg";
 import cvIMAGEN from "../../assets/image/cv/cv.jpg";
+import monitorIcon from "../../assets/image/monitor.png";
 // Components
 import MainContainer from "./containers/MainContainer";
 import ContainerProyects from "./containers/ContainerProyects";
@@ -33,10 +34,11 @@ import LoadingScreenView from "./Essentials/LoadingScreenView";
 import NavView from "./Essentials/NavView";
 import Footer from "./Essentials/Foooter/Footer";
 import ImageView from "./Essentials/ImageView";
-import {CallIcon} from "./../../assets/svg.jsx";
+import { CallIcon } from "./../../assets/svg.jsx";
+import AnimationsLoader from "./Essentials/AnimationsLoader/AnimationsLoader";
 const staticInf = lang.static;
 const CvMain = () => {
-  console.log(SendSGV)
+  console.log(SendSGV);
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
   const [dataText, setdataText] = useState(lang.en);
@@ -57,9 +59,18 @@ const CvMain = () => {
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
 
-  const Callicon = () => { 
-    return (<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" height="48" width="48"><path d="M37.75 39.75q-5.05 0-10.325-2.725-5.275-2.725-9.575-7-4.3-4.275-7.025-9.525Q8.1 15.25 8.1 10.15q0-.9.6-1.525Q9.3 8 10.25 8h4.4q.85 0 1.475.525.625.525.775 1.375l1.05 4.45q.15.8-.025 1.425T17.25 16.8l-4.4 4.15q2.95 4.95 6.475 8.425Q22.85 32.85 27.6 35.45L31.9 31q.5-.55 1.075-.775.575-.225 1.275-.075L38 31q.9.15 1.4.8.5.65.5 1.55v4.25q0 .95-.6 1.55-.6.6-1.55.6ZM12.05 19.6l4.2-3.9q.15-.15.2-.425.05-.275 0-.525l-1-4.6q-.05-.3-.275-.45-.225-.15-.525-.15h-4.5q-.25 0-.4.15-.15.15-.15.4-.05 1.95.6 4.35.65 2.4 1.85 5.15Zm17 16.55q2.05 1.05 4.525 1.575 2.475.525 4.275.525.25 0 .4-.15.15-.15.15-.35v-4.5q0-.3-.15-.5t-.5-.25l-3.9-.8q-.25-.05-.425 0t-.325.2Zm-17-16.55Zm17 16.55Z"/></svg>)
-  }
+  const Callicon = () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#fff"
+        height="48"
+        width="48"
+      >
+        <path d="M37.75 39.75q-5.05 0-10.325-2.725-5.275-2.725-9.575-7-4.3-4.275-7.025-9.525Q8.1 15.25 8.1 10.15q0-.9.6-1.525Q9.3 8 10.25 8h4.4q.85 0 1.475.525.625.525.775 1.375l1.05 4.45q.15.8-.025 1.425T17.25 16.8l-4.4 4.15q2.95 4.95 6.475 8.425Q22.85 32.85 27.6 35.45L31.9 31q.5-.55 1.075-.775.575-.225 1.275-.075L38 31q.9.15 1.4.8.5.65.5 1.55v4.25q0 .95-.6 1.55-.6.6-1.55.6ZM12.05 19.6l4.2-3.9q.15-.15.2-.425.05-.275 0-.525l-1-4.6q-.05-.3-.275-.45-.225-.15-.525-.15h-4.5q-.25 0-.4.15-.15.15-.15.4-.05 1.95.6 4.35.65 2.4 1.85 5.15Zm17 16.55q2.05 1.05 4.525 1.575 2.475.525 4.275.525.25 0 .4-.15.15-.15.15-.35v-4.5q0-.3-.15-.5t-.5-.25l-3.9-.8q-.25-.05-.425 0t-.325.2Zm-17-16.55Zm17 16.55Z" />
+      </svg>
+    );
+  };
 
   useEffect(() => {
     document.body.style.overflowX = "hidden";
@@ -206,16 +217,19 @@ const CvMain = () => {
             )}
           </AnimatePresence>
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-            <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:pt-[140px] w-full">
+            <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:mt-[140px] w-full">
               <div className="p-2 flex flex-col justify-center relative ">
+              <AnimationsLoader  moveY={-10}>
                 <h1 className="text-[50px] w-10/12 sm:w-5/10">
                   Hi, I am Jorge Ortega
-                </h1>
+                </h1></AnimationsLoader>
                 <div className="altura-letras mt-6">
+                <AnimationsLoader  moveX={30}>
                   <p className="text-slate-400 text-[24px] font-semibold">
                     Frontend Developer
-                  </p>
-                  <p className="text-slate-400">Currencly open to work!</p>
+                  </p></AnimationsLoader>
+                     <AnimationsLoader  moveX={-30}>
+                  <p className="text-slate-400">Currencly open to work!</p></AnimationsLoader>
                 </div>
 
                 <div className="absolute bottom-[-50px] lg:bottom-0">
@@ -226,7 +240,9 @@ const CvMain = () => {
                     onClick={() => {
                       goToUrl("#contact", "no-external");
                     }}
-                  ><CallIcon></CallIcon></Button>
+                  >
+                    <CallIcon></CallIcon>
+                  </Button>
                 </div>
                 <div className="absolute left-[-100px]">
                   <div className="flex flex-col ml-2 mt-[17px] animation-init ">
@@ -252,8 +268,8 @@ const CvMain = () => {
                   </div>
                 </div>
               </div>
-              <div className=" border-2 w-12/12 mr-2 h-auto sm:w-[300px] lg:w-[500px]  text-center items-center flex justify-center">
-                IMG
+              <div className="border-2  h-[200px] mr-2 sm:w-[300px] lg:w-[500px] items-center flex justify-center mt-12  ">
+                <img className="max-w-[200px] mt-6 " src={monitorIcon} alt="" />
               </div>
             </div>
 
@@ -264,30 +280,19 @@ const CvMain = () => {
               {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
             </div>
             <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
-              <div className="w-full flex flex-col  justify-center items-center max-w-[800px]">
-                <MainContainer className="flex" title={dataText.headers.about}>
+              <div className="w-full flex flex-col max-w-[800px]">
+                <MainContainer
+                  className="flex relative"
+                  title={dataText.headers.about}
+                >
                   <div
                     className={`font-[100] normalText italic p-[10px] rounded-[10px] text-${text_color}`}
                     dangerouslySetInnerHTML={{
                       __html: dataText.headers.aboutInfo,
                     }}
                   ></div>
-                  <div className="flex justify-center items-center relative ">
-                    <div className="pt-4 z-[1]     "></div>
-                    <div className="flex items-center">
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ type: "tween", duration: 2 }}
-                        className="mt-[18px] relative w-[110px] h-[110px] lg:w-[148px] lg:h-[148px] flex flex-col justify-center items-center"
-                      >
-                        <div className="w-full h-full flex flex-col items-center ">
-                          <img src={cvIMAGEN} alt="" />
-                          <div className="hidden absolute z-[0] animated-text"></div>
-                          <div className=" w-full h-full border-[3px] border-dashed  rounded-full"></div>
-                        </div>
-                      </motion.div>
-                    </div>
+                  <div className="border-2 top-0 flex justify-start lg:justify-center lg:items-center relative ">
+                    <img src={cvIMAGEN} className='w-[150px] max-w-[300px]' alt="" />
                   </div>
                 </MainContainer>
                 <MainContainer
@@ -305,6 +310,7 @@ const CvMain = () => {
                       }}
                     ></div>
                     <div className="absolute bottom-[-26px] right-0 flex items-center ">
+                     
                       <Button
                         imageSize={20}
                         spaceY={3}
@@ -343,12 +349,11 @@ const CvMain = () => {
                 </div>
               </MainContainer>
               <div id="contact" className="w-full max-w-[800px]">
-                <MainContainer
-                  className=""
-                  title={dataText.headers.contact}
-                >
+                <MainContainer className="" title={dataText.headers.contact}>
                   <div className="m-2 ">
-                    <p className="hidden mb-3 font-bold text-[28px]">{dataText.contact.about}</p>
+                    <p className="hidden mb-3 font-bold text-[28px]">
+                      {dataText.contact.about}
+                    </p>
                     <ContactComponent dataText={dataText}></ContactComponent>
                   </div>
                 </MainContainer>
