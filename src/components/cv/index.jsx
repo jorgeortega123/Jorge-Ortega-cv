@@ -232,7 +232,7 @@ const CvMain = () => {
                   <p className="text-slate-400">Currencly open to work!</p></AnimationsLoader>
                 </div>
 
-                <div className="absolute bottom-[-50px] lg:bottom-0">
+                <div className="absolute bottom-[-50px]">
                   <Button
                     text="Contactar"
                     icon={CallSVG}
@@ -309,10 +309,10 @@ const CvMain = () => {
                         __html: dataText.headers.aboutInfo2,
                       }}
                     ></div>
-                    <div className="absolute bottom-[-26px] right-0 flex items-center ">
+                    <div className="absolute bottom-[-36px] right-0 flex items-center ">
                      
                       <Button
-                        imageSize={20}
+                        imageSize={22}
                         spaceY={3}
                         text="Curriculum Vitae"
                         icon={cvICON}
@@ -320,7 +320,7 @@ const CvMain = () => {
                     </div>
                   </div>
                 </MainContainer>
-                <div className="w-full lg:w-5/12 ">
+                <div className="w-full lg:w-5/12 mt-[80px] ">
                   <RoundedCarrousel></RoundedCarrousel>
                 </div>
               </div>
