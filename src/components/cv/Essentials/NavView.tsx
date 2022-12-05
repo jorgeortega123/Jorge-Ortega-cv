@@ -31,7 +31,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
                 <AnimationsLoader duration={3} moveX={10}>
                   <img
                     src={LangSvg}
-                    title={"Translate"}
+                    title={"Translate page"}
                     className="svgDefaultColor w-[30px] h-[30px] m-2 z-[1]"
                     alt=""
                     onClick={() => {

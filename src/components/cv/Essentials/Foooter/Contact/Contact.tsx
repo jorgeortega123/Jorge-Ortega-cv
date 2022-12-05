@@ -4,6 +4,7 @@ import CallSVG from "../../../../../assets/svg/call.svg";
 import SendSGV from "../../../../../assets/svg/send.svg";
 import useMainContext from "../../../context/useMainContext";
 import Button from "../../Button";
+import { SendIcon } from "../../../../../assets/svg";
 export default function ContactComponent({
   dataText = { contact: { email: "@" }, extras: { footer: { input: "" } } },
   copyToClipBoard,
@@ -120,7 +121,7 @@ export default function ContactComponent({
             className="capitalize"
             randNumber={1}
           >
-            <SVGsend></SVGsend>
+            <SendIcon></SendIcon>
           </Button>
         </div>
       </div>

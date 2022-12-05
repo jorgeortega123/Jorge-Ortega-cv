@@ -34,7 +34,7 @@ import LoadingScreenView from "./Essentials/LoadingScreenView";
 import NavView from "./Essentials/NavView";
 import Footer from "./Essentials/Foooter/Footer";
 import ImageView from "./Essentials/ImageView";
-import { CallIcon } from "./../../assets/svg.jsx";
+import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
 import AnimationsLoader from "./Essentials/AnimationsLoader/AnimationsLoader";
 const staticInf = lang.static;
 const CvMain = () => {
@@ -59,18 +59,7 @@ const CvMain = () => {
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
 
-  const Callicon = () => {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="#fff"
-        height="48"
-        width="48"
-      >
-        <path d="M37.75 39.75q-5.05 0-10.325-2.725-5.275-2.725-9.575-7-4.3-4.275-7.025-9.525Q8.1 15.25 8.1 10.15q0-.9.6-1.525Q9.3 8 10.25 8h4.4q.85 0 1.475.525.625.525.775 1.375l1.05 4.45q.15.8-.025 1.425T17.25 16.8l-4.4 4.15q2.95 4.95 6.475 8.425Q22.85 32.85 27.6 35.45L31.9 31q.5-.55 1.075-.775.575-.225 1.275-.075L38 31q.9.15 1.4.8.5.65.5 1.55v4.25q0 .95-.6 1.55-.6.6-1.55.6ZM12.05 19.6l4.2-3.9q.15-.15.2-.425.05-.275 0-.525l-1-4.6q-.05-.3-.275-.45-.225-.15-.525-.15h-4.5q-.25 0-.4.15-.15.15-.15.4-.05 1.95.6 4.35.65 2.4 1.85 5.15Zm17 16.55q2.05 1.05 4.525 1.575 2.475.525 4.275.525.25 0 .4-.15.15-.15.15-.35v-4.5q0-.3-.15-.5t-.5-.25l-3.9-.8q-.25-.05-.425 0t-.325.2Zm-17-16.55Zm17 16.55Z" />
-      </svg>
-    );
-  };
+
 
   useEffect(() => {
     document.body.style.overflowX = "hidden";
@@ -122,6 +111,7 @@ const CvMain = () => {
     }, 3500);
   };
   const text_color = data?.text || "#fff";
+ 
   return (
     <div
       className={`main-container init text-${text_color} relative`}
@@ -219,17 +209,20 @@ const CvMain = () => {
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
             <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:mt-[140px] w-full">
               <div className="p-2 flex flex-col justify-center relative ">
-              <AnimationsLoader  moveY={-10}>
-                <h1 className="text-[50px] w-10/12 sm:w-5/10">
-                  Hi, I am Jorge Ortega
-                </h1></AnimationsLoader>
+                <AnimationsLoader moveY={-10}>
+                  <h1 className="text-[50px] w-10/12 sm:w-5/10">
+                    Hi, I am Jorge Ortega
+                  </h1>
+                </AnimationsLoader>
                 <div className="altura-letras mt-6">
-                <AnimationsLoader  moveX={30}>
-                  <p className="text-slate-400 text-[24px] font-semibold">
-                    Frontend Developer
-                  </p></AnimationsLoader>
-                     <AnimationsLoader  moveX={-30}>
-                  <p className="text-slate-400">Currencly open to work!</p></AnimationsLoader>
+                  <AnimationsLoader moveX={30}>
+                    <p className="text-slate-400 text-[24px] font-semibold">
+                      Frontend Developer
+                    </p>
+                  </AnimationsLoader>
+                  <AnimationsLoader moveX={-30}>
+                    <p className="text-slate-400">Currencly open to work!</p>
+                  </AnimationsLoader>
                 </div>
 
                 <div className="absolute bottom-[-50px]">
@@ -241,7 +234,7 @@ const CvMain = () => {
                       goToUrl("#contact", "no-external");
                     }}
                   >
-                    <CallIcon></CallIcon>
+                    <CallIcon ></CallIcon>
                   </Button>
                 </div>
                 <div className="absolute left-[-100px]">
@@ -292,7 +285,11 @@ const CvMain = () => {
                     }}
                   ></div>
                   <div className="border-2 top-0 flex justify-start lg:justify-center lg:items-center relative ">
-                    <img src={cvIMAGEN} className='w-[150px] max-w-[300px]' alt="" />
+                    <img
+                      src={cvIMAGEN}
+                      className="w-[150px] max-w-[300px]"
+                      alt=""
+                    />
                   </div>
                 </MainContainer>
                 <MainContainer
@@ -310,13 +307,13 @@ const CvMain = () => {
                       }}
                     ></div>
                     <div className="absolute bottom-[-36px] right-0 flex items-center ">
-                     
                       <Button
                         imageSize={22}
+                        svg={true}
                         spaceY={3}
                         text="Curriculum Vitae"
                         icon={cvICON}
-                      ></Button>
+                      ><CvIcon></CvIcon></Button>
                     </div>
                   </div>
                 </MainContainer>

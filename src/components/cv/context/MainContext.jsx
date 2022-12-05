@@ -29,15 +29,11 @@ function MainContextComponent({ children }) {
     link.click();
   };
   const changeOverflowY = (state) => {
-    var isHiddenOVerflowY = document.body.style.overflowY;
-    if (isHiddenOVerflowY === "") isHiddenOVerflowY = "auto";
-    if (isHiddenOVerflowY === "auto") {
-      console.log(isHiddenOVerflowY, 1);
-      document.body.style.overflowY = "hidden";
+    if (document.body.style.overflowY === "hidden") {
+      document.body.style.overflowY = "auto";
       return;
     } else {
-      console.log(isHiddenOVerflowY, 2);
-      document.body.style.overflowY = "auto";
+      document.body.style.overflowY = "hidden";
       return;
     }
   };

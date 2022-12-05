@@ -17,6 +17,9 @@ $main-color: #0f2d51;
 html {
   scroll-behavior: smooth;
 }
+svg { 
+  fill: $main-color;
+}
 //#201211
 .main-container {
   width: 100%;
@@ -443,10 +446,10 @@ h2 {
   transform: all .2s;
 }
 
-.svg-anim[active=true] > svg { 
-  animation: svg-anim-key2 2.4s ease-in-out forwards;
-  transform: all .2s;
-}
+// .svg-anim[active=true] > svg { 
+//   animation: svg-anim-key2 2.4s ease-in-out forwards;
+//   transform: all .2s;
+// }
 
 @keyframes svg-anim-key2 {
 
