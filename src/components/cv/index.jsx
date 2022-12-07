@@ -237,25 +237,25 @@ const CvMain = () => {
                     <CallIcon ></CallIcon>
                   </Button>
                 </div>
-                <div className="absolute left-[-100px]">
-                  <div className="flex flex-col ml-2 mt-[17px] animation-init ">
+                <div className="absolute top-[-170px] sm:top-auto sm:left-[-100px]">
+                  <div className="flex flex-col  sm:ml-2 sm:mt-[17px] animation-init ">
                     <SocialNetworks
                       url={staticInf.social[2].url}
                       img={LinkedinSGV}
-                      classNamee={"ml-2"}
+                      classNamee={""}
                       number={1}
                     ></SocialNetworks>
 
                     <SocialNetworks
                       url={staticInf.social[3].url}
                       img={GithubSVG}
-                      classNamee={"ml-[-4px]"}
+                      classNamee={""}
                       number={2}
                     ></SocialNetworks>
                     <SocialNetworks
                       url={"https://github.com/jorgeortega123"}
                       img={InstagramSGV}
-                      classNamee={"ml-2"}
+                      classNamee={""}
                       number={3}
                     ></SocialNetworks>
                   </div>
@@ -313,6 +313,7 @@ const CvMain = () => {
                         spaceY={3}
                         text="Curriculum Vitae"
                         icon={cvICON}
+                        onClick={()=>setshowDownload(true)}
                       ><CvIcon></CvIcon></Button>
                     </div>
                   </div>

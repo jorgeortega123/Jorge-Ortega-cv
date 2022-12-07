@@ -37,7 +37,7 @@ export default function SocialNetworks({
     <div className={classNamee}>
     <img
       src={img}
-      className={`Social ${intoImg}`}
+      className={`Social ${intoImg} cursor-pointer`}
       onClick={() => {
         goToUrl(url)
       }}
