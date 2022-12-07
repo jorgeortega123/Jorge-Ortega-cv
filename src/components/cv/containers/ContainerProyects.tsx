@@ -188,15 +188,15 @@ export default function ContainerProyects({
      
       </div>
       <div className="flex-col sm:flex-row w-full lg:flex lg:items-center">
-        <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12  items-center flex justify-center px-2">
+        <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12  items-center flex justify-center px-2 lg:pb-2">
           <HeroMain
             images={imagesFrom[index].all}
             showImage={showImage}
           ></HeroMain>
         </div>
-        <div className="normalText text-[12px] h-full lg:p-10 lg:w-8/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
+        <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div
-            className="normalText altura-letras text-[18px] lg:text-[24px]"
+            className="normalText altura-letras text-[18px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div

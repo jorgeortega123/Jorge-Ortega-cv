@@ -7,7 +7,7 @@ export const lang = {
       developer: "Desarrollador",
       knowledge: "Conocimiento",
       aboutInfo: `Hola, soy desarrollador <span class="text-bold mark-1">frontend</span>, comencé a escribir mi primer código desde los 14 años. Siempre he buscado la manera de solucionar problemas cotidanos a través del maravilloso mundo de la programcion. Actualmente tengo 18 y me doy cuenta que realmente esto es lo que me gusta y deseo vivir de ello.`,
-     aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`
+      aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
     },
     contact: {
       about:
@@ -55,12 +55,9 @@ export const lang = {
       },
       {
         title: "Files Manager",
-        about: "Aplicacion sencilla creada a partir de Batch Scripting (Windows) Gestionaba docuementos (.docx, .pdf) en carpetas con el nombre de alguna materia escolar . A inicios de pandemia desarrolle esto como un metodo para hacer mas facil el metodo online en el colegio.",
-        tags: [
-          "Batch",
-          "Python",
-          "Windows"
-        ],
+        about:
+          "Aplicacion sencilla creada a partir de Batch Scripting (Windows) Gestionaba docuementos (.docx, .pdf) en carpetas con el nombre de alguna materia escolar . A inicios de pandemia desarrolle esto como un metodo para hacer mas facil el metodo online en el colegio.",
+        tags: ["Batch", "Python", "Windows"],
         img: [
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
@@ -151,6 +148,17 @@ export const lang = {
         web: "https://www.llampukaq.com",
         onGroup: true,
       },
+      {
+        title: "Files Manager",
+        about:
+          "Simple application created from Batch Scripting (Windows) Managed documents (.docx, .pdf) in folders with the name of some school subject. At the beginning of the pandemic, I developed this as a method to make the online method at school easier.",
+        tags: ["Batch", "Python", "Windows"],
+        img: [
+          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+        ],
+        web: "https://www.llampukaq.com",
+        onGroup: false,
+      },
     ],
     functions: {
       copy: {
@@ -223,22 +231,24 @@ export const lang = {
       {
         title: "My money",
         all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png",
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1666831069/Untitled_qqutoc.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433346/Frame_1_xtlmz4.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433318/Frame_1_1_vabspw.png",
         ],
       },
       {
         title: "LLK",
         all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862022/Screenshot_from_2022-11-07_17-59-26_aqiqth.png",
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862021/Screenshot_from_2022-11-07_17-59-38_echfmv.png",
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667862021/Screenshot_from_2022-11-07_17-59-54_cbljgh.png"
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434478/Screenshot_from_2022-11-07_17-59-26_1_hnvlbu.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434636/Frame_2_cysgp2.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434628/Frame_3_aakioo.png",
         ],
       },
       {
         title: "Files Manager",
         all: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_1_2_rgnryp.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_3_nt77qj.png",
         ],
       },
     ],
