@@ -1,6 +1,11 @@
 export const lang = {
   es: {
     headers: {
+
+      main: "Hola, soy Jorge Ortega",
+      sub: "Desarrollador Frontend",
+      sub1: "Actualmente busco trabajo!",
+
       about: "Acerca de mi",
       proyects: "Proyectos",
       contact: "Contactar",
@@ -98,6 +103,9 @@ export const lang = {
   },
   en: {
     headers: {
+      main: "Hi, I am Jorge Ortega",
+      sub: "Frontend Developer",
+      sub1: "Currently open to work!",
       about: "About",
       proyects: "Proyects",
       contact: "Contact",

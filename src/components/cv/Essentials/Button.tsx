@@ -31,7 +31,7 @@ export default function Button({
     >
       <p className="">{text}</p>
       <div className="">
-        {svg ? <div onClick={(e)=>document.getElementById(`svg-added${andNumber}`)?.classList.add("svg-anim")} active="true" id={`svg-added${andNumber}`} className={`flex justify-center items-center px-2 svg-anim `}>{children}</div>:  <img className={`max-w-[${imageSize}px] pl-2`} src={icon} alt="" />}
+        {svg ? <div onClick={(e)=>document.getElementById(`svg-added${andNumber}`)?.classList.add("svg-anim")} id={`svg-added${andNumber}`} className={`flex justify-center items-center px-2 svg-anim `}>{children}</div>:  <img className={`max-w-[${imageSize}px] pl-2`} src={icon} alt="" />}
    
       </div>
     </div>

@@ -59,8 +59,6 @@ const CvMain = () => {
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
 
-
-
   useEffect(() => {
     document.body.style.overflowX = "hidden";
   }, []);
@@ -111,7 +109,7 @@ const CvMain = () => {
     }, 3500);
   };
   const text_color = data?.text || "#fff";
- 
+
   return (
     <div
       className={`main-container init text-${text_color} relative`}
@@ -207,34 +205,34 @@ const CvMain = () => {
             )}
           </AnimatePresence>
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-            <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:mt-[140px] w-full">
+            <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:mt-[140px] mb-12 w-full">
               <div className="p-2 flex flex-col justify-center relative ">
-                <AnimationsLoader moveY={-10}>
+                <AnimationsLoader duration={3} moveY={-10}>
                   <h1 className="text-[50px] w-10/12 sm:w-5/10">
-                    Hi, I am Jorge Ortega
+                    {dataText.headers.main}
                   </h1>
                 </AnimationsLoader>
                 <div className="altura-letras mt-6">
-                  <AnimationsLoader moveX={30}>
+                  <AnimationsLoader duration={3} moveX={30}>
                     <p className="text-slate-400 text-[24px] font-semibold">
-                      Frontend Developer
+                      {dataText.headers.sub}
                     </p>
                   </AnimationsLoader>
-                  <AnimationsLoader moveX={-30}>
-                    <p className="text-slate-400">Currencly open to work!</p>
+                  <AnimationsLoader duration={3} moveX={-30}>
+                    <p className="text-slate-400">{dataText.headers.sub1}</p>
                   </AnimationsLoader>
                 </div>
 
                 <div className="absolute bottom-[-50px]">
                   <Button
-                    text="Contactar"
+                    text={dataText.headers.contact}
                     icon={CallSVG}
                     svg={true}
                     onClick={() => {
                       goToUrl("#contact", "no-external");
                     }}
                   >
-                    <CallIcon ></CallIcon>
+                    <CallIcon></CallIcon>
                   </Button>
                 </div>
                 <div className="absolute top-[-170px] sm:top-auto sm:left-[-100px]">
@@ -275,22 +273,21 @@ const CvMain = () => {
             <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
               <div className="w-full flex flex-col max-w-[800px]">
                 <MainContainer
-                  className="flex relative"
+                  className="flex relative bg-[#072346] rounded-md mt-10"
                   title={dataText.headers.about}
                 >
                   <div
-                    className={`font-[100] normalText italic p-[10px] rounded-[10px] text-${text_color}`}
+                    className={`font-[100] normalText p-[10px] rounded-[10px] text-${text_color}`}
                     dangerouslySetInnerHTML={{
                       __html: dataText.headers.aboutInfo,
                     }}
                   ></div>
-                  <div className="border-2 top-0 flex justify-start lg:justify-center lg:items-center relative ">
+                  {/* <{div className="h-full bg-slate-100 top-0 ">
                     <img
                       src={cvIMAGEN}
-                      className="w-[150px] max-w-[300px]"
+                      className="w-[130px] max-w-[300px] "
                       alt=""
-                    />
-                  </div>
+                    /> </div>} */}
                 </MainContainer>
                 <MainContainer
                   className="flex"
@@ -313,8 +310,10 @@ const CvMain = () => {
                         spaceY={3}
                         text="Curriculum Vitae"
                         icon={cvICON}
-                        onClick={()=>setshowDownload(true)}
-                      ><CvIcon></CvIcon></Button>
+                        onClick={() => setshowDownload(true)}
+                      >
+                        <CvIcon></CvIcon>
+                      </Button>
                     </div>
                   </div>
                 </MainContainer>

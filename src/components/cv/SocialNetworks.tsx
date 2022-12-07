@@ -31,7 +31,7 @@ export default function SocialNetworks({
     <motion.div
     initial={{ opacity: 0, x: n(number)}}
     animate={{ opacity: 1, x: 0 }}
-    transition={{ type: "tween" ,duration:1}}
+    transition={{ type: "tween" ,duration:1.5}}
     className=""
   >
     <div className={classNamee}>

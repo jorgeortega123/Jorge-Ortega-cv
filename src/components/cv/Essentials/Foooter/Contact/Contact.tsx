@@ -60,8 +60,10 @@ export default function ContactComponent({
                 <img src={e.icon} alt="" />
               </div>
               <div className="altura-letras ">
-                <div className="font-bold text-[26px]">{e.title}</div>
-                <div className="font-light text-slate-300 text-[18px] transition-all hover:text-[#3add11]">
+                <div className="font-bold text-[26px] text-[#66ff00]">
+                  {e.title}
+                </div>
+                <div className="font-light text-slate-200 text-[19px] transition-all ">
                   <a href={`${e.href + e.inf}`}>{e.inf}</a>
                 </div>
               </div>
@@ -70,59 +72,71 @@ export default function ContactComponent({
         })}
       </div>
       <div className="relative w-full flex justify-center">
-        <div className="pt-10 space-y-2  sm:space-y-2 w-9/12 lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
+        <div className="pt-10 space-y-2  sm:space-y-2 w-11/12 lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
           <div className="flex flex-col space-y-2 sm:space-y-2 w-full">
             <div className="border-[1px] flex-col input-contact w-full">
-              <p className="text-[13px] target-p-contact blockAllSelect">Name</p>
+              <p className="text-[13px] target-p-contact blockAllSelect">
+                Name
+              </p>
               <input
                 onChange={(e) => {
                   setname(e.target.value);
                 }}
-                className="input-sender bg-transparent w-full  "
+                className="input-sender input-s-s bg-transparent w-full h-full  "
                 type="text"
               />
             </div>
             <div className="border-[1px] flex-col input-contact w-full">
-              <p className="text-[13px] target-p-contact blockAllSelect">Email</p>
+              <p className="text-[13px] target-p-contact blockAllSelect">
+                Email
+              </p>
               <input
                 onChange={(e) => {
                   setemail(e.target.value);
                 }}
                 type="email"
-                className="input-sender bg-transparent w-full "
+                className="input-sender input-s-s bg-transparent w-full h-full "
               />
             </div>
           </div>
           <div className="border-[1px] flex-col w-full input-contact ">
-            <p className="text-[13px] target-p-contact blockAllSelect">Subject</p>
+            <p className="text-[13px] target-p-contact blockAllSelect">
+              Subject
+            </p>
             <input
               onChange={(e) => {
                 setsubject(e.target.value);
               }}
-              className="input-sender bg-transparent w-full input-contact"
+              className="input-sender input-s-s bg-transparent w-full h-full "
               type="text"
             />
           </div>
-
-          <textarea
-            id="textareOfFooter"
-            placeholder={dataText.extras.footer.input}
-            className="input-contact w-full h-[200px] focus:border-cyan-500 px-2 input-sender hover:border-cyan-600 active:border-cyan-600  border-[1px] rounded-[8px]  "
-            name=""
-            onChange={(e) => {
-              setuserTextWrote(e.target.value);
-            }}
-          />
-
-          <Button
-            svg={true}
-            icon={SVGsend}
-            onClick={() => sendText(formatToSend)}
-            className="capitalize"
-            randNumber={1}
-          >
-            <SendIcon></SendIcon>
-          </Button>
+          <div className="border-[1px] flex-col w-full input-contact ">
+            <p className="text-[13px] target-p-contact blockAllSelect">
+              {dataText.extras.footer.input}
+            </p>
+            <textarea
+              id="textareOfFooter"
+              className="input-sender input-s-s bg-transparent w-full h-full "
+              name=""
+              onChange={(e) => {
+                setuserTextWrote(e.target.value);
+              }}
+            />
+          </div>
+          <div className="w-full flex items-end justify-end">
+          
+            <Button
+              svg={true}
+              icon={SVGsend}
+              text={"Send"}
+              
+              onClick={() => sendText(formatToSend)}
+              className="capitalize right-0"
+            >
+              <SendIcon></SendIcon>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

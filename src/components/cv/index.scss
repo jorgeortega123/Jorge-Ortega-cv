@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400&display=swap");
-$base-color-h1: #66ff00;
+$base-color-h1: #fff;
+$secondary-color: #66ff00 ;
 $base-color-h1-hover: #f6ff00;
 $main-color: #0f2d51;
 @font-face {
@@ -21,6 +22,10 @@ svg {
   fill: $main-color;
 }
 //#201211
+
+input:focus { 
+  border-bottom: 1px solid $secondary-color;
+}
 .main-container {
   width: 100%;
   background-color: $main-color;
@@ -114,7 +119,7 @@ h2 {
 }
 .titleText::before {
   content: "";
-  border-bottom: 1px solid aqua;
+  border-bottom: 1px solid $secondary-color;
   position: absolute;
   transform: translateX(-3px);
   width: 100%;
@@ -293,10 +298,17 @@ h2 {
   padding-bottom: 0.7rem;
 }
 .target-p-contact {
-  margin-top: -12px;
+  margin-top: -14px;
   font-size: 17px;
   letter-spacing: .02rem;
   font-weight: 600;
+}
+
+.input-s-s { 
+  width: calc(100% - 5px)
+}
+.input-contact:focus-within .target-p-contact { 
+ color: $secondary-color;
 }
 .wobbling-3 {
   border-radius: 40px;
@@ -423,7 +435,7 @@ h2 {
   border: 2px solid $base-color-h1;
   border-radius: 100%;
   animation-delay: 2s;
-  animation: loop 2s linear forwards;
+  animation: loop 2.5s linear forwards;
 }
 .animation-init img:hover {
   border: 3px solid base-color-h1;
@@ -432,16 +444,16 @@ h2 {
 .cv-button {
   border: 1px solid transparent;
   transition: all;
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
 }
 .cv-button:hover {
   background-color: $main-color;
   color: $base-color-h1;
-  border: 1px solid $base-color-h1;
+  border: 1px solid $secondary-color;
 }
 
 .cv-button:hover svg {
-  fill: $base-color-h1;
+  fill: $secondary-color;
   animation: svg-anim-key 2s ease-in-out infinite;
   transform: all .2s;
 }

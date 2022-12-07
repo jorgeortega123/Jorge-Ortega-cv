@@ -17,10 +17,10 @@ export default function MainContainer({
   const spacing = "100px";
   return (
     <div
-      className={`w-full flex flex-col  justify-center items-center mt-12 mb-4 `}
+      className={`w-full flex flex-col  justify-center items-center my-4 mb-4 `}
       id={id}
     >
-      <p className="titleText text-left mt-4 mb-1">{title}</p>
+      <p className="titleText text-left my-3">{title}</p>
       <div className={`relative ${JSON.stringify(props)} justify-center items-center space-y-5 w-full  ${className} `}>
         {children}
       </div>

@@ -196,7 +196,7 @@ export default function ContainerProyects({
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div
-            className="normalText altura-letras text-[18px] lg:text-[28px]"
+            className="normalText altura-letras text-[20px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div

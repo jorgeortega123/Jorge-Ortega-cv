@@ -1,3 +1,4 @@
+$timeInit: 12;
 .carrousel {
 	padding-top: 5px;
 	display: flex;
@@ -10,57 +11,7 @@
 }
 
 .carrousel img {
-	width: 50px;
-	animation: rool 7s linear infinite;
-	position: absolute;
+	width: auto;
+	animation: rool $timeInit + s + ' ' linear infinite;
 	transition: all 5s;
-}
-#c7
-{
-	-webkit-animation-delay: -3s;
-	-moz-animation-delay: -3s;
-}
-#c6
-{
-	-webkit-animation-delay: -1s;
-	-moz-animation-delay: -1s;
-}
-#c5
-{
-	-webkit-animation-delay: -2s;
-	-moz-animation-delay: -2s;
-}
-#c4
-{
-	-webkit-animation-delay: -3s;
-	-moz-animation-delay: -3s;
-}
-#c3
-{
-	-webkit-animation-delay: -4s;
-	-moz-animation-delay: -4s;
-}
-#c2
-{
-	-webkit-animation-delay: -5s;
-	-moz-animation-delay: -5s;
-}
-#c1
-{
-	-webkit-animation-delay: -6s;
-	-moz-animation-delay: -6s;
-}
-#c0
-{
-	-webkit-animation-delay: -7s;
-	-moz-animation-delay: -7s;
-}
-
-@keyframes rool {
-	0% { 
-		right: -100px;
-	}
-	100% { 
-		right: 110%;
-	}
 }
