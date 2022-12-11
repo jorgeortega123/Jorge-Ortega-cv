@@ -25,13 +25,31 @@ export function CvIcon() {
 }
 
 export function SendIcon() {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 48 48"
-        height="28"
-        width="28"
-      >
-       <path d="M5.45 40.45V7.35L44.6 23.9ZM8.7 35.4l27.45-11.5L8.7 12.25v8.45l12.45 3.2L8.7 27Zm0 0V12.25 27Z" /></svg>
-    );
-  }
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 48 48"
+      height="28"
+      width="28"
+    >
+      <path d="M5.45 40.45V7.35L44.6 23.9ZM8.7 35.4l27.45-11.5L8.7 12.25v8.45l12.45 3.2L8.7 27Zm0 0V12.25 27Z" />
+    </svg>
+  );
+}
+
+export function CloseIcon() {
+  return (
+    <svg
+      class="w-5 h-5"
+      fill="#fff"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  );
+}

@@ -23,9 +23,7 @@ svg {
 }
 //#201211
 
-input:focus { 
-  border-bottom: 1px solid $secondary-color;
-}
+
 .main-container {
   width: 100%;
   background-color: $main-color;
@@ -192,14 +190,16 @@ h2 {
   transition: all 0.6s;
   transform-origin: left;
 }
-.button-nav  div:first-child {
+
+
+.active-nav  div:first-child {
   transform: rotate(33deg);
 }
-.button-nav:hover div:nth-child(2) {
+.active-nav div:nth-child(2) {
   opacity: 0;
 }
 
-.button-nav:hover div:nth-child(3) {
+.active-nav div:nth-child(3) {
   transform: rotate(-33deg);
 }
 

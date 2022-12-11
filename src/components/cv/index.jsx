@@ -17,6 +17,7 @@ import LinkedinSGV from "./../../assets/svg/linkedin_.svg";
 import star_1 from "./../../assets/svg/backGround/star_1.svg";
 import cvIMAGEN from "../../assets/image/cv/cv.jpg";
 import monitorIcon from "../../assets/image/monitor.png";
+import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
 // Components
 import MainContainer from "./containers/MainContainer";
 import ContainerProyects from "./containers/ContainerProyects";
@@ -27,15 +28,18 @@ import Button from "./Essentials/Button";
 import SocialNetworks from "./SocialNetworks";
 import ContactComponent from "./Essentials/Foooter/Contact/Contact";
 import Background from "./background";
-// Context
-import useMainContext from "./context/useMainContext";
-import TranslateView from "./Essentials/TranslateView";
+import AnimationsLoader from "./Essentials/AnimationsLoader/AnimationsLoader";
+import ContainerPhysics from "./canvas/ContainerPhysics";
+import Skills from "./Essentials/Skills";
 import LoadingScreenView from "./Essentials/LoadingScreenView";
 import NavView from "./Essentials/NavView";
 import Footer from "./Essentials/Foooter/Footer";
 import ImageView from "./Essentials/ImageView";
-import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
-import AnimationsLoader from "./Essentials/AnimationsLoader/AnimationsLoader";
+// Context
+import useMainContext from "./context/useMainContext";
+import TranslateView from "./Essentials/TranslateView";
+
+
 const staticInf = lang.static;
 const CvMain = () => {
   console.log(SendSGV);
@@ -143,12 +147,12 @@ const CvMain = () => {
         <AnimatePresence>
           {showDownload && (
             <motion.div
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "tween", duration: 1 }}
+              initial={{ opacity: 0, y:-20 }}
+              animate={{ opacity: 1, x: 0, y:0 }}
+              exit={{ opacity: 0, y:20 }}
+              transition={{ type: "tween", duration: 2 }}
             >
-              <Modals title="Download curriculum vitae">
+              <Modals setshowDownload={setshowDownload} title="Download curriculum vitae">
                 <FileView
                   title={"" + staticInf.name + "_cv.pdf"}
                   cv={staticInf.cv.en.cv_pdf}
@@ -289,34 +293,7 @@ const CvMain = () => {
                       alt=""
                     /> </div>} */}
                 </MainContainer>
-                <MainContainer
-                  className="flex"
-                  title={dataText.headers.knowledge}
-                >
-                  <div
-                    id="knowledge"
-                    className="textWrote w-12/12 lg:w-full mx-auto relative "
-                  >
-                    <div
-                      className={`normalText containerText text-${text_color}`}
-                      dangerouslySetInnerHTML={{
-                        __html: dataText.headers.aboutInfo2,
-                      }}
-                    ></div>
-                    <div className="absolute bottom-[-36px] right-0 flex items-center ">
-                      <Button
-                        imageSize={22}
-                        svg={true}
-                        spaceY={3}
-                        text="Curriculum Vitae"
-                        icon={cvICON}
-                        onClick={() => setshowDownload(true)}
-                      >
-                        <CvIcon></CvIcon>
-                      </Button>
-                    </div>
-                  </div>
-                </MainContainer>
+                <Skills CvIcon={CvIcon} dataText={dataText} setshowDownload={setshowDownload}></Skills>
                 <div className="w-full lg:w-5/12 mt-[80px] ">
                   <RoundedCarrousel></RoundedCarrousel>
                 </div>

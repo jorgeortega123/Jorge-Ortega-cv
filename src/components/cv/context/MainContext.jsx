@@ -29,13 +29,7 @@ function MainContextComponent({ children }) {
     link.click();
   };
   const changeOverflowY = (state) => {
-    if (document.body.style.overflowY === "hidden") {
-      document.body.style.overflowY = "auto";
-      return;
-    } else {
-      document.body.style.overflowY = "hidden";
-      return;
-    }
+   return;
   };
   const copyToClipBoard = (elements) => {
     switch (elements) {

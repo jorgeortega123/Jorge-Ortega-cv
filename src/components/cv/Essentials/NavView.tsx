@@ -10,11 +10,14 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
           <div className="w-full max-w-[800px] relative">
             <div className="flex w-full lg:max-w-[200px]">
               <button
-                className=" button-nav visible lg:invisible"
+              id='button-nav-id'
+                className=" button-nav visible lg:invisible "
                 onClick={() => {
+                  document.getElementById("button-nav-id")?.classList.add("active-nav")
                   if (showMenuNavbar === true) {
                     setshowMenuNavbar(false);
                   } else {
+                    document.getElementById("button-nav-id")?.classList.remove("active-nav")
                     setshowMenuNavbar(true);
                   }
                 }}
