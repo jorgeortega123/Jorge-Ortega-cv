@@ -219,7 +219,7 @@ const CvMain = () => {
                 <div className="altura-letras mt-6">
                   <AnimationsLoader duration={3} moveX={30}>
                     <p className="text-slate-400 text-[24px] font-semibold">
-                      {dataText.headers.sub}
+                      {dataText.headers.sub} +
                     </p>
                   </AnimationsLoader>
                   <AnimationsLoader duration={3} moveX={-30}>

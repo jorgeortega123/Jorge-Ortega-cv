@@ -23,6 +23,18 @@ svg {
 }
 //#201211
 
+.title-skill { 
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.text-skill { 
+  font-weight: 400;
+  line-height: .7;
+  margin-bottom: 9px ;
+}
+
+
 
 .main-container {
   width: 100%;
@@ -45,6 +57,9 @@ svg {
   font-family: "normal";
   font-size: 23px;
   color: rgb(255, 255, 255);
+}
+.main-color { 
+  background-color: #00ff04;
 }
 .menu-items {
   user-select: none;
