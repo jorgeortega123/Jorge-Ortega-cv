@@ -215,7 +215,7 @@ const CvMain = () => {
           </AnimatePresence>
           <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
             <div className="flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center lg:mt-[140px] mb-12 w-full">
-              <div className="p-2 flex flex-col justify-center relative ">
+              <div className="p-2 flex flex-col justify-center relative mt- ">
                 <AnimationsLoader duration={3} moveY={-10}>
                   <h1 className="text-[50px] w-10/12 sm:w-5/10">
                     {dataText.headers.main}
@@ -301,7 +301,7 @@ const CvMain = () => {
               {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
             </div>
             <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
-              <div className="w-full flex flex-col max-w-[800px]">
+              <div className="w-full flex flex-col max-w-[800px] mb-7">
                 <MainContainer
                   className="flex relative bg-[#072346] rounded-md mt-10"
                   title={dataText.headers.about}

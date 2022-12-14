@@ -148,7 +148,7 @@ function HeroMain({
               setIndex(idx);
             }}
           >
-            <p className={`text-[12px] font-semibold `}>{idx + 1}</p>
+            <p className={`text-[12px] font-semibold select-none `}>{idx + 1}</p>
           </div>
         ))}
       </div>

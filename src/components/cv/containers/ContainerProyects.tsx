@@ -201,7 +201,7 @@ export default function ContainerProyects({
           ></div>
           <div
             id={"appendp" + index}
-            className="flex flex-wrap mt-2 mb-2"
+            className="flex flex-wrap mt-2 mb-2 select-none"
           ></div>
         </div>
       </div>

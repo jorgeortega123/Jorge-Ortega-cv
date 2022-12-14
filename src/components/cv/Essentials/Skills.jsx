@@ -87,7 +87,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
         id="knowledge"
         className="min-h-[400px]  max-w-full w-full bg-[#0000001a] rounded-[3px]"
       >
-        <div className="p-4 ">
+        <div className="p-4 select-none ">
           <div className="relative">
           <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[70px]">Frontend</p></div>
           <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
@@ -129,7 +129,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
         </div>
-        <div className="absolute bottom-[-36px] right-0 flex items-center mt- ">
+        <div className="absolute bottom-[-56px] right-0 flex items-center mt- ">
           <Button
             imageSize={22}
             svg={true}
