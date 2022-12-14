@@ -151,7 +151,7 @@ export default function ContainerProyects({
             </>
           )}
         </div>
-       
+       <div></div>
         <div
           className="pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
           onClick={() => {

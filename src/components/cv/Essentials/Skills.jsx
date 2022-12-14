@@ -89,9 +89,8 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
       >
         <div className="p-4 ">
           <div className="relative">
-          <p className="text-center title-skill">Frontend</p>
-          <div className="z-[0] absolute left-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px] main-color"></div>
-          <div className="z-[0] absolute right-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px]  main-color"></div>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[70px]">Frontend</p></div>
+          <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="grid grid-cols-4 gap-2 justify-center items-center my-3">
             {images.frontend.map((e) => {
               return (
@@ -103,9 +102,9 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
           <div className="relative">
-          <p className="text-center title-skill">Backend</p>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[70px]">Backend</p></div>
+          <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="z-[0] absolute left-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px] main-color"></div>
-          <div className="z-[0] absolute right-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px]  main-color"></div>
           <div className="w-full grid grid-cols-4 gap-2 justify-center items-center my-3">
             {images.backend.map((e) => {
               return (
@@ -117,9 +116,8 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
           <div className="relative">
-          <p className="text-center">Tools</p>
-          <div className="z-[0] absolute left-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px] main-color"></div>
-          <div className="z-[0] absolute right-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px]  main-color"></div>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[50px]"> Tools</p></div>
+          <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="grid grid-cols-4 gap-2">
             {images.tools.map((e) => {
               return (
@@ -131,11 +129,12 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
         </div>
-        <div className="absolute bottom-[-36px] right-0 flex items-center ">
+        <div className="absolute bottom-[-36px] right-0 flex items-center mt- ">
           <Button
             imageSize={22}
             svg={true}
             spaceY={3}
+            className=""
             text="Curriculum Vitae"
             onClick={() => setshowDownload(true)}
           >

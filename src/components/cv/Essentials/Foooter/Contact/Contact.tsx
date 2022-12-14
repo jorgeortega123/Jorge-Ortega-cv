@@ -51,7 +51,7 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className="bg-transparent flex lg:space-x-5 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
+    <div className="bg-transparent  flex lg:space-x-5 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
       <div className="flex flex-col justify-start items-start space-y-2 w-full ">
         {dataContact.map((e) => {
           return (

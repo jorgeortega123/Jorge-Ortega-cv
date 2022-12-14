@@ -45,21 +45,44 @@ function HeroMain({
           }
           setIndex(index - 1);
         }}
-        className="cursor-pointer z-[5] absolute flex justify-center left-0 items-center w-12 carrousel-pilar bg-[#69696920] hover:bg-[#69696949] hover:text-green-300 "
+        className="cursor-pointer z-[5] absolute flex justify-center items-center left-0 w-12 h-full  hover:text-green-300 "
       >
-        {"<"}
+        <div className="w-12 text-center">
+          <svg
+            className="rotate-90 ml-[-5px] w-[50px]  fill-slate-200 hover:fill-[#66ff00]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            fill=""
+            height="34"
+            width="34"
+          >
+            <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z" />
+          </svg>
+        </div>
       </div>
 
       <div
         onClick={() => {
-          if (index >= (images?.length)) {
+          if (index  + 1 === (images?.length)  ) {
+            setIndex(0);
             return;
           }
           setIndex(index + 1);
         }}
-        className="cursor-pointer z-[5] absolute flex justify-center right-0 items-center w-12 carrousel-pilar2 bg-[#69696920] hover:bg-[#69696949] hover:text-green-300  "
+        className="cursor-pointer z-[5] absolute flex justify-center right-0 items-center w-12 h-full  hover:text-green-300  "
       >
-        {">"}
+        <div className="w-12 text-center">
+          <svg
+            className="rotate-[270deg] ml-[-5px] w-[50px]  fill-slate-200 hover:fill-[#66ff00]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            fill=""
+            height="34"
+            width="34"
+          >
+            <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z" />
+          </svg>
+        </div>
       </div>
       <div
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
@@ -118,14 +141,14 @@ function HeroMain({
             key={idx}
             className={`cursor-pointer mx-[3px] inline-block h-[16px] w-[20px] rounded-full  ${
               index === idx
-                ? "bg-slate-900 border-cyan-600 text-white"
+                ? "bg-[#66ff00] border-cyan-600 text-black"
                 : "bg-[#cfb8b85c] text-black"
             }`}
             onClick={() => {
               setIndex(idx);
             }}
           >
-            <p className={`text-[10px]  `}>{idx + 1}</p>
+            <p className={`text-[12px] font-semibold `}>{idx + 1}</p>
           </div>
         ))}
       </div>

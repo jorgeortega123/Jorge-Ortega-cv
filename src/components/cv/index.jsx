@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { lang } from "./langs";
+import "./animation.scss"
 // svg's icons
 import KeyboardSvg from "./../../assets/svg/keyboard.svg";
 import DownloadSvg from "./../../assets/svg/download.svg";
@@ -19,6 +20,8 @@ import cvIMAGEN from "../../assets/image/cv/cv.jpg";
 import monitorIcon from "../../assets/image/monitor.png";
 import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
 // Components
+import { Autocomplete, TextField, Input } from "@mui/material";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import MainContainer from "./containers/MainContainer";
 import ContainerProyects from "./containers/ContainerProyects";
 import Modals from "./containers/Modals";
@@ -38,7 +41,6 @@ import ImageView from "./Essentials/ImageView";
 // Context
 import useMainContext from "./context/useMainContext";
 import TranslateView from "./Essentials/TranslateView";
-
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -147,12 +149,15 @@ const CvMain = () => {
         <AnimatePresence>
           {showDownload && (
             <motion.div
-              initial={{ opacity: 0, y:-20 }}
-              animate={{ opacity: 1, x: 0, y:0 }}
-              exit={{ opacity: 0, y:20 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
               transition={{ type: "tween", duration: 2 }}
             >
-              <Modals setshowDownload={setshowDownload} title="Download curriculum vitae">
+              <Modals
+                setshowDownload={setshowDownload}
+                title="Download curriculum vitae"
+              >
                 <FileView
                   title={"" + staticInf.name + "_cv.pdf"}
                   cv={staticInf.cv.en.cv_pdf}
@@ -263,8 +268,29 @@ const CvMain = () => {
                   </div>
                 </div>
               </div>
-              <div className="border-2  h-[200px] mr-2 sm:w-[300px] lg:w-[500px] items-center flex justify-center mt-12  ">
-                <img className="max-w-[200px] mt-6 " src={monitorIcon} alt="" />
+              <div className="relative h-[200px] mr-2 sm:w-[300px] lg:w-[500px] items-center flex justify-center mt-12  ">
+                <img className="max-w-[200px] mt-6 CVmonitor " src={monitorIcon} alt="" />
+                <img
+                  className="absolute CVimg-1 w-10"
+                  src={
+                    "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png"
+                  }
+                  alt=""
+                />
+                <img
+                  className="absolute CVimg-2 w-10"
+                  src={
+                    "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png"
+                  }
+                  alt=""
+                />
+                <img
+                  className="absolute CVimg-3 w-10"
+                  src={
+                    "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806164/logo_t5er37.png"
+                  }
+                  alt=""
+                />
               </div>
             </div>
 
@@ -293,10 +319,11 @@ const CvMain = () => {
                       alt=""
                     /> </div>} */}
                 </MainContainer>
-                <Skills CvIcon={CvIcon} dataText={dataText} setshowDownload={setshowDownload}></Skills>
-                <div className="w-full lg:w-5/12 mt-[80px] ">
-                  <RoundedCarrousel></RoundedCarrousel>
-                </div>
+                <Skills
+                  CvIcon={CvIcon}
+                  dataText={dataText}
+                  setshowDownload={setshowDownload}
+                ></Skills>
               </div>
               <MainContainer
                 id="proyects"
