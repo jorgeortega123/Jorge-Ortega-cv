@@ -204,12 +204,12 @@ export const lang = {
       es: {
         text: "Español",
         cv_pdf:
-          "https://drive.google.com/uc?id=1TDcETxzZjS9ofo7lknGcp51TXd0TuAHd&export=download",
+          "https://drive.google.com/uc?id=1r-x3eAw5a0VdpYgw3dVYZfCNXz7vuApY&export=download",
       },
       en: {
         text: "English",
         cv_pdf:
-          "https://drive.google.com/uc?id=1TDcETxzZjS9ofo7lknGcp51TXd0TuAHd&export=download",
+          "https://drive.google.com/uc?id=1xRivrp02A0NpnLYApMfdXOiNwKnBVrNj&export=download",
       },
     },
     name: "Jorge_Ortega",
