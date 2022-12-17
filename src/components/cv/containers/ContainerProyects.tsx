@@ -27,7 +27,10 @@ export default function ContainerProyects({
   inGroup: boolean;
   showImage: (data: string) => void;
 }) {
-  const colors = [
+  const colors = [ {
+    b: "#000000",
+    t: "#fff",
+  },
     {
       b: "#ffe300",
       t: "#2A0944",
@@ -49,20 +52,20 @@ export default function ContainerProyects({
       t: "#472D2D",
     },
     {
-      b: "#B9FFF8",
-      t: "#781C68",
+      b: "#093145",
+      t: "#BCA136",
     },
     {
-      b: "#A7D2CB",
-      t: "#874C62",
+      b: "#107896",
+      t: "#000000",
     },
     {
-      b: "#A7D2CB",
-      t: "#874C62",
+      b: "#9A2617",
+      t: "#B5C689",
     },
     {
-      b: "#A7D2CB",
-      t: "#874C62",
+      b: "#1287A8",
+      t: "#fff",
     },
   ];
   const [showGroup, setshowGroup] = useState(false);
@@ -71,8 +74,9 @@ export default function ContainerProyects({
       var elementCreate = document.createElement("p");
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
-      elementCreate.style.color = colors[indexNumber].t;
-      elementCreate.style.backgroundColor = colors[indexNumber].b;
+      var randomNumber = Math.floor(Math.random()*colors.length);
+      elementCreate.style.color = colors[randomNumber].t;
+      elementCreate.style.backgroundColor = colors[randomNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
     });
   };
@@ -111,7 +115,7 @@ export default function ContainerProyects({
     }
   };
   return (
-    <div className="w-full border shadow-xl lg:border-0 pl-2 pr-2 lg:shadow-2xl">
+    <div className="w-full border lg:border-0 pl-2 pr-2 shadow-[5px_5px_8px_#ffffff5c] lg:shadow-[12px_2px_16px_#ffffff5c]">
       <div className="items-center flex justify-center relative">
         <div
           onClick={() => {
@@ -196,7 +200,7 @@ export default function ContainerProyects({
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div
-            className="normalText altura-letras text-[20px] lg:text-[28px]"
+            className="normalText altura-letras text-[22px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div

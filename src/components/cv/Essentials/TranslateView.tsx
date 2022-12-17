@@ -6,11 +6,11 @@ export default function TranslateView({ changeLang, selectedLang }) {
   return (
 
     <motion.div
-      initial={{ opacity: 0, x: 150 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0,}}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: 0 }}
       transition={{ type: "tween" }}
-      className=" absolute z-[0] flex-col left-0 p-3 text-[12px] w-[140px] bg-[#000000c7] text-slate-100  blockAllSelect "
+      className=" absolute z-[-1] flex-col left-0 p-3 text-[12px] w-[140px] bg-[#000000c7] text-slate-100  blockAllSelect "
     >
       <div className="flex flex-col space-y-2">
         <div

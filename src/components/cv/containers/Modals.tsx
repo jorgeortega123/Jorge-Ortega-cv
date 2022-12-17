@@ -25,7 +25,7 @@ export default function Modals({
     >
       <div
         {...props}
-        className="z-[2] fixed backdrop-blur-sm   border-slate-300 mt-[45px] pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
+        className="z-[2] fixed backdrop-blur-sm  bg-[#84a3c955]  border-slate-300 mt-[45px] pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
       >
         <div className=" absolute w-[280px] rounded-md top-[30%]  bg-[#0f2d51] rounded-b-xl mx-auto  shadow-sm shadow-[#66ff00]  ">
           <div className="flex justify-between">

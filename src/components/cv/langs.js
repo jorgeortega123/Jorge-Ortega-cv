@@ -215,11 +215,6 @@ export const lang = {
     name: "Jorge_Ortega",
     social: [
       {
-        name: "facebook",
-        url: "https://www.facebook.com/mateo.garrido.5268",
-        svg: "./../../assets/svg/facebook.svg",
-      },
-      {
         name: "instagram",
         url: "https://www.instagram.com/jorgeandresyts/",
         svg: "./../../assets/svg/instagram",
@@ -227,12 +222,12 @@ export const lang = {
       {
         name: "linkedin",
         url: "https://www.linkedin.com/in/jorge-ortega-b87442254/",
-        svg: "./../../assets/svg/linkedin",
+        svg: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1671229962/linkedin_yrcrig.svg",
       },
       {
         name: "git hub",
         url: "https://github.com/jorgeortega123",
-        svg: "./../../assets/svg/github.svg",
+        svg: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1671230113/github_mqjg2f.png",
       },
     ],
     images: [

@@ -20,6 +20,8 @@ export default function ContactComponent({
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [subject, setsubject] = useState("");
+  const [showMensajeSend, setShowMensajeSend] = useState(false)
+  const [showMensajeErr, setShowMensajeErr] = useState(false)
   const dataContact = [
     { inf: "+593 9627  16235", icon: CallSVG, title: "Call me", href: "tel:" },
     {
@@ -37,6 +39,20 @@ export default function ContactComponent({
       body: userTextWrote,
     },
   };
+  const verifyBeforeSend = () => {
+    if (!name || !email || !userTextWrote) {
+      setname("")
+      setShowMensajeSend(false)
+      setShowMensajeErr(true)
+      return;
+    }
+    setname("")
+    setemail("")
+    setuserTextWrote("")
+    setShowMensajeErr(false)
+    setShowMensajeSend(true)
+    sendText(formatToSend);
+  };
   const SVGsend = () => {
     return (
       <svg
@@ -51,7 +67,7 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className="bg-transparent  flex lg:space-x-5 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
+    <div className="bg-transparent  flex lg:space-x-2 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
       <div className="flex flex-col justify-start items-start space-y-2 w-full ">
         {dataContact.map((e) => {
           return (
@@ -71,8 +87,8 @@ export default function ContactComponent({
           );
         })}
       </div>
-      <div className="relative w-full flex justify-center">
-        <div className="pt-10 space-y-2  sm:space-y-2 w-11/12 lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
+      <div className="relative w-full flex justify-center lg:w-[1550px]">
+        <div className="pt-10 space-y-2  sm:space-y-2 w-full lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
           <div className="flex flex-col space-y-2 sm:space-y-2 w-full">
             <div className="border-[1px] flex-col input-contact w-full">
               <p className="text-[13px] target-p-contact blockAllSelect">
@@ -82,6 +98,7 @@ export default function ContactComponent({
                 onChange={(e) => {
                   setname(e.target.value);
                 }}
+                value={name}
                 className="input-sender input-s-s bg-transparent w-full h-full  "
                 type="text"
               />
@@ -94,12 +111,13 @@ export default function ContactComponent({
                 onChange={(e) => {
                   setemail(e.target.value);
                 }}
+                value={email}
                 type="email"
                 className="input-sender input-s-s bg-transparent w-full h-full "
               />
             </div>
           </div>
-          <div className="border-[1px] flex-col w-full input-contact ">
+          {/* <div className="border-[1px] flex-col w-full input-contact ">
             <p className="text-[13px] target-p-contact blockAllSelect">
               Subject
             </p>
@@ -110,29 +128,31 @@ export default function ContactComponent({
               className="input-sender input-s-s bg-transparent w-full h-full "
               type="text"
             />
-          </div>
+          </div> */}
           <div className="border-[1px] flex-col w-full input-contact ">
             <p className="text-[13px] target-p-contact blockAllSelect">
               {dataText.extras.footer.input}
             </p>
             <textarea
               id="textareOfFooter"
-              className="input-sender input-s-s bg-transparent w-full h-full "
+              className="input-sender input-s-s bg-transparent w-full h-[140px] "
               name=""
               onChange={(e) => {
                 setuserTextWrote(e.target.value);
               }}
+              value={userTextWrote}
             />
           </div>
-          <div className="w-full flex items-end justify-end">
+          {showMensajeSend && <div className="text-green-500 border-[1px] border-green-500 w-full text-center rounded-[8px]">Send data success</div>}
+          {showMensajeErr && <div className="text-red-300 border-[1px] border-red-500 w-full text-center rounded-[8px]">Incomplete data</div>}
           
+          <div className="w-full flex items-end justify-end ">
             <Button
               svg={true}
               icon={SVGsend}
               text={"Send"}
-              
-              onClick={() => sendText(formatToSend)}
-              className="capitalize right-0"
+              onClick={() => verifyBeforeSend()}
+              className="capitalize right-0 active:text-green-400"
             >
               <SendIcon></SendIcon>
             </Button>

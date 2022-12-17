@@ -26,7 +26,7 @@ export default function ImageView({setshowImg, imgSrc}) {
           onClick={(e) => {
             e.preventDefault();
           }}
-          className="w-screen z-[8] border-2"
+          className="w-auto z-[8] border-2 xl:max-h-[800px]"
           src={imgSrc}
           alt=""
         />

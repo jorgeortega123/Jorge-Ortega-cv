@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function LoadingScreenView() {
+export default function LoadingScreenView({changeHandlerBodyLoaded}) {
+  useEffect(() => {
+    setTimeout(() => {
+      changeHandlerBodyLoaded()
+    }, 700);
+  })
+  
   return (
     <motion.div
     initial={{ opacity: 1 }}
