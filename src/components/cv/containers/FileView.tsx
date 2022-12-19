@@ -23,14 +23,14 @@ export default function FileView({
   }
  
   return (
-    <div className={` ${index % 2 === 0 ?'bg-[#0f0f0f]': "bg-[#0f0f0fc2]"} hover:bg-gray-900 text-white w-full  my-2 rounded-[3px] p-1 flex justify-center items-center`}>
-      <div className="grow flex flex-col">
-        <a href={cv} download="Asadasd.pdf" className="font-normal text-blue-600 px-[9px] ">
+    <div  onClick={()=>{download(cv)}}  className={`bg-[#0000002b] hover:bg-gray-900 text-white w-full cursor-pointer  my-2 rounded-[6px] px-2 py-3 flex justify-center items-center min-h-[64px]`}>
+      <div className="flex flex-col relative mr-2">
+        <a href={cv} download="Asadasd.pdf" className=" px-[9px] ">
           {title}
         </a>
-        <p className="font-[Montserrat] text-[13px] ">{children}</p>
+        <p className="absolute font-[Montserrat] text-[13px] bottom-[-20px] right-0 ">{children}</p>
       </div>
-      <div className=" flex items-center pr-1">
+      <div className=" flex items-center w-12/12">
         <button
           type="button"
           className="bg-black rounded-[6px] border-[1px] "

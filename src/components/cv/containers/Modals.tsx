@@ -25,13 +25,13 @@ export default function Modals({
     >
       <div
         {...props}
-        className="z-[2] fixed backdrop-blur-sm  bg-[#84a3c955]  border-slate-300 mt-[45px] pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
+        className="z-[1] fixed backdrop-blur-sm  bg-[#00000061]  border-slate-300 mt-[45px] pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
       >
-        <div className=" absolute w-[280px] rounded-md top-[30%]  bg-[#0f2d51] rounded-b-xl mx-auto  shadow-sm shadow-[#66ff00]  ">
+        <div className=" absolute w-[280px] rounded-md top-[30%]  bg-[#0f2d51] rounded-b-xl mx-auto  shadow-sm border-2 border-[#0000006b] ">
           <div className="flex justify-between">
           <div className=" text-white pt-2 pl-2">{title}</div>
             <div
-              className="bg-[#ffffff0c] px-2 rounded-lg text-red-500 items-end flex justify-end pr-2 mt-[6px] text-[18px] hover:text-red-600 cursor-pointer"
+              className="bg-[#0000002e] mr-[1px] px-2 rounded-[6px] text-red-500 items-end flex justify-end pr-2 mt-[6px] text-[18px] hover:text-red-600 cursor-pointer"
               onClick={() => {
                 setshowDownload(false)
               }}
@@ -41,8 +41,8 @@ export default function Modals({
    
           </div>
 
-          <div className="bg-white w-full h-[1px] mt-[5px]"></div>
-          <div className="p-3">{children}</div>
+          <div className="bg-white w-full h-[1px] mt-[7px]"></div>
+          <div className="p-3 z-[2]">{children}</div>
         </div>
       </div>
     </motion.div>
