@@ -62,7 +62,7 @@ var images = {
     },{
       img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805507/6202fcdee5ee8636a145a41b_1234_xvfbkk.png",
       text: "Express",
-      color: "#b8b8b8"
+      color: "#fff"
     },
     {
       img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806004/267_Python-512_gt1yds.webp",
@@ -103,7 +103,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
     <MainContainer className="flex w-full" title={dataText.headers.knowledge}>
       <div
         id="knowledge"
-        className="min-h-[400px]  max-w-full w-full bg-[#0000001a] rounded-[3px]"
+        className="min-h-[400px]  max-w-full w-full bg-[#0000001a] rounded-[6px]"
       >
         <div className="p-4 select-none ">
           <div className="relative">

@@ -27,10 +27,11 @@ export default function ContainerProyects({
   inGroup: boolean;
   showImage: (data: string) => void;
 }) {
-  const colors = [ {
-    b: "#000000",
-    t: "#fff",
-  },
+  const colors = [
+    {
+      b: "#000000",
+      t: "#fff",
+    },
     {
       b: "#ffe300",
       t: "#2A0944",
@@ -74,7 +75,7 @@ export default function ContainerProyects({
       var elementCreate = document.createElement("p");
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
-      var randomNumber = Math.floor(Math.random()*colors.length);
+      var randomNumber = Math.floor(Math.random() * colors.length);
       elementCreate.style.color = colors[randomNumber].t;
       elementCreate.style.backgroundColor = colors[randomNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
@@ -107,6 +108,8 @@ export default function ContainerProyects({
 */
 
   //window.addEventListener('load', ()=> elemets())
+
+  // shadow-[5px_5px_8px_#ffffff5c] lg:shadow-[12px_2px_16px_#ffffff5c]
   const changeHandle = () => {
     if (showGroup === true) {
       setshowGroup(false);
@@ -115,39 +118,27 @@ export default function ContainerProyects({
     }
   };
   return (
-    <div className="w-full border lg:border-0 pl-2 pr-2 shadow-[5px_5px_8px_#ffffff5c] lg:shadow-[12px_2px_16px_#ffffff5c]">
+    <div className="w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
       <div className="items-center flex justify-center relative">
         <div
           onClick={() => {
             changeHandle();
           }}
-          className="absolute right-0 mt-1 w-[36px] fill-slate-50"
+          className="absolute xl:top-[96px] right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
         >
           {inGroup ? (
             <img
-              onMouseLeave={() => {
-                changeHandle();
-              }}
-              onMouseEnter={() => {
-                changeHandle();
-              }}
               src={inGroupSVG}
             ></img>
           ) : (
             <img
-              onMouseEnter={() => {
-                changeHandle();
-              }}
-              onMouseLeave={() => {
-                changeHandle();
-              }}
               src={inSoloSVG}
             ></img>
           )}
           {showGroup && (
             <>
-              <div className=" flex items-center justify-center rounded-t-[7px] left-[-115px] lg:left-[-115px] lg:top-[-22px] lg:h-[90px]  px-[2px] top-[-50px] absolute bg-[#408198] lg:bg-transparent lg:rounded-sm lg:border-l-[1px] lg:border-blue-900 lg:backdrop-blur-3xl  text-[14px] text-slate-800 w-[110px]">
-                <p className="text-center text-black">
+              <div className=" flex items-center justify-center rounded-t-[7px] left-[-115px] lg:left-[-115px] lg:top-[-22px] lg:h-[90px]  px-[2px] top-[-50px] absolute bg-[#408198] lg:bg-transparent lg:rounded-sm lg:border-l-[1px] lg:border-blue-900 lg:backdrop-blur-3xl altura-letras  w-[110px]">
+                <p className="text-center ">
                   App desarrollada de manera{" "}
                   {!inGroup ? <span>individual</span> : <span>grupal</span>}
                 </p>{" "}
@@ -155,9 +146,8 @@ export default function ContainerProyects({
             </>
           )}
         </div>
-       <div></div>
         <div
-          className="pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
+          className="xl:hidden  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1 relative container-proyects"
           onClick={() => {
             var link = document.createElement("a");
             link.href = web;
@@ -167,38 +157,40 @@ export default function ContainerProyects({
         >
           <p>{title}</p>
           <img
-          className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-31px]"
-          src={newWindow}
-          alt=""
-          onClick={() => {
-            var link = document.createElement("a");
-            link.href = web;
-            link.target = "_blank";
-            link.click();
-          }}
-        />
-         <div className="absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px]  left-[-45px]">
-          <div
-            className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
-          ></div>
-          <div
-             className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
-          ></div>
-          <div
-              className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}
-          ></div>
+            className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-31px]"
+            src={newWindow}
+            alt=""
+            onClick={() => {
+              var link = document.createElement("a");
+              link.href = web;
+              link.target = "_blank";
+              link.click();
+            }}
+          />
+          <div className="absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px]  left-[-45px]">
+            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
+            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
+            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
+          </div>
         </div>
-        </div>
-     
       </div>
-      <div className="flex-col sm:flex-row w-full lg:flex lg:items-center">
-        <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12  items-center flex justify-center px-2 lg:pb-2">
+      <div className="flex-col sm:flex-row w-full lg:flex lg:items-center xl:p-4">
+        <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12 xl:w-9/12  items-center flex justify-center px-2 lg:pb-2">
           <HeroMain
             images={imagesFrom[index].all}
             showImage={showImage}
           ></HeroMain>
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
+        <div
+          className="  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
+          onClick={() => {
+            var link = document.createElement("a");
+            link.href = web;
+            link.target = "_blank";
+            link.click();
+          }}
+        >{title}</div>
           <div
             className="normalText altura-letras text-[22px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}

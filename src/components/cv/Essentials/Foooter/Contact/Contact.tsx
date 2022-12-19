@@ -90,7 +90,7 @@ export default function ContactComponent({
       <div className="relative w-full flex justify-center lg:w-[1550px]">
         <div className="pt-10 space-y-2  sm:space-y-2 w-full lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
           <div className="flex flex-col space-y-2 sm:space-y-2 w-full">
-            <div className="border-[1px] flex-col input-contact w-full">
+            <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
               <p className="text-[13px] target-p-contact blockAllSelect">
                 Name
               </p>
@@ -103,7 +103,7 @@ export default function ContactComponent({
                 type="text"
               />
             </div>
-            <div className="border-[1px] flex-col input-contact w-full">
+            <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
               <p className="text-[13px] target-p-contact blockAllSelect">
                 Email
               </p>
@@ -129,7 +129,7 @@ export default function ContactComponent({
               type="text"
             />
           </div> */}
-          <div className="border-[1px] flex-col w-full input-contact ">
+          <div className="border-[1px] flex-col w-full input-contact border-inputs-contact ">
             <p className="text-[13px] target-p-contact blockAllSelect">
               {dataText.extras.footer.input}
             </p>
