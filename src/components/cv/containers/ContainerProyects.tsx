@@ -29,10 +29,6 @@ export default function ContainerProyects({
 }) {
   const colors = [
     {
-      b: "#000000",
-      t: "#fff",
-    },
-    {
       b: "#ffe300",
       t: "#2A0944",
     },
@@ -51,10 +47,6 @@ export default function ContainerProyects({
     {
       b: "#FECD70",
       t: "#472D2D",
-    },
-    {
-      b: "#093145",
-      t: "#BCA136",
     },
     {
       b: "#107896",
@@ -76,8 +68,9 @@ export default function ContainerProyects({
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
       var randomNumber = Math.floor(Math.random() * colors.length);
-      elementCreate.style.color = colors[randomNumber].t;
-      elementCreate.style.backgroundColor = colors[randomNumber].b;
+      //  elementCreate.style.color = colors[randomNumber].t;
+      elementCreate.style.color = colors[indexNumber].t;
+      elementCreate.style.backgroundColor = colors[indexNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
     });
   };

@@ -103,7 +103,7 @@ svg {
   font-family: "subtitle";
   letter-spacing: 0.6px;
   line-height: 1.2;
-  -webkit-text-stroke: 1px $secondary-color;
+  // -webkit-text-stroke: 1px $secondary-color;
   background-clip: text;
 -webkit-background-clip: text;
 color: #fff;
@@ -292,8 +292,8 @@ nav .rotate180-alternate {
 }
 
 .text-bold {
-  font-weight: 600;
-  color: #b01e68;
+  font-weight: 500;
+  color: #59ff00;
   outline: none;
 }
 .input-container {

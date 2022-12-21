@@ -28,13 +28,13 @@ const CvMain = () => {
   console.log(SendSGV);
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
-  const [dataText, setdataText] = useState(lang.en);
+  const [dataText, setdataText] = useState(lang.es);
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
   const [showImg, setshowImg] = useState(false);
   const [isLoadedBody, setisLoadedBody] = useState(false);
-  const [defaultLang, setdefaultLang] = useState("en");
+  const [defaultLang, setdefaultLang] = useState("es");
   const [imgSrc, setimgSrc] = useState(
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
