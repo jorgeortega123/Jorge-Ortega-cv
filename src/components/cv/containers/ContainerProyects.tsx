@@ -75,9 +75,10 @@ export default function ContainerProyects({
       var elementCreate = document.createElement("p");
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
-      var randomNumber = Math.floor(Math.random() * colors.length);
-      elementCreate.style.color = colors[randomNumber].t;
-      elementCreate.style.backgroundColor = colors[randomNumber].b;
+     // var randomNumber = Math.floor(Math.random() * colors.length);
+      // elementCreate.style.color = colors[randomNumber].t;
+      elementCreate.style.color = colors[indexNumber].t;
+      elementCreate.style.backgroundColor = colors[indexNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
     });
   };

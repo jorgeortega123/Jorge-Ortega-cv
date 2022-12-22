@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function LoadingScreenView({changeHandlerBodyLoaded, isLoadedBody}) {
-  useEffect(() => {
-    setTimeout(() => {
-      changeHandlerBodyLoaded()
-    }, 700);
-  })
+export default function LoadingScreenView({isLoadedBody}) {
+
   if (isLoadedBody) return <></>;
   return (
     <motion.div

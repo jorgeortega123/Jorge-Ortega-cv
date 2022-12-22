@@ -5,6 +5,8 @@ import "./animation.scss";
 // svg's icons
 import LangSvg from "./../../assets/svg/lang.svg";
 import SendSGV from "./../../assets/svg/send.svg";
+import Postgree from "./../../assets/image/p.png";
+import Angular from "./../../assets/image/a.png";
 import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
 // Components
 import MainContainer from "./containers/MainContainer";
@@ -22,6 +24,8 @@ import useMainContext from "./context/useMainContext";
 import NavExplain from "./Essentials/NavExplain";
 import Header from "./Essentials/Header";
 import DownloadComponent from "./Essentials/DownloadComponent";
+import Modals from "./containers/Modals";
+import FileView from "./containers/FileView";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -40,6 +44,13 @@ const CvMain = () => {
   );
   useEffect(() => {
     document.body.style.overflowX = "hidden";
+    if (document.readyState === "complete") {
+      setisLoadedBody(true);
+    } else {
+      window.addEventListener("load", () => setisLoadedBody(true));
+      return () =>
+        document.removeEventListener("load", () => setisLoadedBody(true));
+    }
   }, []);
   const showMenuTranslateFunc = () => {
     if (showMenuTranslate === false) {
@@ -69,34 +80,59 @@ const CvMain = () => {
     setisLoadedBody(true);
   };
   const handlerChangeByDownload = () => {
-    alert("ASD");
     setshowLineWhenFileIsDownloading(true);
     setshowDownload(false);
-    setTimeout(() => {
-      setshowLineWhenFileIsDownloading(false);
-    }, 3500);
   };
   const text_color = data?.text || "#fff";
-
+  if (!isLoadedBody)
+    return (
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "tween" }}
+        >
+          <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
+            <span className="bg-white"></span>
+            <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
+              <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    );
   return (
     <div
       id="home"
       className={`main-container init text-${text_color} relative`}
     >
       <Background />
+
       <AnimatePresence>
-        <LoadingScreenView
-          isLoadedBody={isLoadedBody}
-          changeHandlerBodyLoaded={changeHandlerBodyLoaded}
-        />
-      </AnimatePresence>
-      <AnimatePresence>
-        <DownloadComponent
-          showDownload={showDownload}
-          setshowDownload={setshowDownload}
-          staticInf={staticInf}
-          handlerChangeByDownload={handlerChangeByDownload}
-        />
+        {showDownload && (
+          <Modals
+            setshowDownload={setshowDownload}
+            title="Download curriculum vitae"
+          >
+            <FileView
+              title={"" + staticInf.name + "_cv.pdf"}
+              cv={staticInf.cv.en.cv_pdf}
+              handlerChangeByDownload={handlerChangeByDownload}
+              index={1}
+            >
+              {staticInf.cv.en.text}
+            </FileView>
+            <FileView
+              title={staticInf.name + "_cv.pdf"}
+              cv={staticInf.cv.es.cv_pdf}
+              handlerChangeByDownload={handlerChangeByDownload}
+              index={2}
+            >
+              {staticInf.cv.es.text}
+            </FileView>
+          </Modals>
+        )}
       </AnimatePresence>
       <NavView
         LangSvg={LangSvg}
@@ -144,22 +180,75 @@ const CvMain = () => {
               <div className="relative mt-6">
                 <div className="w-full flex justify-center items-center">
                   <div className="flex-col space-y-4 lg:space-y-7 w-full xl:w-8/12">
-                  {dataText.proyects.map((e, n) => {
-                    return (
-                      <ContainerProyects
-                        index={n}
-                        title={e.title}
-                        about={e.about}
-                        img={e.img}
-                        web={e.web}
-                        langs={e.tags}
-                        inGroup={e.onGroup}
-                        showImage={showImage}
-                      />
-                    );
-                  })}</div>
+                    {dataText.proyects.map((e, n) => {
+                      return (
+                        <ContainerProyects
+                          index={n}
+                          title={e.title}
+                          about={e.about}
+                          img={e.img}
+                          web={e.web}
+                          langs={e.tags}
+                          inGroup={e.onGroup}
+                          showImage={showImage}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
+            </MainContainer>
+            <div className="py-7 flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] p-4">
+              <div className="min-w-[400px] max-w-[700px] flex flex-col space-y-4 ">
+                <div>Actualmente estoy aprendiendo:</div>
+                <div className="relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
+                  <img
+                    className="max-w-[65px] h-max p-1"
+                    src={Postgree}
+                    alt=""
+                  />
+                  <div>
+                    <p className="font-bold text-[24px] mt-[10px]">
+                      PostgreeSQL
+                    </p>
+                    <p className="text-[19px]">Conocimiento basico</p>
+                  </div>
+                  <p className="text-[12px] absolute right-0 bottom-[-15px]">
+                    100%
+                  </p>
+                  <p className="text-[12px] absolute left-0 bottom-[-15px]">
+                    0%
+                  </p>
+                  <div
+                    className={`absolute bottom-0 bg-slate-100 transition-all w-[${40}%] h-[1px]`}
+                  ></div>
+                </div>
+                <div className="relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
+                  <img
+                    className="max-w-[65px] h-max p-1"
+                    src={Angular}
+                    alt=""
+                  />
+                  <div>
+                    <p className="font-bold text-[24px] mt-[10px]">
+                      Angular
+                    </p>
+                    <p className="text-[19px]">Conocimiento basico</p>
+                  </div>
+                  <p className="text-[12px] absolute right-0 bottom-[-15px]">
+                    100%
+                  </p>
+                  <p className="text-[12px] absolute left-0 bottom-[-15px]">
+                    0%
+                  </p>
+                  <div
+                    className={`absolute bottom-0 bg-slate-100 transition-all w-[${68}%] h-[1px]`}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <MainContainer title="Servicios">
+              <p>Que puedo ofrezzco ?</p>
             </MainContainer>
             <div id="contact" className="w-full max-w-[800px]">
               <MainContainer className="" title={dataText.headers.contact}>

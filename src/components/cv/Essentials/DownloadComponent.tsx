@@ -1,15 +1,21 @@
-import React from 'react'
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Modals from '../containers/Modals';
-import FileView from '../containers/FileView';
-export default function DownloadComponent({showDownload, setshowDownload, staticInf, handlerChangeByDownload}) {
-   if(!showDownload) return<></>;
+import Modals from "../containers/Modals";
+import FileView from "../containers/FileView";
+export default function DownloadComponent({
+  showDownload,
+  setshowDownload,
+  staticInf,
+  handlerChangeByDownload,
+}) {
   return (
+    <AnimatePresence>
+      {showDownload && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 120 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ type: "spring", duration: 0.1 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "tween", duration: 2 }}
         >
           <Modals
             setshowDownload={setshowDownload}
@@ -33,5 +39,7 @@ export default function DownloadComponent({showDownload, setshowDownload, static
             </FileView>
           </Modals>
         </motion.div>
-  )
+      )}
+    </AnimatePresence>
+  );
 }
