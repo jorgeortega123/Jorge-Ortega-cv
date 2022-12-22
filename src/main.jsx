@@ -4,7 +4,6 @@ import "./index.css";
 import "./components/cv/index.scss";
 import "./components/cv/rounded_carrousel/carrousel.scss";
 import "./components/cv/svg.scss";
-import "./output.css"
 import CvMain from "./components/cv";
 import { ParallaxProvider } from "react-scroll-parallax";
 import MainContextComponent from "./components/cv/context/MainContext";
