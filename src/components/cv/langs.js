@@ -4,7 +4,6 @@ export const lang = {
       main: "Hola, soy Jorge Ortega",
       sub: "Desarrollador Frontend",
       sub1: "Actualmente busco trabajo!",
-
       about: "Acerca de mi",
       proyects: "Proyectos",
       contact: "Contactar",
@@ -98,11 +97,13 @@ export const lang = {
         number: "Numero copiado en portapapeles!",
         email: "Email copiado en portapapeles!",
       },
-      download: "Decargando cv en español...",
+      download: "Descargando cv en español...",
     },
     extras: {
       footer: {
+        name: "Nombre", 
         input: "Escribe tu mensaje aqui",
+        send: "Enviar"
       },
     },
     social: [
@@ -201,6 +202,8 @@ export const lang = {
     extras: {
       footer: {
         input: "Let you message here",
+        name: "Name", 
+        send: "Send"
       },
     },
     social: [

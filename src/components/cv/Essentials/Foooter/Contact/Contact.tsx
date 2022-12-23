@@ -6,12 +6,15 @@ import useMainContext from "../../../context/useMainContext";
 import Button from "../../Button";
 import { SendIcon } from "../../../../../assets/svg";
 export default function ContactComponent({
-  dataText = { contact: { email: "@" }, extras: { footer: { input: "" } } },
+  dataText = {
+    contact: { email: "@" },
+    extras: { footer: { input: "", name: "", send: "" } },
+  },
   copyToClipBoard,
 }: {
   dataText: {
     contact: { email: string };
-    extras: { footer: { input: string } };
+    extras: { footer: { input: string; name: string; send: string } };
   };
   copyToClipBoard: (data: string) => void;
 }) {
@@ -20,8 +23,8 @@ export default function ContactComponent({
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [subject, setsubject] = useState("");
-  const [showMensajeSend, setShowMensajeSend] = useState(false)
-  const [showMensajeErr, setShowMensajeErr] = useState(false)
+  const [showMensajeSend, setShowMensajeSend] = useState(false);
+  const [showMensajeErr, setShowMensajeErr] = useState(false);
   const dataContact = [
     { inf: "+593 9627  16235", icon: CallSVG, title: "Call me", href: "tel:" },
     {
@@ -41,16 +44,16 @@ export default function ContactComponent({
   };
   const verifyBeforeSend = () => {
     if (!name || !email || !userTextWrote) {
-      setname("")
-      setShowMensajeSend(false)
-      setShowMensajeErr(true)
+      setname("");
+      setShowMensajeSend(false);
+      setShowMensajeErr(true);
       return;
     }
-    setname("")
-    setemail("")
-    setuserTextWrote("")
-    setShowMensajeErr(false)
-    setShowMensajeSend(true)
+    setname("");
+    setemail("");
+    setuserTextWrote("");
+    setShowMensajeErr(false);
+    setShowMensajeSend(true);
     sendText(formatToSend);
   };
   const SVGsend = () => {
@@ -91,8 +94,8 @@ export default function ContactComponent({
         <div className="pt-10 space-y-2  sm:space-y-2 w-full lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
           <div className="flex flex-col space-y-2 sm:space-y-2 w-full">
             <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
-              <p className="text-[13px] target-p-contact blockAllSelect">
-                Name
+              <p className="text-[14px] target-p-contact blockAllSelect">
+                {dataText.extras.footer.name}
               </p>
               <input
                 onChange={(e) => {
@@ -104,7 +107,7 @@ export default function ContactComponent({
               />
             </div>
             <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
-              <p className="text-[13px] target-p-contact blockAllSelect">
+              <p className="text-[14px] target-p-contact blockAllSelect">
                 Email
               </p>
               <input
@@ -130,7 +133,7 @@ export default function ContactComponent({
             />
           </div> */}
           <div className="border-[1px] flex-col w-full input-contact border-inputs-contact ">
-            <p className="text-[13px] target-p-contact blockAllSelect">
+            <p className="text-[14px] target-p-contact blockAllSelect">
               {dataText.extras.footer.input}
             </p>
             <textarea
@@ -143,14 +146,22 @@ export default function ContactComponent({
               value={userTextWrote}
             />
           </div>
-          {showMensajeSend && <div className="text-green-500 border-[1px] border-green-500 w-full text-center rounded-[8px]">Send data success</div>}
-          {showMensajeErr && <div className="text-red-300 border-[1px] border-red-500 w-full text-center rounded-[8px]">Incomplete data</div>}
-          
+          {showMensajeSend && (
+            <div className="text-green-500 border-[1px] border-green-500 w-full text-center rounded-[8px]">
+              Send data success
+            </div>
+          )}
+          {showMensajeErr && (
+            <div className="text-red-300 border-[1px] border-red-500 w-full text-center rounded-[8px]">
+              Incomplete data
+            </div>
+          )}
+
           <div className="w-full flex items-end justify-end ">
             <Button
               svg={true}
               icon={SVGsend}
-              text={"Send"}
+              text={dataText.extras.footer.send}
               onClick={() => verifyBeforeSend()}
               className="capitalize right-0 active:text-green-400"
             >

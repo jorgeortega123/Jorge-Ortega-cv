@@ -1,98 +1,89 @@
-$timeanim: 4.5s;
-$delayAnimationPc: .7s;
+$timeanim: 4.9s;
+$delayAnimationPc: 1.6s;
 $typeAni: forwards;
-.CVmonitor { 
- z-index: 3;
- animation-delay: $delayAnimationPc;
-//  animation: move-monitor $timeanim  $typeAni;
+.CVmonitor {
+  z-index: 3;
+  animation-delay: $delayAnimationPc;
+  //  animation: move-monitor $timeanim  $typeAni;
 }
 
-.CVimg-1{ 
-    z-index: 2;
-    animation-delay: $delayAnimationPc;
-    animation: move-1 $timeanim  $typeAni;
+.CVimg-1 {
+  z-index: 2;
+  animation: move-1 $timeanim $typeAni;
+  animation-delay: $delayAnimationPc;
 }
 
-.CVimg-2{ 
-    z-index: 2;
-    animation-delay: $delayAnimationPc;
-    animation: move-2 $timeanim $typeAni;
+.CVimg-2 {
+  z-index: 2;
+
+  animation: move-2 $timeanim $typeAni;
+  animation-delay: $delayAnimationPc;
 }
 
-.CVimg-3{ 
-    z-index: 2;
-    animation-delay: $delayAnimationPc;
-    animation: move-3 $timeanim  $typeAni;
+.CVimg-3 {
+  z-index: 2;
+
+  animation: move-3 $timeanim $typeAni;
+  animation-delay: $delayAnimationPc;
 }
 
-.CVimg-4{ 
-    z-index: 2;
-    animation-delay: $delayAnimationPc;
-    animation: move-4 $timeanim $typeAni;
-}
+.CVimg-4 {
+  z-index: 2;
 
+  animation: move-4 $timeanim $typeAni;
+  animation-delay: $delayAnimationPc;
+}
 
 @keyframes move-1 {
-    10% { 
-        transform: translateX(0);
-    }
-    70% { 
-        transform: translateX(150px) rotate(380deg);
-        
-    }
-    100% { 
-        transform: translateX(-10px);  
-    }
+  10% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(150px) rotate(380deg);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
 }
 
 @keyframes move-2 {
-
-    50% { 
-        transform: translateX(120px) translateY(120px) rotate(-80deg);
-        
-    }
-    95% { 
-        transform: translateX(0);  
-    }
+  50% {
+    transform: translateX(120px) translateY(120px) rotate(-80deg);
+  }
+  95% {
+    transform: translateX(0);
+  }
 }
-
 
 @keyframes move-3 {
-    10% { 
-        transform: translateX(0);
-    }
-    70% { 
-        transform: translateX(-120px) translateY(120px) rotate(-80deg);
-        
-    }
-    95% { 
-        transform: translateX(0);  
-    }
+  10% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(-120px) translateY(120px) rotate(-80deg);
+  }
+  95% {
+    transform: translateX(0);
+  }
 }
-
-
 
 @keyframes move-4 {
-
-    50% { 
-        transform:  translateY(120px) rotateZ(360deg);
-        
-    }
-    95% { 
-        transform: translateX(0);  
-    }
+  50% {
+    transform: translateY(120px) rotateZ(360deg);
+  }
+  95% {
+    transform: translateX(0);
+  }
 }
 
-
-
 @keyframes move-monitor {
-    10% { 
-        transform: translateX(0);
-    }
-    60% { 
-        transform: translateX(-50px);
-    }
-    90% { 
-        transform: translateX(0);  
-    }
+  10% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-50px);
+  }
+  90% {
+    transform: translateX(0);
+  }
 }

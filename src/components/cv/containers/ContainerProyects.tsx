@@ -29,10 +29,6 @@ export default function ContainerProyects({
 }) {
   const colors = [
     {
-      b: "#000000",
-      t: "#fff",
-    },
-    {
       b: "#ffe300",
       t: "#2A0944",
     },

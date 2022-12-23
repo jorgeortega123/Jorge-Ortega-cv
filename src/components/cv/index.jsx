@@ -26,13 +26,14 @@ import Header from "./Essentials/Header";
 import DownloadComponent from "./Essentials/DownloadComponent";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
+import InProgressKnowledge from "./containers/InProgressKnowledge";
 
 const staticInf = lang.static;
 const CvMain = () => {
   console.log(SendSGV);
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
-  const [dataText, setdataText] = useState(lang.en);
+  const [dataText, setdataText] = useState(lang.es);
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
@@ -108,7 +109,6 @@ const CvMain = () => {
       className={`main-container init text-${text_color} relative`}
     >
       <Background />
-
       <AnimatePresence>
         {showDownload && (
           <Modals
@@ -153,7 +153,10 @@ const CvMain = () => {
           <div className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
             {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
           </div>
-          <div id="about" className="textWrote w-11/12 lg:full mx-auto ">
+          <div
+            id="about"
+            className="textWrote w-11/12 lg:full mx-auto xl:mt-[-120px] "
+          >
             <div className="w-full flex flex-col max-w-[800px] mb-7">
               <MainContainer
                 className="flex relative bg-[#072346] rounded-md mt-10"
@@ -198,58 +201,23 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-            <div className="py-7 flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] p-4">
-              <div className="min-w-[400px] max-w-[700px] flex flex-col space-y-4 ">
-                <div>Actualmente estoy aprendiendo:</div>
-                <div className="relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
-                  <img
-                    className="max-w-[65px] h-max p-1"
-                    src={Postgree}
-                    alt=""
-                  />
-                  <div>
-                    <p className="font-bold text-[24px] mt-[10px]">
-                      PostgreeSQL
-                    </p>
-                    <p className="text-[19px]">Conocimiento basico</p>
-                  </div>
-                  <p className="text-[12px] absolute right-0 bottom-[-15px]">
-                    100%
-                  </p>
-                  <p className="text-[12px] absolute left-0 bottom-[-15px]">
-                    0%
-                  </p>
-                  <div
-                    className={`absolute bottom-0 bg-slate-100 transition-all w-[${40}%] h-[1px]`}
-                  ></div>
-                </div>
-                <div className="relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
-                  <img
-                    className="max-w-[65px] h-max p-1"
-                    src={Angular}
-                    alt=""
-                  />
-                  <div>
-                    <p className="font-bold text-[24px] mt-[10px]">
-                      Angular
-                    </p>
-                    <p className="text-[19px]">Conocimiento basico</p>
-                  </div>
-                  <p className="text-[12px] absolute right-0 bottom-[-15px]">
-                    100%
-                  </p>
-                  <p className="text-[12px] absolute left-0 bottom-[-15px]">
-                    0%
-                  </p>
-                  <div
-                    className={`absolute bottom-0 bg-slate-100 transition-all w-[${68}%] h-[1px]`}
-                  ></div>
-                </div>
+            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] pl-4 pr-4 pb-7 pt-2">
+              <div className="min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
+                <div className="">Actualmente estoy aprendiendo:</div>
+                <div className="flex flex-col space-y-4">
+                <InProgressKnowledge
+                  icon={Angular}
+                  name="Angular"
+                  percentage={46}
+                />
+                <InProgressKnowledge
+                  icon={Postgree}
+                  name="Postsgree"
+                  percentage={76}
+                /></div>
               </div>
             </div>
-            <MainContainer title="Servicios">
-              <p>Que puedo ofrezzco ?</p>
-            </MainContainer>
+           
             <div id="contact" className="w-full max-w-[800px]">
               <MainContainer className="" title={dataText.headers.contact}>
                 <div className="m-2 ">

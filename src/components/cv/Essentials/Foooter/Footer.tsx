@@ -37,6 +37,7 @@ export default function Footer({ staticInf, goToUrl }) {
             );
           })}
         </div>
+        <p className="absolute bottom-0 px-6 text-[18px]">Made with love. Watch code <a href="https://github.com/jorgeortega123/Jorge-Ortega-cv" target={"_blank"}  className="underline">  here</a> </p>
       </div>
       <div className="underline p-9 xl:text-[22px]">Jorge Ortega 2022</div>
     </div>
