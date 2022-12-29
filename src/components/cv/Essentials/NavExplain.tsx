@@ -13,7 +13,7 @@ export default function NavExplain({showMenuNavbar, dataText}) {
           className="menu-items capitalize top-0 fixed right-0 z-[3]"
         > 
           <p>
-            <a href="#home">Home</a>
+            <a href="#home">{dataText.headers.home}</a>
           </p>
           <p>
             <a href="#about">{dataText.headers.about}</a>
