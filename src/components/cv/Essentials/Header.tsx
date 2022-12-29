@@ -10,7 +10,7 @@ import monitorIcon from "../../../assets/image/monitor.png";
     import GithubSVG from "../../../assets/github.png";
     import InstagramSGV from "../../../assets/svg/instagram_.svg";
 import useMainContext from '../context/useMainContext';
-export default function Header({dataText, staticInf}) {
+export default function Header({dataText, staticInf, activeAnimationsHeader}) {
     const { data, goToUrl, changeOverflowY } = useMainContext();
   return (
     <div className="lg:min-h-screen flex flex-col-reverse sm:flex-row space-x-2 space-y-8 justify-center mb-12 w-full">
@@ -75,33 +75,34 @@ export default function Header({dataText, staticInf}) {
         src={animGIF}
         alt=""
       /> */}
-       <img
+       <img id='CVmonitor'
         className="max-w-[360px] xl:min-w-[600px] mt-6 xl:mt-[120%] xl:ml-[-400px] CVmonitor"
         src={animGIF}
         alt=""
+        onClick={()=>activeAnimationsHeader("already")}
       />
-      <img
-        className="absolute CVimg-1 w-10 xl:mt-[45%] xl:w-[70px]  xl:hidden"
+      <img id='CV1'
+        className="absolute w-10 xl:mt-[45%] xl:w-[70px]  xl:hidden"
         src={
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png"
         }
         alt=""
       />
-      <img
-        className="absolute CVimg-2 w-10 xl:mt-[-500px] xl:w-[70px] xl:hidden"
+      <img id='CV2'
+        className="absolute w-10 xl:mt-[-500px] xl:w-[70px] xl:hidden"
         src={
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805907/5968705_flyd73.png"
         }
         alt=""
       />
-      <img
-        className="absolute CVimg-3 w-10 xl:hidden"
+      <img id='CV3'
+        className="absolute w-10 xl:hidden"
         src={
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806164/logo_t5er37.png"
         }
         alt=""
       />
-      <img
+      <img id='CV3'
         className="absolute CVimg-4 w-10 xl:hidden"
         src={
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805764/framer-motion-logo-DA1E33CAA1-seeklogo.com_k8smvm.png"

@@ -12,8 +12,8 @@ export default function InProgressKnowledge({icon, name, percentage}:{
       src={icon}
       alt=""
     />
-    <div>
-      <p className="font-bold text-[24px] mt-[10px]">
+    <div className='about-me'>
+      <p className="font-bold text-[24px] mt-[10px] ">
         {name}
       </p>
       <p className="text-[19px]">Basic knowledge</p>

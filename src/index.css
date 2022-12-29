@@ -39,7 +39,12 @@
 .bodyLetter { 
   font-family: 'Lato', sans-serif;
 }
-
+.about-me { 
+  letter-spacing: 1px;
+}
+.header-info { 
+  line-height: 1.8rem;
+}
 @keyframes charging {
   50% { 
   left: 100%;

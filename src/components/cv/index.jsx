@@ -48,11 +48,21 @@ const CvMain = () => {
     if (document.readyState === "complete") {
       setisLoadedBody(true);
     } else {
-      window.addEventListener("load", () => setisLoadedBody(true));
+      window.addEventListener("load", () => {setisLoadedBody(true); activeAnimationsHeader()});
       return () =>
-        document.removeEventListener("load", () => setisLoadedBody(true));
+        document.removeEventListener("load", () =>  {setisLoadedBody(true); activeAnimationsHeader()});
     }
   }, []);
+  const activeAnimationsHeader = (already) => {
+ 
+    var idsAnim = ["CV1", "CV2", "CV3", "CV4"]
+    for (let i=0; i<idsAnim.length; i++) { 
+      if (already) {document.getElementById(idsAnim[i]).classList.remove(`CVimg-${i + 1}`)} 
+        document.getElementById(idsAnim[i]).classList.add(`CVimg-${i + 1}`)
+      }
+      
+    
+  }
   const showMenuTranslateFunc = () => {
     if (showMenuTranslate === false) {
       setshowMenuTranslate(true);
@@ -85,9 +95,12 @@ const CvMain = () => {
     setshowDownload(false);
   };
   const text_color = data?.text || "#fff";
-  if (!isLoadedBody)
-    return (
-      <AnimatePresence>
+  return (
+    <div
+      id="home"
+      className={`main-container init text-${text_color} relative`}
+    > 
+    {!isLoadedBody && <AnimatePresence>
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 1, x: 0 }}
@@ -101,13 +114,7 @@ const CvMain = () => {
             </div>
           </div>
         </motion.div>
-      </AnimatePresence>
-    );
-  return (
-    <div
-      id="home"
-      className={`main-container init text-${text_color} relative`}
-    >
+      </AnimatePresence>}
       <Background />
       <AnimatePresence>
         {showDownload && (
@@ -148,7 +155,7 @@ const CvMain = () => {
           <NavExplain showMenuNavbar={showMenuNavbar} dataText={dataText} />
         </AnimatePresence>
         <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-          <Header dataText={dataText} staticInf={staticInf} />
+          <Header dataText={dataText} staticInf={staticInf} activeAnimationsHeader={activeAnimationsHeader} />
 
           <div className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
             {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
@@ -163,7 +170,7 @@ const CvMain = () => {
                 title={dataText.headers.about}
               >
                 <div
-                  className={`font-[100] normalText p-[10px] rounded-[10px] lg:text-[23px] xl:text-[26px] text-${text_color}`}
+                  className={`font-[100] header-info normalText p-[10px] rounded-[10px] lg:text-[23px] xl:text-[26px] text-${text_color}`}
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
@@ -202,9 +209,9 @@ const CvMain = () => {
               </div>
             </MainContainer>
             <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] pl-4 pr-4 pb-7 pt-2">
-              <div className="min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
+              <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
                 <div className="">Currently I'm learning:</div>
-                <div className="flex flex-col space-y-4">
+                <div className=" flex flex-col space-y-4">
                 <InProgressKnowledge
                   icon={Angular}
                   name="Angular"
