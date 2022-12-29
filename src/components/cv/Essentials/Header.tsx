@@ -76,7 +76,7 @@ export default function Header({dataText, staticInf}) {
         alt=""
       /> */}
        <img
-        className="max-w-[280px] xl:min-w-[600px] mt-6 xl:mt-[120%] xl:ml-[-400px] CVmonitor"
+        className="max-w-[360px] xl:min-w-[600px] mt-6 xl:mt-[120%] xl:ml-[-400px] CVmonitor"
         src={animGIF}
         alt=""
       />

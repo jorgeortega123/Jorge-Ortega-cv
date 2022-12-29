@@ -203,7 +203,7 @@ const CvMain = () => {
             </MainContainer>
             <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] pl-4 pr-4 pb-7 pt-2">
               <div className="min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
-                <div className="">Actualmente estoy aprendiendo:</div>
+                <div className="">Currently I'm learning:</div>
                 <div className="flex flex-col space-y-4">
                 <InProgressKnowledge
                   icon={Angular}
@@ -212,7 +212,7 @@ const CvMain = () => {
                 />
                 <InProgressKnowledge
                   icon={Postgree}
-                  name="Postsgree"
+                  name="PostgreSQL"
                   percentage={76}
                 /></div>
               </div>
