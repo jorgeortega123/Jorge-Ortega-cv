@@ -23,9 +23,9 @@ export default function FileView({
   }
  
   return (
-    <div  onClick={()=>{download(cv)}}  className={`bg-[#0000002b] hover:bg-gray-900 text-white w-full cursor-pointer  my-2 rounded-[6px] px-2 py-3 flex justify-center items-center min-h-[64px]`}>
+    <a href={cv}  onClick={()=>{download(cv)}}  className={`z-[3] bg-[#0000002b] hover:bg-gray-900 text-white w-full cursor-pointer  my-2 rounded-[6px] px-2 py-3 flex justify-center items-center min-h-[64px]`}>
       <div className="flex flex-col relative mr-2">
-        <a href={cv} download="Asadasd.pdf" className=" px-[9px] ">
+        <a className=" px-[9px] ">
           {title}
         </a>
         <p className="absolute font-[Montserrat] text-[13px] bottom-[-20px] right-0 ">{children}</p>
@@ -40,6 +40,6 @@ export default function FileView({
           <img onClick={()=>{download(cv)}} src={DownloadSvg} className="" alt="" />
         </button>
       </div>
-    </div>
+    </a>
   );
 }
