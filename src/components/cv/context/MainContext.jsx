@@ -16,7 +16,6 @@ function MainContextComponent({ children }) {
 
   const sendText = async (data) => {
     var res = await sendServer(server, "/telegramCV", data);
-    console.log(res);
   };
   const goToUrl = (linkOpen, method) => {
     var link = document.createElement("a");

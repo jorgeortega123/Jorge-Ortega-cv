@@ -60,7 +60,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
                   className="capitalize flex space-x-5 text-[15px]"
                 >
                   <p className="hover:text-yellow-500">
-                    <a href="#home">Home</a>
+                    <a href="#home">{dataText.headers.home}</a>
                   </p>
                   <p className="hover:text-cyan-300">
                     <a href="#about">{dataText.headers.about}</a>
