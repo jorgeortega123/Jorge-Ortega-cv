@@ -1,5 +1,5 @@
-$timeanim: 4.9s;
-$delayAnimationPc: 1.6s;
+$timeanim: 9.9s;
+$delayAnimationPc: 1.6;
 $typeAni: forwards;
 .CVmonitor {
   z-index: 3;
@@ -9,95 +9,115 @@ $typeAni: forwards;
 
 .CVimg-1 {
   z-index: 2;
-  animation: move-1 $timeanim $typeAni;
-  animation-delay: $delayAnimationPc;
+  animation: move-normal $timeanim $typeAni;
+  animation-delay: 1.4s;
 }
 
 .CVimg-2 {
   z-index: 2;
-  animation: move-2 $timeanim $typeAni;
-  animation-delay: $delayAnimationPc;
+  animation: move-normal $timeanim $typeAni;
+  animation-delay: 2.2s;
 }
 
 .CVimg-3 {
   z-index: 2;
 
-  animation: move-3 $timeanim $typeAni;
-  animation-delay: $delayAnimationPc;
+  animation: move-normal $timeanim $typeAni;
+  animation-delay: 3s;
 }
 
 .CVimg-4 {
   z-index: 2;
 
-  animation: move-4 $timeanim $typeAni;
-  animation-delay: $delayAnimationPc;
+  animation: move-normal $timeanim $typeAni;
+  animation-delay: 3.8s;
 }
-
-@keyframes move-1 {
-  10% {
-    transform: translateX(0);
+@keyframes move-normal {
+  0% { 
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
   }
   70% {
-    transform: translateX(150px) rotate(380deg);
-    opacity: 1;
+    transform:  translateX(calc(-100vh / 3));
   }
-  100% {
-    opacity: 0;
-    transform: translateX(-10px);
+  72% {
+    transform: translateX(-100vh /2);
   }
-}
-
-@keyframes move-2 {
-  50% {
-    transform: translateX(120px) translateY(120px) rotate(-80deg);
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-}
-
-@keyframes move-3 {
-  10% {
-    transform: translateX(0);
-  }
-  70% {
-    transform: translateX(-120px) translateY(120px) rotate(-80deg);
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-}
-
-@keyframes move-4 {
-  50% {
-    transform: translateY(120px) rotateZ(360deg);
-  }
-  95% {
-   
+  80% {
     opacity: 1;
   }
   100% { 
     opacity: 0;
-    transform: translateX(0);  
   }
 }
 
-@keyframes move-monitor {
-  10% {
-    transform: translateX(0);
-  }
-  60% {
-    transform: translateX(-50px);
-  }
-  90% {
-    transform: translateX(0);
-  }
-}
+// @keyframes move-1 {
+//   10% {
+//     transform: translateX(0);
+//   }
+//   70% {
+//     transform: translateX(130px) rotate(380deg);
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateX(-10px);
+//   }
+// }
+
+// @keyframes move-2 {
+//   50% {
+//     transform: translateX(120px) translateY(120px) rotate(-80deg);
+//   }
+//   90% {
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateX(0);
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes move-3 {
+//   10% {
+//     transform: translateX(0);
+//   }
+//   70% {
+//     transform: translateX(-120px) translateY(120px) rotate(-80deg);
+//   }
+//   95% {
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: translateX(0);
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes move-4 {
+//   50% {
+//     transform: translateY(120px) rotateZ(360deg);
+//   }
+//   95% {
+
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateX(0);
+//   }
+// }
+
+// @keyframes move-monitor {
+//   10% {
+//     transform: translateX(0);
+//   }
+//   60% {
+//     transform: translateX(-50px);
+//   }
+//   90% {
+//     transform: translateX(0);
+//   }
+// }

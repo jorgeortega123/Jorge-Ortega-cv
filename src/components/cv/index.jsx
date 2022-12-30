@@ -48,21 +48,26 @@ const CvMain = () => {
     if (document.readyState === "complete") {
       setisLoadedBody(true);
     } else {
-      window.addEventListener("load", () => {setisLoadedBody(true); activeAnimationsHeader()});
+      window.addEventListener("load", () => {
+        setisLoadedBody(true);
+        activeAnimationsHeader();
+      });
       return () =>
-        document.removeEventListener("load", () =>  {setisLoadedBody(true); activeAnimationsHeader()});
+        document.removeEventListener("load", () => {
+          setisLoadedBody(true);
+          activeAnimationsHeader();
+        });
     }
   }, []);
   const activeAnimationsHeader = (already) => {
- 
-    var idsAnim = ["CV1", "CV2", "CV3", "CV4"]
-    for (let i=0; i<idsAnim.length; i++) { 
-      if (already) {document.getElementById(idsAnim[i]).classList.remove(`CVimg-${i + 1}`)} 
-        document.getElementById(idsAnim[i]).classList.add(`CVimg-${i + 1}`)
+    var idsAnim = ["CV1", "CV2", "CV3", "CV4"];
+    for (let i = 0; i < idsAnim.length; i++) {
+      if (already) {
+        document.getElementById(idsAnim[i]).classList.remove(`CVimg-${i + 1}`);
       }
-      
-    
-  }
+      document.getElementById(idsAnim[i]).classList.add(`CVimg-${i + 1}`);
+    }
+  };
   const showMenuTranslateFunc = () => {
     if (showMenuTranslate === false) {
       setshowMenuTranslate(true);
@@ -99,22 +104,24 @@ const CvMain = () => {
     <div
       id="home"
       className={`main-container init text-${text_color} relative`}
-    > 
-    {!isLoadedBody && <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ type: "tween" }}
-        >
-          <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
-            <span className="bg-white"></span>
-            <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
-              <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
+    >
+      {!isLoadedBody && (
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: "tween" }}
+          >
+            <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
+              <span className="bg-white"></span>
+              <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
+                <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>}
+          </motion.div>
+        </AnimatePresence>
+      )}
       <Background />
       <AnimatePresence>
         {showDownload && (
@@ -150,12 +157,30 @@ const CvMain = () => {
         showTextOnNavbar={showTextOnNavbar}
         dataText={dataText}
       />
-      <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full relative ">
+      <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
         <AnimatePresence>
-          <NavExplain showMenuNavbar={showMenuNavbar} dataText={dataText} />
+          {showMenuNavbar && (
+            <motion.div
+              initial={{opacity: 0, zIndex:7 }}
+              animate={{opacity: 1, x: 0,zIndex:7  }}
+              exit={{ opacity: 0 }}
+              transition={{ type: "tween", duration:0.2 }}
+              
+            >
+              <NavExplain
+                setshowMenuNavbar={setshowMenuNavbar}
+                showMenuNavbar={showMenuNavbar}
+                dataText={dataText}
+              />
+            </motion.div>
+          )}
         </AnimatePresence>
         <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
-          <Header dataText={dataText} staticInf={staticInf} activeAnimationsHeader={activeAnimationsHeader} />
+          <Header
+            dataText={dataText}
+            staticInf={staticInf}
+            activeAnimationsHeader={activeAnimationsHeader}
+          />
 
           <div className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
             {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
@@ -212,19 +237,20 @@ const CvMain = () => {
               <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
                 <div className="">Currently I'm learning:</div>
                 <div className=" flex flex-col space-y-4">
-                <InProgressKnowledge
-                  icon={Angular}
-                  name="Angular"
-                  percentage={46}
-                />
-                <InProgressKnowledge
-                  icon={Postgree}
-                  name="PostgreSQL"
-                  percentage={76}
-                /></div>
+                  <InProgressKnowledge
+                    icon={Angular}
+                    name="Angular"
+                    percentage={46}
+                  />
+                  <InProgressKnowledge
+                    icon={Postgree}
+                    name="PostgreSQL"
+                    percentage={76}
+                  />
+                </div>
               </div>
             </div>
-           
+
             <div id="contact" className="w-full max-w-[800px]">
               <MainContainer className="" title={dataText.headers.contact}>
                 <div className="m-2 ">

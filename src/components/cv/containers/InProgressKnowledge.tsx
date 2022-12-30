@@ -18,10 +18,10 @@ export default function InProgressKnowledge({icon, name, percentage}:{
       </p>
       <p className="text-[19px]">Basic knowledge</p>
     </div>
-    <p className="text-[12px] absolute right-0 bottom-[-15px]">
+    <p className="text-sm absolute right-0 bottom-[-18px]">
       100%
     </p>
-    <p className="text-[12px] absolute left-0 bottom-[-15px]">
+    <p className="text-sm absolute left-0 bottom-[-18px]">
       0%
     </p>
     <p className={`text-[13px] text-[#66ff00] absolute text-left bottom-[1px] ml-[${percentage - 2}%]`}>
