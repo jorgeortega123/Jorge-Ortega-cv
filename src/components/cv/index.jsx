@@ -17,14 +17,13 @@ import LoadingScreenView from "./Essentials/LoadingScreenView";
 import NavView from "./Essentials/NavView";
 import Footer from "./Essentials/Foooter/Footer";
 import ImageView from "./Essentials/ImageView";
-// Context
-import useMainContext from "./context/useMainContext";
-import NavExplain from "./Essentials/NavExplain";
-import Header from "./Essentials/Header";
-import DownloadComponent from "./Essentials/DownloadComponent";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
 import InProgressKnowledge from "./containers/InProgressKnowledge";
+import NavExplain from "./Essentials/NavExplain";
+import Header from "./Essentials/Header";
+// Context
+import useMainContext from "./context/useMainContext";
 
 const staticInf = lang.static;
 const CvMain = () => {

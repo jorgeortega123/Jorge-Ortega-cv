@@ -7,7 +7,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
   const {showMenuNavbar, setshowMenuNavbar} = useMainContext()
   return (
     <>
-    <div className="nav sticky top-0 blockAllSelect flex items-center justify-center ">
+    <div className="nav h-[46px] sticky top-0 blockAllSelect flex items-center justify-center ">
           <div className="w-full max-w-[800px] relative">
             <div className="flex w-full lg:max-w-[200px]">
               <button
