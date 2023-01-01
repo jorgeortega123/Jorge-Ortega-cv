@@ -8,8 +8,15 @@ export const lang = {
       about: "Acerca de mi",
       proyects: "Proyectos",
       contact: "Contactar",
+      callme: "Teléfono:",
       developer: "Desarrollador",
       knowledge: "Conocimiento",
+      learning: "Actualmente estoy aprendiendo:",
+      basicKnowledge: "Conocimiento básico", 
+      tools: "Herramientas",
+      eng: "Inglés",
+      es: "Español",
+      downloadCv: "Descargar Curriculum Vitae",
       aboutInfo: `        Hola, soy desarrollador <span class="text-bold mark-1">frontend</span>,
       comencé a escribir mi primer código desde los 14 años. Siempre he
       buscado la manera de
@@ -20,6 +27,9 @@ export const lang = {
       <span class="text-bold mark-1">búsqueda de conocimiento</span>. Soy
       autodidacta, proactivo, sé trabajar en equipo y dirigir uno.`,
       aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
+      footerText: "Hecho con amor, código fuente",
+      footerTextLink: "aquí"
+      
     },
     contact: {
       about:
@@ -99,6 +109,8 @@ export const lang = {
         email: "Email copiado en portapapeles!",
       },
       download: "Descargando cv en español...",
+      incomplete: "Completa todos los datos!",
+      successSend: "Se enviaron tus datos!"
     },
     extras: {
       footer: {
@@ -135,10 +147,19 @@ export const lang = {
       about: "About",
       proyects: "Proyects",
       contact: "Contact",
+      callme: "Call me:",
       developer: "Developer",
       knowledge: "Skills",
+      learning: "Currently I am learning:",
+      basicKnowledge: "Basic knowledge", 
+      tools: "Tools",
+      eng: "English",
+      es: "Spanish",
+      downloadCv: "Download Curriculum Vitae",
       aboutInfo: `Hi, I'm a <span class="text-bold mark-1">frontend</span> developer, I started writing my first code since I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and I realize that this is really what I like and I want to live from it.`,
       aboutInfo2: ` I know how use frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>, <span class="text-bold mark-1">TailwindCss</span> (also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
+      footerText: "Made with love. Watch code",
+      footerTextLink: "here"
     },
     contact: {
       about: "Get in touch:",
@@ -200,6 +221,8 @@ export const lang = {
         email: "Email copy to clipboard!",
       },
       download: "Downloading cv in english...",
+      incomplete: "Complete all inputs!",
+      successSend: "Data sent success!"
     },
     extras: {
       footer: {
@@ -283,5 +306,16 @@ export const lang = {
         ],
       },
     ],
+    incomingKnowledge: [{
+      title: "Angular",
+      icon: "./image/angular.png",
+      percentage: 57
+    },{
+      title: "PostgreSQL",
+      icon: "./image/postgresql.png",
+      percentage: 85
+    }
+
+    ]
   },
 };

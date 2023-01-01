@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer({ staticInf, goToUrl }) {
+export default function Footer({ staticInf, goToUrl, dataText }) {
   return (
     <div
       id="bottomPage"
@@ -9,17 +9,17 @@ export default function Footer({ staticInf, goToUrl }) {
       <div className="flex flex-col w-full">
         <div className="pl-6 pt-6 pb-4">
           <p className="mb-1 text-[18px] xl:text-[24px] font-[subtitle]">Jorge Ortega</p>
-          <p className="text-slate-200 xl:text-[20px]">Frotend Developer</p>
+          <p className="text-slate-200 xl:text-[20px]">{dataText.headers.sub}</p>
         </div>
         <div className="pl-6 py-2 pb-5 xl:text-[22px] ">
           <p>
-            <a className="hover:text-slate-300" href="#home">Home</a>
+            <a className="hover:text-slate-300" href="#home">{dataText.headers.home}</a>
           </p>
           <p className="py-2">
-            <a className="hover:text-slate-300" href="#proyects">Proyects</a>
+            <a className="hover:text-slate-300" href="#proyects">{dataText.headers.proyects}</a>
           </p>
           <p>
-            <a className="hover:text-slate-300" href="#contact">Contact</a>
+            <a className="hover:text-slate-300" href="#contact">{dataText.headers.contact}</a>
           </p>
         </div>
         <div className="flex capitalize space-x-2 ">
@@ -37,7 +37,7 @@ export default function Footer({ staticInf, goToUrl }) {
             );
           })}
         </div>
-        <p className="absolute bottom-0 px-6 text-[18px]">Made with love. Watch code <a href="https://github.com/jorgeortega123/Jorge-Ortega-cv" target={"_blank"}  className="underline">  here</a> </p>
+        <p className="absolute bottom-0 px-6 text-[18px]">{dataText.headers.footerText} {" "}<a href="https://github.com/jorgeortega123/Jorge-Ortega-cv" target={"_blank"}  className="underline">{dataText.headers.footerTextLink}</a> </p>
       </div>
       <div className="underline p-9 xl:text-[22px]">Jorge Ortega 2022</div>
     </div>

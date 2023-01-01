@@ -3,9 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import useMainContext from '../context/useMainContext';
 import TranslateView from './TranslateView';
 import AnimationsLoader from './AnimationsLoader/AnimationsLoader';
-export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTranslate, changeLang, selectedLang, showTextOnNavbar, dataText}) {
+export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTranslate, changeLang, selectedLang, children, dataText}) {
   const {showMenuNavbar, setshowMenuNavbar} = useMainContext()
   return (
+    <>
     <div className="nav sticky top-0 blockAllSelect flex items-center justify-center ">
           <div className="w-full max-w-[800px] relative">
             <div className="flex w-full lg:max-w-[200px]">
@@ -29,8 +30,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
               <div className="flex blockAllSelect relative w-[100px]">
                 <div className="items-center flex">
                 </div>
-                
-                <div>
+                <div className='z-[12]'>
                 <AnimationsLoader duration={3} moveX={10}>
                   <img
                     src={LangSvg}
@@ -77,5 +77,6 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
             </div>
           </div>
         </div>
+        {children}</>
   )
 }

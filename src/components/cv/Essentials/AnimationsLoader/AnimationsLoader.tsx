@@ -8,9 +8,9 @@ export default function AnimationsLoader({
   duration=2,
   children,
 }:{
-  moveX: number;
-  moveY: number;
-  delay:number;
+  moveX?: number;
+  moveY?: number;
+  delay?: number;
   duration:number
   children: any;
 }) {

@@ -33,7 +33,7 @@ export default function Modals({
       ></div>
       <div className=" absolute w-[280px] rounded-md top-[30%]  bg-[#0f2d51] rounded-b-xl mx-auto  shadow-sm border-2 border-[#0000006b] ">
         <div className="flex justify-between">
-          <div className=" text-white pt-2 pl-2">{title}</div>
+          <div className=" text-white pt-2 pl-2 ">{title}</div>
           <div
             className="bg-[#0000002e] mr-[1px] px-2 rounded-[6px] text-red-500 items-end flex justify-end pr-2 mt-[6px] text-[18px] hover:text-red-600 cursor-pointer"
             onClick={() => {

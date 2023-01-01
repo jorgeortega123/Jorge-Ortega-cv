@@ -12,15 +12,15 @@ export default function Button({
   andNumber = 0,
   ...props
 }: {
-  text: string;
-  icon: any;
-  spaceY: number;
-  imageSize: number;
-  className: string
-  svg: boolean,
+  text?: string;
+  icon?: any;
+  spaceY?: number;
+  imageSize?: number;
+  className?: string
+  svg?: boolean,
   children:any, 
-  andNumber: number
-  onClick: ()=> void;
+  andNumber?: number
+  onClick?: ()=> void;
 }) {
   const [active, setactive] = useState(false)
   return (

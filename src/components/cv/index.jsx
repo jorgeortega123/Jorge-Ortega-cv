@@ -5,8 +5,6 @@ import "./animation.scss";
 // svg's icons
 import LangSvg from "./../../assets/svg/lang.svg";
 import SendSGV from "./../../assets/svg/send.svg";
-import Postgree from "./../../assets/image/p.png";
-import Angular from "./../../assets/image/a.png";
 import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
 // Components
 import MainContainer from "./containers/MainContainer";
@@ -30,7 +28,6 @@ import InProgressKnowledge from "./containers/InProgressKnowledge";
 
 const staticInf = lang.static;
 const CvMain = () => {
-  console.log(SendSGV);
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
   const [dataText, setdataText] = useState(lang.es);
@@ -39,7 +36,7 @@ const CvMain = () => {
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
   const [showImg, setshowImg] = useState(false);
   const [isLoadedBody, setisLoadedBody] = useState(false);
-  const [defaultLang, setdefaultLang] = useState("en");
+  const [defaultLang, setdefaultLang] = useState();
   const [imgSrc, setimgSrc] = useState(
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
@@ -82,10 +79,9 @@ const CvMain = () => {
   };
   const selectedLang = (e) => {
     if (defaultLang === e) {
-      return "text-blue-500";
-    } else {
-      return "text-slate-100";
-    }
+      return true} else {
+        return false
+      }
   };
   const showImage = (src) => {
     setshowImg(true);
@@ -105,6 +101,16 @@ const CvMain = () => {
       id="home"
       className={`main-container init text-${text_color} relative`}
     >
+      <Background />
+      <NavView
+        LangSvg={LangSvg}
+        showMenuTranslateFunc={showMenuTranslateFunc}
+        showMenuTranslate={showMenuTranslate}
+        changeLang={changeLang}
+        selectedLang={selectedLang}
+        showTextOnNavbar={showTextOnNavbar}
+        dataText={dataText}
+      ></NavView>
       {!isLoadedBody && (
         <AnimatePresence>
           <motion.div
@@ -122,12 +128,11 @@ const CvMain = () => {
           </motion.div>
         </AnimatePresence>
       )}
-      <Background />
       <AnimatePresence>
         {showDownload && (
           <Modals
             setshowDownload={setshowDownload}
-            title="Download curriculum vitae"
+            title={dataText.headers.downloadCv}
           >
             <FileView
               title={"" + staticInf.name + "_cv.pdf"}
@@ -135,7 +140,7 @@ const CvMain = () => {
               handlerChangeByDownload={handlerChangeByDownload}
               index={1}
             >
-              {staticInf.cv.en.text}
+              {dataText.headers.eng}
             </FileView>
             <FileView
               title={staticInf.name + "_cv.pdf"}
@@ -143,29 +148,20 @@ const CvMain = () => {
               handlerChangeByDownload={handlerChangeByDownload}
               index={2}
             >
-              {staticInf.cv.es.text}
+                 {dataText.headers.es}
             </FileView>
           </Modals>
         )}
       </AnimatePresence>
-      <NavView
-        LangSvg={LangSvg}
-        showMenuTranslateFunc={showMenuTranslateFunc}
-        showMenuTranslate={showMenuTranslate}
-        changeLang={changeLang}
-        selectedLang={selectedLang}
-        showTextOnNavbar={showTextOnNavbar}
-        dataText={dataText}
-      />
+      {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
       <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
         <AnimatePresence>
           {showMenuNavbar && (
             <motion.div
-              initial={{opacity: 0, zIndex:7 }}
-              animate={{opacity: 1, x: 0,zIndex:7  }}
+              initial={{ opacity: 0, zIndex: 7 }}
+              animate={{ opacity: 1, x: 0, zIndex: 7 }}
               exit={{ opacity: 0 }}
-              transition={{ type: "tween", duration:0.2 }}
-              
+              transition={{ type: "tween", duration: 0.2 }}
             >
               <NavExplain
                 setshowMenuNavbar={setshowMenuNavbar}
@@ -181,10 +177,6 @@ const CvMain = () => {
             staticInf={staticInf}
             activeAnimationsHeader={activeAnimationsHeader}
           />
-
-          <div className="w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
-            {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
-          </div>
           <div
             id="about"
             className="textWrote w-11/12 lg:full mx-auto xl:mt-[-120px] "
@@ -212,7 +204,7 @@ const CvMain = () => {
               className="flex "
               title={dataText.headers.proyects}
             >
-              <div className="relative mt-6">
+              <div id="proyects-view" className="relative mt-6">
                 <div className="w-full flex justify-center items-center">
                   <div className="flex-col space-y-4 lg:space-y-7 w-full xl:w-8/12">
                     {dataText.proyects.map((e, n) => {
@@ -235,18 +227,17 @@ const CvMain = () => {
             </MainContainer>
             <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] pl-4 pr-4 pb-7 pt-2">
               <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
-                <div className="">Currently I'm learning:</div>
+                <div className="">{dataText.headers.learning}</div>
                 <div className=" flex flex-col space-y-4">
-                  <InProgressKnowledge
-                    icon={Angular}
-                    name="Angular"
-                    percentage={46}
-                  />
-                  <InProgressKnowledge
-                    icon={Postgree}
-                    name="PostgreSQL"
-                    percentage={76}
-                  />
+                  {staticInf.incomingKnowledge.map((d) => { 
+                    console.log(d); return(<InProgressKnowledge
+                      dataText={dataText.headers.basicKnowledge}
+                      icon={d.icon}
+                      name={d.title}
+                      percentage={d.percentage}
+                    />)
+                    
+                  })}
                 </div>
               </div>
             </div>
@@ -263,7 +254,7 @@ const CvMain = () => {
             </div>
           </div>
         </div>
-        <Footer staticInf={staticInf} goToUrl={goToUrl} />
+        <Footer dataText={dataText} staticInf={staticInf} goToUrl={goToUrl} />
       </div>
     </div>
   );

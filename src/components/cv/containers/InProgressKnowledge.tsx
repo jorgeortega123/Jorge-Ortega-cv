@@ -1,14 +1,15 @@
 import React from 'react'
 
-export default function InProgressKnowledge({icon, name, percentage}:{ 
+export default function InProgressKnowledge({icon, name, percentage,  dataText}:{ 
     icon:string;
     name: string;
-    percentage: number
+    percentage: number,
+    dataText: string
 }) {
   return (
     <div className=" relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
     <img
-      className="max-w-[65px] h-max p-1"
+      className="max-w-[65px] h-auto max-h-[65px] p-1"
       src={icon}
       alt=""
     />
@@ -16,7 +17,7 @@ export default function InProgressKnowledge({icon, name, percentage}:{
       <p className="font-bold text-[24px] mt-[10px] ">
         {name}
       </p>
-      <p className="text-[19px]">Basic knowledge</p>
+      <p className="text-[19px]">{dataText}</p>
     </div>
     <p className="text-sm absolute right-0 bottom-[-18px]">
       100%

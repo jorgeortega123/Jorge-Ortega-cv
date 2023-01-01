@@ -7,12 +7,16 @@ import Button from "../../Button";
 import { SendIcon } from "../../../../../assets/svg";
 export default function ContactComponent({
   dataText = {
+    headers: {callme: ""},
+    functions : {  incomplete: "", successSend: "" },
     contact: { email: "@" },
     extras: { footer: { input: "", name: "", send: "" } },
   },
   copyToClipBoard,
 }: {
   dataText: {
+    headers: {callme: string}
+    functions : {  incomplete: string, successSend: string },
     contact: { email: string };
     extras: { footer: { input: string; name: string; send: string } };
   };
@@ -26,7 +30,7 @@ export default function ContactComponent({
   const [showMensajeSend, setShowMensajeSend] = useState(false);
   const [showMensajeErr, setShowMensajeErr] = useState(false);
   const dataContact = [
-    { inf: "+593 9627  16235", icon: CallSVG, title: "Call me", href: "tel:" },
+    { inf: "+593 9627  16235", icon: CallSVG, title: dataText.headers.callme, href: "tel:" },
     {
       inf: dataText.contact.email,
       icon: MailSVG,
@@ -79,7 +83,7 @@ export default function ContactComponent({
                 <img src={e.icon} alt="" />
               </div>
               <div className="altura-letras ">
-                <div className="font-bold text-[26px] text-[#66ff00]">
+                <div className="font-bold text-[26px] text-[#66ff00] spacing-letters ">
                   {e.title}
                 </div>
                 <div className="font-light text-slate-200 text-[19px] transition-all ">
@@ -148,12 +152,12 @@ export default function ContactComponent({
           </div>
           {showMensajeSend && (
             <div className="text-green-500 border-[1px] border-green-500 w-full text-center rounded-[8px]">
-              Send data success
+              {dataText.functions.successSend}
             </div>
           )}
           {showMensajeErr && (
             <div className="text-red-300 border-[1px] border-red-500 w-full text-center rounded-[8px]">
-              Incomplete data
+                {dataText.functions.incomplete}
             </div>
           )}
 

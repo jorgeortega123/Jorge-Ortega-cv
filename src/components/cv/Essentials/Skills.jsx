@@ -107,7 +107,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
       >
         <div className="p-4 select-none ">
           <div className="relative">
-          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[70px] font-bold text-[24px]">Frontend</p></div>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-max px-2  font-bold text-[24px]">Frontend</p></div>
           <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="grid grid-cols-4 gap-2 justify-center items-center my-3">
             {images.frontend.map((e) => {
@@ -120,7 +120,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
           <div className="relative">
-          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[70px] font-bold text-[24px]">Backend</p></div>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-max px-2 font-bold text-[24px]">Backend</p></div>
           <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="z-[0] absolute left-0 top-[15px] w-[70px] h-[1px] sm:w-[98px] lg:w-[120px] main-color"></div>
           <div className="w-full grid grid-cols-4 gap-2 justify-center items-center my-3">
@@ -134,7 +134,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
             })}
           </div></div>
           <div className="relative">
-          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-[50px] font-bold text-[24px]"> Tools</p></div>
+          <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  "><p className="z-[2] bg-[#082847] w-max px-2 font-bold text-[24px]">{dataText.headers.tools}</p></div>
           <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color"></div>
           <div className="grid grid-cols-4 gap-2">
             {images.tools.map((e) => {
