@@ -308,11 +308,11 @@ export const lang = {
     ],
     incomingKnowledge: [{
       title: "Angular",
-      icon: "./image/angular.png",
+      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536521/angular_bffjli.png",
       percentage: 57
     },{
       title: "PostgreSQL",
-      icon: "./image/postgresql.png",
+      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
       percentage: 85
     }
 

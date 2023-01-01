@@ -15,7 +15,7 @@ export default function Header({
   staticInf,
   activeAnimationsHeader,
 }) {
-  const { data, goToxUrl, changeOverflowY } = useMainContext();
+  const { data, goToUrl, changeOverflowY } = useMainContext();
   return (
     <div className=" lg:min-h-screen flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 mt-3 w-full">
       <div className="p-2 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-120px] xl:mx-auto xl:ml-[270px]">

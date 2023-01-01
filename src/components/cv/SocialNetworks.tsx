@@ -8,11 +8,11 @@ export default function SocialNetworks({
   number = 0,
   ...props
 }: {
-  img: any;
-  url: string;
-  classNamee: any;
-  intoImg: any; 
-  number: number
+  img?: any;
+  url?: string;
+  classNamee?: any;
+  intoImg?: any; 
+  number?: number
 }) { 
     const goToUrl = (linkOpen:any) => { 
         var link = document.createElement("a");
