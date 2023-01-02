@@ -82,10 +82,10 @@ const CvMain = () => {
         return false
       }
   };
-  const showImage = (src) => {
+  const showImage = (data) => {
     setshowImg(true);
     changeOverflowY();
-    setimgSrc(src);
+    setimgSrc(data);
   };
   const changeHandlerBodyLoaded = () => {
     setisLoadedBody(true);
@@ -178,7 +178,7 @@ const CvMain = () => {
           />
           <div
             id="about"
-            className="textWrote w-11/12 lg:full mx-auto xl:mt-[-120px] "
+            className="textWrote w-11/12 lg:full mx-auto xl:mt-[-70px] "
           >
             <div className="w-full flex flex-col max-w-[800px] mb-7">
               <MainContainer
@@ -224,10 +224,10 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] pl-4 pr-4 pb-7 pt-2">
+            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] lg:rounded-[12px] pl-4 pr-4 pb-7 pt-2">
               <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
-                <div className="">{dataText.headers.learning}</div>
-                <div className=" flex flex-col space-y-4">
+                <div className="text-[1.5rem]">{dataText.headers.learning}</div>
+                <div className=" flex flex-col space-y-[1.5rem]">
                   {staticInf.incomingKnowledge.map((d) => { 
                     console.log(d); return(<InProgressKnowledge
                       dataText={dataText.headers.basicKnowledge}

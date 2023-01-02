@@ -1,7 +1,7 @@
-@import "@fontsource/roboto/300.css";
-@import "@fontsource/roboto/400.css";
-@import "@fontsource/roboto/500.css";
-@import "@fontsource/roboto/700.css";
+// @import "@fontsource/roboto/300.css";
+// @import "@fontsource/roboto/400.css";
+// @import "@fontsource/roboto/500.css";
+// @import "@fontsource/roboto/700.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400&display=swap");
 $base-color-h1: #fff;
@@ -26,8 +26,9 @@ html {
 svg {
   fill: $main-color;
 }
-//#201211
-
+.header-altura { 
+  min-height: calc(100vh);
+}
 .title-skill {
   font-weight: 600;
   color: #ffffff;

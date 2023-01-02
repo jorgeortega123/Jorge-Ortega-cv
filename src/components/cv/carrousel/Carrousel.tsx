@@ -4,11 +4,13 @@ import PinchToZoom from "react-pinch-and-zoom";
 function HeroMain({
   images,
   className,
+  proyect,
   showImage,
 }: {
   images: string[] | undefined;
   className?: string;
-  showImage: (data: string) => void;
+  proyect?: string;
+  showImage: (data: object) => void;
 }) {
   const delay = 3600;
   const [index, setIndex] = React.useState(0);
@@ -130,7 +132,7 @@ function HeroMain({
               key={index}
               src={backgroundColor}
               className="w-full h-full object-cover rounded-xl"
-              onClick={() => showImage(backgroundColor)}
+              onClick={() => showImage({img:backgroundColor, proyect: proyect})}
             />
           </motion.div>
         ))}

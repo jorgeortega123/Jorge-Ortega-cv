@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import MailSVG from "../../../../../assets/svg/mail.svg";
 import CallSVG from "../../../../../assets/svg/call.svg";
 import SendSGV from "../../../../../assets/svg/send.svg";
+import LocationSGV from "../../../../../assets/svg/location.svg";
 import useMainContext from "../../../context/useMainContext";
 import Button from "../../Button";
 import { SendIcon } from "../../../../../assets/svg";
 export default function ContactComponent({
   dataText = {
-    headers: {callme: ""},
+    headers: {callme: "", location: ""},
     functions : {  incomplete: "", successSend: "" },
     contact: { email: "@" },
     extras: { footer: { input: "", name: "", send: "" } },
@@ -15,7 +16,7 @@ export default function ContactComponent({
   copyToClipBoard,
 }: {
   dataText: {
-    headers: {callme: string}
+    headers: {callme: string, location: string}
     functions : {  incomplete: string, successSend: string },
     contact: { email: string };
     extras: { footer: { input: string; name: string; send: string } };
@@ -37,6 +38,13 @@ export default function ContactComponent({
       title: "Email",
       href: "mailto:",
     },
+    {
+      inf: "Ecuador, Pichincha, Quito.",
+      icon: LocationSGV,
+      title: dataText.headers.location,
+      href: "",
+    },
+    //LocationIcon
   ];
   const formatToSend = {
     text: {
@@ -74,12 +82,13 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className="bg-transparent  flex lg:space-x-2 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
-      <div className="flex flex-col justify-start items-start space-y-2 w-full ">
+    <div className=" bg-transparent  flex lg:space-x-2 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
+      <div className="flex flex-col justify-start items-start space-y-2 w-full lg:mt-[-42px] ">
         {dataContact.map((e) => {
           return (
             <div className="flex justify-center items-center ">
               <div className="w-12 h-12 mx-2">
+       
                 <img src={e.icon} alt="" />
               </div>
               <div className="altura-letras ">

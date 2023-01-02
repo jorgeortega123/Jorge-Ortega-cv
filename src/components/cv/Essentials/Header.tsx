@@ -16,11 +16,12 @@ export default function Header({
   activeAnimationsHeader,
 }) {
   const { data, goToUrl, changeOverflowY } = useMainContext();
+  //w-[calc(100%_-_10rem)]
   return (
-    <div className=" lg:min-h-screen flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 mt-3 w-full">
-      <div className="p-2 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-120px] xl:mx-auto xl:ml-[270px]">
+    <div className=" lg:min-h-[calc(100vh_-_50px)] flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 mt-[1px] w-full">
+      <div className=" p-2 lg:pl-12 xl:pl-0 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-140px] xl:mx-auto xl:ml-[270px]">
         <AnimationsLoader duration={3} moveY={-10}>
-          <h1 className="text-[50px] lg:text-[80px] w-10/12 sm:w-5/10 lg:mt-[70px] xl:w-9/12 title-main-header">
+          <h1 className="text-[50px] lg:text-[80px] w-10/12 sm:w-5/10 sm:mt-[50px] xl:mt-0 xl:w-9/12 title-main-header">
             {dataText.headers.main}
           </h1>
         </AnimationsLoader>
@@ -50,7 +51,7 @@ export default function Header({
           </Button>
         </div>
         <div className="z-[7] absolute top-[-200px] sm:top-auto sm:left-[-100px]">
-          <div className=" flex flex-col  sm:ml-2 sm:mt-[17px] animation-init  lg:flex-row lg:ml-[100px] lg:mt-[540px]  xl:ml-0 xl:flex-col xl:mt-0 ">
+          <div className=" flex flex-col mt-[5px] sm:mt-0  sm:ml-2 sm:mt-[17px] animation-init  lg:flex-row lg:ml-[100px] lg:mt-[540px]  xl:ml-0 xl:flex-col xl:mt-0 ">
             <SocialNetworks
               url={staticInf.social[1].url}
               img={LinkedinSGV}
@@ -77,13 +78,13 @@ export default function Header({
         <div className=" flex justify-center">
           <img
             id="CVmonitor"
-            className=" absolute w-[350px] sm:w-[500px] sm:ml-0 sm:mt-[1px] md:mt-[-40px] mt-[-70px] ml-12 md:ml-0 xl:mt-[-130px] xl:ml-[-260px] xl:w-[800px]  "
+            className=" w-[350px] sm:w-[500px] sm:ml-0 sm:mt-[1px] md:mt-[-40px] mt-[-70px] ml-12 md:ml-0 xl:mt-[-130px] xl:ml-[-260px] xl:w-[800px]  "
             src={animGIF}
             alt=""
             onClick={() => activeAnimationsHeader("already")}
           />
 
-          <div id="images-header" className="border border-red-900">
+          {/* <div id="images-header" className=" border-red-900">
             <img
               id="CV1"
               className="absolute right-[-30px]  w-6 lg:w-7 "
@@ -116,7 +117,7 @@ export default function Header({
               }
               alt=""
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

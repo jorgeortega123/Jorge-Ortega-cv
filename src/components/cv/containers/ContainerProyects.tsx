@@ -49,8 +49,8 @@ export default function ContainerProyects({
       t: "#472D2D",
     },
     {
-      b: "#093145",
-      t: "#BCA136",
+      b: "#4fff05",
+      t: "#9A2617",
     },
     {
       b: "#107896",
@@ -104,7 +104,7 @@ export default function ContainerProyects({
             })}
 */
 
-  //window.addEventListener('load', ()=> elemets())
+  //window.addEventListener('load', ()=> elemets())j
 
   // shadow-[5px_5px_8px_#ffffff5c] lg:shadow-[12px_2px_16px_#ffffff5c]
   const changeHandle = () => {
@@ -134,8 +134,8 @@ export default function ContainerProyects({
           )}
           {showGroup && (
             <>
-              <div className=" flex items-center justify-center rounded-t-[7px] left-[-115px] lg:left-[-115px] lg:top-[-22px] lg:h-[90px]  px-[2px] top-[-50px] absolute bg-[#408198] lg:bg-transparent lg:rounded-sm lg:border-l-[1px] lg:border-blue-900 lg:backdrop-blur-3xl altura-letras  w-[110px]">
-                <p className="text-center ">
+              <div className="bg-[#000000a8] rounded-[6px] p-2 absolute z-[3] flex left-[-40px] altura-letras  max-w-[110px]">
+                <p className="text-rigth w-full">
                   App desarrollada de manera{" "}
                   {!inGroup ? <span>individual</span> : <span>grupal</span>}
                 </p>{" "}
@@ -176,6 +176,7 @@ export default function ContainerProyects({
           <HeroMain
             images={imagesFrom[index].all}
             showImage={showImage}
+            proyect={title}
           ></HeroMain>
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
@@ -198,9 +199,7 @@ export default function ContainerProyects({
           ></div>
         </div>
       </div>
-      <div className="invisible lg:visible lg:flex lg:flex-col w-full items-center justify-center">
-        <div className=" lg:w-[520px] h-[1px] bg-green-500"></div>
-      </div>
+
     </div>
   );
 }

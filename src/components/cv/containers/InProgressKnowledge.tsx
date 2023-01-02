@@ -7,7 +7,7 @@ export default function InProgressKnowledge({icon, name, percentage,  dataText}:
     dataText: string
 }) {
   return (
-    <div className=" relative border-[1px] border-[#0000003c] rounded-[6px] flex altura-letras">
+    <div className=" relative border-[1px] border-[#0000003c] rounded-[6px]  flex altura-letras">
     <img
       className="max-w-[65px] h-auto max-h-[65px] p-1"
       src={icon}
@@ -19,13 +19,13 @@ export default function InProgressKnowledge({icon, name, percentage,  dataText}:
       </p>
       <p className="text-[19px]">{dataText}</p>
     </div>
-    <p className="text-sm absolute right-0 bottom-[-18px]">
+    <p className="text-[1rem] absolute right-0 bottom-[-18px]">
       100%
     </p>
-    <p className="text-sm absolute left-0 bottom-[-18px]">
+    <p className="text-[1rem] absolute left-0 bottom-[-18px]">
       0%
     </p>
-    <p className={`text-[13px] text-[#66ff00] absolute text-left bottom-[1px] ml-[${percentage - 2}%]`}>
+    <p className={`text-[1rem] text-[#66ff00] absolute text-left bottom-[1px] ml-[${percentage - 2}%]`}>
       {percentage}%
     </p>
     <div
