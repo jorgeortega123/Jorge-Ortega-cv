@@ -309,15 +309,23 @@ export const lang = {
       },
     ],
     incomingKnowledge: [{
-      title: "Angular",
-      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536521/angular_bffjli.png",
-      percentage: 57
+      title: "Vuejs",
+      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/vue_pcrlxt.png",
+      percentage: 87
     },{
       title: "PostgreSQL",
       icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
-      percentage: 85
+      percentage: 67
     }
-
+    ,{
+      title: "Php",
+      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/php_xunwa5.png",
+      percentage: 45
+    },{
+      title: "Laravel",
+      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/laravel_hwybdn.png",
+      percentage: 37
+    }
     ]
   },
 };

@@ -2,7 +2,7 @@
 // @import "@fontsource/roboto/400.css";
 // @import "@fontsource/roboto/500.css";
 // @import "@fontsource/roboto/700.css";
-
+@tailwind base;
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400&display=swap");
 $base-color-h1: #fff;
 $secondary-color: #66ff00;
@@ -65,7 +65,9 @@ svg {
   color: rgb(255, 255, 255);
 }
 .main-color {
+
   background-color: #071b2e;
+
 }
 .menu-items {
   user-select: none;

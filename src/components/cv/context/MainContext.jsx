@@ -1,19 +1,31 @@
 import React, { createContext, useEffect, useState } from "react";
 import sendServer from "../../server";
+import { lang } from "../langs";
 export const MainContext = createContext({});
 const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
     sendServer(server, "/init", "turn");
+    loadImages()
   }, []);
   const [write, setWrite] = useState("");
+  const [images, setimages] = useState()
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
+  const loadImages = () => { 
+    var imgs = []
+    //(let i = 0; i < miArray.length; i++)
+    for (let x=0; x < lang.static.images.length; x++ ) { 
+      for (let i = 0; i < lang.static.images[x].all.length; i++  ) { 
+        imgs.push(lang.static.images[x].all[i])
+      }
+    }
+  console.log("hola", imgs)
+  }
   var data = {
     color: "#0f2d51",
     color_asent: "#201211",
     text: "#fff",
   };
-
   const sendText = async (data) => {
     var res = await sendServer(server, "/telegramCV", data);
   };

@@ -45,7 +45,7 @@ export default function ImageView({ setshowImg, imgSrc }) {
               onClick={(e) => {
                 e.preventDefault();
               }}
-              className="border-[1px] w-auto z-[8] rounded-[12px]  border-[#00000033] xl:max-h-[calc(100vh_-_180px)] "
+              className="border-[1px] w-auto z-[8] rounded-[12px]  border-[#00000033] xl:max-h-[calc(100vh_-_280px)] "
               src={imgSrc.img}
               alt=""
             />

@@ -116,12 +116,12 @@ export default function ContainerProyects({
   };
   return (
     <div className="w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
-      <div className="items-center flex justify-center relative">
+      <div className=" items-center flex justify-center relative">
         <div
           onClick={() => {
             changeHandle();
           }}
-          className="absolute xl:top-[96px] right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
+          className=" transition-modal-proyects absolute xl:top-[96px] right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
         >
           {inGroup ? (
             <img
@@ -144,7 +144,7 @@ export default function ContainerProyects({
           )}
         </div>
         <div
-          className="xl:hidden  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1 relative container-proyects"
+          className=" xl:hidden relative  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects"
           onClick={() => {
             var link = document.createElement("a");
             link.href = web;
@@ -154,7 +154,7 @@ export default function ContainerProyects({
         >
           <p>{title}</p>
           <img
-            className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-31px]"
+            className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-30px] "
             src={newWindow}
             alt=""
             onClick={() => {
@@ -164,12 +164,12 @@ export default function ContainerProyects({
               link.click();
             }}
           />
-          <div className="absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px]  left-[-45px]">
-            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
-            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
-            <div className={`linesTitle w-[${index * 2 + 0.4 * 100}px]`}></div>
-          </div>
         </div>
+        <div className="hidden absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px] left-5 ">
+            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
+            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
+            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
+          </div>
       </div>
       <div className="flex-col sm:flex-row w-full lg:flex lg:items-center xl:p-4">
         <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12 xl:w-9/12  items-center flex justify-center px-2 lg:pb-2">
