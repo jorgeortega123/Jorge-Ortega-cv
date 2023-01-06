@@ -64,7 +64,7 @@
   height:90px;
   left:70%;
   animation-duration:52s;
-  animation-delay:2s;
+  animation-delay:0s;
 }
 .bubble:nth-child(8){
   width:25px;
@@ -88,6 +88,7 @@
   animation-delay:0s;
   animation-direction: alternate-reverse;
 }
+
 @keyframes rise{
   0%{
     bottom:-100px;
