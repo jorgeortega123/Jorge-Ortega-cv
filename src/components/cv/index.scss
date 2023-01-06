@@ -23,9 +23,18 @@ $main-color: #0f2d51;
 html {
   scroll-behavior: smooth;
 }
-svg {
-  fill: $main-color;
+svg { 
+  transition: .3s all;
 }
+svg:hover {
+  fill: $secondary-color;
+}
+
+// svg:hover .svg-hover p {
+//   visibility: visible;
+// }
+
+
 .header-altura { 
   min-height: calc(100vh);
 }

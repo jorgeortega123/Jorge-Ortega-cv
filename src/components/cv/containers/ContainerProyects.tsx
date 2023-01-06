@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import newWindow from "../../../assets/svg/newWindow.svg";
 import inGroupSVG from "../../../assets/svg/group.svg";
 import inSoloSVG from "../../../assets/svg/person.svg";
+import githubSVG from "../../../assets/svg/github.svg";
 import back from "../../../assets/svg/backGround/titles.svg";
 import { lang } from "../langs";
 import HeroMain from "../carrousel/Carrousel";
@@ -71,7 +72,7 @@ export default function ContainerProyects({
       var elementCreate = document.createElement("p");
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
-     // var randomNumber = Math.floor(Math.random() * colors.length);
+      // var randomNumber = Math.floor(Math.random() * colors.length);
       // elementCreate.style.color = colors[randomNumber].t;
       elementCreate.style.color = colors[indexNumber].t;
       elementCreate.style.backgroundColor = colors[indexNumber].b;
@@ -86,33 +87,23 @@ export default function ContainerProyects({
       return () => document.removeEventListener("load", () => elemets());
     }
   }, []);
-
-  /*
-      {langs.map((lan, index) => {
-              console.log(index)
-              console.log(colors[index])
-                      var elementCreate = document.createElement("p")
-  elementCreate.classList.add('tagsLanguajes', 'num' + index)
-  elementCreate.setAttribute('style', `background-color: ${colors[index].b};color: ${colors[index].t}`)
-  document.getElementById("appendp")?.append(elementCreate)
-}
-              return (
-                <p key={lan + "Child" + index} className="tagsLanguajes">
-                  {lan}
-                </p>
-              );
-            })}
-*/
-
-  //window.addEventListener('load', ()=> elemets())j
-
-  // shadow-[5px_5px_8px_#ffffff5c] lg:shadow-[12px_2px_16px_#ffffff5c]
   const changeHandle = () => {
     if (showGroup === true) {
       setshowGroup(false);
     } else {
       setshowGroup(true);
     }
+  };
+  const GitRepo = () => {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        data-name="Layer 1"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z" />
+      </svg>
+    );
   };
   return (
     <div className="w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
@@ -123,15 +114,7 @@ export default function ContainerProyects({
           }}
           className=" transition-modal-proyects absolute xl:top-[96px] right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
         >
-          {inGroup ? (
-            <img
-              src={inGroupSVG}
-            ></img>
-          ) : (
-            <img
-              src={inSoloSVG}
-            ></img>
-          )}
+          {inGroup ? <img src={inGroupSVG}></img> : <img src={inSoloSVG}></img>}
           {showGroup && (
             <>
               <div className="bg-[#000000a8] rounded-[6px] p-2 absolute z-[3] flex left-[-40px] altura-letras  max-w-[110px]">
@@ -165,11 +148,22 @@ export default function ContainerProyects({
             }}
           />
         </div>
-        <div className="hidden absolute w-max h-max flex flex-col space-y-[2px] rotate-180 top-[12px] left-5 ">
-            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
-            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
-            <div className={`linesTitle w-[${(index * 2) + 2 * 2}rem]`}></div>
-          </div>
+        <div className=" absolute top-[12px] left-1 flex">
+          <svg
+            height="24"
+            version="1.1"
+            viewBox="0 0 16 16"
+            width="24"
+            fill="#fff"
+            opacity={1}
+          >
+            <path
+              fill-rule=""
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
+         
+        </div>
       </div>
       <div className="flex-col sm:flex-row w-full lg:flex lg:items-center xl:p-4">
         <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12 xl:w-9/12  items-center flex justify-center px-2 lg:pb-2">
@@ -180,15 +174,17 @@ export default function ContainerProyects({
           ></HeroMain>
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
-        <div
-          className="  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
-          onClick={() => {
-            var link = document.createElement("a");
-            link.href = web;
-            link.target = "_blank";
-            link.click();
-          }}
-        >{title}</div>
+          <div
+            className="  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
+            onClick={() => {
+              var link = document.createElement("a");
+              link.href = web;
+              link.target = "_blank";
+              link.click();
+            }}
+          >
+            {title}
+          </div>
           <div
             className="normalText altura-letras text-[22px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
@@ -199,7 +195,6 @@ export default function ContainerProyects({
           ></div>
         </div>
       </div>
-
     </div>
   );
 }

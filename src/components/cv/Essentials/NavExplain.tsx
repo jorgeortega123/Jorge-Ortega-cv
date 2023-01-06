@@ -8,17 +8,17 @@ export default function NavExplain({showMenuNavbar, setshowMenuNavbar, dataText}
         <div
           className="menu-items capitalize top-0 fixed"
         > 
-          <p>
+          <p className='hover:text-[#66ff00] transition-all'>
             <a onClick={()=>setshowMenuNavbar(false)} href="#home">{dataText.headers.home}</a>
           </p>
-          <p>
+          <p className='hover:text-[#66ff00] transition-all'>
             <a onClick={()=>setshowMenuNavbar(false)}  href="#about">{dataText.headers.about}</a>
           </p>
 
-          <p>
+          <p className='hover:text-[#66ff00] transition-all'>
             <a  onClick={()=>setshowMenuNavbar(false)} href="#proyects">{dataText.headers.proyects}</a>
           </p>
-          <p>
+          <p className='hover:text-[#66ff00] transition-all'>
             <a  onClick={()=>setshowMenuNavbar(false)}  href="#contact">{dataText.headers.contact}</a>
           </p>
         </div>

@@ -17,7 +17,7 @@ export default function MainContainer({
   const spacing = "100px";
   return (
     <div
-      className={`w-full flex flex-col  justify-center items-center my-4 mb-4 `}
+      className={`w-full flex flex-col  justify-center items-center pt-[40px]  `}
       id={id}
     >
       <p className="titleText text-left my-3">{title}</p>

@@ -7,7 +7,7 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
   const {showMenuNavbar, setshowMenuNavbar} = useMainContext()
   return (
     <>
-    <div className="nav h-[46px] sticky top-0 blockAllSelect flex items-center justify-center ">
+    <div className="nav h-[46px] fixed top-0 blockAllSelect flex items-center justify-center ">
           <div className="w-full max-w-[800px] relative">
             <div className="flex w-full lg:max-w-[200px]">
               <button
@@ -59,17 +59,17 @@ export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTransla
                   transition={{ type: "tween" }}
                   className="capitalize flex space-x-5 text-[15px]"
                 >
-                  <p className="hover:text-yellow-500">
+                  <p className="hover:text-[#66ff00]">
                     <a href="#home">{dataText.headers.home}</a>
                   </p>
-                  <p className="hover:text-cyan-300">
+                  <p className="hover:text-[#66ff00]">
                     <a href="#about">{dataText.headers.about}</a>
                   </p>
 
-                  <p className="hover:text-cyan-300">
+                  <p className="hover:text-[#66ff00]">
                     <a href="#proyects">{dataText.headers.proyects}</a>
                   </p>
-                  <p className="hover:text-cyan-300">
+                  <p className="hover:text-[#66ff00]">
                     <a href="#contact">{dataText.headers.contact}</a>
                   </p>
                 </motion.div>

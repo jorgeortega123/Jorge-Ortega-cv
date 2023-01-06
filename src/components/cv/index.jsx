@@ -78,9 +78,10 @@ const CvMain = () => {
   };
   const selectedLang = (e) => {
     if (defaultLang === e) {
-      return true} else {
-        return false
-      }
+      return true;
+    } else {
+      return false;
+    }
   };
   const showImage = (data) => {
     setshowImg(true);
@@ -147,12 +148,22 @@ const CvMain = () => {
               handlerChangeByDownload={handlerChangeByDownload}
               index={2}
             >
-                 {dataText.headers.es}
+              {dataText.headers.es}
             </FileView>
           </Modals>
         )}
       </AnimatePresence>
-      {showImg && <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />}
+      {showImg && (
+        <motion.div
+          initial={{ opacity: 0, zIndex: 7 }}
+          animate={{ opacity: 1, x: 0, zIndex: 7 }}
+          exit={{ opacity: 0 }}
+          transition={{ type: "tween", duration: 0.2 }}
+        >
+          {" "}
+          <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />
+        </motion.div>
+      )}
       <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
         <AnimatePresence>
           {showMenuNavbar && (
@@ -224,18 +235,20 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] lg:rounded-[12px] pl-4 pr-4 pb-7 pt-2">
+            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] lg:rounded-[12px] pl-4 pr-4 pb-7 pt-2 mt-[16px]">
               <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
                 <div className="text-[1.5rem]">{dataText.headers.learning}</div>
                 <div className=" flex flex-col space-y-[1.5rem]">
-                  {staticInf.incomingKnowledge.map((d) => { 
-                    console.log(d); return(<InProgressKnowledge
-                      dataText={dataText.headers.basicKnowledge}
-                      icon={d.icon}
-                      name={d.title}
-                      percentage={d.percentage}
-                    />)
-                    
+                  {staticInf.incomingKnowledge.map((d) => {
+                    console.log(d);
+                    return (
+                      <InProgressKnowledge
+                        dataText={dataText.headers.basicKnowledge}
+                        icon={d.icon}
+                        name={d.title}
+                        percentage={d.percentage}
+                      />
+                    );
                   })}
                 </div>
               </div>

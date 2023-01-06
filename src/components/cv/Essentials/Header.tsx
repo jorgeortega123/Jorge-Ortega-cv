@@ -18,7 +18,7 @@ export default function Header({
   const { data, goToUrl, changeOverflowY } = useMainContext();
   //w-[calc(100%_-_10rem)]
   return (
-    <div className=" lg:min-h-[calc(100vh_-_50px)] flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 mt-[1px] w-full">
+    <div className="lg:min-h-[calc(100vh_-_50px)] flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 pt-[52px] w-full">
       <div className=" p-2 lg:pl-12 xl:pl-0 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-140px] xl:mx-auto xl:ml-[270px]">
         <AnimationsLoader duration={3} moveY={-10}>
           <h1 className="text-[50px] lg:text-[80px] w-10/12 sm:w-5/10 sm:mt-[50px] xl:mt-0 xl:w-9/12 title-main-header">
@@ -66,7 +66,7 @@ export default function Header({
               number={2}
             ></SocialNetworks>
             <SocialNetworks
-              url={"https://github.com/jorgeortega123"}
+              url={"https://www.instagram.com/jorgeandresyts/"}
               img={InstagramSGV}
               classNamee={""}
               number={3}
