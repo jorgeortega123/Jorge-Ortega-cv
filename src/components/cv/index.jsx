@@ -170,7 +170,7 @@ const CvMain = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="page-content  relative w-[100%] md:w-[1000px] lg:w-full">
+        <div className="page-content  relative w-[100%] lg:w-full">
           <Header
             dataText={dataText}
             staticInf={staticInf}
