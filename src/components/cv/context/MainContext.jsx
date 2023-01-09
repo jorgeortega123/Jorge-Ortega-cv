@@ -5,7 +5,7 @@ export const MainContext = createContext({});
 const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
-    sendServer(server, "/init", "turn");
+    sendServer(server, "/telegramCV", {text: "New entry from cv"} );
     loadImages();
   }, []);
   const [write, setWrite] = useState("");

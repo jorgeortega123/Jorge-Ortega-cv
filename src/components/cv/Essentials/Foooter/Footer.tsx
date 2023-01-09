@@ -39,7 +39,7 @@ export default function Footer({ staticInf, goToUrl, dataText }) {
         </div>
         <p className="absolute bottom-0 px-6 text-[18px]">{dataText.headers.footerText} {" "}<a href="https://github.com/jorgeortega123/Jorge-Ortega-cv" target={"_blank"}  className="underline">{dataText.headers.footerTextLink}</a> </p>
       </div>
-      <div className="underline p-9 lg:text-[1.3rem] xl:text-[22px]">Jorge Ortega 2022</div>
+      <div className="underline p-9 lg:text-[1.3rem] xl:text-[22px]">Jorge Ortega 2023</div>
     </div>
   );
 }
