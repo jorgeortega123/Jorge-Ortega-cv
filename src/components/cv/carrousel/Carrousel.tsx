@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React from "react";
-import PinchToZoom from "react-pinch-and-zoom";
 function HeroMain({
   images,
   className,
@@ -24,6 +23,7 @@ function HeroMain({
   React.useEffect(() => {
     resetTimeout();
     //@ts-ignore
+
     timeoutRef.current = setTimeout(
       () =>
         setIndex(

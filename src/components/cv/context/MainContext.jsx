@@ -6,21 +6,25 @@ const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
     sendServer(server, "/init", "turn");
-    loadImages()
+    loadImages();
   }, []);
   const [write, setWrite] = useState("");
-  const [images, setimages] = useState()
+  const [images, setimages] = useState();
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
-  const loadImages = () => { 
-    var imgs = []
+  const loadImages = () => {
+    var imgs = [];
     //(let i = 0; i < miArray.length; i++)
-    for (let x=0; x < lang.static.images.length; x++ ) { 
-      for (let i = 0; i < lang.static.images[x].all.length; i++  ) { 
-        imgs.push(lang.static.images[x].all[i])
+    for (let x = 0; x < lang.static.images.length; x++) {
+      for (let i = 0; i < lang.static.images[x].all.length; i++) {
+        let file = new File(["image data"], lang.static.images[x].all[i], {
+          type: "image/jpeg",
+        });
+        let urlCreateImg = window.URL.createObjectURL(file);
+        imgs.push(urlCreateImg);
       }
     }
-  console.log("hola", imgs)
-  }
+    setimages(imgs)
+  };
   var data = {
     color: "#0f2d51",
     color_asent: "#201211",
@@ -32,15 +36,15 @@ function MainContextComponent({ children }) {
   const goToUrl = (linkOpen, method) => {
     var link = document.createElement("a");
     link.href = linkOpen;
-    if (method==="no-external") { 
+    if (method === "no-external") {
       link.click();
-      return
+      return;
     }
     link.target = "_blank";
     link.click();
   };
   const changeOverflowY = (state) => {
-   return;
+    return;
   };
   const copyToClipBoard = (elements) => {
     switch (elements) {
@@ -62,7 +66,7 @@ function MainContextComponent({ children }) {
         copyToClipBoard,
         showMenuNavbar,
         setshowMenuNavbar,
-        
+        images
       }}
     >
       {children}

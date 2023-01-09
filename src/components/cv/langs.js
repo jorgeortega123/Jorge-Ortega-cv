@@ -286,6 +286,7 @@ export const lang = {
     images: [
       {
         title: "My money",
+        key: "mym",
         all: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433346/Frame_1_xtlmz4.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433318/Frame_1_1_vabspw.png",
@@ -293,6 +294,7 @@ export const lang = {
       },
       {
         title: "LLK",
+        key: "llk",
         all: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434478/Screenshot_from_2022-11-07_17-59-26_1_hnvlbu.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434636/Frame_2_cysgp2.png",
@@ -301,6 +303,7 @@ export const lang = {
       },
       {
         title: "Files Manager",
+        key: "flm",
         all: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_1_2_rgnryp.png",
@@ -309,13 +312,9 @@ export const lang = {
       },
     ],
     incomingKnowledge: [{
-      title: "Vuejs",
-      icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/vue_pcrlxt.png",
-      percentage: 87
-    },{
       title: "PostgreSQL",
       icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
-      percentage: 67
+      percentage: 89
     }
     ,{
       title: "Php",

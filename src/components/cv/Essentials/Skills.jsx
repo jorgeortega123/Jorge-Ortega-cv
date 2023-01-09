@@ -23,6 +23,10 @@ var images = {
       img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png",
       text: "React",
       color: "#61dafb"
+    }, {
+      img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/vue_pcrlxt.png",
+      text: "Vuejs",
+      color: "#19b986"
     },
     {
       img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/sass-logo-7702_sxv52z.png",
@@ -41,7 +45,7 @@ var images = {
     },{
       img: "    https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805814/bootstrap-logo-shadow_wsyug6.png",
       text: "Bootstrap",
-      color: "#7418f6"
+      color: "#9000f3"
     },
     {
       img: " https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806164/logo_t5er37.png",
