@@ -12,17 +12,16 @@ function MainContextComponent({ children }) {
   const [images, setimages] = useState();
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
   const loadImages = () => {
+    return;
     var imgs = [];
     //(let i = 0; i < miArray.length; i++)
     for (let x = 0; x < lang.static.images.length; x++) {
       for (let i = 0; i < lang.static.images[x].all.length; i++) {
-        let file = new File(["image data"], lang.static.images[x].all[i], {
-          type: "image/jpeg",
-        });
-        let urlCreateImg = window.URL.createObjectURL(file);
-        imgs.push(urlCreateImg);
+        //let urlCreateImg = URL.createObjectURL(lang.static.images[x].all[i]);
+        //imgs.push(urlCreateImg);
       }
     }
+    console.log("holas",imgs)
     setimages(imgs)
   };
   var data = {

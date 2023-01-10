@@ -182,7 +182,7 @@ export default function ContainerProyects({
           {!loadImages ? <HeroMain
             images={imagesFrom[index].all}
             showImage={showImage}
-            proyect={title}
+            proyect={imagesFrom[index]}
           ></HeroMain> : <p>Charging...</p>  
           }
           

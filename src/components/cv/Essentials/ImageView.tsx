@@ -10,6 +10,7 @@ export default function ImageView({ setshowImg, imgSrc }) {
     setshowImg(false);
   };
   const changeOverflowY = useMainContext();
+  console.log("sadd",imgSrc)
   return (
     <div className="select-none  w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
       <div className="z-[6] fixed w-full overflow-auto h-full backdrop-blur-xl  bg-[#00000088] bottom-0 top-[44px]  flex justify-center">
@@ -22,18 +23,17 @@ export default function ImageView({ setshowImg, imgSrc }) {
         <div className=" w-11/12 flex flex-col items-center justify-center">
           <div className="relative text-white">
             <div className=" lg:text-[1.4rem] xl:lg:text-[1.8rem] absolute xl:mt-[-36px] font-semibold">
-              <p>{imgSrc.proyect}</p>
+              <p>{imgSrc.proyect.title}</p>
             </div>
             <div className="absolute bottom-[-20px] w-full">
               <div className="relative flex w-full">
                 <p className="absolute text-[.7rem] sm:text-[1rem] lg:text-[1.4rem] xl:lg:text-[1.8rem]">
-                  1 <span className="text-green-400">/</span> 12
+                  1 <span className="text-green-400">/</span> {imgSrc.proyect.all.length}
                 </p>
-                <div className="relative flex space-x-9  mx-auto border border-[#66ff00] px-2 py-3 rounded-[6px]">
-
+                {/* <div className="relative flex space-x-9  ] mx-auto border border-[#66ff00] px-2 py-3 rounded-[6px] mt-[] text-[.8rem]">
                   <p className="text-slate-200">{"<" + "Anterior"}</p>
                   <p className="text-[#66ff00]">{"Siguiente" + ">"}</p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div

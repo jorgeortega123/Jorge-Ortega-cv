@@ -8,7 +8,7 @@ export const lang = {
       about: "Acerca de mi",
       proyects: "Proyectos",
       contact: "Contactar",
-      callme: "Teléfono:",
+      callme: "Teléfono",
       location: "Ubicación",
       developer: "Desarrollador",
       knowledge: "Conocimiento",
@@ -148,7 +148,7 @@ export const lang = {
       about: "About",
       proyects: "Proyects",
       contact: "Contact",
-      callme: "Call me:",
+      callme: "Call me",
       location: "Location",
       developer: "Developer",
       knowledge: "Skills",
@@ -270,7 +270,7 @@ export const lang = {
       {
         name: "instagram",
         url: "https://www.instagram.com/jorgeandresyts/",
-        svg: "./../../assets/svg/instagram",
+        svg: "/src/assets/svg/instagram_.svg",
       },
       {
         name: "linkedin",

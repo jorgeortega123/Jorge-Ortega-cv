@@ -8,7 +8,7 @@ function HeroMain({
 }: {
   images: string[] | undefined;
   className?: string;
-  proyect?: string;
+  proyect?: string[];
   showImage: (data: object) => void;
 }) {
   const delay = 3600;
