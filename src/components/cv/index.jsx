@@ -29,7 +29,7 @@ const staticInf = lang.static;
 const CvMain = () => {
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
-  const [dataText, setdataText] = useState(lang.es);
+  const [dataText, setdataText] = useState(lang.en);
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
