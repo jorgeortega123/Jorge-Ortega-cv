@@ -42,6 +42,7 @@ const CvMain = () => {
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
   useEffect(() => {
+   document.body.style.overflowX = "hidden"
     if (document.readyState === "complete") {
       setisLoadedBody(true);
     } else {
