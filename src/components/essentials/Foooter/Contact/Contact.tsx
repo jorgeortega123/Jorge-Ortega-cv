@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import MailSVG from "../../../../../assets/svg/mail.svg";
-import CallSVG from "../../../../../assets/svg/call.svg";
-import SendSGV from "../../../../../assets/svg/send.svg";
-import LocationSGV from "../../../../../assets/svg/location.svg";
+import MailSVG from "../../../../assets/svg/mail.svg";
+import CallSVG from "../../../../assets/svg/call.svg";
+import SendSGV from "../../../../assets/svg/send.svg";
+import LocationSGV from "../../../../assets/svg/location.svg";
 import useMainContext from "../../../context/useMainContext";
 import Button from "../../Button";
-import { SendIcon } from "../../../../../assets/svg";
+import { SendIcon } from "../../../../assets/svg";
 export default function ContactComponent({
   dataText = {
     headers: {callme: "", location: ""},

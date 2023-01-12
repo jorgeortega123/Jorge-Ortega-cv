@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from "react";
 import sendServer from "../../server";
-import { lang } from "../langs";
+import { lang } from "../../langs";
 export const MainContext = createContext({});
-const server = "https://mymone.azurewebsites.net";
+const server = import.meta.env.VITE_SERVER_LINK;
 function MainContextComponent({ children }) {
   useEffect(() => {
     sendServer(server, "/telegramCV", {text: "New entry from cv"} );

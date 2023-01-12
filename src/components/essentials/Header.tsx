@@ -1,14 +1,14 @@
 import React from "react";
-import { CallIcon } from "../../../assets/svg";
+import { CallIcon } from "../../assets/svg";
 import SocialNetworks from "../SocialNetworks";
 import AnimationsLoader from "./AnimationsLoader/AnimationsLoader";
 import Button from "./Button";
-import animGIF from "../../../assets/animation_640.gif";
-import monitorIcon from "../../../assets/image/monitor.png";
-import CallSVG from "../../../assets/svg/call.svg";
-import LinkedinSGV from "../../../assets/svg/linkedin_.svg";
-import GithubSVG from "../../../assets/github.png";
-import InstagramSGV from "../../../assets/svg/instagram_.svg";
+import animGIF from "../../assets/animation_640.gif";
+import monitorIcon from "../../assets/image/monitor.png";
+import CallSVG from "../../assets/svg/call.svg";
+import LinkedinSGV from "../../assets/svg/linkedin_.svg";
+import GithubSVG from "../../assets/github.png";
+import InstagramSGV from "../../assets/svg/instagram_.svg";
 import useMainContext from "../context/useMainContext";
 export default function Header({
   dataText,

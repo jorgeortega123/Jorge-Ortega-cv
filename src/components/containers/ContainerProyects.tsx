@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 //@ts-ignore
-import newWindow from "../../../assets/svg/newWindow.svg";
-import inGroupSVG from "../../../assets/svg/group.svg";
-import inSoloSVG from "../../../assets/svg/person.svg";
-import githubSVG from "../../../assets/svg/github.svg";
-import back from "../../../assets/svg/backGround/titles.svg";
-import { lang } from "../langs";
+import newWindow from "../../assets/svg/newWindow.svg";
+import inGroupSVG from "../../assets/svg/group.svg";
+import inSoloSVG from "../../assets/svg/person.svg";
+import githubSVG from "../../assets/svg/github.svg";
+import back from "../../assets/svg/backGround/titles.svg";
+import { lang } from "../../langs";
 import HeroMain from "../carrousel/Carrousel";
 const imagesFrom = lang.static.images;
 export default function ContainerProyects({

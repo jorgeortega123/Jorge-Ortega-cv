@@ -1,5 +1,5 @@
 import React from "react";
-import DownloadSvg from "../../../assets/svg/figma/button_pdf.svg";
+import DownloadSvg from "../../assets/svg/figma/button_pdf.svg";
 export default function FileView({
   title = "as",
   children = "",

@@ -1,32 +1,33 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { lang } from "./langs";
+import { lang } from "../langs";
 import "./animation.scss";
 // svg's icons
-import LangSvg from "./../../assets/svg/lang.svg";
-import SendSGV from "./../../assets/svg/send.svg";
-import { CallIcon, CvIcon } from "./../../assets/svg.jsx";
+import LangSvg from "../assets/svg/lang.svg";
+import SendSGV from "../assets/svg/send.svg";
+import { CallIcon, CvIcon } from "../assets/svg.jsx";
 // Components
 import MainContainer from "./containers/MainContainer";
 import ContainerProyects from "./containers/ContainerProyects";
-import ContactComponent from "./Essentials/Foooter/Contact/Contact";
+import ContactComponent from "./essentials/Foooter/Contact/Contact";
 import Background from "./background";
-import AnimationsLoader from "./Essentials/AnimationsLoader/AnimationsLoader";
-import Skills from "./Essentials/Skills";
-import LoadingScreenView from "./Essentials/LoadingScreenView";
-import NavView from "./Essentials/NavView";
-import Footer from "./Essentials/Foooter/Footer";
-import ImageView from "./Essentials/ImageView";
+import AnimationsLoader from "./essentials/AnimationsLoader/AnimationsLoader";
+import Skills from "./essentials/Skills";
+import LoadingScreenView from "./essentials/LoadingScreenView";
+import NavView from "./essentials/NavView";
+import Footer from "./essentials/Foooter/Footer";
+import ImageView from "./essentials/ImageView";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
 import InProgressKnowledge from "./containers/InProgressKnowledge";
-import NavExplain from "./Essentials/NavExplain";
-import Header from "./Essentials/Header";
+import NavExplain from "./essentials/NavExplain";
+import Header from "./essentials/Header";
 // Context
 import useMainContext from "./context/useMainContext";
 
 const staticInf = lang.static;
 const CvMain = () => {
+
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
   const [dataText, setdataText] = useState(lang.en);

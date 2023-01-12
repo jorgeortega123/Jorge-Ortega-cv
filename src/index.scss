@@ -12,19 +12,20 @@ $main-color: #0f2d51;
   font-family: "subtitle";
   font-style: normal;
   font-weight: 100;
-  src: url(../../assets/fonts/titles.ttf);
+  src: url(./assets/fonts/titles.ttf);
 }
 @font-face {
   font-family: "normal";
   font-style: normal;
   font-weight: 100;
-  src: url(../../assets/fonts/normal.ttf);
+  src: url(./assets/fonts/normal.ttf);
 }
 html {
   scroll-behavior: smooth;
 }
-svg { 
-  transition: .3s all;
+svg {
+  transition: 0.3s all;
+  cursor: pointer;
 }
 svg:hover {
   fill: $secondary-color;
@@ -34,8 +35,7 @@ svg:hover {
 //   visibility: visible;
 // }
 
-
-.header-altura { 
+.header-altura {
   min-height: calc(100vh);
 }
 .title-skill {
@@ -43,7 +43,7 @@ svg:hover {
   color: #ffffff;
 }
 .spacing-letters {
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 .text-skill {
   font-weight: 400;
@@ -74,9 +74,8 @@ svg:hover {
   color: rgb(255, 255, 255);
 }
 .main-color {
-  transition: all .3s;
+  transition: all 0.3s;
   background-color: #071b2e;
-
 }
 .menu-items {
   user-select: none;
@@ -112,15 +111,15 @@ svg:hover {
   border-bottom: 1px solid rgb(0, 187, 255);
 }
 
-.title-main-header { 
+.title-main-header {
   font-family: "subtitle";
   letter-spacing: 0.6px;
   line-height: 1.2;
   // -webkit-text-stroke: 1px #000000;
   background: transparent;
   background-clip: text;
--webkit-background-clip: text;
- color: #fff;
+  -webkit-background-clip: text;
+  color: #fff;
 }
 //  {
 //   color: transparent;
@@ -347,10 +346,10 @@ nav .rotate180-alternate {
   padding-bottom: 0.7rem;
 }
 .input-contact:focus-within {
- background-color: #0000002e;
+  background-color: #0000002e;
 }
 
-.border-inputs-contact { 
+.border-inputs-contact {
   border-color: #aaafb664;
 }
 .target-p-contact {
@@ -556,4 +555,3 @@ nav .rotate180-alternate {
     border-color: rgb(255, 255, 255);
   }
 }
-
