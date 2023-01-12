@@ -7,6 +7,7 @@ export const lang = {
       home: "Inicio",
       about: "Acerca de mi",
       proyects: "Proyectos",
+      contributions: "Contribución a la comunidad",
       contact: "Contactar",
       callme: "Teléfono",
       location: "Ubicación",
@@ -30,6 +31,11 @@ export const lang = {
       footerText: "Hecho con amor, código fuente",
       footerTextLink: "aquí",
     },
+    repos: [{
+      title: "react-scroll-video",
+      link: "https://www.npmjs.com/package/react-scroll-video",
+      description: "Componente que ayuda a reproducir un video con el scroll de la pagina web."
+    }],
     contact: {
       about:
         "Si quiere contactarse conmigo puede mandar enviar un mensaje a traves de:",
@@ -60,6 +66,7 @@ export const lang = {
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085300/cld-sample-3.jpg",
         ],
         web: "https://mymoneyapp.pages.dev/app/myMoney",
+        repo: "https://github.com/jorgeortega123/MyMoneyApp",
         onGroup: false,
       },
       {
@@ -83,6 +90,7 @@ export const lang = {
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
         web: "https://www.llampukaq.com",
+        repo: "https://www.llampukaq.com",
         onGroup: true,
       },
       {
@@ -95,7 +103,8 @@ export const lang = {
         img: [
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
-        web: "https://www.llampukaq.com",
+        web: "https://github.com/jorgeortega123/Files-manager",
+        repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
       },
     ],
@@ -142,6 +151,7 @@ export const lang = {
       home: "Home",
       about: "About",
       proyects: "Proyects",
+      contributions: "Contribution to community",
       contact: "Contact",
       callme: "Call me",
       location: "Location",
@@ -158,6 +168,11 @@ export const lang = {
       footerText: "Made with love. Watch code",
       footerTextLink: "here",
     },
+    repos: [{
+      title: "react-scroll-video",
+      link: "https://www.npmjs.com/package/react-scroll-video",
+      description: "Component that reproduce a video when user scroll the page web."
+    }],
     contact: {
       about: "Get in touch:",
       number: "+593962716235",
@@ -186,6 +201,7 @@ export const lang = {
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png",
         ],
         web: "https://mymoneyapp.pages.dev/app/myMoney",
+        repo: "https://github.com/jorgeortega123/MyMoneyApp",
         onGroup: false,
       },
       {
@@ -207,6 +223,7 @@ export const lang = {
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
         web: "https://www.llampukaq.com",
+        repo: "https://www.llampukaq.com",
         onGroup: true,
       },
       {
@@ -222,6 +239,7 @@ export const lang = {
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
         web: "https://www.llampukaq.com",
+        repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
       },
     ],
@@ -323,17 +341,12 @@ export const lang = {
       {
         title: "PostgreSQL",
         icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
-        percentage: 89,
-      },
-      {
-        title: "Php",
-        icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/php_xunwa5.png",
-        percentage: 45,
+        percentage: 79,
       },
       {
         title: "Laravel",
         icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/laravel_hwybdn.png",
-        percentage: 37,
+        percentage: 57,
       },
     ],
   },

@@ -24,10 +24,11 @@ import NavExplain from "./essentials/NavExplain";
 import Header from "./essentials/Header";
 // Context
 import useMainContext from "./context/useMainContext";
+import Contributions from "./essentials/Contributions";
+import CurrentlyProyect from "./essentials/CurrentlyProyect";
 
 const staticInf = lang.static;
 const CvMain = () => {
-
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
   const [dataText, setdataText] = useState(lang.en);
@@ -41,30 +42,18 @@ const CvMain = () => {
     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
   );
   useEffect(() => {
-    document.body.style.overflowX = "hidden";
     if (document.readyState === "complete") {
       setisLoadedBody(true);
     } else {
       window.addEventListener("load", () => {
         setisLoadedBody(true);
-        activeAnimationsHeader();
       });
       return () =>
         document.removeEventListener("load", () => {
           setisLoadedBody(true);
-          activeAnimationsHeader();
         });
     }
   }, []);
-  const activeAnimationsHeader = (already) => {
-    var idsAnim = ["CV1", "CV2", "CV3", "CV4"];
-    for (let i = 0; i < idsAnim.length; i++) {
-      if (already) {
-        document.getElementById(idsAnim[i]).classList.remove(`CVimg-${i + 1}`);
-      }
-      document.getElementById(idsAnim[i]).classList.add(`CVimg-${i + 1}`);
-    }
-  };
   const showMenuTranslateFunc = () => {
     if (showMenuTranslate === false) {
       setshowMenuTranslate(true);
@@ -78,11 +67,7 @@ const CvMain = () => {
     setshowMenuTranslate(false);
   };
   const selectedLang = (e) => {
-    if (defaultLang === e) {
-      return true;
-    } else {
-      return false;
-    }
+    return defaultLang === e ? true : false;
   };
   const showImage = (data) => {
     setshowImg(true);
@@ -186,7 +171,6 @@ const CvMain = () => {
           <Header
             dataText={dataText}
             staticInf={staticInf}
-            activeAnimationsHeader={activeAnimationsHeader}
           />
           <div
             id="about"
@@ -228,6 +212,7 @@ const CvMain = () => {
                           web={e.web}
                           langs={e.tags}
                           inGroup={e.onGroup}
+                          repo={e.repo}
                           showImage={showImage}
                         />
                       );
@@ -236,24 +221,11 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-            <div className=" flex justify-center w-full lg:w-full xl:w-8/12 border-[1px] border-[#0000003c] bg-[#00000023] rounded-[6px] lg:rounded-[12px] pl-4 pr-4 pb-7 pt-2 mt-[16px]">
-              <div className=" min-w-full lg:min-w-[400px] max-w-full lg:max-w-[700px] flex flex-col ">
-                <div className="text-[1.5rem]">{dataText.headers.learning}</div>
-                <div className=" flex flex-col space-y-[1.5rem]">
-                  {staticInf.incomingKnowledge.map((d) => {
-                    console.log(d);
-                    return (
-                      <InProgressKnowledge
-                        dataText={dataText.headers.basicKnowledge}
-                        icon={d.icon}
-                        name={d.title}
-                        percentage={d.percentage}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
+            <Contributions data={dataText} />
+            <CurrentlyProyect
+              dataText={dataText}
+              staticInf={staticInf}
+            ></CurrentlyProyect>
 
             <div id="contact" className="w-full max-w-[800px]">
               <MainContainer className="" title={dataText.headers.contact}>

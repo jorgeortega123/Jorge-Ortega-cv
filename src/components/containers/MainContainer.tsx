@@ -9,10 +9,10 @@ export default function MainContainer({
   ...props
 }: {
   title: string;
-  children: any;
-  className: string;
-  id:string
-  convertHTML: boolean;
+  children?: any;
+  className?: string;
+  id?:string
+  convertHTML?: boolean;
 }) {
   const spacing = "100px";
   return (

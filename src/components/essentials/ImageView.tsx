@@ -19,7 +19,7 @@ export default function ImageView({ setshowImg, imgSrc }) {
     exit={{ opacity: 0, scale:0 }}
     transition={{ type: "tween", duration:.2}}
   >
-    <div className="select-none  w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
+    <div className="select-none  max-w-full flex justify-center items-center max-h-screen lg:px-[56px] lg:py-10 relative">
       <div className="z-[6] fixed w-full overflow-auto h-full backdrop-blur-xl  bg-[#00000088] bottom-0   flex justify-center">
         <div
           onClick={() => {

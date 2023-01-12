@@ -29,7 +29,7 @@ export default function Modals({
   >
     <div
       {...props}
-      className="z-[2] fixed backdrop-blur-sm  bg-[#00000061]  border-slate-300 pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
+      className="z-[2] fixed backdrop-blur-sm  bg-[#00000061]  border-slate-300 pt-1 rounded-md w-full h-full mx-auto flex flex-col items-center "
     >
       <div
         onClick={() => {
