@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import useMainContext from "../context/useMainContext";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function ImageView({ setshowImg, imgSrc }) {
   useEffect(() => {
@@ -12,8 +13,14 @@ export default function ImageView({ setshowImg, imgSrc }) {
   const changeOverflowY = useMainContext();
   console.log("sadd",imgSrc)
   return (
+    <motion.div
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, x: 0, scale:1 }}
+    exit={{ opacity: 0, scale:0 }}
+    transition={{ type: "tween", duration:.2}}
+  >
     <div className="select-none  w-full flex justify-center items-center  lg:px-[56px] lg:py-10 relative">
-      <div className="z-[6] fixed w-full overflow-auto h-full backdrop-blur-xl  bg-[#00000088] bottom-0 top-[44px]  flex justify-center">
+      <div className="z-[6] fixed w-full overflow-auto h-full backdrop-blur-xl  bg-[#00000088] bottom-0   flex justify-center">
         <div
           onClick={() => {
             changeCol();
@@ -55,6 +62,6 @@ export default function ImageView({ setshowImg, imgSrc }) {
           </div>
         </div>
       </div>
-    </div>
+    </div></motion.div>
   );
 }

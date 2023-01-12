@@ -21,9 +21,15 @@ export default function Modals({
     setshowDownload(false);
   }
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0 }}
+    transition={{ type: "tween", duration:.2 }}
+  >
     <div
       {...props}
-      className="z-[2] fixed backdrop-blur-sm  bg-[#00000061]  border-slate-300 mt-[45px] pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
+      className="z-[2] fixed backdrop-blur-sm  bg-[#00000061]  border-slate-300 pt-1 rounded-md w-full h-screen mx-auto top-0 flex flex-col items-center "
     >
       <div
         onClick={() => {
@@ -47,6 +53,6 @@ export default function Modals({
         <div className="bg-white w-full h-[1px] mt-[7px]"></div>
         <div className="p-3 z-[2]">{children}</div>
       </div>
-    </div>
+    </div></motion.div>
   );
 }
