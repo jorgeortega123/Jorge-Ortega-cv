@@ -238,7 +238,7 @@ export const lang = {
         img: [
           "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
         ],
-        web: "https://www.llampukaq.com",
+        web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
       },

@@ -139,8 +139,8 @@ export default function ContainerProyects({
             <>
               <div className="bg-[#000000a8] rounded-[6px] p-2 absolute z-[3] flex left-[-40px] altura-letras  max-w-[110px]">
                 <p className="text-rigth w-full">
-                  App desarrollada de manera{" "}
-                  {!inGroup ? <span>individual</span> : <span>grupal</span>}
+                  App developed in{" "}
+                  {!inGroup ? <span>solo</span> : <span>group</span>}
                 </p>{" "}
               </div>
             </>
@@ -191,7 +191,7 @@ export default function ContainerProyects({
         </div>
         <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
           <div
-            className="  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
+            className="relative flex items-center  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
             onClick={() => {
               var link = document.createElement("a");
               link.href = web;
@@ -199,15 +199,21 @@ export default function ContainerProyects({
               link.click();
             }}
           >
-            {title}
+            <p>{title}</p> 
+            <img
+            className="ml-3 w-6 invisible xl:visible"
+            src={newWindow}
+            alt=""
+            onClick={() => goToUrl(web)}
+          />
           </div>
           <div
-            className="normalText altura-letras text-[22px] lg:text-[28px]"
+            className="xl:border-r-[1px] xl:rounded-[6px] xl:border-[#666666b6] normalText altura-letras text-[22px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div
             id={"appendp" + index}
-            className="flex flex-wrap mt-2 mb-2 select-none"
+            className="xl:border-l-[1px] xl:rounded-[6px] xl:border-[#666666b6]  flex flex-wrap mt-2 mb-2 select-none"
           ></div>
         </div>
       </div>
