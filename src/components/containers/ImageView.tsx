@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useMainContext from "../context/useMainContext";
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function ImageView({ setshowImg, imgSrc }) {
+export default function ImageView({ setshowImg, imgSrc, index }) {
+  const [imageShow, setimageShow] = useState(imgSrc.img)
   useEffect(() => {
     document.body.style.overflowY = "hidden";
   });
@@ -10,8 +11,15 @@ export default function ImageView({ setshowImg, imgSrc }) {
     document.body.style.overflowY = "scroll";
     setshowImg(false);
   };
-  const changeOverflowY = useMainContext();
-  console.log("sadd",imgSrc)
+  const next = () =>  {
+    //imgSrc.proyect.all.length
+    console.log(index)
+    console.log(imgSrc.proyect.all[0])
+    setimageShow(imgSrc.proyect.all[index + 1])
+  }
+  const back = () => { 
+    setimageShow(imgSrc.proyect.all[index - 1])
+  }
   return (
     <motion.div
     initial={{ opacity: 0, scale: 0 }}
@@ -56,10 +64,15 @@ export default function ImageView({ setshowImg, imgSrc }) {
                 e.preventDefault();
               }}
               className="border-[1px] w-auto z-[8] rounded-[12px]  border-[#00000033] xl:max-h-[calc(100vh_-_240px)] "
-              src={imgSrc.img}
+              src={imageShow}
               alt=""
             />
+            <div className="text-white w-[100px] mx-auto">
+            {/* <p onClick={()=>next()}>+</p>
+            <p onClick={()=>back()}>_</p> */}
           </div>
+          </div>
+          
         </div>
       </div>
     </div></motion.div>

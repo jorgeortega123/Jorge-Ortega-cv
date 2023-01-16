@@ -132,7 +132,7 @@ function HeroMain({
               key={index}
               src={backgroundColor}
               className="w-full h-full object-cover rounded-xl"
-              onClick={() => showImage({img:backgroundColor, proyect: proyect})}
+              onClick={() => showImage({img:backgroundColor, proyect: proyect, index: index})}
             />
           </motion.div>
         ))}

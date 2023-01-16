@@ -1,8 +1,8 @@
 import React from 'react'
 import { AnimatePresence, motion } from "framer-motion";
-import useMainContext from '../context/useMainContext';
-import TranslateView from './TranslateView';
-import AnimationsLoader from './AnimationsLoader/AnimationsLoader';
+import useMainContext from '../../context/useMainContext';
+import TranslateView from '../TranslateView';
+import AnimationsLoader from '../AnimationsLoader/AnimationsLoader';
 export default function NavView({LangSvg, showMenuTranslateFunc, showMenuTranslate, changeLang, selectedLang, children, dataText}) {
   const {showMenuNavbar, setshowMenuNavbar} = useMainContext()
   return (

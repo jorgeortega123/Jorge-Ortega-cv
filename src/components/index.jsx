@@ -14,35 +14,36 @@ import Background from "./background";
 import AnimationsLoader from "./essentials/AnimationsLoader/AnimationsLoader";
 import Skills from "./essentials/Skills";
 import LoadingScreenView from "./essentials/LoadingScreenView";
-import NavView from "./essentials/NavView";
+import NavView from "./essentials/Headers/NavView";
 import Footer from "./essentials/Foooter/Footer";
-import ImageView from "./essentials/ImageView";
+import ImageView from "./containers/ImageView";
 import Modals from "./containers/Modals";
 import FileView from "./containers/FileView";
 import InProgressKnowledge from "./containers/InProgressKnowledge";
-import NavExplain from "./essentials/NavExplain";
-import Header from "./essentials/Header";
-// Context
-import useMainContext from "./context/useMainContext";
+import NavExplain from "./essentials/Headers/NavExplain";
+import Header from "./essentials/Headers/Header";
 import Contributions from "./essentials/Contributions";
 import CurrentlyProyect from "./essentials/CurrentlyProyect";
+// Context
+import useMainContext from "./context/useMainContext";
+
+import useLang from "../functions/useLang";
 
 const staticInf = lang.static;
 const CvMain = () => {
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
-  const [dataText, setdataText] = useState(lang.en);
+  const [dataText, setdataText] = useLang();
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
   const [showTextOnNavbar, setshowTextOnNavbar] = useState(false);
   const [showImg, setshowImg] = useState(false);
   const [isLoadedBody, setisLoadedBody] = useState(false);
   const [defaultLang, setdefaultLang] = useState();
-  const [imgSrc, setimgSrc] = useState(
-    "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png"
-  );
+  const [imgSrc, setimgSrc] = useState("");
+  const text_color = data?.text || "#fff";
   useEffect(() => {
-   document.body.style.overflowX = "hidden"
+    document.body.style.overflowX = "hidden";
     if (document.readyState === "complete") {
       setisLoadedBody(true);
     } else {
@@ -56,15 +57,10 @@ const CvMain = () => {
     }
   }, []);
   const showMenuTranslateFunc = () => {
-    if (showMenuTranslate === false) {
-      setshowMenuTranslate(true);
-    } else {
-      setshowMenuTranslate(false);
-    }
+    setshowMenuTranslate(!showMenuTranslate);
   };
   const changeLang = (langByUser) => {
-    setdataText(lang[langByUser]);
-    setdefaultLang(langByUser);
+    setdataText(langByUser);
     setshowMenuTranslate(false);
   };
   const selectedLang = (e) => {
@@ -72,17 +68,15 @@ const CvMain = () => {
   };
   const showImage = (data) => {
     setshowImg(true);
-    changeOverflowY();
     setimgSrc(data);
   };
   const changeHandlerBodyLoaded = () => {
     setisLoadedBody(true);
   };
   const handlerChangeByDownload = () => {
-    setshowLineWhenFileIsDownloading(true);
     setshowDownload(false);
   };
-  const text_color = data?.text || "#fff";
+
   return (
     <div
       id="home"
@@ -147,7 +141,6 @@ const CvMain = () => {
           exit={{ opacity: 0 }}
           transition={{ type: "tween", duration: 0.2 }}
         >
-          {" "}
           <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />
         </motion.div>
       )}
@@ -169,10 +162,7 @@ const CvMain = () => {
           )}
         </AnimatePresence>
         <div className="page-content  relative w-[100%] lg:w-full">
-          <Header
-            dataText={dataText}
-            staticInf={staticInf}
-          />
+          <Header dataText={dataText} staticInf={staticInf} />
           <div
             id="about"
             className="textWrote w-11/12 lg:full mx-auto xl:mt-[-70px] "
