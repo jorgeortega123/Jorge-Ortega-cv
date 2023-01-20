@@ -41,7 +41,6 @@ const CvMain = () => {
   const [isLoadedBody, setisLoadedBody] = useState(false);
   const [defaultLang, setdefaultLang] = useState();
   const [imgSrc, setimgSrc] = useState("");
-  const text_color = data?.text || "#fff";
   useEffect(() => {
     document.body.style.overflowX = "hidden";
     if (document.readyState === "complete") {
@@ -80,7 +79,7 @@ const CvMain = () => {
   return (
     <div
       id="home"
-      className={`main-container init text-${text_color} relative`}
+      className={`main-container init relative`}
     >
       <Background />
       <NavView
@@ -144,7 +143,7 @@ const CvMain = () => {
           <ImageView setshowImg={setshowImg} imgSrc={imgSrc} />
         </motion.div>
       )}
-      <div className="main-page mx-auto sm:w-[500px] md:w-[600px] lg:w-full ">
+      <div className="main-page mx-auto  lg:w-full ">
         <AnimatePresence>
           {showMenuNavbar && (
             <motion.div
@@ -165,34 +164,41 @@ const CvMain = () => {
           <Header dataText={dataText} staticInf={staticInf} />
           <div
             id="about"
-            className="textWrote w-11/12 lg:full mx-auto xl:mt-[-70px] "
+            className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] "
           >
-            <div className="w-full flex flex-col max-w-[800px] mb-7">
+            <div className="w-full flex flex-col max-w-[800px] mb-7 justify-center items-center text-[1.5rem] xl:text-[1.7rem]">
               <MainContainer
-                className="flex relative bg-[#072346] rounded-md mt-10"
+                className="flex relative bg-[#072346] rounded-md mt-10 w-11/12 sm:w-10/12 "
                 title={dataText.headers.about}
+                subtitle={dataText.headers._about}
               >
                 <div
-                  className={`font-[100] header-info normalText p-[10px] rounded-[10px] lg:text-[23px] xl:text-[26px] text-${text_color}`}
+                  className={`font-[100] header-info normalText p-[10px] rounded-[10px] `}
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
                 ></div>
               </MainContainer>
-              <Skills
-                CvIcon={CvIcon}
-                dataText={dataText}
-                setshowDownload={setshowDownload}
-              />
+              <div className="w-11/12 sm:w-10/12 ">
+              <MainContainer className="flex w-full" subtitle={dataText.headers._knowledge} title={dataText.headers.knowledge}>
+                <Skills
+                  className=" "
+                  CvIcon={CvIcon}
+                  dataText={dataText}
+                  setshowDownload={setshowDownload}
+                />  </MainContainer>
+              </div>
             </div>
             <MainContainer
               id="proyects"
               className="flex "
               title={dataText.headers.proyects}
+              subtitle={dataText.headers._proyects}
+              
             >
               <div id="proyects-view" className="relative mt-6">
                 <div className="w-full flex justify-center items-center">
-                  <div className="flex-col space-y-4 lg:space-y-7 w-full xl:w-8/12">
+                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mx-5 lg:mx-[60px] gap-2  sm:gap-5 ">
                     {dataText.proyects.map((e, n) => {
                       return (
                         <ContainerProyects
@@ -212,14 +218,16 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-            <Contributions data={dataText} />
-            <CurrentlyProyect
-              dataText={dataText}
-              staticInf={staticInf}
-            ></CurrentlyProyect>
+          <div className="w-11/12 sm:w-10/12 lg:sm:w-8/12 flex flex-col items-center">
+              <Contributions data={dataText} />
+              <CurrentlyProyect
+                dataText={dataText}
+                staticInf={staticInf}
+              ></CurrentlyProyect></div>
+           
 
             <div id="contact" className="w-full max-w-[800px]">
-              <MainContainer className="" title={dataText.headers.contact}>
+              <MainContainer className="" subtitle={dataText.headers._contact} title={dataText.headers.contact}>
                 <div className="m-2 ">
                   <p className="hidden mb-3 font-bold text-[28px]">
                     {dataText.contact.about}

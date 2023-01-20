@@ -2,6 +2,7 @@ import React from "react";
 
 export default function MainContainer({
   title,
+  subtitle, 
   children,
   convertHTML,
   className,
@@ -9,9 +10,10 @@ export default function MainContainer({
   ...props
 }: {
   title: string;
+  subtitle: string;
   children?: any;
   className?: string;
-  id?:string
+  id?: string;
   convertHTML?: boolean;
 }) {
   const spacing = "100px";
@@ -20,8 +22,16 @@ export default function MainContainer({
       className={`w-full flex flex-col  justify-center items-center pt-[40px]  `}
       id={id}
     >
-      <p className="titleText text-left my-3">{title}</p>
-      <div className={`relative ${JSON.stringify(props)} justify-center items-center space-y-5 w-full  ${className} `}>
+      <div className="my-3 text-[26px] lg:text-[30px] text-center ">
+        <p className="titleText leading-3 ">{title}</p>
+        <p className="text-[1.3rem] ">{subtitle}</p>
+      </div>
+
+      <div
+        className={`relative ${JSON.stringify(
+          props
+        )} justify-center items-center space-y-5 w-full  ${className} `}
+      >
         {children}
       </div>
     </div>

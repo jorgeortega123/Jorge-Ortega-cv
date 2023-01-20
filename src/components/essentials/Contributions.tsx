@@ -7,7 +7,7 @@ export default function Contributions(data) {
   const { goToUrl } = useMainContext();
   console.log(data.data);
   return (
-    <MainContainer title={data.data.headers.contributions}>
+    <MainContainer subtitle={data.data.headers._contributions} title={data.data.headers.contributions}>
       <div className="flex justify-center items-center w-full  ">
         <div className=" bg-[#00000023] w-full xl:w-6/12 px-6 border-l-[1px] rounded-[6px] ">
           <div className="relative">

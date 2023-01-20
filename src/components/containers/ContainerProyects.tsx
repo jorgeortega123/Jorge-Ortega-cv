@@ -53,7 +53,7 @@ export default function ContainerProyects({
       t: "#472D2D",
     },
     {
-      b: "#4fff05",
+      b: "#9fff05",
       t: "#9A2617",
     },
     {
@@ -127,12 +127,12 @@ export default function ContainerProyects({
 
   return (
     <div className="w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
-      <div className=" items-center flex justify-center relative">
+      <div className="items-center flex justify-center relative">
         <div
           onClick={() => {
             changeHandle();
           }}
-          className=" transition-modal-proyects absolute xl:top-[96px] right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
+          className=" transition-modal-proyects absolute right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
         >
           {inGroup ? <img src={inGroupSVG}></img> : <img src={inSoloSVG}></img>}
           {showGroup && (
@@ -147,12 +147,12 @@ export default function ContainerProyects({
           )}
         </div>
         <div
-          className=" xl:hidden relative  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects"
+          className="relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects useTextColor"
           onClick={() => goToUrl(web)}
         >
           <p>{title}</p>
           <img
-            className="absolute w-7 h-7 cursor-pointer top-[6px] right-[-30px] "
+            className=" w-7 h-7 cursor-pointer "
             src={newWindow}
             alt=""
             onClick={() => goToUrl(web)}
@@ -160,7 +160,7 @@ export default function ContainerProyects({
         </div>
         <div
           onClick={() => goToUrl(repo)}
-          className=" absolute top-[12px] left-1 flex"
+          className="absolute top-[12px] left-1 flex"
         >
           <svg
             height="24"
@@ -177,9 +177,10 @@ export default function ContainerProyects({
           </svg>
         </div>
       </div>
-      <div className="flex-col sm:flex-row w-full lg:flex lg:items-center xl:p-4">
-        <div className="w-12/12 lg:h-[500px] lg:min-w-[390px] lg:w-7/12 xl:w-9/12  items-center flex justify-center px-2 lg:pb-2">
-          {!loadImages ? (
+      <div className="flex-col w-full ">
+        <div className="w-12/12   items-center flex justify-center  ">
+          <img className="" src={imagesFrom[index].all[0]} alt="" />
+          {/* {!loadImages ? (
             <HeroMain
               images={imagesFrom[index].all}
               showImage={showImage}
@@ -187,33 +188,29 @@ export default function ContainerProyects({
             ></HeroMain>
           ) : (
             <p>Charging...</p>
-          )}
+          )} */}
         </div>
-        <div className="normalText text-[12px] h-full lg:p-10  lg:w-6/12 flex flex-col lg:text-left lg:items-center lg:justify-center">
-          <div
-            className="relative flex items-center  pt-[1px pb-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-4 relative container-proyects"
-            onClick={() => {
-              var link = document.createElement("a");
-              link.href = web;
-              link.target = "_blank";
-              link.click();
-            }}
-          >
-            <p>{title}</p> 
-            <img
-            className="ml-3 w-6 invisible xl:visible"
-            src={newWindow}
-            alt=""
-            onClick={() => goToUrl(web)}
-          />
+        <div className=" normalText text-[12px] h-full lg:p-3  flex flex-col ">
+          <div className="relative flex items-center useTextColor  pb-[1px] text-[29px] lg:text-[32px] lg:my-1 container-proyects ">
+            <p
+            className="cursor-pointer "
+              onClick={() => {
+                var link = document.createElement("a");
+                link.href = web;
+                link.target = "_blank";
+                link.click();
+              }}
+            >
+              {title}
+            </p>
           </div>
           <div
-            className="xl:border-r-[1px] xl:rounded-[6px] xl:border-[#666666b6] normalText altura-letras text-[22px] lg:text-[28px]"
+            className="  normalText altura-letras text-[22px] lg:text-[28px]"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
           <div
             id={"appendp" + index}
-            className="xl:border-l-[1px] xl:rounded-[6px] xl:border-[#666666b6]  flex flex-wrap mt-2 mb-2 select-none"
+            className=" flex flex-wrap mt-2 mb-2 select-none"
           ></div>
         </div>
       </div>

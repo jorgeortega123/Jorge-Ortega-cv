@@ -8,6 +8,7 @@ $base-color-h1: #fff;
 $secondary-color: #66ff00;
 $base-color-h1-hover: #f6ff00;
 $main-color: #0f2d51;
+$space-margin-main: 5px;
 @font-face {
   font-family: "subtitle";
   font-style: normal;
@@ -31,6 +32,10 @@ svg:hover {
   fill: $secondary-color;
 }
 
+.useMargin { 
+  margin-left: $space-margin-main;
+  margin-right: $space-margin-main;
+}
 
 
 .header-altura {
@@ -69,7 +74,7 @@ svg:hover {
   z-index: 0;
   font-family: "normal";
   font-size: 23px;
-  color: rgb(255, 255, 255);
+
 }
 .main-color {
   transition: all 0.3s;
@@ -144,8 +149,6 @@ h2 {
 }
 .titleText {
   font-family: "subtitle";
-  font-size: 24px;
-  text-indent: 8px;
   position: relative;
   transition: all 0.3s;
   color: $base-color-h1;
@@ -155,18 +158,20 @@ h2 {
   color: $base-color-h1-hover;
   cursor: pointer;
 }
-.titleText::before {
-  content: "";
-  border-bottom: 1px solid $secondary-color;
-  position: absolute;
-  transform: translateX(-3px);
-  width: 100%;
-  height: 40px;
-  transition: all 1.5s;
-  animation: titleAnim 1.1s ease-in-out forwards;
-  opacity: 0;
+// .titleText::before {
+//   content: "";
+//   border-bottom: 1px solid $secondary-color;
+//   position: absolute;
+//   transform: translateX(-3px);
+//   width: 100%;
+//   height: 40px;
+//   transition: all 1.5s;
+//   animation: titleAnim 1.1s ease-in-out forwards;
+//   opacity: 0;
+// }
+.useTextColor { 
+  color: white;
 }
-
 .svgTheme {
   fill: #00295f;
 }
@@ -552,4 +557,36 @@ nav .rotate180-alternate {
     transform: rotate(360deg);
     border-color: rgb(255, 255, 255);
   }
+}
+.useBackgroundMove { 
+  overflow: hidden;
+}
+.useBackgroundMove::before {
+  content: "";
+  position: absolute;
+  margin: 0;
+  margin-top: -680px;
+  margin-left: -580px;
+  z-index: 0;
+  width: 2750px;
+  height: 2750px;
+  background: linear-gradient(
+    90deg,
+    rgba(194, 24, 24, 1) 10%,
+    rgb(174, 0, 255) 29%,
+    rgba(16, 237, 32, 1) 100%
+  );
+  animation: move-border 5s linear infinite;
+}
+@keyframes move-border {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animation-delay { 
+  animation-delay: .7s;
 }
