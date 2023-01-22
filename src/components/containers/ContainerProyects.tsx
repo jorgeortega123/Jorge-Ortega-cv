@@ -126,15 +126,21 @@ export default function ContainerProyects({
   };
 
   return (
-    <div className="w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
-      <div className="items-center flex justify-center relative">
+    <div className="relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
+      <div className=" items-center flex justify-center relative ">
         <div
           onClick={() => {
             changeHandle();
           }}
-          className=" transition-modal-proyects absolute right-0 mt-1 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
+          className="h-full items-center flex justify-center transition-modal-proyects absolute right-0 w-[36px] text-slate-50 fill-slate-50 text-[20px]"
         >
-          {inGroup ? <img src={inGroupSVG}></img> : <img src={inSoloSVG}></img>}
+          <div className=" w-8 ">
+            {inGroup ? (
+              <img src={inGroupSVG}></img>
+            ) : (
+              <img src={inSoloSVG}></img>
+            )}
+          </div>
           {showGroup && (
             <>
               <div className="bg-[#000000a8] rounded-[6px] p-2 absolute z-[3] flex left-[-40px] altura-letras  max-w-[110px]">
@@ -147,20 +153,14 @@ export default function ContainerProyects({
           )}
         </div>
         <div
-          className="relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects useTextColor"
+          className=" relative flex items-center mr-[-26px]  px-[1px] cursor-pointer text-[29px] lg:text-[42px] lg:my-1  container-proyects useTextColor"
           onClick={() => goToUrl(web)}
         >
           <p>{title}</p>
-          <img
-            className=" w-7 h-7 cursor-pointer "
-            src={newWindow}
-            alt=""
-            onClick={() => goToUrl(web)}
-          />
         </div>
         <div
           onClick={() => goToUrl(repo)}
-          className="absolute top-[12px] left-1 flex"
+          className=" h-full absolute left-1 flex items-center"
         >
           <svg
             height="24"
@@ -193,13 +193,8 @@ export default function ContainerProyects({
         <div className=" normalText text-[12px] h-full lg:p-3  flex flex-col ">
           <div className="relative flex items-center useTextColor  pb-[1px] text-[29px] lg:text-[32px] lg:my-1 container-proyects ">
             <p
-            className="cursor-pointer "
-              onClick={() => {
-                var link = document.createElement("a");
-                link.href = web;
-                link.target = "_blank";
-                link.click();
-              }}
+              className="cursor-pointer "
+              onClick={()=>goToUrl(web)} 
             >
               {title}
             </p>
@@ -214,28 +209,10 @@ export default function ContainerProyects({
           ></div>
         </div>
       </div>
+      <div className="absolute bottom-0  w-full left-0  flex space-x-3 px-2 pb-2">
+        <button onClick={()=>goToUrl(web)} className=" useTransitionDelay border-[1px] rounded-[6px] px-7 border-[#66ff00] text-[#66ff00]  hover:bg-[#66ff00f1] hover:text-[black]">Visit</button>
+        <button  onClick={() => goToUrl(repo)}  className=" useTransitionDelay border-[1px] rounded-[6px] px-7 border-[#1cf0ff] text-[#1cf0ff]">Code</button>
+      </div>
     </div>
   );
 }
-
-/*
-    <div className="w-full border pl-2 pr-2">
-      <div className="items-center flex justify-left">
-        <p>{title}</p>
-        <img className="w-7 h-7 ml-1" src={newWindow} alt="" />
-      </div>
-      <div className="flex">
-        <div className=" w-[150px] h-[170px] items-center flex justify-left">
-          FOTO
-        </div>
-        <div className="h-full flex flex-col justify-end">
-          <p className="text-[17px]">{about}</p>
-          {langs.map((lan,index) => (
-            <p key={lan + "Child" + index} className="tagsLanguajes">
-              {lan}
-            </p>
-          ))}
-        </div>
-      </div>
-    </div>
-*/

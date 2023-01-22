@@ -32,6 +32,7 @@ svg:hover {
   fill: $secondary-color;
 }
 
+
 .useMargin { 
   margin-left: $space-margin-main;
   margin-right: $space-margin-main;
@@ -590,3 +591,7 @@ nav .rotate180-alternate {
 .animation-delay { 
   animation-delay: .7s;
 }
+
+.useTransitionDelay {
+  transition: all .2s;
+ }

@@ -123,8 +123,10 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
  
       <div
         id="knowledge"
-        className="min-h-[400px]  max-w-full w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
-      >
+        className="min-h-[400px] overflow-hidden relative max-w-full w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
+      > 
+      <div className="absolute w-full rounded-[6px] left-0 h-[2px] top-0 useBackgroundMove "></div>
+      <div className="absolute w-full rounded-[6px]  left-0 h-[2px] bottom-0 useBackgroundMove rotate-180 "></div>
         {images.map((e) => (
           <div className="relative">
             <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  ">
@@ -132,7 +134,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
                 {e.title}
               </p>
             </div>
-            <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] main-color animation-delay useBackgroundMove "></div>
+            <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] bg-[#0000001a]  animation-delay  "></div>
             <div className="grid grid-cols-4 gap-2 justify-center items-center my-3">
               {e.data.map((e) => {
                 return (

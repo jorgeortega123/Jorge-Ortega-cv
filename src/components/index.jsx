@@ -28,6 +28,7 @@ import CurrentlyProyect from "./essentials/CurrentlyProyect";
 import useMainContext from "./context/useMainContext";
 
 import useLang from "../functions/useLang";
+import Services from "./essentials/Services";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -77,10 +78,7 @@ const CvMain = () => {
   };
 
   return (
-    <div
-      id="home"
-      className={`main-container init relative`}
-    >
+    <div id="home" className={`main-container init relative`}>
       <Background />
       <NavView
         LangSvg={LangSvg}
@@ -180,13 +178,18 @@ const CvMain = () => {
                 ></div>
               </MainContainer>
               <div className="w-11/12 sm:w-10/12 ">
-              <MainContainer className="flex w-full" subtitle={dataText.headers._knowledge} title={dataText.headers.knowledge}>
-                <Skills
-                  className=" "
-                  CvIcon={CvIcon}
-                  dataText={dataText}
-                  setshowDownload={setshowDownload}
-                />  </MainContainer>
+                <MainContainer
+                  className="flex w-full"
+                  subtitle={dataText.headers._knowledge}
+                  title={dataText.headers.knowledge}
+                >
+                  <Skills
+                    className=" "
+                    CvIcon={CvIcon}
+                    dataText={dataText}
+                    setshowDownload={setshowDownload}
+                  />{" "}
+                </MainContainer>
               </div>
             </div>
             <MainContainer
@@ -194,7 +197,6 @@ const CvMain = () => {
               className="flex "
               title={dataText.headers.proyects}
               subtitle={dataText.headers._proyects}
-              
             >
               <div id="proyects-view" className="relative mt-6">
                 <div className="w-full flex justify-center items-center">
@@ -218,16 +220,25 @@ const CvMain = () => {
                 </div>
               </div>
             </MainContainer>
-          <div className="w-11/12 sm:w-10/12 lg:sm:w-8/12 flex flex-col items-center">
+            <div id="services" className="w-full ">
+              <MainContainer className="flex justify-center items-center" subtitle="What I offer" title="Services">
+                <Services></Services>
+              </MainContainer>
+            </div>
+            <div className="w-11/12 sm:w-10/12 lg:sm:w-8/12 flex flex-col items-center">
               <Contributions data={dataText} />
               <CurrentlyProyect
                 dataText={dataText}
                 staticInf={staticInf}
-              ></CurrentlyProyect></div>
-           
+              ></CurrentlyProyect>
+            </div>
 
             <div id="contact" className="w-full max-w-[800px]">
-              <MainContainer className="" subtitle={dataText.headers._contact} title={dataText.headers.contact}>
+              <MainContainer
+                className=""
+                subtitle={dataText.headers._contact}
+                title={dataText.headers.contact}
+              >
                 <div className="m-2 ">
                   <p className="hidden mb-3 font-bold text-[28px]">
                     {dataText.contact.about}
