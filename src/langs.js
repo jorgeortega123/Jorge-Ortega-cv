@@ -11,6 +11,7 @@ export const lang = {
       _proyects: "Proyectos",
       contributions: "Contribución a la comunidad",
       _contributions: "Contribución a la comunidad",
+      services: "Servicios",
       contact: "Contactar",
       _contact: "",
       callme: "Teléfono",
@@ -162,6 +163,7 @@ export const lang = {
       _proyects: "Proyects",
       contributions: "Contribution to community",
       _contributions: "Contribution to community",
+      services: "Services",
       contact: "Contact",
       _contact: "Get in touch",
       callme: "Call me",
@@ -177,7 +179,14 @@ export const lang = {
       eng: "English",
       es: "Spanish",
       downloadCv: "Download Curriculum Vitae",
-      aboutInfo: `Hi, I'm a <span class="text-bold mark-1">react</span> developer, I wrote my first code when I was 14 years old. I have always looked for ways to solve everyday problems through the wonderful world of programming. I am currently 18 and keeping constantly <span class="text-bold">acquire knowledge</span>.  `,
+      aboutInfo: `Hello, I am a developer in <span class="text-bold mark-1">React</span>,
+      I wrote my first code since I was 14 years old. I've always
+      searched for the way
+      <span class="text-bold mark-1">fix problems</span>
+      daily through the wonderful world of
+      <span class="text-bold mark-1">programming</span>. I am currently 18
+      and I keep constant
+      <span class="text-bold mark-1">acquire knowledge</span>. I specialize in React but I still know a lot about other technologies/libraries/frameworks. `,
       aboutInfo2: ` I know how use frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>, <span class="text-bold mark-1">TailwindCss</span> (also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
       footerText: "Made with love. Watch code",
       footerTextLink: "here",

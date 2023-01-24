@@ -80,8 +80,9 @@ export default function ContainerProyects({
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
       // var randomNumber = Math.floor(Math.random() * colors.length);
       // elementCreate.style.color = colors[randomNumber].t;
-      elementCreate.style.color = colors[indexNumber].t;
-      elementCreate.style.backgroundColor = colors[indexNumber].b;
+      // elementCreate.style.color = colors[indexNumber].t;
+      // elementCreate.style.backgroundColor = colors[indexNumber].b;
+      // elementCreate.style.border = colors[indexNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
     });
   };

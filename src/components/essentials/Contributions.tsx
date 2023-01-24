@@ -21,7 +21,7 @@ export default function Contributions(data) {
               <a
                 href={data.data.repos[0].link}
                 target={"_blank"}
-                className="font-semibold   tracking-wide"
+                className="font-semibold   tracking-wide text-white"
               >
                 react-scroll-video
               </a>

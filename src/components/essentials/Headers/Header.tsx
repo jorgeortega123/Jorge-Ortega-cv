@@ -18,7 +18,7 @@ export default function Header({
   //w-[calc(100%_-_10rem)]
   return (
     <div className="lg:min-h-[calc(100vh_-_50px)] flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 pt-[52px] w-full">
-      <div className=" p-2 lg:pl-12 xl:pl-0 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-140px] xl:mx-auto xl:ml-[270px]">
+      <div className="sm:px-6 p-2 lg:pl-12 xl:pl-0 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-140px] xl:mx-auto xl:ml-[270px]">
         <AnimationsLoader duration={3} moveY={-10}>
           <h1 className="text-[50px] lg:text-[80px] w-10/12 sm:w-5/10 sm:mt-[50px] xl:mt-0 xl:w-9/12 title-main-header">
             {dataText.headers.main}
@@ -50,7 +50,7 @@ export default function Header({
           </Button>
         </div>
         <div className="z-[7] absolute top-[-200px] sm:top-auto sm:left-[-100px]">
-          <div className=" flex flex-col mt-[5px] sm:mt-0  sm:ml-2 sm:mt-[17px] animation-init  lg:flex-row lg:ml-[100px] lg:mt-[540px]  xl:ml-0 xl:flex-col xl:mt-0 ">
+          <div className=" flex flex-col mt-[5px]   animation-init  sm:flex-row sm:ml-[100px] sm:mt-[540px]  xl:ml-0 xl:flex-col xl:mt-0 ">
             <SocialNetworks
               url={staticInf.social[1].url}
               img={LinkedinSGV}
