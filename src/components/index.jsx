@@ -29,6 +29,7 @@ import useMainContext from "./context/useMainContext";
 
 import useLang from "../functions/useLang";
 import Services from "./essentials/Services";
+import Proyects from "./essentials/Proyects";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -198,30 +199,20 @@ const CvMain = () => {
               title={dataText.headers.proyects}
               subtitle={dataText.headers._proyects}
             >
-              <div id="proyects-view" className="relative mt-6">
-                <div className="w-full flex justify-center items-center">
-                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 mx-5 lg:mx-[60px] gap-2  sm:gap-5 ">
-                    {dataText.proyects.map((e, n) => {
-                      return (
-                        <ContainerProyects
-                          index={n}
-                          title={e.title}
-                          about={e.about}
-                          img={e.img}
-                          web={e.web}
-                          langs={e.tags}
-                          inGroup={e.onGroup}
-                          repo={e.repo}
-                          showImage={showImage}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
+              {/* 
+              MENU PROYECTOS
+              */}
+              {/* 
+              MENU PROYECTOS
+              */}
+            <Proyects dataText={dataText} showImage={showImage} />
             </MainContainer>
             <div id="services" className="w-full ">
-              <MainContainer className="flex justify-center items-center" subtitle="What I offer" title="Services">
+              <MainContainer
+                className="flex justify-center items-center"
+                subtitle="What I offer"
+                title="Services"
+              >
                 <Services></Services>
               </MainContainer>
             </div>

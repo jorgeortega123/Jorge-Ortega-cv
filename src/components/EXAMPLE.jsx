@@ -81,6 +81,15 @@ export default function EXAMPLE() {
         esto como un método para hacer más fácil la nueva
         <span class="text-bold">modalidad online</span> en el colegio.
       </div>
+      <div className="COUNTDOWNS ES">
+        Página web que permite crear
+        <span class="text-bold">conteos regresivos</span>, ya sea para recordar
+        alguna <span class="text-bold">fecha importante</span> o para tener en
+        cuenta cuantos días falta para que una fecha específica suceda. Tiene
+        conteos predefinidos. Como
+        <span class="text-bold">eventos astronómicos</span>, feriados y
+        <span class="text-bold">sucesos mundiales</span>.
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const lang = {
       location: "Ubicación",
       developer: "Desarrollador",
       knowledge: "Conocimiento",
-      _knowledge : "Tegnologias que domino",
+      _knowledge: "Tegnologias que domino",
       learning: "Actualmente estoy aprendiendo:",
       basicKnowledge: "Conocimiento básico",
       visit: "Visitar",
@@ -39,11 +39,14 @@ export const lang = {
       footerText: "Hecho con amor, código fuente",
       footerTextLink: "aquí",
     },
-    repos: [{
-      title: "react-scroll-video",
-      link: "https://www.npmjs.com/package/react-scroll-video",
-      description: "Componente que ayuda a reproducir un video con el scroll de la pagina web."
-    }],
+    repos: [
+      {
+        title: "react-scroll-video",
+        link: "https://www.npmjs.com/package/react-scroll-video",
+        description:
+          "Componente que ayuda a reproducir un video con el scroll de la pagina web.",
+      },
+    ],
     contact: {
       about:
         "Si quiere contactarse conmigo puede mandar enviar un mensaje a traves de:",
@@ -113,6 +116,23 @@ export const lang = {
         ],
         web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
+        onGroup: false,
+      },
+      {
+        title: "CountDowns",
+        about: `Página web que permite crear
+        <span class="text-bold">conteos regresivos</span>, ya sea para recordar
+        alguna <span class="text-bold">fecha importante</span> o para tener en
+        cuenta cuantos días falta para que una fecha específica suceda. Tiene
+        conteos predefinidos. Como
+        <span class="text-bold">eventos astronómicos</span>, feriados y
+        <span class="text-bold">sucesos mundiales</span>.`,
+        tags: ["React"],
+        img: [
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
+        ],
+        web: "https://github.com/jorgeortega123/Files-manager",
+        repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
       },
     ],
@@ -191,11 +211,14 @@ export const lang = {
       footerText: "Made with love. Watch code",
       footerTextLink: "here",
     },
-    repos: [{
-      title: "react-scroll-video",
-      link: "https://www.npmjs.com/package/react-scroll-video",
-      description: "Component that reproduce a video when user scroll the page web."
-    }],
+    repos: [
+      {
+        title: "react-scroll-video",
+        link: "https://www.npmjs.com/package/react-scroll-video",
+        description:
+          "Component that reproduce a video when user scroll the page web.",
+      },
+    ],
     contact: {
       about: "Get in touch:",
       number: "+593962716235",
@@ -263,6 +286,23 @@ export const lang = {
         ],
         web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
+        onGroup: false,
+      },
+      {
+        title: "CountDowns",
+        about: `Web page that allows you to create
+                 <span class="text-bold">countdowns</span>, whether to remember
+                 some <span class="text-bold">important date</span> or to keep in mind
+                 Count how many days until a specific date happens. Have
+                 predefined counts. Such as
+                 <span class="text-bold">astronomical events</span>, holidays and
+                 <span class="text-bold">world events</span>.`,
+        tags: ["React"],
+        img: [
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
+        ],
+        web: "https://github.com/jorgeortega123/Files-manager",
+        repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
       },
     ],
@@ -357,6 +397,13 @@ export const lang = {
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_1_2_rgnryp.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_3_nt77qj.png",
+        ],
+      },
+      {
+        title: "CountDowns",
+        key: "ctn",
+        all: [
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
         ],
       },
     ],

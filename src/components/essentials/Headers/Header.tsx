@@ -57,7 +57,6 @@ export default function Header({
               classNamee={""}
               number={1}
             ></SocialNetworks>
-
             <SocialNetworks
               url={staticInf.social[2].url}
               img={GithubSVG}
