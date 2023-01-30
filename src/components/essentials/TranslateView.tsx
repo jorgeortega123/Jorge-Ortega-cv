@@ -2,6 +2,9 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Modals from "../containers/Modals";
 export default function TranslateView({ changeLang, selectedLang }) {
+  const change = () => { 
+    
+  }
   return (
 
     <motion.div
