@@ -8,7 +8,7 @@ export default function TranslateView({
 }) {
   const change = () => {};
   return (
-    <div className="absolute left-0">
+    <div className="fixed left-0 w-screen z-[2]">
       <Modals setshowDownload={showMenuTranslateFunc} title="Languaje">
         <div className="flex flex-col space-y-2">
           <div
@@ -17,6 +17,8 @@ export default function TranslateView({
             }  hover:text-green-400 cursor-pointer`}
             onClick={() => {
               changeLang("en");
+              document.body.style.overflowY="scroll"
+              showMenuTranslateFunc(false)
             }}
           >
             <img
@@ -33,6 +35,8 @@ export default function TranslateView({
             }   hover:text-green-400 z-[0] cursor-pointer`}
             onClick={() => {
               changeLang("es");
+              document.body.style.overflowY="scroll"
+              showMenuTranslateFunc(false)
             }}
           >
             <img

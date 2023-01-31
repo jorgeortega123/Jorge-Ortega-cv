@@ -29,9 +29,9 @@ export default function Proyects(dataText, showImage) {
                   onClick={() => setshowMenu(!showMenu)}
                   className="relative px-2 mx-1 py-1 border rounded-[4px] border-[#00000081] flex items-center h-[26px] w-[70px] justify-center"
                 >
-                  {limitNumebr}
+                 <span className="text-[#66ff00]">{limitNumebr}</span> 
                   {showMenu && (
-                    <span className="z-[2] border border-[#00000081] bg-[#00000031]  absolute left-2 bottom-[-105px]  flex flex-col text-center w-[55px]">
+                    <span className="z-[2] border border-[#00000081] bg-[#00000031]  absolute left-2 bottom-[-105px]  flex flex-col text-center w-[55px] ">
                       <span
                         onClick={() => changeLimit(2)}
                         className="hover:bg-[#00000031] "
