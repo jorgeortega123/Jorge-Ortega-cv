@@ -1,37 +1,54 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Modals from "../containers/Modals";
-export default function TranslateView({ changeLang, selectedLang }) {
-  const change = () => { 
-    
-  }
+export default function TranslateView({
+  changeLang,
+  selectedLang,
+  showMenuTranslateFunc,
+}) {
+  const change = () => {};
   return (
+    <div className="absolute left-0">
+      <Modals setshowDownload={showMenuTranslateFunc} title="Languaje">
+        <div className="flex flex-col space-y-2">
+          <div
+            className={`flex items-center m-0 ${
+              selectedLang("en") && "text-blue-700"
+            }  hover:text-green-400 cursor-pointer`}
+            onClick={() => {
+              changeLang("en");
+            }}
+          >
+            <img
+              className="h-7 w-12"
+              src="https://flagsweb.com/images/WEBP/Flag_of_the_United_States.webp"
+              alt=""
+            />
 
-    <motion.div
-      initial={{ opacity: 0,}}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, x: 0 }}
-      transition={{ type: "tween" }}
-      className=" absolute z-[-1] flex-col left-0 p-3 text-[12px] w-[140px] bg-[#000000c7] text-slate-100 cursor-pointer blockAllSelect "
-    >
-      <div className="flex flex-col space-y-2">
-        <div
-          className={`m-0 ${selectedLang("en") && "text-blue-700"}  hover:text-green-400`}
-          onClick={() => {
-            changeLang("en");
-          }}
-        >
-          &raquo; English
+            <p className="px-2"> English</p>
+          </div>
+          <div
+            className={`flex items-center m-0 ${
+              selectedLang("es") && "text-blue-700"
+            }   hover:text-green-400 z-[0] cursor-pointer`}
+            onClick={() => {
+              changeLang("es");
+            }}
+          >
+            <img
+              className="h-7 w-12"
+              src={"https://flagsweb.com/images/WEBP/Flag_of_Ecuador.webp"}
+              alt=""
+            />
+            <p className="px-2">  Español</p>
+          </div>
         </div>
-        <div
-          className={`m-0 ${selectedLang("es") && "text-blue-700"}   hover:text-green-400 z-[0] `}
-          onClick={() => {
-            changeLang("es");
-          }}
-        >
-          &raquo; Español
+        <div className="pt-2 select-none hidden">
+          <input id="check-translate" type="checkbox" className="cursor-pointer" />
+          <label htmlFor="check-translate" className="px-2 cursor-pointer">Save my selection</label>
+ 
         </div>
-      </div>
-    </motion.div>
+      </Modals>
+    </div>
   );
 }

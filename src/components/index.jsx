@@ -61,6 +61,7 @@ const CvMain = () => {
     setshowMenuTranslate(!showMenuTranslate);
   };
   const changeLang = (langByUser) => {
+    // localStorage.setItem("lang", langByUser)
     setdataText(langByUser);
     setshowMenuTranslate(false);
   };

@@ -13,6 +13,7 @@ export default function NavView({
   dataText,
 }) {
   const { showMenuNavbar, setshowMenuNavbar } = useMainContext();
+  
   return (
     <>
       <div className="nav h-[46px] fixed top-0 blockAllSelect flex items-center justify-center ">
@@ -31,7 +32,7 @@ export default function NavView({
                   document
                     .getElementById("button-nav-id")
                     ?.classList.remove("active-nav");
-                    setshowMenuNavbar(!showMenuNavbar);
+                  setshowMenuNavbar(!showMenuNavbar);
                 }
               }}
             >
@@ -39,7 +40,7 @@ export default function NavView({
               <div className="line l2"></div>
               <div className="line l3"></div>
             </button>
-            <div className="flex blockAllSelect relative w-max">
+            <div className="flex blockAllSelect w-full">
               <div className="items-center flex">
                 <p className="useNavLetter px-2 ">Jorge Ortega</p>
               </div>
@@ -55,15 +56,16 @@ export default function NavView({
                     }}
                   />
                 </AnimationsLoader>
-                <AnimatePresence>
-                  {showMenuTranslate && (
-                    <TranslateView
-                      changeLang={changeLang}
-                      selectedLang={selectedLang}
-                    />
-                  )}
-                </AnimatePresence>
               </div>
+              <AnimatePresence>
+                {showMenuTranslate && (
+                  <TranslateView
+                    changeLang={changeLang}
+                    selectedLang={selectedLang}
+                    showMenuTranslateFunc={showMenuTranslateFunc}
+                  />
+                )}
+              </AnimatePresence>
             </div>
             <div className="invisible h-full pr-5 flex justify-center items-center lg:visible absolute text-slate-100 right-0 useNavLetter text-[1rem] ">
               <motion.div
@@ -72,8 +74,7 @@ export default function NavView({
                 exit={{ opacity: 0 }}
                 transition={{ type: "tween" }}
                 className="capitalize flex space-x-8"
-
-                >
+              >
                 <p className="hover:text-[#66ff00]">
                   <a href="#home">{dataText.headers.home}</a>
                 </p>
