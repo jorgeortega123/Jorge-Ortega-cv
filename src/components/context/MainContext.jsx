@@ -2,10 +2,10 @@ import React, { createContext, useEffect, useState } from "react";
 import sendServer from "../../server";
 import { lang } from "../../langs";
 export const MainContext = createContext({});
-const server = import.meta.env.VITE_SERVER_LINK;
+const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
-    sendServer(server, "/telegramCV", {text: "New entry from cv"} );
+    sendServer(server, "/telegramCV", { text: "New entry from cv" });
     loadImages();
   }, []);
   const [write, setWrite] = useState("");
@@ -21,8 +21,8 @@ function MainContextComponent({ children }) {
         //imgs.push(urlCreateImg);
       }
     }
-    console.log("holas",imgs)
-    setimages(imgs)
+    console.log("holas", imgs);
+    setimages(imgs);
   };
   var data = {
     color: "#0f2d51",
@@ -65,7 +65,7 @@ function MainContextComponent({ children }) {
         copyToClipBoard,
         showMenuNavbar,
         setshowMenuNavbar,
-        images
+        images,
       }}
     >
       {children}
