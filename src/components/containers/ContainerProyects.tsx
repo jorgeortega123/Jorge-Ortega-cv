@@ -19,6 +19,7 @@ export default function ContainerProyects({
   inGroup = false,
   repo = "",
   showImage,
+  imgSrc,
   ...props
 }: {
   title: string;
@@ -29,7 +30,8 @@ export default function ContainerProyects({
   index: number;
   inGroup: boolean;
   repo: string;
-  showImage: (data: string) => void;
+  showImage: (data: object) => void;
+  imgSrc: (data: string) => void;
 }) {
   const colors = [
     {
@@ -180,10 +182,10 @@ export default function ContainerProyects({
       </div>
       <div className="flex-col w-full ">
         <div className="w-12/12   items-center flex justify-center  ">
-          <img className="" src={imagesFrom[index].all[0]} alt="" />
+          <img className="" onClick={()=>imgSrc(imagesFrom[index].all[0])} src={imagesFrom[index].all[0]} alt="" />
           {/* {!loadImages ? (
             <HeroMain
-              images={imagesFrom[index].all}
+              images={[imagesFrom[index].all[0]]}
               showImage={showImage}
               proyect={imagesFrom[index]}
             ></HeroMain>

@@ -9,7 +9,7 @@ export default function Contributions(data) {
   return (
     <MainContainer subtitle={data.data.headers._contributions} title={data.data.headers.contributions}>
       <div className="flex justify-center items-center w-full  ">
-        <div className=" bg-[#00000023] w-full xl:w-6/12 px-6 border-l-[1px] rounded-[6px] ">
+        <div className=" bg-[#00000023] w-full xl:w-12/12 px-6 border-l-[1px] rounded-[6px] ">
           <div className="relative">
             <img
               className="absolute w-6 h-6 cursor-pointer top-[10px]  right-[-16px] "

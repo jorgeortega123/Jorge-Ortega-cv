@@ -58,7 +58,7 @@ export default function Services() {
     }
   };
   return (
-    <div className=" w-11/12 bg-[#00000023] rounded-[6px] border-[1px] border-[#0000001a]  px-2 sm:w-10/12 lg:sm:w-8/12 xl:w-5/12  ">
+    <div className=" w-11/12 bg-[#00000023] rounded-[6px] border-[1px] border-[#0000001a]  px-2 sm:w-10/12 lg:sm:w-8/12 xl:w-7/12  ">
       <div className="flex flex-col  w-full min-h-[110px]">
         <div>
           <div className="h-[110px] grid grid-cols-2">

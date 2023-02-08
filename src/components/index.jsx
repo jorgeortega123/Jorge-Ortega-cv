@@ -30,6 +30,7 @@ import useMainContext from "./context/useMainContext";
 import useLang from "../functions/useLang";
 import Services from "./essentials/Services";
 import Proyects from "./essentials/Proyects";
+import Experience from "./essentials/Experience";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -206,37 +207,41 @@ const CvMain = () => {
               {/* 
               MENU PROYECTOS
               */}
-            <Proyects dataText={dataText} showImage={showImage} />
+              <Proyects dataText={dataText} showImage={showImage} />
             </MainContainer>
-            <div id="services" className="w-full ">
-              <MainContainer
-                className="flex justify-center items-center"
-                subtitle="What I offer"
-                title="Services"
-              >
-                <Services></Services>
-              </MainContainer>
-            </div>
-            <div className="w-11/12 sm:w-10/12 lg:sm:w-8/12 flex flex-col items-center">
+
+            <MainContainer
+              className="flex justify-center items-center w-11/12 sm:w-10/12 lg:sm:w-8/12"
+              subtitle="What I offer"
+              title="Services"
+            >
+              <Services></Services>
+            </MainContainer>
+
+            <div className=" flex flex-col items-center">
               <Contributions data={dataText} />
-              <CurrentlyProyect
+              {/* <CurrentlyProyect
                 dataText={dataText}
                 staticInf={staticInf}
-              ></CurrentlyProyect>
+              ></CurrentlyProyect> */}
+            </div>
+            <div className="">
+              <MainContainer
+                className="flex flex-col items-center"
+                title="Experience"
+                subtitle="1+ year"
+              >
+                <Experience></Experience>
+              </MainContainer>
             </div>
 
-            <div id="contact" className="w-full max-w-[800px]">
+            <div id="contact" className="w-full max-w-[800px] px-5 sm:px-auto">
               <MainContainer
                 className=""
                 subtitle={dataText.headers._contact}
                 title={dataText.headers.contact}
               >
-                <div className="m-2 ">
-                  <p className="hidden mb-3 font-bold text-[28px]">
-                    {dataText.contact.about}
-                  </p>
-                  <ContactComponent dataText={dataText}></ContactComponent>
-                </div>
+                <ContactComponent dataText={dataText}></ContactComponent>
               </MainContainer>
             </div>
           </div>
