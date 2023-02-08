@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import sendServer from "../../server";
 import { lang } from "../../langs";
 export const MainContext = createContext({});
-const server = "https://mymone.azurewebsites.nett";
+const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
     sendServer(server, "/telegramCV", { text: "New entry from cv" });
