@@ -209,7 +209,7 @@ const CvMain = () => {
               */}
               <Proyects dataText={dataText} showImage={showImage} />
             </MainContainer>
-
+            
             <MainContainer
               className="flex justify-center items-center w-11/12 sm:w-10/12 lg:sm:w-8/12"
               subtitle="What I offer"
@@ -217,7 +217,7 @@ const CvMain = () => {
             >
               <Services></Services>
             </MainContainer>
-
+          
             <div className=" flex flex-col items-center">
               <Contributions data={dataText} />
               {/* <CurrentlyProyect

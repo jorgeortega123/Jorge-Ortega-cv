@@ -34,7 +34,7 @@ export default function SocialNetworks({
     transition={{ type: "tween" ,duration:1.5}}
     className=""
   >
-    <div className={classNamee}>
+    <div className={classNamee + " "}>
     <img
       src={img}
       className={`Social ${intoImg} cursor-pointer`}

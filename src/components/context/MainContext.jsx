@@ -7,7 +7,7 @@ function MainContextComponent({ children }) {
   useEffect(() => {
     sendServer(server, "/telegramCV", { text: "New entry from cv" });
     loadImages();
-  }, []);
+  });
   const [write, setWrite] = useState("");
   const [images, setimages] = useState();
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import MainContainer from "../containers/MainContainer";
-
+import Parallax from "../parallax"
 export default function Services() {
   const [textToShow, setTextToShow] = useState("word1");
   const [changeText, setchangeText] = useState(false)
@@ -59,6 +59,7 @@ export default function Services() {
   };
   return (
     <div className=" w-11/12 bg-[#00000023] rounded-[6px] border-[1px] border-[#0000001a]  px-2 sm:w-10/12 lg:sm:w-8/12 xl:w-7/12  ">
+     <Parallax ></Parallax>
       <div className="flex flex-col  w-full min-h-[110px]">
         <div>
           <div className="h-[110px] grid grid-cols-2">

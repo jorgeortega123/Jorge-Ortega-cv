@@ -43,7 +43,7 @@ export default function ContainerProyects({
       t: "#42032C",
     },
     {
-      b: "#533483",
+      b: "#b686ff",
       t: "#FFEA11",
     },
     {
@@ -84,7 +84,7 @@ export default function ContainerProyects({
       // elementCreate.style.color = colors[randomNumber].t;
       // elementCreate.style.color = colors[indexNumber].t;
       // elementCreate.style.backgroundColor = colors[indexNumber].b;
-      // elementCreate.style.border = colors[indexNumber].b;
+      elementCreate.style.color = colors[indexNumber].b;
       document.getElementById("appendp" + index)?.append(elementCreate);
     });
   };
@@ -208,7 +208,7 @@ export default function ContainerProyects({
           ></div>
           <div
             id={"appendp" + index}
-            className=" flex flex-wrap mt-2 mb-2 select-none"
+            className=" flex flex-wrap pb-3 pt-7 mb-2 select-none opacity-[75%]"
           ></div>
         </div>
       </div>

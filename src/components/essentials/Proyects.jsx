@@ -19,7 +19,7 @@ export default function Proyects(dataText, showImage) {
   
   return (
     <div id="proyects-view" className="mt-6 ">
-      <div className={`w-full xl:px-${limitNumebr % 2 === 0 ? '[250px]': '[0px'} flex justify-center items-center`}>
+      <div className={`w-full xl:px-${limitNumebr % 2 === 0 ? '[250px]': '[250px]'} flex justify-center items-center`}>
         <div className={` w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-${limitNumebr ===4 ? "2": limitNumebr} mx-5 lg:mx-[60px] gap-2  sm:gap-5 `}>
           <div className="absolute top-[-16px] tracking-wide select-none ">
             <div className=" items-center justify-center h-[16px]">

@@ -67,7 +67,7 @@ export default function NavView({
                 )}
               </AnimatePresence>
             </div>
-            <div className="invisible h-full pr-5 flex justify-center items-center lg:visible absolute text-slate-100 right-0 useNavLetter text-[1rem] ">
+            <div className="invisible h-full pr-5 flex justify-center items-center lg:visible absolute text-slate-300 right-0 useNavLetter text-[1rem] ">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -75,20 +75,20 @@ export default function NavView({
                 transition={{ type: "tween" }}
                 className="capitalize flex space-x-8"
               >
-                <p className="hover:text-[#66ff00]">
+                <p className="hover:text-white">
                   <a href="#home">{dataText.headers.home}</a>
                 </p>
-                <p className="hover:text-[#66ff00]">
+                <p className="hover:text-white">
                   <a href="#about">{dataText.headers.about}</a>
                 </p>
 
-                <p className="hover:text-[#66ff00]">
+                <p className="hover:text-white">
                   <a href="#proyects">{dataText.headers.proyects}</a>
                 </p>
-                <p className="hover:text-[#66ff00]">
+                <p className="hover:text-white">
                   <a href="#proyects">{dataText.headers.services}</a>
                 </p>
-                <p className="hover:text-[#66ff00]">
+                <p className="hover:text-white">
                   <a href="#contact">{dataText.headers.contact}</a>
                 </p>
               </motion.div>
