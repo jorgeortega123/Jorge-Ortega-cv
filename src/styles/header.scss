@@ -1,0 +1,28 @@
+.title-main-header {
+    font-family: "subtitle";
+    letter-spacing: 0.6px;
+    line-height: 1.2;
+    // -webkit-text-stroke: 1px #000000;
+    background: rgb(255, 255, 255);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.altura-letras {
+    line-height: 1;
+  }
+.text-developer { 
+    letter-spacing: .8px;
+}
+
+
+.animation-init img {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    animation-delay: 2s;
+    animation: loop 2.5s linear forwards;
+  }
+.animation-init img:hover {
+    border: 3px solid #fff;
+    border-radius: 100%;
+  }
+  

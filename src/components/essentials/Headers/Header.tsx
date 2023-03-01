@@ -20,19 +20,22 @@ export default function Header({
     <div className="lg:min-h-[calc(100vh_-_50px)] flex flex-col-reverse sm:flex-row space-x-2 space-y-2 justify-center items-center mb-12 pt-[52px] w-full">
       <div className="sm:px-6 p-2 lg:pl-12 xl:pl-0 h-full lg:w-6/12 flex flex-col justify-center relative lg:mt-[-100px] xl:mt-[-140px] xl:mx-auto xl:ml-[270px]">
         <AnimationsLoader duration={3} moveY={-10}>
-          <h1 className="text-[50px] lg:text-[80px] w-10/12 sm:w-5/10 sm:mt-[50px] xl:mt-0 xl:w-9/12 title-main-header">
+          <h1 className="text-[50px] lg:text-[100px] w-10/12 sm:w-5/10 sm:mt-[50px] xl:mt-0 xl:w-9/12 title-main-header">
             {dataText.headers.main}
           </h1>
         </AnimationsLoader>
         <div className="altura-letras mt-6">
           <AnimationsLoader duration={3} moveX={30}>
-            <p className=" text-slate-400 text-[24px] font-semibold lg:text-[38px]">
+            <p className=" text-slate-400 text-[24px] font-semibold lg:text-[38px] text-developer">
               {dataText.headers.sub}
             </p>
           </AnimationsLoader>
           <AnimationsLoader duration={3} moveX={-30}>
             <p className="  text-slate-400  lg:text-[26px]">
               {dataText.headers.sub1}
+              <span onClick={() => {
+              goToUrl(dataText.headers.sub_linked_link);
+            }} className="cursor-pointer text-white">{dataText.headers.sub_linked}</span>
             </p>
           </AnimationsLoader>
         </div>

@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./index.scss";
-import "./components/rounded_carrousel/carrousel.scss";
+import "./styles/index.css";
+import "./styles/index.scss";
+import "./styles/main.css";
+import "./styles/header.scss";
+import "./styles/skill.scss";
 import CvMain from "./components/index.jsx";
 import MainContextComponent from "./components/context/MainContext";
 ReactDOM.createRoot(document.getElementById("root")).render(

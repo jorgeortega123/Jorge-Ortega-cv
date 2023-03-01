@@ -22,6 +22,7 @@ var images = [
         img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/k_fhm489.png",
         text: "CSS",
         color: "#35aadd",
+        hidden: true
       },
       {
         img: "  https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845292/javascript-39404_yvaz5m.png",
@@ -58,11 +59,13 @@ var images = [
         img: "    https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805814/bootstrap-logo-shadow_wsyug6.png",
         text: "Bootstrap",
         color: "#9000f3",
+        hidden: true
       },
       {
         img: " https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806164/logo_t5er37.png",
         text: "Material-UI ",
         color: "#2581cb",
+        hidden: true
       },
     ],
   },
@@ -122,25 +125,26 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
   return (
     <div
       id="knowledge"
-      className="min-h-[400px] overflow-hidden relative max-w-full w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
+      className="min-h-[400px] overflow-hidden relative max-w-[550px] w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
     >
       <div className="absolute w-full rounded-[6px] left-0 h-[2px] top-0 useBackgroundMove "></div>
       <div className="absolute w-full rounded-[6px]  left-0 h-[2px] bottom-0 useBackgroundMove rotate-180 "></div>
       {images.map((e) => (
-        <div className="relative">
+        <div className="relative skills-segment-title">
           <div className="sticky z-[2] w-full bg-transparent flex justify-center text-center  ">
-            <p className=" z-[2] bg-[#0d2849] w-max px-2  font-bold text-[24px] capitalize rounded-full">
+            <p className="title-skills z-[2] bg-[#0d2849] w-max px-2  font-bold text-[24px] capitalize rounded-full">
               {e.title}
             </p>
           </div>
-          <div className="z-[1] absolute left-0 top-[15px] w-full h-[1px] bg-[#0000001a]  animation-delay  "></div>
+          <div className="line-skills-segment z-[1] absolute left-0 top-[15px] w-full h-[1px] bg-[#0000001a]  animation-delay  "></div>
           <div className="grid grid-cols-4 gap-2 justify-center items-center my-3">
             {e.data.map((e) => {
+              if (e.hidden) return;
               return (
                 <div
                   className={` h-[86px] relative w-full flex flex-col  text-center items-center skills-container hover:text-[${e.color}] hover:drop-shadow-[5px_6px_16px_${e.color}] `}
                 >
-                  <p className="text-skill  lg:text-[22px] xl:text-[25px]">
+                  <p className={`text-skill ${e.crown ? "text-yellow-500": ""}  lg:text-[22px] xl:text-[25px]`}>
                     {e.text}
                   </p>
                   {e.crown && (

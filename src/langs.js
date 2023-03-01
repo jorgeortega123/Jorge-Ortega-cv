@@ -3,12 +3,14 @@ export const lang = {
     headers: {
       main: "Hola, soy Jorge Ortega",
       sub: "Desarrollador React",
-      sub1: "Actualmente busco trabajo!",
+      sub1: "Actualmente trabajando en ",
+      sub_linked: "LLK",
+      sub_linked_link: "https://www.llampukaq.com/",
       home: "Inicio",
       about: "Acerca de mi",
       _about: "Acerca de mi",
       proyects: "Proyectos",
-      _proyects: "Proyectos",
+      _proyects: "Habilidades puestas en práctica",
       contributions: "Contribución a la comunidad",
       _contributions: "Contribución a la comunidad",
       services: "Servicios",
@@ -81,44 +83,6 @@ export const lang = {
         onGroup: false,
       },
       {
-        title: "LLK",
-        about: `       Aplicación web que ofrece servicio de tipo
-          <span class="text-bold">E-commerce </span> para empresas pequeñas
-          medianas y grandes. Incluyendo
-          <span class="text-bold">micro-servicios</span> como gestor de
-          inventario,
-          <span class="text-bold">pedidos online</span>, transacciones y
-          facturación por internet.`,
-        tags: [
-          "React",
-          "Typescript",
-          "Express",
-          "TailwindCss",
-          "MongoDB",
-          "GoogleApi",
-        ],
-        img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
-        ],
-        web: "https://www.llampukaq.com",
-        repo: "https://www.llampukaq.com",
-        onGroup: true,
-      },
-      {
-        title: "Files Manager",
-        about: `   Aplicación sencilla creada a partir de <span class="text-bold">Batch Scripting</span> (Windows)
-          Gestionaba documentos (.docx, .pdf) en carpetas con el nombre de alguna
-          materia escolar. A inicios de <span class="text-bold">pandemia</span> desarrollé esto como un método
-          para hacer más fácil la nueva <span class="text-bold">modalidad online</span> en el colegio.`,
-        tags: ["Batch", "Python", "Windows"],
-        img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
-        ],
-        web: "https://github.com/jorgeortega123/Files-manager",
-        repo: "https://github.com/jorgeortega123/Files-manager",
-        onGroup: false,
-      },
-      {
         title: "CountDowns",
         about: `Página web que permite crear
         <span class="text-bold">conteos regresivos</span>, ya sea para recordar
@@ -133,6 +97,20 @@ export const lang = {
         ],
         web: "https://countdowns.pages.dev/",
         repo: "https://github.com/jorgeortega123/countdown",
+        onGroup: false,
+      },
+      {
+        title: "Files Manager",
+        about: `   Aplicación sencilla creada a partir de <span class="text-bold">Batch Scripting</span> (Windows)
+          Gestionaba documentos (.docx, .pdf) en carpetas con el nombre de alguna
+          materia escolar. A inicios de <span class="text-bold">pandemia</span> desarrollé esto como un método
+          para hacer más fácil la nueva <span class="text-bold">modalidad online</span> en el colegio.`,
+        tags: ["Batch", "Python", "Windows"],
+        img: [
+          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+        ],
+        web: "https://github.com/jorgeortega123/Files-manager",
+        repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
       },
     ],
@@ -175,12 +153,14 @@ export const lang = {
     headers: {
       main: "Hi, I am Jorge Ortega",
       sub: "React Developer",
-      sub1: "Currently open to work!",
+      sub1: "Currently working in ",
+      sub_linked: "LLK",
+      sub_linked_link: "https://www.llampukaq.com/",
       home: "Home",
       about: "About",
       _about: "About",
       proyects: "Proyects",
-      _proyects: "Proyects",
+      _proyects: "Skills into practice",
       contributions: "Contribution to community",
       _contributions: "Contribution to community",
       services: "Services",
@@ -251,26 +231,21 @@ export const lang = {
         onGroup: false,
       },
       {
-        title: "LLK",
-        about: `Web application that offers
-          <span class="text-bold">E-commerce service</span> for small, medium and
-          big companies. Including <span class="text-bold">sub-services</span>
-          such as inventory manager, <span class="text-bold">online orders</span>,
-          transactions and internet billing.`,
-        tags: [
-          "React",
-          "Typescript",
-          "Express",
-          "TailwindCss",
-          "MongoDB",
-          "GoogleApi",
-        ],
+        title: "CountDowns",
+        about: `Web page that allows you to create
+                 <span class="text-bold">countdowns</span>, whether to remember
+                 some <span class="text-bold">important date</span> or to keep in mind
+                 Count how many days until a specific date happens. Have
+                 predefined counts. Such as
+                 <span class="text-bold">astronomical events</span>, holidays and
+                 <span class="text-bold">world events</span>.`,
+        tags: ["React"],
         img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
         ],
-        web: "https://www.llampukaq.com",
-        repo: "https://www.llampukaq.com",
-        onGroup: true,
+        web: "https://countdowns.pages.dev/",
+        repo: "https://github.com/jorgeortega123/countdown",
+        onGroup: false,
       },
       {
         title: "Files Manager",
@@ -286,23 +261,6 @@ export const lang = {
         ],
         web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
-        onGroup: false,
-      },
-      {
-        title: "CountDowns",
-        about: `Web page that allows you to create
-                 <span class="text-bold">countdowns</span>, whether to remember
-                 some <span class="text-bold">important date</span> or to keep in mind
-                 Count how many days until a specific date happens. Have
-                 predefined counts. Such as
-                 <span class="text-bold">astronomical events</span>, holidays and
-                 <span class="text-bold">world events</span>.`,
-        tags: ["React"],
-        img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
-        ],
-        web: "https://countdowns.pages.dev/",
-        repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
       },
     ],
@@ -381,10 +339,10 @@ export const lang = {
         ],
       },
       {
-        title: "LLK",
-        key: "llk",
+        title: "CountDowns",
+        key: "ctn",
         all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434478/Screenshot_from_2022-11-07_17-59-26_1_hnvlbu.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
         ],
       },
       {
@@ -392,13 +350,6 @@ export const lang = {
         key: "flm",
         all: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
-        ],
-      },
-      {
-        title: "CountDowns",
-        key: "ctn",
-        all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
         ],
       },
     ],
@@ -416,3 +367,58 @@ export const lang = {
     ],
   },
 };
+
+// {
+//   title: "LLK",
+//   about: `       Aplicación web que ofrece servicio de tipo
+//     <span class="text-bold">E-commerce </span> para empresas pequeñas
+//     medianas y grandes. Incluyendo
+//     <span class="text-bold">micro-servicios</span> como gestor de
+//     inventario,
+//     <span class="text-bold">pedidos online</span>, transacciones y
+//     facturación por internet.`,
+//   tags: [
+//     "React",
+//     "Typescript",
+//     "Express",
+//     "TailwindCss",
+//     "MongoDB",
+//     "GoogleApi",
+//   ],
+//   img: [
+//     "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+//   ],
+//   web: "https://www.llampukaq.com",
+//   repo: "https://www.llampukaq.com",
+//   onGroup: true,
+// },
+// {
+//   title: "LLK",
+//   about: `Web application that offers
+//     <span class="text-bold">E-commerce service</span> for small, medium and
+//     big companies. Including <span class="text-bold">sub-services</span>
+//     such as inventory manager, <span class="text-bold">online orders</span>,
+//     transactions and internet billing.`,
+//   tags: [
+//     "React",
+//     "Typescript",
+//     "Express",
+//     "TailwindCss",
+//     "MongoDB",
+//     "GoogleApi",
+//   ],
+//   img: [
+//     "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+//   ],
+//   web: "https://www.llampukaq.com",
+//   repo: "https://www.llampukaq.com",
+//   onGroup: true,
+// },
+
+// {
+//   title: "LLK",
+//   key: "llk",
+//   all: [
+//     "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434478/Screenshot_from_2022-11-07_17-59-26_1_hnvlbu.png",
+//   ],
+// },

@@ -1,0 +1,20 @@
+
+.skills-segment-title { 
+    transition: all .6s;
+}
+.skills-segment-title:hover .title-skills{
+ 
+    color: #fff;
+}
+.skills-segment-title:hover .line-skills-segment{
+    background-color: #00000057;
+   
+}
+
+
+
+.text-skill {
+    font-weight: 400;
+    line-height: 0.7;
+    margin-bottom: 9px;
+  }

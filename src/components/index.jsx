@@ -31,6 +31,8 @@ import useLang from "../functions/useLang";
 import Services from "./essentials/Services";
 import Proyects from "./essentials/Proyects";
 import Experience from "./essentials/Experience";
+import Console from "./essentials/Console";
+import LoadingScreen from "./essentials/LoadingScreen";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -83,6 +85,7 @@ const CvMain = () => {
   return (
     <div id="home" className={`main-container init relative`}>
       <Background />
+      <Console></Console>
       <NavView
         LangSvg={LangSvg}
         showMenuTranslateFunc={showMenuTranslateFunc}
@@ -92,23 +95,7 @@ const CvMain = () => {
         showTextOnNavbar={showTextOnNavbar}
         dataText={dataText}
       ></NavView>
-      {!isLoadedBody && (
-        <AnimatePresence>
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: "tween" }}
-          >
-            <div className=" z-[7] absolute top-0 w-full h-screen bg-[#0f2d51] text-[54px] flex justify-center">
-              <span className="bg-white"></span>
-              <div className="relative w-full h-[1px] rounded-2xl bg-transparent">
-                <div className=" loadServer h-[1px] bg-white rounded-2xl"></div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      )}
+     <LoadingScreen isLoadedBody={isLoadedBody} />
       <AnimatePresence>
         {showDownload && (
           <Modals

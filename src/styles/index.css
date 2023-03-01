@@ -1,0 +1,23 @@
+
+.loadServer {
+  position: absolute;
+  z-index: 0;
+  width: 20%;
+  left: 0;
+  animation: charging 1.2s linear infinite;
+}
+.bodyLetter {
+  font-family: "Lato", sans-serif;
+}
+.about-me {
+  letter-spacing: 1px;
+}
+.header-info {
+  line-height: 1.8rem;
+}
+@keyframes charging {
+  50% {
+    left: 100%;
+    transform: translateX(calc(-100% - 3px));
+  }
+}
