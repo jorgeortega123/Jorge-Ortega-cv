@@ -1,0 +1,47 @@
+$secondary-color: #66ff00;
+
+.border-inputs-contact {
+  border-color: #aaafb664;
+}
+
+.input-contact {
+  border-radius: 8px;
+  padding-top: 1rem;
+  background-color: #0000001a;
+  padding-bottom: 0.7rem;
+}
+.input-contact:focus-within {
+  border: 1px solid $secondary-color;
+  background-color: #0000002e;
+}
+.target-p-contact {
+  margin-top: -14px;
+  font-size: 17px;
+  margin-left: 6px;
+  letter-spacing: 0.02rem;
+  font-weight: 600;
+  color: rgb(172, 174, 176);
+}
+.input-s-s {
+  width: calc(100% - 5px);
+}
+.input-contact:focus-within .target-p-contact {
+  color: $secondary-color;
+}
+.input-sender {
+  color: #fff;
+  background: transparent;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  padding-top: 0.3rem;
+  margin-top: -10px;
+  padding-left: .8rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  &:active {
+    outline: none;
+    resize: none;
+  }
+}

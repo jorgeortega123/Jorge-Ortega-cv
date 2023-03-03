@@ -82,8 +82,8 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className=" bg-transparent  flex lg:space-x-2 flex-col lg:flex-row rounded-[11px] w-full items-center mt-10">
-      <div className="flex flex-col justify-start items-start space-y-2 w-full lg:mt-[-42px] ">
+    <div className=" bg-transparent  flex lg:space-x-2 flex-col md:flex-row lg:flex-row rounded-[11px] w-full items-center mt-10">
+      <div className="flex flex-col justify-start items-start space-y-2 lg:mt-[-42px] w-full md:w-[80%] ">
         {dataContact.map((e) => {
           return (
             <div className="flex justify-center items-center ">
@@ -105,8 +105,9 @@ export default function ContactComponent({
       </div>
       <div className="relative w-full flex justify-center lg:w-[1550px]">
         <div className="pt-10 space-y-2  sm:space-y-2 w-full lg:w-11/12 flex flex-col relative overflow-x-hidden overflow-y-auto items-center justify-center">
-          <div className="flex flex-col space-y-2 sm:space-y-2 w-full">
-            <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
+          <div className="w-full grid space-y-2 sm:grid-cols-2 sm:space-y-0 sm:space-x-2 ">
+          {/* <div className="flex flex-col space-y-2 sm:space-y-2 w-full"> */}
+            <div className="border-[1px] flex-col input-contact  border-inputs-contact">
               <p className="text-[17px] target-p-contact blockAllSelect">
                 {dataText.extras.footer.name}
               </p>
@@ -119,7 +120,7 @@ export default function ContactComponent({
                 type="text"
               />
             </div>
-            <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
+            <div className="border-[1px] flex-col input-contact border-inputs-contact">
               <p className="text-[17px] target-p-contact blockAllSelect">
                 Email
               </p>
@@ -129,27 +130,28 @@ export default function ContactComponent({
                 }}
                 value={email}
                 type="email"
-                className="input-sender input-s-s bg-transparent w-full h-full "
+                className=" input-sender input-s-s bg-transparent w-full h-full  "
               />
             </div>
           </div>
-          {/* <div className="border-[1px] flex-col w-full input-contact ">
-            <p className="text-[13px] target-p-contact blockAllSelect">
+          <div className="border-[1px] flex-col input-contact w-full border-inputs-contact">
+            <p className="text-[17px] target-p-contact blockAllSelect">
               Subject
             </p>
             <input
               onChange={(e) => {
                 setsubject(e.target.value);
               }}
-              className="input-sender input-s-s bg-transparent w-full h-full "
+              className="input-sender input-s-s bg-transparent w-full h-full"
               type="text"
             />
-          </div> */}
+          </div> 
           <div className="border-[1px] flex-col w-full input-contact border-inputs-contact ">
             <p className="text-[17px] target-p-contact blockAllSelect">
               {dataText.extras.footer.input}
             </p>
             <textarea
+            spellCheck={false}
               id="textareOfFooter"
               className="input-sender input-s-s bg-transparent w-full h-[140px] "
               name=""

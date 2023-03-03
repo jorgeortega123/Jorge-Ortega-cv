@@ -27,10 +27,7 @@ $space-margin-main: 5px;
   width: 100%;
   background-color: $main-color;
 }
-.useNavLetter {
-  font-family:'subtitle';
-  font-weight: 200;
-}
+
 
 .sheet-body {
   backdrop-filter: blur(3px);
@@ -45,20 +42,6 @@ $space-margin-main: 5px;
 .main-color {
   transition: all 0.3s;
   background-color: #071b2e;
-}
-.menu-items {
-  user-select: none;
-  text-align: left;
-  padding-top: 60px;
-  padding-left: 15px;
-  right: 0;
-  width: 200px;
-  height: 100vh;
-  background-color: rgba(38, 41, 43, 0.961);
-  backdrop-filter: 10px;
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 300;
 }
 
 .page-content {
@@ -162,39 +145,6 @@ h2 {
 .sad {
   background-color: #24242467;
 }
-.button-nav {
-  display: flex;
-  position: absolute;
-  right: 0;
-  flex-direction: column;
-  justify-content: center;
-  background-color: transparent;
-  height: 40px;
-  margin-right: 10px;
-  margin-top: 2px;
-  gap: 0.45rem;
-}
-.button-nav > div {
-  display: block;
-  width: 40px;
-  height: 3px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-
-  transition: all 0.6s;
-  transform-origin: left;
-}
-
-.active-nav div:first-child {
-  transform: rotate(33deg);
-}
-.active-nav div:nth-child(2) {
-  opacity: 0;
-}
-
-.active-nav div:nth-child(3) {
-  transform: rotate(-33deg);
-}
 
 .hidden {
   opacity: 0;
@@ -268,48 +218,9 @@ nav .rotate180-alternate {
     background: #00000042;
   }
 }
-.input-sender {
-  background: transparent;
-  outline: none;
-  font-size: 14px;
-  padding-top: 0.3rem;
-  padding-left: 0.3rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
-  &:active {
-    outline: none;
-    resize: none;
-  }
-}
-.input-contact {
-  border-radius: 8px;
-  padding-top: 1rem;
-  padding-left: 0.5rem;
-  background-color: #0000001a;
-  padding-bottom: 0.7rem;
-}
-.input-contact:focus-within {
-  background-color: #0000002e;
-}
 
-.border-inputs-contact {
-  border-color: #aaafb664;
-}
-.target-p-contact {
-  margin-top: -14px;
-  font-size: 17px;
-  letter-spacing: 0.02rem;
-  font-weight: 600;
-  color: rgb(172, 174, 176);
-}
 
-.input-s-s {
-  width: calc(100% - 5px);
-}
-.input-contact:focus-within .target-p-contact {
-  color: $secondary-color;
-}
 .wobbling-3 {
   border-radius: 40px;
   color: #514b82;

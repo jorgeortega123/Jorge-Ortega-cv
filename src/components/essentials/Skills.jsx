@@ -142,9 +142,9 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
               if (e.hidden) return;
               return (
                 <div
-                  className={` h-[86px] relative w-full flex flex-col  text-center items-center skills-container hover:text-[${e.color}] hover:drop-shadow-[5px_6px_16px_${e.color}] `}
+                  className={` h-[86px] relative w-full flex flex-col  text-center items-center skills-container hover:text-white hover:drop-shadow-[13px_13px_17px_${e.color}] `}
                 >
-                  <p className={`text-skill ${e.crown ? "text-yellow-500": ""}  lg:text-[22px] xl:text-[25px]`}>
+                  <p className={`text-skill ${e.crown ? "text-yellow-500": "text-"}  lg:text-[22px] xl:text-[25px]`}>
                     {e.text}
                   </p>
                   {e.crown && (

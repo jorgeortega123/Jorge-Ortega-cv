@@ -4,7 +4,7 @@ import ContainerProyects from "../containers/ContainerProyects";
 export default function Proyects(dataText, showImage) {
   
   const [showMenu, setshowMenu] = useState(false);
-  const [limitNumebr, setlimitNumebr] = useState(2);
+  const [limitNumebr, setlimitNumebr] = useState(3);
   const changeLimit = (num) => {
     setlimitNumebr(num);
     setshowMenu(false);
@@ -20,27 +20,27 @@ export default function Proyects(dataText, showImage) {
   return (
     <div id="proyects-view" className="mt-6 ">
       <div className={`w-full xl:px-${limitNumebr % 2 === 0 ? '[250px]': '[250px]'} flex justify-center items-center`}>
-        <div className={` w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-${limitNumebr ===4 ? "2": limitNumebr} mx-5 lg:mx-[60px] gap-2  sm:gap-5 `}>
+        <div className={` w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-${limitNumebr ===3 ? "2": limitNumebr} mx-5 lg:mx-[60px] gap-2  sm:gap-5 `}>
           <div className="absolute top-[-16px] tracking-wide select-none ">
             <div className=" items-center justify-center h-[16px]">
               <div className="w-[250px] flex items-center">
                 <p>Mostrar:</p>
                 <p
                   onClick={() => setshowMenu(!showMenu)}
-                  className="relative px-2 mx-1 py-1 border rounded-[4px] border-[#00000081] flex items-center h-[26px] w-[70px] justify-center"
+                  className="relative px-2 mx-1 py-1 border rounded-[4px] border-[#000000] flex items-center h-[26px] w-[70px] justify-center"
                 >
                  <span className="text-[#66ff00]">{limitNumebr}</span> 
                   {showMenu && (
-                    <span className="z-[2] border border-[#00000081] bg-[#00000031]  absolute left-2 bottom-[-105px]  flex flex-col text-center w-[55px] ">
+                    <span className="z-[2] border border-[#000000] bg-[#000000]  absolute left-2 bottom-[-105px]  flex flex-col text-center w-[55px] ">
                       <span
                         onClick={() => changeLimit(2)}
-                        className="hover:bg-[#00000031] "
+                        className="hover:bg-[#c0bfbf27] "
                       >
                         2
                       </span>
                       <span
                         onClick={() => changeLimit(3)}
-                        className="hover:bg-[#00000031] "
+                        className="hover:bg-[#c0bfbf27] "
                       >
                         3
                       </span>
@@ -48,7 +48,7 @@ export default function Proyects(dataText, showImage) {
                         onClick={() =>
                           changeLimit(dataText.dataText.proyects.length)
                         }
-                        className="hover:bg-[#00000031] "
+                        className="hover:bg-[#c0bfbf27] "
                       >
                         Todos
                       </span>

@@ -1,27 +1,48 @@
-import React from 'react'
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-export default function NavExplain({showMenuNavbar, setshowMenuNavbar, dataText}) {
-
- if (!showMenuNavbar) return <></>;
+export default function NavExplain({
+  showMenuNavbar,
+  setshowMenuNavbar,
+  dataText,
+}) {
+  if (!showMenuNavbar) return <></>;
   return (
-    <div className=' bg-slate-200 max-w-screen max-h-screen relative z-[7]'>
-        <div
-          className="menu-items capitalize top-0 fixed"
-        > 
-          <p className='hover:text-[#66ff00] transition-all'>
-            <a onClick={()=>setshowMenuNavbar(false)} href="#home">{dataText.headers.home}</a>
-          </p>
-          <p className='hover:text-[#66ff00] transition-all'>
-            <a onClick={()=>setshowMenuNavbar(false)}  href="#about">{dataText.headers.about}</a>
-          </p>
+    <div
+      onClick={() => {
+        document
+          .getElementById("button-nav-id")
+          ?.classList.remove("active-nav");
+        setshowMenuNavbar(false);
+      }}
+      className="h-full w-screen  absolute z-[8] "
+    >
+      <div className="menu-items capitalize top-0 fixed">
+        <p className="hover:text-[#66ff00] transition-all">
+          <a onClick={() => setshowMenuNavbar(false)} href="#home">
+            {dataText.headers.home}
+          </a>
+        </p>
+        <p className="hover:text-[#66ff00] transition-all">
+          <a onClick={() => setshowMenuNavbar(false)} href="#about">
+            {dataText.headers.about}
+          </a>
+        </p>
 
-          <p className='hover:text-[#66ff00] transition-all'>
-            <a  onClick={()=>setshowMenuNavbar(false)} href="#proyects">{dataText.headers.proyects}</a>
-          </p>
-          <p className='hover:text-[#66ff00] transition-all'>
-            <a  onClick={()=>setshowMenuNavbar(false)}  href="#contact">{dataText.headers.contact}</a>
-          </p>
+        <p className="hover:text-[#66ff00] transition-all">
+          <a onClick={() => setshowMenuNavbar(false)} href="#proyects">
+            {dataText.headers.proyects}
+          </a>
+        </p>
+        <p className="hover:text-[#66ff00] transition-all">
+          <a onClick={() => setshowMenuNavbar(false)} href="#contact">
+            {dataText.headers.contact}
+          </a>
+        </p>
+        <div className="absolute bottom-0 left-2 text-[18px]">
+    
+          <p>Made with &hearts; by Jorge Ortega</p>
         </div>
-        </div>
-  )
+      </div>
+    </div>
+  );
 }

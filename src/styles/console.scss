@@ -1,0 +1,14 @@
+ul li {
+    padding: 6px 12px;
+    transition: 0.2s background;
+    cursor: pointer;
+  }
+  ul li.selected {
+   background: rgba(0, 0, 0, 0.08);
+  }
+  ul li:hover {
+    background: #e6f0f2;
+  }
+  ul li + li {
+    border-top: 1px solid #bfc8c9;
+  }

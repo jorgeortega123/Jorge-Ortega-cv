@@ -1,8 +1,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 export default function LoadingScreen(isLoadedBody) {
-  isLoadedBody
-    ? (document.body.style.overflowY = "scroll")
+  isLoadedBody ? (document.body.style.overflowY = "scroll")
     : (document.body.style.overflowY = "hidden");
 
   return (

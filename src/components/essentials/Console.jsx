@@ -2,21 +2,31 @@ import React, { useState } from "react";
 
 export default function Console() {
   const [showMenu, setshowMenu] = useState(false);
-
+  const keys = {
+    get: ["cv", "proyects"],
+    send: ["msg"],
+    play: ["piano"],
+  };
   return (
-    <div className="hidden fixed w-full h-screen z-[3]">
+    <div className="hidden fixed w-full h-screen z-[2]">
       {showMenu && (
         <div className="absolute bottom-[70px] right-2">
           <div className="border w-[40vh] h-[40vh] bg-[#00000081] backdrop-blur-sm p-2 relative">
             <div className="items-console">
-              <p>Cv</p>
-              <p>hola</p>
+              <p>Console</p>
             </div>
-            <div className="history-console bg-black w-full h-[calc(100%_-_76px)] px-[3px] py-[3px] overflow-y-auto">
-<p>s</p>
+            <div className="history-console bg-black w-full h-[calc(100%_-_55px)] px-[3px] py-[3px] overflow-y-auto">
+              <p>s</p>
             </div>
-            <div className="w-full absolute bottom-2 rounded-md flex ">
-              <label className="text-white  z-[2]" htmlFor="input-console ">{">"}</label>
+
+            <div className="w-full relative bottom-2 rounded-md flex ">
+              <ul className="absolute mt-[-25px] flex-col-reverse" role="listbox">
+                <li>as</li>
+                <li>as</li>
+              </ul>
+              <label className="text-white  z-[2]" htmlFor="input-console ">
+                {">"}
+              </label>
               <input
                 id="input-console"
                 spellCheck={false}
