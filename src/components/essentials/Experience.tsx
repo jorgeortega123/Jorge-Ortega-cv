@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "./Button";
-export default function Experience() {
-  const [showTextInfo, setshowTextInfo] = useState(false);
+export default function Experience(dataText) {
+  const [showTextInfo, setshowTextInfo] = useState(true);
   const togle_vanila_show_text = () => {
     var elem = document.getElementById("show-text");
   };
@@ -20,7 +20,7 @@ export default function Experience() {
           </div>
           <div className="absolute rounded-[8px] backdrop-blur-sm w-full px-3 ">
             <Button
-              text="What was my role?"
+              text={dataText.dataText.headers.my_role}
               className="font-semibold absolute bottom-2 right-2"
               onClick={() => setshowTextInfo(!showTextInfo)}
             ></Button>
@@ -33,13 +33,10 @@ export default function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ type: "spring", duration: 0.7 }}
-                className="max-w-6/12 text-white px-2     "
+                className="max-w-6/12 text-white px-2 bg-[#00001a4b] rounded-lg     "
               >
-                <p className="altura-letras">
-                  Give proposals to the client on how to model the website. What
-                  essential elements do you want to appear on your page. Like
-                  menu, map, promotions and order status. Also contribute with
-                  pieces of code dedicated to the visual part
+                <p className="altura-letras text-[22px] py-2">
+                {dataText.dataText.headers.experience_info}
                 </p>
               </motion.div>
             )}

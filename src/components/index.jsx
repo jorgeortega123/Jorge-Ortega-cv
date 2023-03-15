@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Controller, Scene } from "react-scrollmagic";
 import { useEffect, useState } from "react";
 import { lang } from "../langs";
-import "./animation.scss";
 // svg's icons
 import LangSvg from "../assets/svg/lang.svg";
 import SendSGV from "../assets/svg/send.svg";
@@ -49,17 +48,17 @@ const CvMain = () => {
   const [imgSrc, setimgSrc] = useState("");
   useEffect(() => {
     document.body.style.overflowX = "hidden";
-    if (document.readyState === "complete") {
-      setisLoadedBody(true);
-    } else {
-      window.addEventListener("load", () => {
-        setisLoadedBody(true);
-      });
-      return () =>
-        document.removeEventListener("load", () => {
-          setisLoadedBody(true);
-        });
-    }
+    // if (document.readyState === "complete") {
+    //   setisLoadedBody(true);
+    // } else {
+    //   window.addEventListener("load", () => {
+    //     setisLoadedBody(true);
+    //   });
+    //   return () =>
+    //     document.removeEventListener("load", () => {
+    //       setisLoadedBody(true);
+    //     });
+    // }
   }, []);
   const showMenuTranslateFunc = () => {
     setshowMenuTranslate(!showMenuTranslate);
@@ -77,7 +76,10 @@ const CvMain = () => {
     setimgSrc(data);
   };
   const changeHandlerBodyLoaded = () => {
-    setisLoadedBody(true);
+    setTimeout(() => {
+      setisLoadedBody(!isLoadedBody);
+    }, 600);
+    
   };
   const handlerChangeByDownload = () => {
     setshowDownload(false);
@@ -151,7 +153,7 @@ const CvMain = () => {
           )}
         </AnimatePresence>
         <div className="page-content  relative w-[100%] lg:w-full">
-          <Header dataText={dataText} staticInf={staticInf} />
+          <Header dataText={dataText} staticInf={staticInf} changeHandlerBodyLoaded={changeHandlerBodyLoaded} />
           <div
             id="about"
             className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] "
@@ -190,22 +192,16 @@ const CvMain = () => {
               title={dataText.headers.proyects}
               subtitle={dataText.headers._proyects}
             >
-              {/* 
-              MENU PROYECTOS
-              */}
-              {/* 
-              MENU PROYECTOS
-              */}
               <Proyects dataText={dataText} showImage={showImage} />
             </MainContainer>
 
             <div className="w-full">
               <MainContainer
                 className="flex justify-center items-center w-11/12 sm:w-10/12 lg:sm:w-8/12"
-                subtitle="What I offer"
-                title="Services"
+                subtitle={dataText.headers._services}
+                title={dataText.headers.services}
               >
-                <Services></Services>
+                <Services dataText={dataText}></Services>
               </MainContainer>
             </div>
 
@@ -220,9 +216,9 @@ const CvMain = () => {
               <MainContainer
                 className="flex flex-col items-center"
                 title="Experience"
-                subtitle="1+ year"
+                subtitle={dataText.headers._experience}
               >
-                <Experience></Experience>
+                <Experience dataText={dataText}></Experience>
               </MainContainer>
             </div>
 

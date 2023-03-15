@@ -82,8 +82,9 @@ export default function ContactComponent({
     );
   };
   return (
-    <div className=" bg-transparent  flex lg:space-x-2 flex-col md:flex-row lg:flex-row rounded-[11px] w-full items-center mt-10">
-      <div className="flex flex-col justify-start items-start space-y-2 lg:mt-[-42px] w-full md:w-[80%] ">
+    <div className="relative bg-transparent  flex lg:space-x-2 flex-col md:flex-row lg:flex-row rounded-[11px] w-full items-center mt-10">
+      <img className="absolute bottom-0 opacity-[0.04] z-[-1]" src={"https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817104/8-01_1_n4jlci.png"} alt="" />
+      <div className=" flex flex-col justify-start items-start space-y-2 lg:mt-[-42px] w-full md:w-[80%] ">
         {dataContact.map((e) => {
           return (
             <div className="flex justify-center items-center ">

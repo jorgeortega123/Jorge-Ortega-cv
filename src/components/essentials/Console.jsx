@@ -1,12 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Console() {
   const [showMenu, setshowMenu] = useState(false);
-  const keys = {
-    get: ["cv", "proyects"],
-    send: ["msg"],
-    play: ["piano"],
+  const [inputValue, setinputValue] = useState();
+  const [filterOptions, setfilterOptions] = useState([]);
+  const [consoleText, setconsoleText] = useState([
+    { command: "TITLE", text: "Error" },
+  ]);
+  const keys = [
+    {
+      method: "get",
+      options: ["cv", "proyects"],
+    },
+    {
+      method: "add",
+      options: ["p1", "p2"],
+    },
+  ];
+  useEffect(() => {
+    showOptions()
+  }, [])
+  
+  const hideOptions = () => {
+    setfilterOptions([]);
+    setinputValue("");
   };
+  const showOptions = async () => { 
+    var m = []
+     var allMethods = await keys.map((arr)=> { 
+      m.push(arr.method)
+    })
+    console.log("ALLMETHODS", allMethods)
+    setfilterOptions(m)
+  }
+  const changeInput = (val) => {
+    console.log(val.split());
+    if (val.split().length < 0 ) {
+      showOptions();
+    }
+
+    var options = keys.filter((op) => {
+      return op.method.toLowerCase().startsWith(val.toLowerCase());
+      // return country.name.common.toLowerCase().startsWith(val.toLowerCase());
+    });
+    if (options.length === 0) hideOptions();
+    setfilterOptions(options);
+    console.log("ASDASDAS", options);
+  };
+
   return (
     <div className="hidden fixed w-full h-screen z-[2]">
       {showMenu && (
@@ -16,13 +57,19 @@ export default function Console() {
               <p>Console</p>
             </div>
             <div className="history-console bg-black w-full h-[calc(100%_-_55px)] px-[3px] py-[3px] overflow-y-auto">
-              <p>s</p>
+              {consoleText.map((e) => (
+                <div>
+                  <p>{e.command}</p>
+                  <p>{e.text}</p>
+                </div>
+              ))}
             </div>
 
             <div className="w-full relative bottom-2 rounded-md flex ">
-              <ul className="absolute mt-[-25px] flex-col-reverse" role="listbox">
-                <li>as</li>
-                <li>as</li>
+              <ul className="absolute mt-[-25px] ml-5 flex flex-col bg-slate-90">
+                {filterOptions.map((e) => (
+                  <div>{JSON.stringify(e) }</div>
+                ))}
               </ul>
               <label className="text-white  z-[2]" htmlFor="input-console ">
                 {">"}
@@ -30,6 +77,7 @@ export default function Console() {
               <input
                 id="input-console"
                 spellCheck={false}
+                onChange={(e) => changeInput(e.target.value)}
                 className="w-full ml-[-22px] pl-[25px] text-white outline-none bg-black"
                 type="text"
               />

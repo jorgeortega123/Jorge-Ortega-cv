@@ -1,0 +1,33 @@
+.Social {
+    position: relative;
+    width: 32px;
+    margin: 7px;
+  }
+
+  .animation-init img {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    animation-delay: 2s;
+    animation: loop 2.5s linear forwards;
+  }
+.animation-init img:hover {
+    border: 3px solid #fff;
+    border-radius: 100%;
+  }
+  .label-social-network { 
+    width: 0px;
+    height: 0px;
+  }
+  .text-social-hidden { 
+    transition: all 6.4s;
+    label { 
+      transition: width 6.4s;
+    }
+  }
+  .text-social-hidden:hover label {
+    height: auto;
+    visibility: visible;
+    width: max-content;
+    opacity: 1; 
+  
+  }

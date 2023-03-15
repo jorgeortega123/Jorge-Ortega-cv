@@ -14,7 +14,7 @@ export default function NavExplain({
           ?.classList.remove("active-nav");
         setshowMenuNavbar(false);
       }}
-      className="h-full w-screen  absolute z-[8] "
+      className="h-full w-screen  absolute z-[8] bg-[#0000006b] "
     >
       <div className="menu-items capitalize top-0 fixed">
         <p className="hover:text-[#66ff00] transition-all">

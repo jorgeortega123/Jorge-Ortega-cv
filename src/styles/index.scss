@@ -118,11 +118,7 @@ h2 {
   align-items: center;
 }
 
-.Social {
-  position: relative;
-  width: 32px;
-  margin: 7px;
-}
+
 .tagsLanguajes {
   width: min-content;
   padding-left: 7px;
@@ -441,8 +437,23 @@ nav .rotate180-alternate {
  .slider-services { 
   transition: all 2s ease-in-out;
  }
-
-
+.line-left-contributions { 
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-color:  #1cf0ff;
+  border-top-color: transparent;
+  border-bottom-right-radius: 10px ;
+}
+.contributions-border { 
+  border-bottom-color: #d51700;
+  border-right-color: #d51700;
+  border-left-color:  transparent;
+  border-top-color: transparent;
+  border-bottom-right-radius: 10px ;
+}
+.contributions-title { 
+  color: #d51700
+}
  .services-background { 
   position: fixed;
   background: url("https://res.cloudinary.com/ddcoxtm2v/image/upload/v1677110692/blue-purple-floral-pattern_1017-5170_nlwxj3.avif")

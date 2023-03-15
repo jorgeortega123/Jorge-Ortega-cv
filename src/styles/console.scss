@@ -1,5 +1,5 @@
 ul li {
-    padding: 6px 12px;
+    padding: 1px 1px;
     transition: 0.2s background;
     cursor: pointer;
   }
@@ -11,4 +11,7 @@ ul li {
   }
   ul li + li {
     border-top: 1px solid #bfc8c9;
+  }
+  .sda { 
+    background-color: #ffffff00;
   }

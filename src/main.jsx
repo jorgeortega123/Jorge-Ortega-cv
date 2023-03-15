@@ -8,6 +8,8 @@ import "./styles/skill.scss";
 import "./styles/console.scss";
 import "./styles/contact.scss";
 import "./styles/navbar.scss";
+import "./styles/social.scss";
+import "./styles/services.scss";
 import CvMain from "./components/index.jsx";
 import MainContextComponent from "./components/context/MainContext";
 ReactDOM.createRoot(document.getElementById("root")).render(

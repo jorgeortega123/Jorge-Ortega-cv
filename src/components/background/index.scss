@@ -2,7 +2,7 @@
 .bubbles{
   position:absolute;
   width:100%;
-  height: 100%;
+  height: max-content;
   z-index:-2;
   overflow:hidden;
   transition: all 1.2s;

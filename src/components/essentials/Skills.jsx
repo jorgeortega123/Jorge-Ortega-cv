@@ -125,8 +125,9 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
   return (
     <div
       id="knowledge"
-      className="min-h-[400px] overflow-hidden relative max-w-[550px] w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
+      className=" min-h-[400px] overflow-hidden relative max-w-[550px] w-full bg-[#0000001a] rounded-[6px] p-4 select-none"
     >
+      <img className="absolute left-0 h-[80%] object-cover opacity-[0.02] bottom-[-12px]" src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678816061/Group_1_xvfjme.png" alt="" />
       <div className="absolute w-full rounded-[6px] left-0 h-[2px] top-0 useBackgroundMove "></div>
       <div className="absolute w-full rounded-[6px]  left-0 h-[2px] bottom-0 useBackgroundMove rotate-180 "></div>
       {images.map((e) => (
@@ -142,7 +143,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
               if (e.hidden) return;
               return (
                 <div
-                  className={` h-[86px] relative w-full flex flex-col  text-center items-center skills-container hover:text-white hover:drop-shadow-[13px_13px_17px_${e.color}] `}
+                  className={`h-[86px] relative w-full flex flex-col  text-center items-center skills-container hover:text-white hover:drop-shadow-[13px_13px_17px_${e.color}] `}
                 >
                   <p className={`text-skill ${e.crown ? "text-yellow-500": "text-"}  lg:text-[22px] xl:text-[25px]`}>
                     {e.text}

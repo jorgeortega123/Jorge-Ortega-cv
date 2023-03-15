@@ -3,7 +3,7 @@ export const lang = {
     headers: {
       main: "Hola, soy Jorge Ortega",
       sub: "Desarrollador React",
-      sub1: "Actualmente trabajando en ",
+      sub1: "Actualmente trabajo en ",
       sub_linked: "LLK",
       sub_linked_link: "https://www.llampukaq.com/",
       home: "Inicio",
@@ -14,6 +14,7 @@ export const lang = {
       contributions: "Contribución a la comunidad",
       _contributions: "Contribución a la comunidad",
       services: "Servicios",
+      _services: "¿Qué ofrezco?",
       contact: "Contactar",
       _contact: "",
       callme: "Teléfono",
@@ -21,6 +22,10 @@ export const lang = {
       developer: "Desarrollador",
       knowledge: "Conocimiento",
       _knowledge: "Tegnologias que domino",
+      my_role: "¿Qué hago en mi puesto?",
+      experience: "Experiencia",
+      _experience: "1 año 5 meses",
+      experience_info: "Tengo dos funciones en mi puesto. Uno es hablar con el cliente y adaptar lo que pide en un esquema funcional de cómo se maneja el apartado visual de la App. El otro es programar exclusivamente el frontend con React. Haciendo uso de rest-api para llamar al servidor y posteriormente pasa dichos datos, a información legible para los clientes y usuarios.",
       learning: "Actualmente estoy aprendiendo:",
       basicKnowledge: "Conocimiento básico",
       visit: "Visitar",
@@ -40,6 +45,34 @@ export const lang = {
       aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
       footerText: "Hecho con amor, código fuente",
       footerTextLink: "aquí",
+  
+      services_segment: [
+        {
+          title: "Compromiso total",
+          text: "Ser leal a la empresa y seguir sus requerimientos por el mayor tiempo posible.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817561/group_r5jzkt.png",
+        },
+        {
+          title: "Buena organización",
+          text: "Ofrezco trabajar con el paradigma Funcional y el orientado a objetos.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817691/group_2_qb8vxr.png",
+        },
+        {
+          title: "Trabajo colaborativo",
+          text: "Me gusta trabajar en equipo y mantener una comunicación eficaz.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678816061/Group_1_xvfjme.png",
+        },
+        {
+          title: "Calidad antes que cantidad",
+          text: "Cada código escrito por mi garantiza un funcionamiento óptimo del mismo.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817639/group_1_karpnt.png",
+        },
+      ],
+    
     },
     repos: [
       {
@@ -47,6 +80,11 @@ export const lang = {
         link: "https://www.npmjs.com/package/react-scroll-video",
         description:
           "Componente que ayuda a reproducir un video con el scroll de la pagina web.",
+      },
+      {
+        title: "react-cache-state",
+        link: "https://www.npmjs.com/package/react-cache-state",
+        description: "Componente que guarda en cacha, nombre de variables, objetos o arrays.",
       },
     ],
     contact: {
@@ -153,7 +191,7 @@ export const lang = {
     headers: {
       main: "Hi, I am Jorge Ortega",
       sub: "React Developer",
-      sub1: "Currently working in ",
+      sub1: "Currently working at ",
       sub_linked: "LLK",
       sub_linked_link: "https://www.llampukaq.com/",
       home: "Home",
@@ -164,6 +202,7 @@ export const lang = {
       contributions: "Contribution to community",
       _contributions: "Contribution to community",
       services: "Services",
+      _services: "What I offer?",
       contact: "Contact",
       _contact: "Get in touch",
       callme: "Call me",
@@ -171,6 +210,10 @@ export const lang = {
       developer: "Developer",
       knowledge: "Skills",
       _knowledge: "Technologies that I use",
+      my_role: "What is my role ?",
+      experience: "Experience",
+      _experience: "1 year 5 months",
+      experience_info: "I have two functions in my position. One is to talk to the client and adapt what they ask for in a functional scheme of how the visual section of the App is handled. The other is to exclusively program the frontend with React. Making use of rest-api to call the server and later passes said data, readable information for clients and users.",
       learning: "Currently I am learning:",
       basicKnowledge: "Basic knowledge",
       visit: "Visit",
@@ -190,6 +233,32 @@ export const lang = {
       aboutInfo2: ` I know how use frameworks, libraries and web technologies. Like: <span class="text-bold mark-1">ReactJs</span>, <span class="text-bold mark-1">TailwindCss</span> (also handle native Css and Vanila JS). at an advanced level. On the other hand I have knowledge in: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) and Telegram(Bots).`,
       footerText: "Made with love. Watch code",
       footerTextLink: "here",
+      services_segment: [
+        {
+          title: "Full commitment",
+          text: "Be loyal to the company and follow requirements for as long as possible.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817561/group_r5jzkt.png",
+        },
+        {
+          title: "Good organization",
+          text: "I offer to work with the Functional paradigm and the object-oriented.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817691/group_2_qb8vxr.png",
+        },
+        {
+          title: "Collaborative work",
+          text: "I like to work in a team and maintain effective communication.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678816061/Group_1_xvfjme.png",
+        },
+        {
+          title: "Quality before quantity",
+          text: "Each code written by me guarantees its optimal functioning.",
+          image:
+            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817639/group_1_karpnt.png",
+        },
+      ],
     },
     repos: [
       {
@@ -197,6 +266,11 @@ export const lang = {
         link: "https://www.npmjs.com/package/react-scroll-video",
         description:
           "Component that reproduce a video when user scroll the page web.",
+      },
+      {
+        title: "react-cache-state",
+        link: "https://www.npmjs.com/package/react-cache-state",
+        description: "Component that save in cache names of variables, objects or arrays.",
       },
     ],
     contact: {
@@ -317,7 +391,7 @@ export const lang = {
       {
         name: "instagram",
         url: "https://www.instagram.com/jorgeandresyts/",
-        svg: "/src/assets/svg/instagram_.svg",
+        svg: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678901453/174855_ikozff.png",
       },
       {
         name: "linkedin",

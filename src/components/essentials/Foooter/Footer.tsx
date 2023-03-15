@@ -11,18 +11,18 @@ export default function Footer({ staticInf, goToUrl, dataText }) {
           <p className="mb-1 text-[1.1rem] xl:text-[24px] font-[subtitle]">Jorge Ortega</p>
           <p className="text-slate-200 xl:text-[20px] lg:text-[1.3rem]">{dataText.headers.sub}</p>
         </div>
-        <div className="pl-6 py-2 pb-5 lg:text-[1.2rem] xl:text-[22px]  ">
+        <div className="pl-6 py-2 pb-7 lg:text-[1.2rem] xl:text-[22px] space-x-3 flex ">
           <p>
-            <a className="hover:text-slate-300" href="#home">{dataText.headers.home}</a>
+            <a className=" hover:text-slate-300" href="#home">{dataText.headers.home}</a>
           </p>
-          <p className="py-2">
+          <p className="">
             <a className="hover:text-slate-300" href="#proyects">{dataText.headers.proyects}</a>
           </p>
           <p>
             <a className="hover:text-slate-300" href="#contact">{dataText.headers.contact}</a>
           </p>
         </div>
-        <div className="flex capitalize space-x-2 ">
+        <div className="flex capitalize space-x-2 pl-6 ">
           {staticInf.social.map((socialMedia, indexNum) => {
             return (
               <div
