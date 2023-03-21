@@ -65,10 +65,10 @@ export default function NavView({
           </>
         )}
         <div className="w-full max-w-[800px] relative">
-          <div className="relative flex w-full lg:max-w-[200px]">
+          <div className="relative flex w-full lg:max-w-[200px] select-none">
             <button
               id="button-nav-id"
-              className=" button-nav visible lg:invisible "
+              className="select-none button-nav visible lg:invisible "
               onClick={() => {
                 document
                   .getElementById("button-nav-id")

@@ -1,0 +1,9 @@
+.modal-anim { 
+    opacity: 0;
+    animation: modal-appear .3s ease-in-out forwards ;
+}
+@keyframes modal-appear {
+    100% { 
+        opacity: 1;
+    }
+}
