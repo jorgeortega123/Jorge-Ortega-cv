@@ -2,14 +2,15 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Modals from "../containers/Modals";
 export default function TranslateView({
+  showMenuTranslate,
   changeLang,
   selectedLang,
-  showMenuTranslateFunc,
+  setshowMenuTranslate,
 }) {
   const change = () => {};
   return (
     <div className="fixed left-0 w-screen z-[2]">
-      <Modals setshowDownload={showMenuTranslateFunc} title="Languaje">
+      <Modals setshowDownload={setshowMenuTranslate} title="Languaje">
         <div className="flex flex-col space-y-2">
           <div
             className={`flex items-center m-0 ${
@@ -17,8 +18,8 @@ export default function TranslateView({
             }  hover:text-green-400 cursor-pointer`}
             onClick={() => {
               changeLang("en");
-              document.body.style.overflowY="scroll"
-              showMenuTranslateFunc(false)
+              document.body.style.overflowY = "scroll";
+              setshowMenuTranslate(!showMenuTranslate);
             }}
           >
             <img
@@ -35,8 +36,8 @@ export default function TranslateView({
             }   hover:text-green-400 z-[0] cursor-pointer`}
             onClick={() => {
               changeLang("es");
-              document.body.style.overflowY="scroll"
-              showMenuTranslateFunc(false)
+              document.body.style.overflowY = "scroll";
+              setshowMenuTranslate(!showMenuTranslate);
             }}
           >
             <img
@@ -44,13 +45,18 @@ export default function TranslateView({
               src={"https://flagsweb.com/images/WEBP/Flag_of_Ecuador.webp"}
               alt=""
             />
-            <p className="px-2">  Español</p>
+            <p className="px-2"> Español</p>
           </div>
         </div>
         <div className="pt-2 select-none hidden">
-          <input id="check-translate" type="checkbox" className="cursor-pointer" />
-          <label htmlFor="check-translate" className="px-2 cursor-pointer">Save my selection</label>
- 
+          <input
+            id="check-translate"
+            type="checkbox"
+            className="cursor-pointer"
+          />
+          <label htmlFor="check-translate" className="px-2 cursor-pointer">
+            Save my selection
+          </label>
         </div>
       </Modals>
     </div>

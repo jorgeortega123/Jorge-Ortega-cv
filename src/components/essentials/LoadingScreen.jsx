@@ -1,6 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-export default function LoadingScreen(isLoadedBody) {
+export default function LoadingScreen({isLoadedBody}) {
   isLoadedBody ? (document.body.style.overflowY = "scroll")
     : (document.body.style.overflowY = "hidden");
 
@@ -13,7 +13,7 @@ export default function LoadingScreen(isLoadedBody) {
           exit={{ opacity: 0 }}
           transition={{ type: "tween" }}
         >
-          <div className=" z-[7] absolute top-0 w-full h-[calc(100vh_-_50px)] bg-[#0f2d51] flex flex-col ">
+          <div className=" z-[7] absolute top-[-56px] w-full h-screen bg-[#0f2d51] flex flex-col ">
             <span className="bg-white"></span>
 
             <div className="my-auto mx-auto">

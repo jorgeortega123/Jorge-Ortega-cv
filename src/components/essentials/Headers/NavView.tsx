@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import TranslateView from "../TranslateView";
 import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
 export default function NavView({
+  setshowMenuTranslate,
   LangSvg,
-  showMenuTranslateFunc,
   showMenuTranslate,
   changeLang,
   selectedLang,
@@ -21,7 +21,6 @@ export default function NavView({
   ];
 
   return (
-    <>
       <div className=" nav h-[46px] fixed top-0 blockAllSelect flex items-center justify-center ">
         {showMenuNavbar && (
           <>
@@ -30,7 +29,7 @@ export default function NavView({
                 document
                   .getElementById("button-nav-id")
                   ?.classList.remove("active-nav");
-                setshowMenuNavbar(false);
+                setshowMenuNavbar(!showMenuNavbar);
               }}
               className="anim-modal h-screen top-[46px] w-screen absolute z-[4] bg-[#0000006b]  "
             ></div>
@@ -99,7 +98,7 @@ export default function NavView({
                     className="svgDefaultColor w-[30px] h-[30px] m-2 z-[1] right-0"
                     alt=""
                     onClick={() => {
-                      showMenuTranslateFunc();
+                      setshowMenuTranslate(!showMenuTranslate)
                     }}
                   />
                 </AnimationsLoader>
@@ -107,9 +106,10 @@ export default function NavView({
               <AnimatePresence>
                 {showMenuTranslate && (
                   <TranslateView
+                  showMenuTranslate={showMenuTranslate}
                     changeLang={changeLang}
                     selectedLang={selectedLang}
-                    showMenuTranslateFunc={showMenuTranslateFunc}
+                    setshowMenuTranslate={setshowMenuTranslate}
                   />
                 )}
               </AnimatePresence>
@@ -143,7 +143,5 @@ export default function NavView({
           </div>
         </div>
       </div>
-      {children}
-    </>
   );
 }

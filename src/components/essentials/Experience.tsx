@@ -7,12 +7,12 @@ export default function Experience(dataText) {
     var elem = document.getElementById("show-text");
   };
   return (
-    <div className="w-11/12 sm:w-10/12 md:w-6/12  px-2 ">
+    <div className="w-12/12 sm:w-10/12 md:w-8/12 lg:max-w-[800px] ">
       <div className="main flex flex-col items-center justify-center">
-        <div className="relative text-black ">
+        <div className="relative text-black  ">
           <img
-            className="w-full max-w-[700px] mx-auto"
-            src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670434478/Screenshot_from_2022-11-07_17-59-26_1_hnvlbu.png"
+            className="w-full object-cover  mx-auto md:rounded-[6px] "
+            src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1680016932/1_n3iyvx.webp"
             alt=""
           />
           <div className="absolute top-[-1rem] border border-[#ffffff] px-6 bg-[#ffffffa2] rounded-[8px] backdrop-blur-sm text-[1.8rem] font-bold left-3 altura-letras py-1 tracking-wider">

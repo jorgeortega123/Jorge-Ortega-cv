@@ -37,7 +37,7 @@ import LoadingScreen from "./essentials/LoadingScreen";
 const staticInf = lang.static;
 const CvMain = () => {
   const { data, goToUrl, changeOverflowY } = useMainContext();
-  const { showMenuNavbar, setshowMenuNavbar } = useMainContext(false);
+  const [ showMenuNavbar, setshowMenuNavbar ] = useState(false);
   const [dataText, setdataText] = useLang();
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
@@ -48,6 +48,9 @@ const CvMain = () => {
   const [imgSrc, setimgSrc] = useState("");
   useEffect(() => {
     document.body.style.overflowX = "hidden";
+    setshowMenuTranslate(false)
+    setshowMenuNavbar(false)
+    // setshowMenuNavbar(false)
     // if (document.readyState === "complete") {
     //   setisLoadedBody(true);
     // } else {
@@ -60,9 +63,6 @@ const CvMain = () => {
     //     });
     // }
   }, []);
-  const showMenuTranslateFunc = () => {
-    setshowMenuTranslate(!showMenuTranslate);
-  };
   const changeLang = (langByUser) => {
     // localStorage.setItem("lang", langByUser)
     setdataText(langByUser);
@@ -87,11 +87,11 @@ const CvMain = () => {
 
   return (
     <div id="home" className={`main-container init relative`}>
-      <Background />
+      {/* <Background /> */}
       <Console></Console>
       <NavView
         LangSvg={LangSvg}
-        showMenuTranslateFunc={showMenuTranslateFunc}
+        setshowMenuTranslate={setshowMenuTranslate}
         showMenuTranslate={showMenuTranslate}
         changeLang={changeLang}
         selectedLang={selectedLang}
@@ -135,7 +135,7 @@ const CvMain = () => {
         </motion.div>
       )}
 
-      <div className="main-page mx-auto  lg:w-full ">
+      <div className="main-page mx-auto  lg:w-full relative">
         <AnimatePresence>
           {showMenuNavbar && (
             <motion.div
