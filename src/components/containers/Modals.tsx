@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CloseIcon } from "../../../assets/svg";
+import Icons from "../../styles/icons/Icons";
 export default function Modals({
   title = "as",
   children = "",
@@ -33,15 +34,15 @@ export default function Modals({
         className=" w-screen h-screen"
       ></div>
       <div className=" absolute w-[280px] rounded-md top-[30%]  bg-[#0f2d51] rounded-b-xl mx-auto  shadow-sm border-2 border-[#0000006b] ">
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between h-full">
           <div className=" text-white pt-2 pl-2 ">{title}</div>
           <div
-            className="bg-[#0000002e] mr-[1px] px-2 rounded-[6px] text-red-500 items-end flex justify-end pr-2 mt-[6px] text-[18px] hover:text-red-600 cursor-pointer"
+            className="text-red-600 cursor-pointer h-full items-center flex "
             onClick={() => {
               changeRef()
             }}
           >
-            x
+            <Icons  icon="close" className="w-6 pt-2 pr-2"></Icons>
           </div>
         </div>
 

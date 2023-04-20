@@ -15,6 +15,33 @@
 .header-info {
   line-height: 1.8rem;
 }
+.transition-button-proyect-code { 
+  transition: all .2s;
+}
+.transition-button-proyect-code > svg { 
+  border-radius: 100%;
+  transition: all .5s;
+}
+.transition-button-proyect-code:hover { 
+  border-color: #fff;
+  color: #fff;
+}
+#appendp > p { 
+  transition: all .2s;
+}
+#appendp > p:hover { 
+  color: #fff;
+
+}
+
+.transition-button-proyect-code:hover > svg { 
+  background-color: black;
+  fill: aliceblue;
+}
+
+
+
+
 @keyframes charging {
   50% {
     left: 100%;

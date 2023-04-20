@@ -150,6 +150,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
                   </p>
                   {e.crown && (
                     <img
+                    draggable={false}
                       className="absolute top-[-24px] w-8 "
                       src={
                         "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1673546913/crown_gpoase.png"
@@ -157,7 +158,7 @@ export default function Skills({ dataText, setshowDownload, CvIcon }) {
                       alt=""
                     />
                   )}
-                  <img className="w-12 h-auto" src={e.img} alt="" srcset="" />
+                  <img draggable={false} className="w-12 h-auto" src={e.img} alt="" srcset="" />
                 </div>
               );
             })}

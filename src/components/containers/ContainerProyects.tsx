@@ -129,7 +129,7 @@ export default function ContainerProyects({
   };
 
   return (
-    <div className="relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
+    <div className="transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#000000] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
       <div className=" items-center flex justify-center relative ">
         {/* <div
           onClick={() => {
@@ -166,6 +166,7 @@ export default function ContainerProyects({
         <div className="w-12/12   items-center flex justify-center  ">
           <img
             className=""
+            draggable={false}
             onClick={() => imgSrc(imagesFrom[index].all[0])}
             src={imagesFrom[index].all[0]}
             alt=""
@@ -206,7 +207,7 @@ export default function ContainerProyects({
         </button>
         <div
           onClick={() => goToUrl(repo)}
-          className=" useTransitionDelay cursor-pointer flex flex-row-reverse border-[1px] rounded-[6px] px-7 border-[#1cf0ff] text-[#1cf0ff]"
+          className="transition-button-proyect-code useTransitionDelay cursor-pointer flex flex-row-reverse border-[1px] rounded-[6px] px-7 border-[#1cf0ff] text-[#1cf0ff]"
         >
           <svg
             className="my-auto ml-[5px]"

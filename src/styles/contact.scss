@@ -9,6 +9,7 @@ $secondary-color: #66ff00;
   padding-top: 1rem;
   background-color: #0000001a;
   padding-bottom: 0.7rem;
+  transition: border .34s;
 }
 .input-contact:focus-within {
   border: 1px solid $secondary-color;
@@ -36,6 +37,7 @@ $secondary-color: #66ff00;
   font-size: 14px;
   padding-top: 0.3rem;
   margin-top: -10px;
+  padding: 12px;
   padding-left: .8rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

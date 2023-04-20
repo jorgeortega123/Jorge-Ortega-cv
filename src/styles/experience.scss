@@ -1,0 +1,23 @@
+.show-text { 
+  transition: all 2s;
+}
+.container-experience { 
+  height: max-content;
+  transition: height 2s;
+}
+.text-experience { 
+  transition: all .2s;
+  height: 0;
+}
+.show-content-experience { 
+  opacity: 1;
+  height: max-content;
+}
+
+
+
+
+// .show-content-experience {
+//   height: max-content;
+//   opacity: 1;
+// }

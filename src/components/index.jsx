@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Controller, Scene } from "react-scrollmagic";
 import { useEffect, useState } from "react";
 import { lang } from "../langs";
 // svg's icons
@@ -46,25 +45,39 @@ const CvMain = () => {
   const [isLoadedBody, setisLoadedBody] = useState(false);
   const [defaultLang, setdefaultLang] = useState();
   const [imgSrc, setimgSrc] = useState("");
+  const [visibleContainer, setVisibleContainer] = useState(1);
   useEffect(() => {
-    document.body.style.overflowX = "hidden";
-    setshowMenuTranslate(false)
-    setshowMenuNavbar(false)
-    // setshowMenuNavbar(false)
-    // if (document.readyState === "complete") {
-    //   setisLoadedBody(true);
-    // } else {
-    //   window.addEventListener("load", () => {
-    //     setisLoadedBody(true);
-    //   });
-    //   return () =>
-    //     document.removeEventListener("load", () => {
-    //       setisLoadedBody(true);
-    //     });
-    // }
-  }, []);
+    document.body.style.overflowX = "hidden"
+  }, [])
+  
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const container1 = document.getElementById('container1');
+  //     const container2 = document.getElementById('container2');
+  //     const container3 = document.getElementById('container3');
+
+  //     const container1Top = container1.getBoundingClientRect().top;
+  //     const container2Top = container2.getBoundingClientRect().top;
+  //     const container3Top = container3.getBoundingClientRect().top;
+  //     console.log(container1Top, container2Top, container3Top)
+  //     if (container1Top > window.innerHeight / 2) {
+  //       console.log(container1Top , window.innerHeight / 2)
+  //       setVisibleContainer(1);
+  //     } else if (container2Top < window.innerHeight / 2) {
+  //       console.log(123)
+  //       setVisibleContainer(2);
+  //     } else if (container3Top < window.innerHeight / 2) {
+  //       setVisibleContainer(3);
+  //     } 
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
   const changeLang = (langByUser) => {
-    // localStorage.setItem("lang", langByUser)
     setdataText(langByUser);
     setshowMenuTranslate(false);
   };
@@ -86,7 +99,7 @@ const CvMain = () => {
   };
 
   return (
-    <div id="home" className={`main-container init relative`}>
+    <div id="container1" className={`main-container init relative`}>
       {/* <Background /> */}
       <Console></Console>
       <NavView
@@ -97,6 +110,7 @@ const CvMain = () => {
         selectedLang={selectedLang}
         showTextOnNavbar={showTextOnNavbar}
         dataText={dataText}
+        visibleContainer={visibleContainer}
       ></NavView>
       <LoadingScreen isLoadedBody={isLoadedBody} />
       <AnimatePresence>
@@ -173,6 +187,7 @@ const CvMain = () => {
               </MainContainer>
               <div className="w-11/12 sm:w-10/12 ">
                 <MainContainer
+                id="container2"
                   className="flex w-full"
                   subtitle={dataText.headers._knowledge}
                   title={dataText.headers.knowledge}
@@ -187,7 +202,7 @@ const CvMain = () => {
               </div>
             </div>
             <MainContainer
-              id="proyects"
+              id="container3"
               className="flex "
               title={dataText.headers.proyects}
               subtitle={dataText.headers._proyects}

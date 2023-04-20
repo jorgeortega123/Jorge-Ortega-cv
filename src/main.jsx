@@ -11,6 +11,7 @@ import "./styles/navbar.scss";
 import "./styles/social.scss";
 import "./styles/services.scss";
 import "./styles/modal.scss";
+import "./styles/experience.scss";
 import CvMain from "./components/index.jsx";
 import MainContextComponent from "./components/context/MainContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
