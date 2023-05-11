@@ -1,8 +1,8 @@
 export const lang = {
   es: {
     headers: {
-      main: "Hola, soy Jorge Ortega",
-      sub: "Desarrollador React",
+      main: "Hola, soy",
+      sub: "Desarrollador en React",
       sub1: "Actualmente trabajo en ",
       sub_linked: "LLK",
       sub_linked_link: "https://www.llampukaq.com/",
@@ -35,7 +35,7 @@ export const lang = {
       es: "Español",
       downloadCv: "Descargar Curriculum Vitae",
       aboutInfo: `        Hola, soy desarrollador en <span class="text-bold mark-1">React</span>,
-      escribí mi primer código desde los 14 años. Siempre he
+      escribí mi primer código a los 14 años. Siempre he
       buscado la manera de
       <span class="text-bold mark-1">solucionar problemas</span>
       cotidanos a través del maravilloso mundo de la 
@@ -189,7 +189,7 @@ export const lang = {
   },
   en: {
     headers: {
-      main: "Hi, I am Jorge Ortega",
+      main: "Hi, I am",
       sub: "React Developer",
       sub1: "Currently working at ",
       sub_linked: "LLK",

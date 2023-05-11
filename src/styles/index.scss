@@ -18,6 +18,38 @@ $space-margin-main: 5px;
   src: url(../assets/fonts/normal.ttf);
 }
 
+@font-face {
+  font-family: "letters";
+  font-style: normal;
+  font-weight: 100;
+  src: url(../assets/fonts/static/Inter-Black.ttf);
+}
+
+@font-face {
+  font-family: "paragraphs";
+  src: url(../assets/fonts/static/Inter-Regular.ttf);
+}
+
+// p { 
+//   font-family: "paragraphs";
+// }
+// p1 { 
+//   font-family: "paragraphs";
+// }
+.service-text { 
+  font-family: "paragraphs";
+}
+.normalText {
+  font-family: "paragraphs";
+  font-weight: 100px;
+  color: #ffffff;
+}
+
+h2 { 
+  font-family: "letters";
+}
+
+
 .spacing-letters {
   letter-spacing: 0.1rem;
 }
@@ -56,9 +88,7 @@ $space-margin-main: 5px;
 }
 
 
-h2 {
-  font-family: Roboto, "Open Sans";
-}
+
 
 .container-proyects {
   font-weight: 600;
@@ -106,10 +136,7 @@ h2 {
   }
 }
 
-.normalText {
-  font-weight: 100px;
-  color: #ffffff;
-}
+
 .textWrote {
   display: flex;
   flex-direction: column;

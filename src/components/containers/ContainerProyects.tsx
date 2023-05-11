@@ -188,7 +188,7 @@ export default function ContainerProyects({
             </p>
           </div> */}
           <div
-            className="  normalText altura-letras text-[22px] lg:text-[28px] my-2"
+            className="  normalText text-[13px] lg:text-[16px]  leading-5 my-2"
             dangerouslySetInnerHTML={{ __html: about }}
           ></div>
 

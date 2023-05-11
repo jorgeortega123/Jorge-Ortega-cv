@@ -178,12 +178,13 @@ const CvMain = () => {
                 title={dataText.headers.about}
                 subtitle={dataText.headers._about}
               >
-                <div
-                  className={`font-[100] header-info normalText p-[10px] rounded-[10px] `}
+                <p1
+                  className={`header-info normalText p-[10px] rounded-[10px] text-[15px] leading-5 lg:leading-6  lg:text-[17px] `}
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
-                ></div>
+                  
+                ></p1>
               </MainContainer>
               <div className="w-11/12 sm:w-10/12 ">
                 <MainContainer

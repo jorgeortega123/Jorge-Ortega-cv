@@ -13,7 +13,7 @@ export default function Contributions(data) {
       title={data.data.headers.contributions}
     >
       <div className="w-12/12 flex space-y- relative ">
-        <div className="border border-[#000000] rounded-[6px] absolute w-[calc(100%_-_24px)] ml-[12px] h-full "></div>
+        <div className="border border-[#000000] rounded-[6px] absolute w-[calc(100%_-_22px)] ml-[12px] h-full "></div>
         <div
           className={`bg-[#0000001a] flex flex-col justify-center items-center ml-3 w-2/12 rounded-l-[10px] `}
         > 
@@ -39,7 +39,7 @@ export default function Contributions(data) {
         {data.data.repos.map((rep, ind) => {
           return (
             <div
-              className={`bg-[#0000001a] border border-[#00000036] mx- w-[95%] mx-auto flex flex-col space-y-2 xl:w-12/12 px-6  rounded-[6px]  `}
+              className={`bg-[#0000001a] border border-[#0000001a] mx- w-[95%] mx-auto flex flex-col space-y-2 xl:w-12/12 px-6  rounded-[6px]  `}
             >
               <div className=" relative">
                 <img

@@ -37,7 +37,7 @@ export default function Header({
             <span className="absolute z-[-1] opacity-0 ml-1 pt-[2px] my-auto  text-center">
               Linkedin
             </span>
-            <Icons icon="linkedin" className="w-9 h-auto rounded-full"></Icons>
+            <Icons icon="linkedin" className="w-9 lg:w-11 h-auto rounded-full"></Icons>
           </div>
           <div className="icons-delay w-max bg-[#000000] rounded-r-[18px] overflow-hidden   ">
             <span
@@ -48,7 +48,7 @@ export default function Header({
             </span>
             <Icons
               icon="github"
-              className="w-9 h-auto rounded-full p-1 bg-[#000000] text-white"
+              className="w-9 lg:w-11 h-auto rounded-full p-1 bg-[#000000] text-white"
             ></Icons>
           </div>
           <div
@@ -58,11 +58,11 @@ export default function Header({
             <span className="absolute z-[-1] opacity-0 pt-[4px] my-auto  text-center text-[19px]">
               Instagram
             </span>
-
-            <div className="w-9 rounded-full overflow-hidden">
+ 
+            <div className="w-9 lg:w-11 rounded-full overflow-hidden">
               <Icons
                 icon="instagram"
-                className="w-9 h-auto rounded-full fill-[#e65806]"
+                className="w-9 lg:w-11 h-auto rounded-full fill-[#e65806]"
               ></Icons>
             </div>
           </div>
@@ -77,13 +77,16 @@ export default function Header({
             onClick={() => activeAnimationsHeader("already")}
           />
         </div>
-        <div className=" lg:my-auto lg:w-6/12 lg:items-end lg:justify-end lg:flex lg:flex-col">
-          <AnimationsLoader duration={3} moveY={-10}>
-            <h1 className=" lg:w-6/12 text-[50px] lg:text-[12vh] title-main-header">
-              {dataText.headers.main}
+        <div className="flex flex-col lg:my-auto lg:w-6/12  lg:items-end lg:justify-end  ">
+          {/* <AnimationsLoader duration={3} moveY={-10}> */}
+            <h1 className="lg:w-9/12 text-[50px] lg:text-[12vh] title-main-header right-0">
+              {dataText.headers.main + " "}  
+              <h1 className="text-white">Jorge Ortega</h1>
+               
+              
             </h1>
-          </AnimationsLoader>
-          <div className="altura-letras mt-6">
+          {/* </AnimationsLoader> */}
+          <div className="altura-letras mt-6 lg:mt-0 lg:w-[75%]">
             <AnimationsLoader duration={3} moveX={30}>
               <p className=" text-slate-400  font-semibold  text-developer">
                 {dataText.headers.sub}
@@ -103,7 +106,7 @@ export default function Header({
               </p>
             </AnimationsLoader>
           </div>
-          <div className=" absolute bottom-[-50px]  lg:bottom-[22px]  lg:right-12 xl:left-3 xl:right-auto xl:bottom-[-52px] ">
+          <div className=" absolute bottom-[-50px]  lg:bottom-[22%]  lg:left-[17.6%]">
             <Button
               text={dataText.headers.contact}
               icon={CallSVG}
