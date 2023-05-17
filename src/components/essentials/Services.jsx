@@ -20,7 +20,7 @@ export default function Services(dataText) {
   };
 
   return (
-    <div className="w-12/12 bg-[#00000023] rounded-[6px]  border-[#0000001a] pb-3  px-2 sm:w-10/12 lg:sm:w-8/12 xl:w-7/12  ">
+    <div className="w-12/12 bg-[#00000023] rounded-[6px]  border-[#0000001a] pb-3  px-2  max-w-[700px]  ">
       <div className=" flex flex-col  w-full items-center relative  ">
         <div className=" m-2 mt-4 text-center w-max  #082744 bg-[#082744] ">
         <h2 className="text-[16px]"> {words[position].title}</h2>
@@ -33,13 +33,13 @@ export default function Services(dataText) {
                 position % 2 === 0 ? "translateX(0)" : "translateX(100%)",
                 
             }}
-            className=" h-[100%]  w-full text-center"
+            className=" h-[100%]  w-full text-center flex items-center justify-center"
           >
             <p className="h-full service-text text-[13px] sm:text-[14px]">{words[position].text}</p> 
           </div>
           <div
             style={{
-              transform:
+              transform: 
                 position % 2 != 0 ? "translateX(-100%)" : "translateX(0)",
             }}
             id=""

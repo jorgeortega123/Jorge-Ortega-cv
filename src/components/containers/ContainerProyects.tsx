@@ -8,6 +8,7 @@ import back from "../../assets/svg/backGround/titles.svg";
 import { lang } from "../../langs";
 import HeroMain from "../carrousel/Carrousel";
 import useMainContext from "../context/useMainContext";
+import Icons from "../../styles/icons/Icons";
 const imagesFrom = lang.static.images;
 export default function ContainerProyects({
   title = "Semaforos ",
@@ -160,6 +161,7 @@ export default function ContainerProyects({
           onClick={() => goToUrl(web)}
         >
           <p>{title}</p>
+          <Icons icon="link" className="rotate-[135deg] "></Icons>
         </div>
       </div>
       <div className="flex-col w-full ">

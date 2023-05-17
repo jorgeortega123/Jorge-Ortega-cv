@@ -25,7 +25,7 @@ export default function Header({
     <>
       <div
         onLoad={() => changeHandlerBodyLoaded()}
-        className=" relative px-2 mt-[46px] flex flex-col mx-auto  sm:w-[550px] lg:flex-row-reverse lg:h-screen lg:w-screen lg:justify-center"
+        className=" relative px-2 mt-[46px] flex flex-col mx-auto  sm:w-[550px] lg:mt-[-15px] lg:mb-[55px] lg:flex-row-reverse lg:h-screen lg:w-screen lg:justify-center"
       >
         <div className="absolute  top-[15%] lg:top-[40%] left-0 gap-1 overflow-hidden flex flex-col">
           <div

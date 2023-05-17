@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "./Button";
+import Icons from "../../styles/icons/Icons";
 export default function Experience(dataText) {
   const [showTextInfo, setshowTextInfo] = useState(true);
   const togle_vanila_show_text = () => {
@@ -10,7 +11,7 @@ export default function Experience(dataText) {
   };
   return (
     <>
-      <div className="w-12/12 sm:w-10/12 md:w-8/12 lg:max-w-[800px] container-experience ">
+      <div className="w-12/12  max-w-[700px]  container-experience ">
         <div className="main flex flex-col items-center justify-center">
           <div className="relative text-black  ">
             <img
@@ -20,8 +21,9 @@ export default function Experience(dataText) {
               alt=""
             />
 
-            <div className="absolute top-[-1rem] border border-[#ffffff] px-6 bg-[#ffffffa2] rounded-[8px] backdrop-blur-sm text-[1.8rem] font-bold left-3 altura-letras py-1 tracking-wider">
-              LLK
+            <div className="absolute flex top-[-1rem] border border-[#ffffff] px-6 bg-[#ffffffa2] rounded-[8px] backdrop-blur-sm text-[1.8rem] font-bold left-3 altura-letras py-1 tracking-wider">
+              <p className="pl-2">LLK</p> 
+              <Icons icon="link" className="rotate-[135deg]"></Icons>
             </div>
 
             <div className="absolute rounded-[8px] backdrop-blur-sm w-full px-3 ">
@@ -34,7 +36,7 @@ export default function Experience(dataText) {
           </div>
         </div>
       
-          <h1 id="show-text" className=" px-6 text-experience font-[400] opacity-0  altura-letras text-[22px] py-2">
+          <h1 id="show-text" className=" px-6 text-experience font-[400] altura-letras text-[22px] py-2">
             {dataText.dataText.headers.experience_info}
           </h1>
         
