@@ -133,7 +133,7 @@ export const lang = {
         img: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
         ],
-        web: "https://countdowns.pages.dev/",
+        web: "https://countdown-holidays.pages.dev/",
         repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
       },
@@ -317,7 +317,7 @@ export const lang = {
         img: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
         ],
-        web: "https://countdowns.pages.dev/",
+        web: "https://countdown-holidays.pages.dev/",
         repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
       },
