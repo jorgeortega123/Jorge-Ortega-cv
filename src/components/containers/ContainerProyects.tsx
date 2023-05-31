@@ -1,14 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react";
-//@ts-ignore
-import newWindow from "../../assets/svg/newWindow.svg";
-import inGroupSVG from "../../assets/svg/group.svg";
-import inSoloSVG from "../../assets/svg/person.svg";
-import githubSVG from "../../assets/svg/github.svg";
-import back from "../../assets/svg/backGround/titles.svg";
+
 import { lang } from "../../langs";
 import HeroMain from "../carrousel/Carrousel";
 import useMainContext from "../context/useMainContext";
 import Icons from "../../styles/icons/Icons";
+import Modal from "../context/modal/modal/Modal";
+import useModal from "../context/modal/useModal";
+import { ZoomableImage } from "./ZoomableImage";
+import useImagesContext from "../context/useImagesContext";
 const imagesFrom = lang.static.images;
 export default function ContainerProyects({
   title = "Semaforos ",
@@ -78,7 +77,8 @@ export default function ContainerProyects({
   const { goToUrl } = useMainContext();
   const elemets = () => {
     langs.map((lan, indexNumber) => {
-      var elementCreate = document.createElement("p");
+      var elementCreate = document.createElement("div");
+
       elementCreate.textContent = lan;
       elementCreate.classList.add("tagsLanguajes", "num" + indexNumber);
       // var randomNumber = Math.floor(Math.random() * colors.length);
@@ -128,9 +128,16 @@ export default function ContainerProyects({
       setshowGroup(true);
     }
   };
+  const { imageMap, isLoaded } = useImagesContext();
+  const modal = useModal();
 
   return (
-    <div className="transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#000000] xl:border-[#0000003c] bg-[#00000023] px-2 lg:rounded-[12px]">
+    <div className="transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#0000001a]  bg-[#00000023] px-2 lg:rounded-[12px]">
+      <Modal modal={modal} title={title}>
+        <p>Images</p>
+        <ZoomableImage imageUrl={imageMap[imagesFrom[index].key]}></ZoomableImage>
+      </Modal>
+      
       <div className=" items-center flex justify-center relative ">
         {/* <div
           onClick={() => {
@@ -165,14 +172,29 @@ export default function ContainerProyects({
         </div>
       </div>
       <div className="flex-col w-full ">
-        <div className="w-12/12   items-center flex justify-center  ">
-          <img
-            className=""
-            draggable={false}
-            onClick={() => imgSrc(imagesFrom[index].all[0])}
-            src={imagesFrom[index].all[0]}
-            alt=""
-          />
+        <div className="w-12/12   items-center flex justify-center relative  ">
+          <div onClick={() => modal.open()} className="relative">
+            <svg
+              className="z-[3] absolute left-4 bottom-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M208 48V16H16v192h32V70.627l160.687 160.686l22.626-22.626L70.627 48H208zm256 256v137.373L299.313 276.687l-22.626 22.626L441.373 464H304v32h192V304h-32z"
+              />
+            </svg>
+
+            <img
+              className=""
+              draggable={false}
+              onClick={() => imgSrc(imagesFrom[index].all[0])}
+              src={imageMap[imagesFrom[index].key]}
+              alt=""
+            />
+          </div>
           {/* {!loadImages ? (
             <HeroMain
               images={[imagesFrom[index].all[0]]}
@@ -205,7 +227,7 @@ export default function ContainerProyects({
           onClick={() => goToUrl(web)}
           className=" useTransitionDelay border-[1px] rounded-[6px] px-7 border-[#66ff00] text-[#66ff00]  hover:bg-[#66ff00f1] hover:text-[black]"
         >
-          Visit
+          Visitar
         </button>
         <div
           onClick={() => goToUrl(repo)}

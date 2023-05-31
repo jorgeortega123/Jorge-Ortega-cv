@@ -14,10 +14,13 @@ import "./styles/modal.scss";
 import "./styles/experience.scss";
 import CvMain from "./components/index.jsx";
 import MainContextComponent from "./components/context/MainContext";
+import { ImageContextProvider } from "./components/context/ImagesContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MainContextComponent>
+      <ImageContextProvider>
         <CvMain />
+      </ImageContextProvider>
     </MainContextComponent>
   </React.StrictMode>
 );

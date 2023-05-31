@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import TranslateView from "../TranslateView";
 import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
 import Icons from "../../../styles/icons/Icons";
+import useScrollTo from "../../../functions/useScroll";
 
 export default function NavView({
   visibleContainer,
@@ -16,12 +17,17 @@ export default function NavView({
   dataText,
 }) {
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
+  const scrollToElement = useScrollTo();
   const menu = [
     {
       text: "",
       to: "",
     },
   ];
+  const handleClick = (id: string) => {
+    scrollToElement(id)
+    // scroll(id)
+  };
 
   return (
     <div className=" nav h-[46px] fixed top-0 blockAllSelect flex items-center justify-center ">
@@ -39,7 +45,7 @@ export default function NavView({
           <div className=" menu-items  absolute right-0 top-[100%] z-[5] ">
             <div className="capitalize ">
               <p className="hover:text-[#66ff00] transition-all">
-                <a onClick={() => setshowMenuNavbar(false)} href="#home">
+                <a onClick={() => handleClick("proyects")}>
                   {dataText.headers.home}
                 </a>
               </p>
@@ -68,25 +74,25 @@ export default function NavView({
       )}
       <div className="w-full max-w-[800px] relative h-full">
         <div className="relative flex flex-row-reverse w-full h-full lg:max-w-[200px] select-none">
-
           <div className="lg:hidden flex  items-center h-full p-3 gap-5">
-            <a className="" href="#home">
+            <a onClick={() => handleClick("about")} className="">
               <Icons
-                className={`stroke-[#ebebebd0] w-7  ${visibleContainer=== 2 ? "stroke-[#66ff00]":""}`}
+                className={`stroke-[#ebebebd0] w-7  `}
                 fromNav={true}
                 icon={"home"}
               ></Icons>
             </a>
-            <a href="#skill">
+            <a  onClick={() => handleClick("skills")}>
               <Icons
-                className={`fill-[#ebebebd0] w-7 ${visibleContainer=== 2 ? "fill-[#66ff00]":""}`}
+                className={`fill-[#ebebebd0] w-7 `}
                 fromNav={true}
                 icon={"skill"}
               ></Icons>
             </a>
-            <div>
+            <div  onClick={() => handleClick("proyects")}>
               <Icons
-                className={`stroke-[#ebebebd0] w-7  ${visibleContainer=== 3 ? "fill-[#66ff00]":""}`}
+              
+                className={`stroke-[#ebebebd0] w-7  `}
                 fromNav={true}
                 icon={"portfolio"}
               ></Icons>
@@ -133,7 +139,6 @@ export default function NavView({
             <p className="hover:text-white">
               <a href="#home" className="flex flex-row-reverse items-center">
                 {dataText.headers.home}
-              
               </a>
             </p>
             <p className="hover:text-white">

@@ -23,8 +23,8 @@ export default function MainContainer({
       id={id}
     >
       <div className="my-3 text-[26px] lg:text-[30px] text-center ">
-        <p className="titleText leading-3 ">{title}</p>
-        <p className="text-[1.3rem] ">{subtitle}</p>
+        <p className="titleText leading-3 text-[#FFFF] ">{title}</p>
+        <p className="text-[1.3rem] text-[#ccc] ">{subtitle}</p>
       </div>
 
       <div

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useImagesContext from "../context/useImagesContext";
 export default function Services(dataText) {
   const [textToShow, setTextToShow] = useState("word1");
   const [changeAnimation, setchangeAnimation] = useState(false);
@@ -8,7 +9,7 @@ export default function Services(dataText) {
   const [words, setwords] = useState(
     dataText.dataText.headers.services_segment
   );
-
+  const {imageMap, isLoaded} = useImagesContext()
   const [position, setPosition] = useState(0);
 
   const handlePrev = () => {
@@ -47,7 +48,7 @@ export default function Services(dataText) {
           >
             <img
               className="h-[120px] sm:h-[220px] object-cover"
-              src={words[position].image}
+              src={imageMap[words[position].image]}
               alt=""
             />
           </div>

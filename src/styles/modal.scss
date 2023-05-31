@@ -1,9 +1,19 @@
-.modal-anim { 
-    opacity: 0;
-    animation: modal-appear .3s ease-in-out forwards ;
+.modal {
+  z-index: 10;
 }
-@keyframes modal-appear {
-    100% { 
-        opacity: 1;
-    }
+.modal-enter {
+  z-index: 10;
+  opacity: 0;
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.modal-exit {
+  opacity: 0;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
 }

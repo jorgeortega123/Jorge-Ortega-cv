@@ -51,25 +51,25 @@ export const lang = {
           title: "Compromiso total",
           text: "Ser leal a la empresa y seguir sus requerimientos por el mayor tiempo posible.",
           image:
-            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817561/group_r5jzkt.png",
+            "services-1",
         },
         {
           title: "Buena organización",
           text: "Ofrezco trabajar con el paradigma Funcional y el orientado a objetos.",
           image:
-            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817691/group_2_qb8vxr.png",
+            "services-2",
         },
         {
           title: "Trabajo colaborativo",
           text: "Me gusta trabajar en equipo y mantener una comunicación eficaz.",
           image:
-            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678816061/Group_1_xvfjme.png",
+            "services-3",
         },
         {
           title: "Calidad antes que cantidad",
           text: "Cada código escrito por mi garantiza un funcionamiento óptimo del mismo.",
           image:
-            "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817639/group_1_karpnt.png",
+            "services-4",
         },
       ],
     
@@ -129,7 +129,7 @@ export const lang = {
         conteos predefinidos. Como
         <span class="text-bold">eventos astronómicos</span>, feriados y
         <span class="text-bold">sucesos mundiales</span>.`,
-        tags: ["React"],
+        tags: ["react"],
         img: [
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
         ],

@@ -78,20 +78,20 @@
   animation:opacity-modal .2s linear forwards ;
 }
 
-.svg-text div {
-  border-radius: 6px;
-  z-index: -1;
-  width: max-content;
-  display: none;
-  opacity: 1;
-  transition: opacity 0.2s;
-}
-.svg-text:hover div {
-  text-transform: capitalize;
- display: inline-flex;
-  z-index: 1;
-  opacity: 1;
-}
+// .svg-text div {
+//   border-radius: 6px;
+//   z-index: -1;
+//   width: max-content;
+//   display: none;
+//   opacity: 1;
+//   transition: opacity 0.2s;
+// }
+// .svg-text:hover div {
+//   text-transform: capitalize;
+//  display: inline-flex;
+//   z-index: 1;
+//   opacity: 1;
+// }
 
 // @keyframes showNav {
 //   100% { 

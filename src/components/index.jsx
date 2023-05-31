@@ -32,11 +32,14 @@ import Proyects from "./essentials/Proyects";
 import Experience from "./essentials/Experience";
 import Console from "./essentials/Console";
 import LoadingScreen from "./essentials/LoadingScreen";
+import Modal from "./context/modal/modal/Modal";
+import useModal from "./context/modal/useModal";
+import Button from "./essentials/Button";
 
 const staticInf = lang.static;
 const CvMain = () => {
   const { data, goToUrl, changeOverflowY } = useMainContext();
-  const [ showMenuNavbar, setshowMenuNavbar ] = useState(false);
+  const [showMenuNavbar, setshowMenuNavbar] = useState(false);
   const [dataText, setdataText] = useLang();
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
   const [showDownload, setshowDownload] = useState(false);
@@ -47,9 +50,9 @@ const CvMain = () => {
   const [imgSrc, setimgSrc] = useState("");
   const [visibleContainer, setVisibleContainer] = useState(1);
   useEffect(() => {
-    document.body.style.overflowX = "hidden"
-  }, [])
-  
+    document.body.style.overflowX = "hidden";
+  }, []);
+
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const container1 = document.getElementById('container1');
@@ -68,7 +71,7 @@ const CvMain = () => {
   //       setVisibleContainer(2);
   //     } else if (container3Top < window.innerHeight / 2) {
   //       setVisibleContainer(3);
-  //     } 
+  //     }
   //   };
 
   //   window.addEventListener('scroll', handleScroll);
@@ -92,14 +95,14 @@ const CvMain = () => {
     setTimeout(() => {
       setisLoadedBody(!isLoadedBody);
     }, 600);
-    
   };
   const handlerChangeByDownload = () => {
     setshowDownload(false);
   };
+  const modalCv = useModal();
 
   return (
-    <div id="container1" className={`main-container init relative`}>
+    <div id="about" className={`main-container init relative`}>
       {/* <Background /> */}
       <Console></Console>
       <NavView
@@ -114,29 +117,24 @@ const CvMain = () => {
       ></NavView>
       <LoadingScreen isLoadedBody={isLoadedBody} />
       <AnimatePresence>
-        {showDownload && (
-          <Modals
-            setshowDownload={setshowDownload}
-            title={dataText.headers.downloadCv}
+        <Modal modal={modalCv} title="Hoja de vida">
+          <FileView
+            title={"" + staticInf.name + "_cv.pdf"}
+            cv={staticInf.cv.en.cv_pdf}
+            handlerChangeByDownload={handlerChangeByDownload}
+            index={1}
           >
-            <FileView
-              title={"" + staticInf.name + "_cv.pdf"}
-              cv={staticInf.cv.en.cv_pdf}
-              handlerChangeByDownload={handlerChangeByDownload}
-              index={1}
-            >
-              {dataText.headers.eng}
-            </FileView>
-            <FileView
-              title={staticInf.name + "_cv.pdf"}
-              cv={staticInf.cv.es.cv_pdf}
-              handlerChangeByDownload={handlerChangeByDownload}
-              index={2}
-            >
-              {dataText.headers.es}
-            </FileView>
-          </Modals>
-        )}
+            {dataText.headers.eng}
+          </FileView>
+          <FileView
+            title={staticInf.name + "_cv.pdf"}
+            cv={staticInf.cv.es.cv_pdf}
+            handlerChangeByDownload={handlerChangeByDownload}
+            index={2}
+          >
+            {dataText.headers.es}
+          </FileView>
+        </Modal>
       </AnimatePresence>
       {showImg && (
         <motion.div
@@ -167,7 +165,11 @@ const CvMain = () => {
           )}
         </AnimatePresence>
         <div className="page-content  relative w-[100%] lg:w-full">
-          <Header dataText={dataText} staticInf={staticInf} changeHandlerBodyLoaded={changeHandlerBodyLoaded} />
+          <Header
+            dataText={dataText}
+            staticInf={staticInf}
+            changeHandlerBodyLoaded={changeHandlerBodyLoaded}
+          />
           <div
             id="about"
             className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] "
@@ -183,13 +185,12 @@ const CvMain = () => {
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
-                  
                 ></p1>
               </MainContainer>
               <div className="w-11/12 sm:w-10/12 ">
                 <MainContainer
-                id="container2"
-                  className="flex w-full"
+                  id="skills"
+                  className="flex w-full "
                   subtitle={dataText.headers._knowledge}
                   title={dataText.headers.knowledge}
                 >
@@ -197,13 +198,24 @@ const CvMain = () => {
                     className=" "
                     CvIcon={CvIcon}
                     dataText={dataText}
-                    setshowDownload={setshowDownload}
+                    modal={modalCv}
                   />{" "}
+                  <div className="absolute bottom-4 ml-[200px]">
+                  <Button
+                    text={"Curriculum Vitae"}
+                    icon={CvIcon}
+                    svg={true}
+                    onClick={() => {
+                      modalCv.open();
+                    }}
+                  >
+                    <CvIcon></CvIcon>
+                  </Button></div>
                 </MainContainer>
               </div>
             </div>
             <MainContainer
-              id="container3"
+              id="proyects"
               className="flex "
               title={dataText.headers.proyects}
               subtitle={dataText.headers._proyects}
@@ -231,8 +243,8 @@ const CvMain = () => {
             <div className="">
               <MainContainer
                 className="flex flex-col items-center"
-                title="Experience"
-                subtitle={dataText.headers._experience}
+                title="Experiencia"
+                subtitle={dataText.headers._experience + "+"}
               >
                 <Experience dataText={dataText}></Experience>
               </MainContainer>
