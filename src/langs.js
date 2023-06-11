@@ -113,7 +113,7 @@ export const lang = {
           "GoogleApi",
         ],
         img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
           "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085300/cld-sample-3.jpg",
         ],
         web: "https://mymoneyapp.pages.dev/app/myMoney",
@@ -298,7 +298,7 @@ export const lang = {
           "GoogleApi",
         ],
         img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085373/myMoney_rqopx1.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
         ],
         web: "https://mymoneyapp.pages.dev/app/myMoney",
         repo: "https://github.com/jorgeortega123/MyMoneyApp",
@@ -409,7 +409,7 @@ export const lang = {
         title: "My money",
         key: "mym",
         all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433346/Frame_1_xtlmz4.png",
+          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
         ],
       },
       {

@@ -136,22 +136,22 @@ export default function NavView({
             transition={{ type: "tween" }}
             className="capitalize flex space-x-8"
           >
-            <p className="hover:text-white">
-              <a href="#home" className="flex flex-row-reverse items-center">
+            <p onClick={() => handleClick("home")}  className="hover:text-white">
+              <a className="flex flex-row-reverse items-center">
                 {dataText.headers.home}
               </a>
             </p>
-            <p className="hover:text-white">
-              <a href="#about">{dataText.headers.about}</a>
+            <p  onClick={() => handleClick("about")} className="hover:text-white">
+              <a >{dataText.headers.about}</a>
             </p>
 
-            <p className="hover:text-white">
-              <a href="#proyects">{dataText.headers.proyects}</a>
+            <p  onClick={() => handleClick("proyects")} className="hover:text-white">
+              <a >{dataText.headers.proyects}</a>
             </p>
-            <p className="hover:text-white">
-              <a href="#proyects">{dataText.headers.services}</a>
+            <p onClick={() => handleClick("services")} className="hover:text-white">
+              <a >{dataText.headers.services}</a>
             </p>
-            <p className="hover:text-white">
+            <p onClick={() => handleClick("contact")} className="hover:text-white">
               <a href="#contact">{dataText.headers.contact}</a>
             </p>
           </motion.div>

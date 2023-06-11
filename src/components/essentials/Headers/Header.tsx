@@ -11,12 +11,15 @@ import InstagramSGV from "../../../assets/svg/instagram_.svg";
 import useMainContext from "../../context/useMainContext";
 import { useScroll, motion, useTransform } from "framer-motion";
 import Icons from "../../../styles/icons/Icons.js";
+import useImagesContext from "../../context/useImagesContext.js";
+
 export default function Header({
   dataText,
   staticInf,
   activeAnimationsHeader,
   changeHandlerBodyLoaded,
 }) {
+  const { imageMap, isLoaded } = useImagesContext();
   const { data, goToUrl, changeOverflowY } = useMainContext();
   const { scrollYProgress } = useScroll();
   // const background = useTransform(scrollYProgress, [0, 1], ["red", "blue"]);
@@ -24,9 +27,26 @@ export default function Header({
   return (
     <>
       <div
+  
         onLoad={() => changeHandlerBodyLoaded()}
         className=" relative px-2 mt-[46px] flex flex-col mx-auto  sm:w-[550px] lg:mt-[-15px] lg:mb-[55px] lg:flex-row-reverse lg:h-screen lg:w-screen lg:justify-center"
       >
+        <div className="wave-index absolute invisible lg:visible bg-[#040a2c] "></div>
+      
+        <div className="wave-index-0 absolute invisible lg:visible  ">
+          <div className=" h-12 mx-auto invisible lg:visible ">
+            <svg
+              className="absolute bottom-[-90px] z-[-1] mt-12 w-[calc(180%)] "
+              viewBox="0 0 1920 1080"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1920,1080C1600.5,1097.3333333333333,284.8333333333333,1100.3333333333333,0,1080C-284.8333333333333,1059.6666666666667,141,979.6666666666666,211,958C281,936.3333333333334,349.6666666666667,945.6666666666666,420,950C490.3333333333333,954.3333333333334,562.3333333333334,978.6666666666666,633,984C703.6666666666666,989.3333333333334,772.8333333333334,971,844,982C915.1666666666666,993,987.5,1057.1666666666667,1060,1050C1132.5,1042.8333333333333,1208.6666666666667,941.8333333333334,1279,939C1349.3333333333333,936.1666666666666,1411.8333333333333,1027.6666666666667,1482,1033C1552.1666666666667,1038.3333333333333,1627.5,980.5,1700,971C1772.5,961.5,1880.3333333333333,957.8333333333334,1917,976C1953.6666666666667,994.1666666666666,2239.5,1062.6666666666667,1920,1080C1600.5,1097.3333333333333,284.8333333333333,1100.3333333333333,0,1080"
+                fill="#040a2c"
+              />
+            </svg>
+          </div>
+        </div>
         <div className="absolute  top-[15%] lg:top-[40%] left-0 gap-1 overflow-hidden flex flex-col">
           <div
             onClick={() =>
@@ -37,7 +57,10 @@ export default function Header({
             <span className="absolute z-[-1] opacity-0 ml-1 pt-[2px] my-auto  text-center">
               Linkedin
             </span>
-            <Icons icon="linkedin" className="w-9 lg:w-11 h-auto rounded-full"></Icons>
+            <Icons
+              icon="linkedin"
+              className="w-9 lg:w-11 h-auto rounded-full"
+            ></Icons>
           </div>
           <div className="icons-delay w-max bg-[#000000] rounded-r-[18px] overflow-hidden   ">
             <span
@@ -58,7 +81,7 @@ export default function Header({
             <span className="absolute z-[-1] opacity-0 pt-[4px] my-auto  text-center text-[19px]">
               Instagram
             </span>
- 
+
             <div className="w-9 lg:w-11 rounded-full overflow-hidden">
               <Icons
                 icon="instagram"
@@ -67,26 +90,36 @@ export default function Header({
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center pl-8 m-5">
+        <div></div>
+        <div className="flex items-center justify-center pl-8 m-5 lg:hidden">
+           {/* <p>animGift</p> */}
           <img
             draggable={false}
             id="CVmonitor"
             className="w-[40vh] lg:w-[700px] "
-            src={animGIF}
+            src={imageMap["animGift"]}
             alt=""
             onClick={() => activeAnimationsHeader("already")}
           />
         </div>
-        <div className="flex flex-col lg:my-auto lg:w-6/12  lg:items-end lg:justify-end  ">
+        <div className=" flex flex-col lg:my-auto lg:w-8/12   ">
           {/* <AnimationsLoader duration={3} moveY={-10}> */}
-            <h1 className="lg:w-9/12 text-[50px] lg:text-[12vh] title-main-header right-0">
-              {dataText.headers.main + " "}  
-              <h1 className="text-white">Jorge Ortega</h1>
-               
-              
+          <div className="flex-row lg:flex lg:items-center lg:justify-end   z-[2] gap-12 lg:w-10/12">
+            <h1 className="lg:w-6/12 text-[52px] lg:text-[14vh]  text-white lg:text-transparent title-main-header right-0 lg:text-right">
+             Hi, I am
+              Jorge Ortega
             </h1>
+            <div className="invisible   lg:h-full lg:visible items-center flex  mr-[-120px] text-[14px] max-w-[480px] text-right">
+              <h3 className="font-thin h-0 lg:h-full  text-[16px] rounded-[12px] p-4 px-8 bg-[#040a2c] ">
+                "Explorando el infinito universo del código, mi pasión me
+                impulsa a crear soluciones innovadoras que desafían los límites
+                del posible."
+              </h3>
+            </div>
+          </div>
+
           {/* </AnimationsLoader> */}
-          <div className="altura-letras mt-6 lg:mt-0 lg:w-[75%]">
+          <div className="altura-letras mt-0 lg:mt-6 lg:ml-0 z-[2] lg:w-[75%]">
             <AnimationsLoader duration={3} moveX={30}>
               <p className=" text-slate-400  font-semibold  text-developer">
                 {dataText.headers.sub}
@@ -106,7 +139,7 @@ export default function Header({
               </p>
             </AnimationsLoader>
           </div>
-          <div className=" absolute bottom-[-50px]  lg:bottom-[22%]  lg:left-[17.6%]">
+          <div className="z-[3] absolute bottom-[-50px]  lg:bottom-[30%]  lg:left-[17.6%]">
             <Button
               text={dataText.headers.contact}
               icon={CallSVG}

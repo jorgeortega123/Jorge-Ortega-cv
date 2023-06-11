@@ -21,7 +21,7 @@ export default function Services(dataText) {
   };
 
   return (
-    <div className="w-12/12 bg-[#00000023] rounded-[6px]  border-[#0000001a] pb-3  px-2  max-w-[700px]  ">
+    <div  className="w-12/12 bg-[#00000023] rounded-[6px]  border-[#0000001a] pb-3  px-2  max-w-[700px]  ">
       <div className=" flex flex-col  w-full items-center relative  ">
         <div className=" m-2 mt-4 text-center w-max  #082744 bg-[#082744] ">
         <h2 className="text-[16px]"> {words[position].title}</h2>

@@ -1,6 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
 import sendServer from "../../server";
 import { lang } from "../../langs";
+const data = {
+  color: "#0f2d51",
+  color_asent: "#201211",
+  text: "#fff",
+};
 export const MainContext = createContext({});
 const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
@@ -11,6 +16,7 @@ function MainContextComponent({ children }) {
   const [write, setWrite] = useState("");
   const [images, setimages] = useState([]);
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
+
 
   // const loadImages = async () => {
   //   var unirImagenes = ["./assets/animation_640.gif"];
@@ -27,11 +33,7 @@ function MainContextComponent({ children }) {
   //   console.log(images)
   //   }
   // };
-  var data = {
-    color: "#0f2d51",
-    color_asent: "#201211",
-    text: "#fff",
-  };
+
   const sendText = async (data) => {
     var res = await sendServer(server, "/telegramCV", data);
   };

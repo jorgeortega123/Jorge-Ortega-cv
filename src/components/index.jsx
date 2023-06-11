@@ -35,10 +35,12 @@ import LoadingScreen from "./essentials/LoadingScreen";
 import Modal from "./context/modal/modal/Modal";
 import useModal from "./context/modal/useModal";
 import Button from "./essentials/Button";
+import useImagesContext from "./context/useImagesContext";
 
 const staticInf = lang.static;
 const CvMain = () => {
   const { data, goToUrl, changeOverflowY } = useMainContext();
+  const { isLoaded } = useImagesContext();
   const [showMenuNavbar, setshowMenuNavbar] = useState(false);
   const [dataText, setdataText] = useLang();
   const [showMenuTranslate, setshowMenuTranslate] = useState(false);
@@ -100,9 +102,11 @@ const CvMain = () => {
     setshowDownload(false);
   };
   const modalCv = useModal();
-
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
   return (
-    <div id="about" className={`main-container init relative`}>
+    <div id="home" className={`main-container init relative`}>
       {/* <Background /> */}
       <Console></Console>
       <NavView
@@ -115,7 +119,7 @@ const CvMain = () => {
         dataText={dataText}
         visibleContainer={visibleContainer}
       ></NavView>
-      <LoadingScreen isLoadedBody={isLoadedBody} />
+
       <AnimatePresence>
         <Modal modal={modalCv} title="Hoja de vida">
           <FileView
@@ -170,18 +174,18 @@ const CvMain = () => {
             staticInf={staticInf}
             changeHandlerBodyLoaded={changeHandlerBodyLoaded}
           />
-          <div
-            id="about"
-            className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] "
-          >
-            <div className="w-full flex flex-col max-w-[800px] mb-7 justify-center items-center text-[1.5rem] xl:text-[1.7rem]">
+          <div className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] ">
+            <div
+              id="about"
+              className="w-full flex flex-col max-w-[800px] mb-7 justify-center items-center text-[1.5rem] xl:text-[1.7rem]"
+            >
               <MainContainer
                 className="flex relative bg-[#072346] rounded-md mt-10 w-11/12 sm:w-10/12 "
                 title={dataText.headers.about}
                 subtitle={dataText.headers._about}
               >
                 <p1
-                  className={`header-info normalText p-[10px] rounded-[10px] text-[15px] leading-5 lg:leading-6  lg:text-[17px] `}
+                  className={`header-info normalText p-[10px] lg:p-5 rounded-[10px] text-[12px] leading-5 lg:leading-6  lg:text-[15px] `}
                   dangerouslySetInnerHTML={{
                     __html: dataText.headers.aboutInfo,
                   }}
@@ -201,16 +205,17 @@ const CvMain = () => {
                     modal={modalCv}
                   />{" "}
                   <div className="absolute bottom-4 ml-[200px]">
-                  <Button
-                    text={"Curriculum Vitae"}
-                    icon={CvIcon}
-                    svg={true}
-                    onClick={() => {
-                      modalCv.open();
-                    }}
-                  >
-                    <CvIcon></CvIcon>
-                  </Button></div>
+                    <Button
+                      text={"Curriculum Vitae"}
+                      icon={CvIcon}
+                      svg={true}
+                      onClick={() => {
+                        modalCv.open();
+                      }}
+                    >
+                      <CvIcon></CvIcon>
+                    </Button>
+                  </div>
                 </MainContainer>
               </div>
             </div>
@@ -225,6 +230,7 @@ const CvMain = () => {
 
             <div className="w-full">
               <MainContainer
+                id="services"
                 className="flex justify-center items-center w-11/12 sm:w-10/12 lg:sm:w-8/12"
                 subtitle={dataText.headers._services}
                 title={dataText.headers.services}

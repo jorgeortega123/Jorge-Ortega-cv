@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 
 export const ZoomableImage = ({ imageUrl }) => {
   const canvasRef = useRef(null);
@@ -10,12 +10,18 @@ export const ZoomableImage = ({ imageUrl }) => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     const image = imageRef.current;
 
     const drawImage = () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
-      context.drawImage(image, position.x, position.y, canvas.width, canvas.height);
+      context.drawImage(
+        image,
+        position.x,
+        position.y,
+        canvas.width,
+        canvas.height
+      );
     };
 
     const handleZoom = () => {
@@ -62,24 +68,21 @@ export const ZoomableImage = ({ imageUrl }) => {
   };
 
   return (
-    <div className='relative h-[calc(100%_-_20%)] overflow-auto justify-center items-center'>
+    <div className="border relative cursor-zoom-in select-none h-[500px] active:cursor-crosshair overflow-auto justify-center items-center">
       <canvas
         ref={canvasRef}
-        style={{ border: '1px solid black' }}
-        className="max-w-[100%]"
+        style={{}}
+        className="max-w-[160%] min-w-[80%] overflow-hidden"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-      />
-      <img
-        ref={imageRef}
-        alt="Zoomable"
-        style={{ display: 'none' }}
-      />
-      <button onClick={handleZoomIn}>Zoom In</button>
-      <button onClick={handleZoomOut}>Zoom Out</button>
+      > <img ref={imageRef} alt="Zoomable" style={{ display: "none" }} /></canvas>
+     
+      <div className="absolute top-0">
+        {" "}
+        <button onClick={handleZoomIn}>Zoom In</button>
+        <button onClick={handleZoomOut}>Zoom Out</button>
+      </div>
     </div>
   );
 };
-
-

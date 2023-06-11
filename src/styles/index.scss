@@ -30,6 +30,11 @@ $space-margin-main: 5px;
    src: url(../assets/fonts/static/Inter-Regular.ttf);
 }
 
+@font-face {
+  font-family: "phrases";
+   src: url(../assets/fonts/static/Inter-Medium.ttf);
+}
+
 // p {
 //   font-family: "paragraphs";
 // }
@@ -53,14 +58,16 @@ p {
   // font-family: "paragraphs";
   // font-weight: 100px;
    color: #ccc;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+   font-family: "phrases";
 }
 
 h2 {
-  font-family: "letters";
+  font-family: "phrases";
 }
+h3 { 
+  font-family: "phrases";
+}
+
 
 .spacing-letters {
   letter-spacing: 0.1rem;
@@ -371,15 +378,15 @@ nav .rotate180-alternate {
   transition-duration: 0.4s;
 }
 .cv-button:hover {
-  background-color: $main-color;
-  color: $base-color-h1;
+  background-color: transparent;
+  color:white ;
   border: 1px solid $secondary-color;
 }
 
 .cv-button:hover svg {
   fill: $secondary-color;
-  animation: svg-anim-key 2s ease-in-out infinite;
-  transform: all 0.2s;
+  animation: svg-anim-key 1.5s ease-in-out infinite;
+  transform: all 0.7s;
 }
 
 // .svg-anim[active=true] > svg {
@@ -389,17 +396,17 @@ nav .rotate180-alternate {
 
 @keyframes svg-anim-key2 {
   50% {
-    transform: translateX(100px);
+    transform: translateX(30px);
     opacity: 0;
   }
   70% {
-    transform: translateX(-100px);
+    transform: translateX(30px);
   }
 }
 
 @keyframes svg-anim-key {
   50% {
-    transform: translateX(10px);
+    transform: translateX(3px);
   }
 }
 
@@ -484,4 +491,8 @@ nav .rotate180-alternate {
   position: fixed;
   background: url("https://res.cloudinary.com/ddcoxtm2v/image/upload/v1677110692/blue-purple-floral-pattern_1017-5170_nlwxj3.avif");
   background-repeat: repeat;
+}
+
+.cursor-zoom { 
+  cursor: zoom-in;
 }

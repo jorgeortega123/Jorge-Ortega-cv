@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 const data = [
   {
+    id: "animGift",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686446951/animation_640_nkdivz.gif",
+  },
+  {
     id: "react",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png",
   },
@@ -82,7 +86,7 @@ const data = [
   },
   {
     id: "mym",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433346/Frame_1_xtlmz4.png",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447982/Frame_1_l3ehv6.png",
   },
   {
     id: "ctn",
@@ -116,6 +120,8 @@ export const ImageContext = createContext({});
 export const ImageContextProvider = ({ children }) => {
   const [imageMap, setImageMap] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [numberCharge, setnumberCharge] = useState(0)
+  const numbersImages = data.length
 
   useEffect(() => {
     // Cargar las imágenes una vez
@@ -125,6 +131,7 @@ export const ImageContextProvider = ({ children }) => {
 
         await Promise.all(
           data.map(async (item) => {
+            // setnumberCharge((e)=> e + 1)
             const response = await fetch(item.link);
             const blob = await response.blob();
             const url = URL.createObjectURL(blob);
@@ -136,6 +143,7 @@ export const ImageContextProvider = ({ children }) => {
         setIsLoaded(true);
       } catch (error) {
         console.log("Error loading images:", error);
+        setIsLoaded(true);
       }
     };
 
@@ -143,7 +151,7 @@ export const ImageContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <ImageContext.Provider value={{ imageMap, isLoaded }}>
+    <ImageContext.Provider value={{ imageMap, isLoaded ,numberCharge, numbersImages }}>
       {children}
     </ImageContext.Provider>
   );
