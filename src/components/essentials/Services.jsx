@@ -36,7 +36,7 @@ export default function Services(dataText) {
             }}
             className=" h-[100%]  w-full text-center flex items-center justify-center"
           >
-            <p className="h-full service-text text-[13px] sm:text-[14px]">{words[position].text}</p> 
+            <p className=" service-text text-[13px] sm:text-[14px]">{words[position].text}</p> 
           </div>
           <div
             style={{

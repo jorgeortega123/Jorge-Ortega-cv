@@ -105,7 +105,7 @@ export default function Header({
         <div className=" flex flex-col lg:my-auto lg:w-8/12   ">
           {/* <AnimationsLoader duration={3} moveY={-10}> */}
           <div className="flex-row lg:flex lg:items-center lg:justify-end   z-[2] gap-12 lg:w-10/12">
-            <h1 className="lg:w-6/12 text-[52px] lg:text-[14vh]  text-white lg:text-transparent title-main-header right-0 lg:text-right">
+            <h1 className="lg:w-6/12 text-[52px] lg:text-[14vh]  text-white title-main-header right-0 lg:text-right">
              Hi, I am
               Jorge Ortega
             </h1>
