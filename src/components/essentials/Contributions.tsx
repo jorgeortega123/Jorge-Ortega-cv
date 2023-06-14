@@ -43,6 +43,7 @@ export default function Contributions(data) {
           {data.data.repos.map((rep, ind) => {
             return (
               <div
+              key={"rep" + ind}
                 className={`bg-[#0000001a] border border-[#0000001a] mx- w-[95%] mx-auto flex flex-col space-y-2 xl:w-12/12 px-6  rounded-[6px]  `}
               >
                 <div className=" relative">

@@ -4,12 +4,14 @@ export default function FileView({
   title = "as",
   children = "",
   cv,
+  modal,
   index = 0,
   handlerChangeByDownload,
 }: {
   title: string;
   children: any;
   cv: string;
+  modal: any;
   index: number;
   handlerChangeByDownload: () => void;
 }) {
@@ -20,6 +22,10 @@ export default function FileView({
     link.href = a;
     link.download = a;
     link.click();
+    // setTimeout(() => {
+    //   modal.toggle()
+    // }, 1500);
+ 
   };
 
   return (
@@ -28,11 +34,11 @@ export default function FileView({
       onClick={() => {
         download(cv);
       }}
-      className={`max-w-[400px] mx-auto z-[3] bg-[#0000002b] hover:bg-gray-900 text-white w-full cursor-pointer  my-2 rounded-[6px] px-2 py-3 flex justify-center items-center min-h-[64px]`}
+      className={`max-w-[400px] mx-auto z-[3] bg-[#0000002b] hover:bg-gray-900 text-white w-full cursor-pointer  my-2 rounded-[6px]  py-3 flex justify-between px-4 items-center min-h-[64px]`}
     >
-      <div className="flex flex-col relative mr-2">
-        <p className="tracking-wide text-[25px] ">{title}</p>
-        <p className="absolute text-[2s5px] bottom-[-20px] right-0 ">
+      <div className="flex flex-col relative lg:ml-6">
+        <p className="tracking-wider text-[28px] ">{title}</p>
+        <p className="absolute text-[18px] bottom-[-20px] right-0 ">
           {children}
         </p>
       </div>

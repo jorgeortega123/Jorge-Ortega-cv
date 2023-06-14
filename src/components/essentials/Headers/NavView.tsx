@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+
 
 import TranslateView from "../TranslateView";
 import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
@@ -25,7 +25,7 @@ export default function NavView({
     },
   ];
   const handleClick = (id: string) => {
-    scrollToElement(id)
+    scrollToElement(id);
     // scroll(id)
   };
 
@@ -82,16 +82,15 @@ export default function NavView({
                 icon={"home"}
               ></Icons>
             </a>
-            <a  onClick={() => handleClick("skills")}>
+            <a onClick={() => handleClick("skills")}>
               <Icons
                 className={`fill-[#ebebebd0] w-7 `}
                 fromNav={true}
                 icon={"skill"}
               ></Icons>
             </a>
-            <div  onClick={() => handleClick("proyects")}>
+            <div onClick={() => handleClick("proyects")}>
               <Icons
-              
                 className={`stroke-[#ebebebd0] w-7  `}
                 fromNav={true}
                 icon={"portfolio"}
@@ -116,7 +115,7 @@ export default function NavView({
                 />
               </AnimationsLoader>
             </div> */}
-            <AnimatePresence>
+        
               {showMenuTranslate && (
                 <TranslateView
                   showMenuTranslate={showMenuTranslate}
@@ -125,36 +124,42 @@ export default function NavView({
                   setshowMenuTranslate={setshowMenuTranslate}
                 />
               )}
-            </AnimatePresence>
+        
           </div>
         </div>{" "}
         <div className=" top-0 invisible h-full pr-5 flex justify-center items-center lg:visible absolute text-slate-300 right-0 useNavLetter text-[1rem] ">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ type: "tween" }}
-            className="capitalize flex space-x-8"
-          >
-            <p onClick={() => handleClick("home")}  className="hover:text-white">
+          <div className="capitalize flex space-x-8">
+            <p onClick={() => handleClick("home")} className="hover:text-white">
               <a className="flex flex-row-reverse items-center">
                 {dataText.headers.home}
               </a>
             </p>
-            <p  onClick={() => handleClick("about")} className="hover:text-white">
-              <a >{dataText.headers.about}</a>
+            <p
+              onClick={() => handleClick("about")}
+              className="hover:text-white"
+            >
+              <a>{dataText.headers.about}</a>
             </p>
 
-            <p  onClick={() => handleClick("proyects")} className="hover:text-white">
-              <a >{dataText.headers.proyects}</a>
+            <p
+              onClick={() => handleClick("proyects")}
+              className="hover:text-white"
+            >
+              <a>{dataText.headers.proyects}</a>
             </p>
-            <p onClick={() => handleClick("services")} className="hover:text-white">
-              <a >{dataText.headers.services}</a>
+            <p
+              onClick={() => handleClick("services")}
+              className="hover:text-white"
+            >
+              <a>{dataText.headers.services}</a>
             </p>
-            <p onClick={() => handleClick("contact")} className="hover:text-white">
+            <p
+              onClick={() => handleClick("contact")}
+              className="hover:text-white"
+            >
               <a href="#contact">{dataText.headers.contact}</a>
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

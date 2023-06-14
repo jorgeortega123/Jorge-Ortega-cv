@@ -7,8 +7,10 @@
 
   .services-container > div {
     transition: all .5s ;
+    transition-timing-function:cubic-bezier(0.08, 0.63, 0.53, 0.97)
   }
 
   .services-container > div > p {
     transition: all .5s ;
+    transition-timing-function:cubic-bezier(0.08, 0.63, 0.53, 0.97)
   }

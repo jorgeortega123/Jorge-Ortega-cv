@@ -193,7 +193,7 @@ export default function Skills({ dataText, modalCv, CvIcon }) {
                     className="w-12 h-auto"
                     src={imageMap[e.id]}
                     alt=""
-                    srcset=""
+                  
                   />
                 </div>
               );

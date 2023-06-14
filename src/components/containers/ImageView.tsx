@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useMainContext from "../context/useMainContext";
-import { AnimatePresence, motion } from "framer-motion";
+
 
 export default function ImageView({ setshowImg, imgSrc, index }) {
   const [imageShow, setimageShow] = useState(imgSrc.img)
@@ -21,12 +20,7 @@ export default function ImageView({ setshowImg, imgSrc, index }) {
     setimageShow(imgSrc.proyect.all[index - 1])
   }
   return (
-    <motion.div
-    initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, x: 0, scale:1 }}
-    exit={{ opacity: 0, scale:0 }}
-    transition={{ type: "tween", duration:.2}}
-  >
+  
     <div className="select-none  max-w-full flex justify-center items-center max-h-screen lg:px-[56px] lg:py-10 relative">
       <div className="z-[6] fixed w-full overflow-auto h-full backdrop-blur-xl  bg-[#00000088] bottom-0   flex justify-center">
         <div
@@ -75,6 +69,6 @@ export default function ImageView({ setshowImg, imgSrc, index }) {
           
         </div>
       </div>
-    </div></motion.div>
+    </div>
   );
 }

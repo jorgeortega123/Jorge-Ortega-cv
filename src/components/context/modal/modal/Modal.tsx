@@ -9,6 +9,7 @@ function Modal({
   modal,
   title,
   full,
+  mini,
   ...props
 }: {
   children?: any;
@@ -16,6 +17,7 @@ function Modal({
   modal: any;
   title: string;
   full?: boolean;
+  mini?:boolean;
   delete?: boolean;
 }) {
   const scrollBody = (scroll: string) => {
@@ -51,7 +53,7 @@ function Modal({
           {...props}
           className={`z-[10] bg-[#0f2d51] rounded-lg shadow max-h-full  ${
             full ? "w-full" : "w-11/12"
-          }  mx-auto`}
+          }  mx-auto ${mini ? "max-w-[400px]": ""}`}
         >
           <ModalClose closeModal={closeModal} text={title} />
           {props.delete && (

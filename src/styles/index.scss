@@ -1,5 +1,4 @@
 @tailwind base;
-@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400&display=swap");
 $base-color-h1: #fff;
 $secondary-color: #66ff00;
 $base-color-h1-hover: #f6ff00;
@@ -17,6 +16,14 @@ $space-margin-main: 5px;
   font-weight: 100;
   src: url(../assets/fonts/normal.ttf);
 }
+
+@font-face {
+  font-family: "strong";
+  font-style: normal;
+  font-weight: 100;
+  src: url(../assets/fonts/static/Inter-Bold.ttf);
+}
+
 
 @font-face {
   font-family: "letters";
@@ -50,7 +57,9 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+h1 { 
+  font-family: "strong";
+}
 .service-text {
   font-family: "paragraphs";
 }

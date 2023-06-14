@@ -2,7 +2,7 @@ import React from "react";
 function ModalClose({ text, closeModal }: { text: any; closeModal: any }) {
   return (
     <div className="flex justify-between items-center p-2 mb-2 dark:border-zinc-50 border-zinc-900 relative ">
-      <h1 className="capitalize">{text}</h1>
+      <h1 className="capitalize indent-3 lg:text-[18px] ">{text}</h1>
       <div
         onClick={closeModal}
         className="cursor-pointer  rounded-full "

@@ -1,15 +1,12 @@
 import React from "react";
 import { CallIcon } from "../../../assets/svg.jsx";
-import SocialNetworks from "../../SocialNetworks";
+
 import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
 import Button from "../Button";
-import animGIF from "../../../assets/animation_640.gif";
+
 import CallSVG from "../../../assets/svg/call.svg";
-import LinkedinSGV from "../../../assets/svg/linkedin_.svg";
-import GithubSVG from "../../../assets/github.png";
-import InstagramSGV from "../../../assets/svg/instagram_.svg";
+
 import useMainContext from "../../context/useMainContext";
-import { useScroll, motion, useTransform } from "framer-motion";
 import Icons from "../../../styles/icons/Icons.js";
 import useImagesContext from "../../context/useImagesContext.js";
 
@@ -21,18 +18,16 @@ export default function Header({
 }) {
   const { imageMap, isLoaded } = useImagesContext();
   const { data, goToUrl, changeOverflowY } = useMainContext();
-  const { scrollYProgress } = useScroll();
   // const background = useTransform(scrollYProgress, [0, 1], ["red", "blue"]);
   //w-[calc(100%_-_10rem)]
   return (
     <>
       <div
-  
         onLoad={() => changeHandlerBodyLoaded()}
         className=" relative px-2 mt-[46px] flex flex-col mx-auto  sm:w-[550px] lg:mt-[-15px] lg:mb-[55px] lg:flex-row-reverse lg:h-screen lg:w-screen lg:justify-center"
       >
         <div className="wave-index absolute invisible lg:visible bg-[#040a2c] "></div>
-      
+
         <div className="wave-index-0 absolute invisible lg:visible  ">
           <div className=" h-12 mx-auto invisible lg:visible ">
             <svg
@@ -92,7 +87,7 @@ export default function Header({
         </div>
         <div></div>
         <div className="flex items-center justify-center pl-8 m-5 lg:hidden">
-           {/* <p>animGift</p> */}
+          {/* <p>animGift</p> */}
           <img
             draggable={false}
             id="CVmonitor"
@@ -106,27 +101,41 @@ export default function Header({
           {/* <AnimationsLoader duration={3} moveY={-10}> */}
           <div className="flex-row lg:flex lg:items-center lg:justify-end   z-[2] gap-12 lg:w-10/12">
             <h1 className="lg:w-6/12 text-[52px] lg:text-[14vh]  text-white title-main-header right-0 lg:text-right">
-             Hi, I am
-              Jorge Ortega
+              Hi, I am Jorge Ortega
             </h1>
-            <div className="invisible   lg:h-full lg:visible items-center flex  mr-[-120px] text-[14px] max-w-[480px] text-right">
-              <h3 className="font-thin h-0 lg:h-full  text-[16px] rounded-[12px] p-4 px-8 bg-[#040a2c] ">
-                "Explorando el infinito universo del código, mi pasión me
-                impulsa a crear soluciones innovadoras que desafían los límites
-                del posible."
-              </h3>
+            <div className="invisible   lg:h-full lg:visible items-center flex mr-[-20px] text-[14px] max-w-[330px] text-right">
+              <div className="bg-[#040a2c] rounded-[8px] ">
+              
+                <svg
+                  aria-hidden="true"
+                  className="w-12 h-[0px] lg:h-12 mx-auto mt-5 text-gray-400 dark:text-gray-600"
+                  viewBox="0 0 24 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h3 className="font-thin h-[0px]  lg:h-full  text-[16px] rounded-[12px] p-4 px-8 ">
+                  Explorando el infinito universo del código, mi pasión me
+                  impulsa a crear soluciones innovadoras que desafían los
+                  límites del posible.
+                </h3>
+              </div>
             </div>
           </div>
 
           {/* </AnimationsLoader> */}
           <div className="altura-letras mt-0 lg:mt-6 lg:ml-0 z-[2] lg:w-[75%]">
             <AnimationsLoader duration={3} moveX={30}>
-              <p className=" text-slate-400  font-semibold  text-developer">
+              <p className=" text-slate-400  font-semibold  text-developer lg:text-[28px]">
                 {dataText.headers.sub}
               </p>
             </AnimationsLoader>
             <AnimationsLoader duration={3} moveX={-30}>
-              <p className="  text-slate-400  ">
+              <p className="  text-slate-400 lg:text-[25px]  ">
                 {dataText.headers.sub1}
                 <span
                   onClick={() => {
@@ -139,7 +148,7 @@ export default function Header({
               </p>
             </AnimationsLoader>
           </div>
-          <div className="z-[3] absolute bottom-[-50px]  lg:bottom-[30%]  lg:left-[17.6%]">
+          <div className="z-[3] absolute bottom-[-50px]  lg:bottom-[15%]  lg:left-[16.8%]">
             <Button
               text={dataText.headers.contact}
               icon={CallSVG}

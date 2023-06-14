@@ -87,7 +87,7 @@ export default function ContactComponent({
       <div className=" flex flex-col justify-start items-start space-y-2 lg:mt-[-42px] w-full md:w-[80%] ">
         {dataContact.map((e) => {
           return (
-            <div className="flex justify-center items-center ">
+            <div key={"as" + e.title} className="flex justify-center items-center ">
               <div className="w-12 h-12 mx-2">
        
                 <img src={e.icon} alt="" />

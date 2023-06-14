@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+
 
 export default function AnimationsLoader({
   moveX=0,
@@ -18,15 +18,10 @@ export default function AnimationsLoader({
     translateX: 0,
   };
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, translateX: moveX, translateY: moveY }}
-        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ type: "spring", duration: duration, delay:delay }}
-      >
+
+      <div>
         {children}
-      </motion.div>
-    </AnimatePresence>
+        </div>
+  
   );
 }

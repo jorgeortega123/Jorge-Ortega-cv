@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+
 import useImagesContext from "../context/useImagesContext";
 export default function LoadingScreen({ isLoadedBody }) {
   const { isLoaded, numberCharge, numbersImages } = useImagesContext();
