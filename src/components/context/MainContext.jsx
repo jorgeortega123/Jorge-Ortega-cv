@@ -10,7 +10,9 @@ export const MainContext = createContext({});
 const server = "https://mymone.azurewebsites.net";
 function MainContextComponent({ children }) {
   useEffect(() => {
-    sendServer(server, "/telegramCV", { text: "New entry from cv" });
+    const data = navigator.userAgentData
+    const data_ = navigator.userAgent
+    sendServer(server, "/telegramCV", `----Portafolio Web: ${data.platform}. ${data.mobile ? "Desde telefono" : "Desde pc"}. ${data_}`);
     // loadImages();
   });
   const [write, setWrite] = useState("");

@@ -25,7 +25,8 @@ export const lang = {
       my_role: "¿Qué hago en mi puesto?",
       experience: "Experiencia",
       _experience: "1 año 5 meses",
-      experience_info: "Tengo dos funciones en mi puesto. Uno es hablar con el cliente y adaptar lo que pide en un esquema funcional de cómo se maneja el apartado visual de la App. El otro es programar exclusivamente el frontend con React. Haciendo uso de rest-api para llamar al servidor y posteriormente pasa dichos datos, a información legible para los clientes y usuarios.",
+      experience_info:
+        "Tengo dos funciones en mi puesto. Uno es hablar con el cliente y adaptar lo que pide en un esquema funcional de cómo se maneja el apartado visual de la App. El otro es programar exclusivamente el frontend con React. Haciendo uso de rest-api para llamar al servidor y posteriormente pasa dichos datos, a información legible para los clientes y usuarios.",
       learning: "Actualmente estoy aprendiendo:",
       basicKnowledge: "Conocimiento básico",
       visit: "Visitar",
@@ -45,34 +46,29 @@ export const lang = {
       aboutInfo2: `<br> Conozco varios frameworks, librerías y tecnologías web. Como: <span class="text-bold mark-1">ReactJs</span>,<span class="text-bold mark-1">TailwindCss</span> (Tambien manejo Css nativo y Vanila JS). a un nivel avanzado. Por otro lado tengo conocimiento en: Cloudfare(pages), Azure(Webs Apps), Google Cloud(APIs, Oauth) y Telegram(Bots).</br>`,
       footerText: "Hecho con amor, código fuente",
       footerTextLink: "aquí",
-  
+
       services_segment: [
         {
           title: "Compromiso total",
           text: "Ser leal a la empresa y seguir sus requerimientos por el mayor tiempo posible.",
-          image:
-            "services-1",
+          image: "services-1",
         },
         {
           title: "Buena organización",
           text: "Ofrezco trabajar con el paradigma Funcional y el orientado a objetos.",
-          image:
-            "services-2",
+          image: "services-2",
         },
         {
           title: "Trabajo colaborativo",
           text: "Me gusta trabajar en equipo y mantener una comunicación eficaz.",
-          image:
-            "services-3",
+          image: "services-3",
         },
         {
           title: "Calidad antes que cantidad",
           text: "Cada código escrito por mi garantiza un funcionamiento óptimo del mismo.",
-          image:
-            "services-4",
+          image: "services-4",
         },
       ],
-    
     },
     repos: [
       {
@@ -84,7 +80,8 @@ export const lang = {
       {
         title: "react-cache-state",
         link: "https://www.npmjs.com/package/react-cache-state",
-        description: "Componente que guarda en cacha, nombre de variables, objetos o arrays.",
+        description:
+          "Componente que guarda en cacha, nombre de variables, objetos o arrays.",
       },
     ],
     contact: {
@@ -94,6 +91,17 @@ export const lang = {
       email: "garridomateo74@gmail.com",
     },
     proyects: [
+      {
+        title: "Jet Match",
+        about: `Registra tus <span class="text-bold">rutinas </span> y <span class="text-bold">préstamos bancarios</span>  de manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
+        tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
+        img: [
+          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
+        ],
+        web: "https://jetmatch.pages.dev",
+        repo: "https://github.com/jorgeortega123/JetMatch",
+        onGroup: false,
+      },
       {
         title: "My Money",
         about: `        Una billetera digital que permite tener gestionado los
@@ -213,7 +221,8 @@ export const lang = {
       my_role: "What is my role ?",
       experience: "Experience",
       _experience: "1 year 5 months",
-      experience_info: "I have two functions in my position. One is to talk to the client and adapt what they ask for in a functional scheme of how the visual section of the App is handled. The other is to exclusively program the frontend with React. Making use of rest-api to call the server and later passes said data, readable information for clients and users.",
+      experience_info:
+        "I have two functions in my position. One is to talk to the client and adapt what they ask for in a functional scheme of how the visual section of the App is handled. The other is to exclusively program the frontend with React. Making use of rest-api to call the server and later passes said data, readable information for clients and users.",
       learning: "Currently I am learning:",
       basicKnowledge: "Basic knowledge",
       visit: "Visit",
@@ -270,7 +279,8 @@ export const lang = {
       {
         title: "react-cache-state",
         link: "https://www.npmjs.com/package/react-cache-state",
-        description: "Component that save in cache names of variables, objects or arrays.",
+        description:
+          "Component that save in cache names of variables, objects or arrays.",
       },
     ],
     contact: {
@@ -407,24 +417,19 @@ export const lang = {
     images: [
       {
         title: "My money",
+        key: "jm",
+      },
+      {
+        title: "My money",
         key: "mym",
-        all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
-        ],
       },
       {
         title: "CountDowns",
         key: "ctn",
-        all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
-        ],
       },
       {
         title: "Files Manager",
         key: "flm",
-        all: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
-        ],
       },
     ],
     incomingKnowledge: [

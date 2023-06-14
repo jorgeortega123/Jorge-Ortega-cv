@@ -93,6 +93,10 @@ const data = [
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
   },
   {
+    id: "jm",
+    link: " https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png" 
+  },
+  {
     id: "flm",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
   },
