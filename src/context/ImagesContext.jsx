@@ -133,22 +133,21 @@ export const ImageContextProvider = ({ children }) => {
   const numbersImages = data.length;
 
   useEffect(() => {
-    // Cargar las imágenes una vez
     const loadImages = async () => {
-      let num = 0
+      let num = 0;
       try {
         const map = {};
-
-        await Promise.all(
-          data.map(async (item) => {
-            setnumberCharge(num + 1)
-            const response = await fetch(item.link);
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            map[item.id] = url;
-          })
-        );
-
+        
+  
+        for (const item of data) {
+          setnumberCharge(++num);
+  
+          const response = await fetch(item.link);
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          map[item.id] = url;
+        }
+  
         setImageMap(map);
         setIsLoaded(true);
       } catch (error) {
@@ -156,9 +155,9 @@ export const ImageContextProvider = ({ children }) => {
         setIsLoaded(true);
       }
     };
-
+  
     loadImages();
-  }, []);
+  }, []); 
 
   return (
     <ImageContext.Provider

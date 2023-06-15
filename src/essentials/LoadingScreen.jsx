@@ -34,13 +34,13 @@ export default function LoadingScreen({ isLoadedBody }) {
             />
           </svg>
           <div className="flex flex-col items-center justify-center">
-            <div className="relative my-auto w-[40%] h-[8px] rounded-2xl bg-transparent border">
-              <div className=" loadServer h-[4px] my-[1px] bg-white rounded-2xl"></div>
+            <div className="relative my-auto w-[60%] h-[8px] rounded-2xl bg-transparent border">
+              <div className={` w-[${((numberCharge / numbersImages) * 100).toFixed(0)}%] h-[4px] my-[1px] bg-white rounded-2xl`}></div>
             </div>
             {/* <div className="relative my-auto w-[40%] h-[8px] rounded-2xl bg-transparent border">
               <div className={`w-[${(numberCharge / numbersImages) * 100}px] h-[4px] my-[1px] bg-white rounded-2xl`}></div>
             </div> */}
-            <p className="text-[12px] pt-2 ">Loading resources [{numberCharge}%]</p>
+            <p className="text-[12px] pt-2 ">Cargando recursos... {((numberCharge / numbersImages) * 100).toFixed(0)}%</p>
           </div>
         </div>
       </div>

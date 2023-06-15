@@ -85,11 +85,11 @@ const images = [
         text: "Python",
         color: "#fbca1f",
       },
-       {
+      {
         id: "postsgres",
         text: "postgreeSQL",
-        color: "#00001a"
-       }
+        color: "#00001a",
+      },
     ],
   },
   {
@@ -125,7 +125,7 @@ const images = [
 ];
 
 export default function Skills({ dataText, modalCv, CvIcon }) {
-  const {imageMap, isLoaded} = useImagesContext()
+  const { imageMap, isLoaded } = useImagesContext();
   return (
     <div
       id="knowledge"
@@ -171,11 +171,11 @@ export default function Skills({ dataText, modalCv, CvIcon }) {
                     />
                   )}
                   <img
+                    loading="lazy"
                     draggable={false}
                     className="w-12 h-auto"
                     src={imageMap[e.id]}
                     alt=""
-                  
                   />
                 </div>
               );
@@ -183,9 +183,7 @@ export default function Skills({ dataText, modalCv, CvIcon }) {
           </div>
         </div>
       ))}
-      <div className="absolute bottom-5 right-5">
-    
-      </div>
+      <div className="absolute bottom-5 right-5"></div>
     </div>
   );
 }
