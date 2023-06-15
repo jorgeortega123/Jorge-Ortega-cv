@@ -1,6 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Modals from "../containers/Modals";
+
 export default function TranslateView({
   showMenuTranslate,
   changeLang,
@@ -10,7 +9,7 @@ export default function TranslateView({
   const change = () => {};
   return (
     <div className="fixed left-0 w-screen z-[2]">
-      <Modals setshowDownload={setshowMenuTranslate} title="Languaje">
+      {/* <Modals setshowDownload={setshowMenuTranslate} title="Languaje">
         <div className="flex flex-col space-y-2">
           <div
             className={`flex items-center m-0 ${
@@ -58,7 +57,7 @@ export default function TranslateView({
             Save my selection
           </label>
         </div>
-      </Modals>
+      </Modals> */}
     </div>
   );
 }

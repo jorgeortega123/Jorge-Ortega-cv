@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import ContainerProyects from "../containers/ContainerProyects";
-import MainContainer from "../containers/MainContainer";
+import ContainerProyects from "../components/containers/ContainerProyects";
+import MainContainer from "../components/containers/MainContainer";
 import useMainContext from "../context/useMainContext";
-import newWindow from "../../assets/svg/newWindow.svg";
+
 import { ImageContext } from "../context/ImagesContext";
 import useImagesContext from "../context/useImagesContext";
+import Icons from "../styles/Icons";
 
 export default function Contributions(data) {
+  
   const { goToUrl } = useMainContext();
   const {imageMap, isLoaded} = useImagesContext()
   const colorBorder = "#d51700";
@@ -26,11 +28,11 @@ export default function Contributions(data) {
             src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1673542281/npm_dnhxi4.png"
             alt=""
           />
-          <p className="absolute mt-[-6px]">+</p>
+          <p className="absolute mt-[-6px] text-[#66ff00]">+</p>
 
           <img
             className="w-12 "
-            src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png"
+            src={imageMap["react"]}
             alt=""
           />
 
@@ -47,12 +49,12 @@ export default function Contributions(data) {
                 className={`bg-[#0000001a] border border-[#0000001a] mx- w-[95%] mx-auto flex flex-col space-y-2 xl:w-12/12 px-6  rounded-[6px]  `}
               >
                 <div className=" relative">
-                  <img
+                  <div
                     className="absolute w-6 h-6 cursor-pointer top-[10px]  right-[-16px] "
-                    src={newWindow}
-                    alt=""
                     onClick={() => goToUrl(rep.link)}
-                  />
+                  >
+                    <Icons className="w-6 h-auto fill-[#66ff00]" icon="newWindow" ></Icons>
+                  </div>
                   <div className={`flex items-center  space-x-2 `}>
                     <a
                       href={rep.link}

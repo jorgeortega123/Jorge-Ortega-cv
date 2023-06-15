@@ -95,9 +95,7 @@ export const lang = {
         title: "Jet Match",
         about: `Registra tus <span class="text-bold">rutinas </span> y <span class="text-bold">préstamos bancarios</span>  de manera visual y motivadora, Con esta aplicación, podrás <span class="text-bold">pintar</span>  un cuadro por cada interacción que realices, viendo así tu progreso y logros de forma tangible`,
         tags: ["NextJs", "React", "TypeScript", "PostgreeSQL"],
-        img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
-        ],
+       
         web: "https://jetmatch.pages.dev",
         repo: "https://github.com/jorgeortega123/JetMatch",
         onGroup: false,
@@ -120,10 +118,7 @@ export const lang = {
           "TelegramApi",
           "GoogleApi",
         ],
-        img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1662085300/cld-sample-3.jpg",
-        ],
+
         web: "https://mymoneyapp.pages.dev/app/myMoney",
         repo: "https://github.com/jorgeortega123/MyMoneyApp",
         onGroup: false,
@@ -138,9 +133,7 @@ export const lang = {
         <span class="text-bold">eventos astronómicos</span>, feriados y
         <span class="text-bold">sucesos mundiales</span>.`,
         tags: ["react"],
-        img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
-        ],
+    
         web: "https://countdown-holidays.pages.dev/",
         repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
@@ -152,9 +145,7 @@ export const lang = {
           materia escolar. A inicios de <span class="text-bold">pandemia</span> desarrollé esto como un método
           para hacer más fácil la nueva <span class="text-bold">modalidad online</span> en el colegio.`,
         tags: ["Batch", "Python", "Windows"],
-        img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
-        ],
+      
         web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
@@ -307,9 +298,7 @@ export const lang = {
           "TelegramApi",
           "GoogleApi",
         ],
-        img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447766/MyMoney-PNG-Size_zfpncg.png",
-        ],
+       
         web: "https://mymoneyapp.pages.dev/app/myMoney",
         repo: "https://github.com/jorgeortega123/MyMoneyApp",
         onGroup: false,
@@ -324,9 +313,7 @@ export const lang = {
                  <span class="text-bold">astronomical events</span>, holidays and
                  <span class="text-bold">world events</span>.`,
         tags: ["React"],
-        img: [
-          "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605586/Screenshot_from_2023-01-24_19-05-20_1_vtxqb6.png",
-        ],
+     
         web: "https://countdown-holidays.pages.dev/",
         repo: "https://github.com/jorgeortega123/countdown",
         onGroup: false,
@@ -340,9 +327,7 @@ export const lang = {
           developed this as a method to make the
           <span class="text-bold">online method</span> at school easier.`,
         tags: ["Batch", "Python", "Windows"],
-        img: [
-          "https://res.cloudinary.com/luisgarrido/image/upload/v1662252280/Screenshot_55_uiu6he.png",
-        ],
+       
         web: "https://github.com/jorgeortega123/Files-manager",
         repo: "https://github.com/jorgeortega123/Files-manager",
         onGroup: false,
@@ -435,12 +420,12 @@ export const lang = {
     incomingKnowledge: [
       {
         title: "PostgreSQL",
-        icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
+        icon: "postsgres",
         percentage: 79,
       },
       {
         title: "Laravel",
-        icon: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672891267/laravel_hwybdn.png",
+        icon: "laravel",
         percentage: 57,
       },
     ],

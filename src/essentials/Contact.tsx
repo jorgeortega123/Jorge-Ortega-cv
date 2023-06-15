@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import MailSVG from "../../../../assets/svg/mail.svg";
-import CallSVG from "../../../../assets/svg/call.svg";
-import SendSGV from "../../../../assets/svg/send.svg";
-import LocationSGV from "../../../../assets/svg/location.svg";
-import useMainContext from "../../../context/useMainContext";
-import Button from "../../Button";
-import { SendIcon } from "../../../../assets/svg";
+import MailSVG from "../assets/svg/mail.svg";
+import CallSVG from "../assets/svg/call.svg";
+
+import LocationSGV from "../assets/svg/location.svg";
+
+import Button from "../components/cycleComponents/Button";
+import { SendIcon } from "../assets/svg";
+import useMainContext from "../context/useMainContext";
+import useImagesContext from "../context/useImagesContext";
 export default function ContactComponent({
   dataText = {
     headers: {callme: "", location: ""},
@@ -23,6 +25,7 @@ export default function ContactComponent({
   };
   copyToClipBoard: (data: string) => void;
 }) {
+  const {imageMap, isLoaded} = useImagesContext()
   const [userTextWrote, setuserTextWrote] = useState("");
   const { data, sendText } = useMainContext();
   const [name, setname] = useState("");
@@ -83,7 +86,7 @@ export default function ContactComponent({
   };
   return (
     <div className="relative bg-transparent  flex lg:space-x-2 flex-col md:flex-row lg:flex-row rounded-[11px] w-full items-center mt-10">
-      <img className="absolute bottom-0 opacity-[0.04] z-[-1]" src={"https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817104/8-01_1_n4jlci.png"} alt="" />
+      <img className="absolute bottom-0 opacity-[0.04] z-[-1]" src={imageMap["contact"]} alt="" />
       <div className=" flex flex-col justify-start items-start space-y-2 lg:mt-[-42px] w-full md:w-[80%] ">
         {dataContact.map((e) => {
           return (

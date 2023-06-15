@@ -71,12 +71,12 @@
   width: 36px;
   transform: rotate(-36deg);
 
-  //   background-color: #66ff00b7
+  /* //   background-color: #66ff00b7 */
 }
 .anim-modal { 
   opacity: 0;
-  animation:opacity-modal .2s linear forwards ;
-}
+  animation:opacity-modal .2s linear forwards ;}
+/* }
 
 // .svg-text div {
 //   border-radius: 6px;
@@ -103,4 +103,4 @@
 //   100% { 
 //     opacity: 1;
 //   }
-// }
+// } */

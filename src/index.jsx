@@ -1,39 +1,38 @@
 
 import { useEffect, useState } from "react";
-import { lang } from "../langs";
+import { lang } from "./langs";
 // svg's icons
-import LangSvg from "../assets/svg/lang.svg";
+import LangSvg from "./assets/svg/lang.svg";
 
-import { CallIcon, CvIcon } from "../assets/svg.jsx";
+import { CallIcon, CvIcon } from "./assets/svg.jsx";
 // Components
-import MainContainer from "./containers/MainContainer";
+import MainContainer from "./components/containers/MainContainer";
 
-import ContactComponent from "./essentials/Foooter/Contact/Contact";
+import ContactComponent from "./essentials/Contact";
 
 import Skills from "./essentials/Skills";
 
-import NavView from "./essentials/Headers/NavView";
-import Footer from "./essentials/Foooter/Footer";
-import ImageView from "./containers/ImageView";
+import NavView from "./essentials/NavView";
+import Footer from "./essentials/Footer";
+import ImageView from "./components/drafts/ImageView";
 
-import FileView from "./containers/FileView";
+import FileView from "./components/FileView";
 
-import NavExplain from "./essentials/Headers/NavExplain";
-import Header from "./essentials/Headers/Header";
+import Header from "./essentials/Header";
 import Contributions from "./essentials/Contributions";
 
 // Context
 import useMainContext from "./context/useMainContext";
 
-import useLang from "../functions/useLang";
+import useLang from "./functions/useLang";
 import Services from "./essentials/Services";
 import Proyects from "./essentials/Proyects";
 import Experience from "./essentials/Experience";
-import Console from "./essentials/Console";
+// import Console from "./components/drafts/Console";
 import LoadingScreen from "./essentials/LoadingScreen";
 import Modal from "./context/modal/modal/Modal";
 import useModal from "./context/modal/useModal";
-import Button from "./essentials/Button";
+import Button from "./components/cycleComponents/Button";
 import useImagesContext from "./context/useImagesContext";
 
 const staticInf = lang.static;
@@ -54,33 +53,6 @@ const CvMain = () => {
     document.body.style.overflowX = "hidden";
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const container1 = document.getElementById('container1');
-  //     const container2 = document.getElementById('container2');
-  //     const container3 = document.getElementById('container3');
-
-  //     const container1Top = container1.getBoundingClientRect().top;
-  //     const container2Top = container2.getBoundingClientRect().top;
-  //     const container3Top = container3.getBoundingClientRect().top;
-  //     console.log(container1Top, container2Top, container3Top)
-  //     if (container1Top > window.innerHeight / 2) {
-  //       console.log(container1Top , window.innerHeight / 2)
-  //       setVisibleContainer(1);
-  //     } else if (container2Top < window.innerHeight / 2) {
-  //       console.log(123)
-  //       setVisibleContainer(2);
-  //     } else if (container3Top < window.innerHeight / 2) {
-  //       setVisibleContainer(3);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
   const changeLang = (langByUser) => {
     setdataText(langByUser);
     setshowMenuTranslate(false);
@@ -107,7 +79,7 @@ const CvMain = () => {
   return (
     <div id="home" className={`main-container init relative`}>
       {/* <Background /> */}
-      <Console></Console>
+      {/* <Console></Console> */}
       <NavView
         LangSvg={LangSvg}
         setshowMenuTranslate={setshowMenuTranslate}
@@ -168,10 +140,10 @@ const CvMain = () => {
           <div className="textWrote w-12/12 lg:full mx-auto xl:mt-[-70px] ">
             <div
               id="about"
-              className="w-full flex flex-col max-w-[800px] mb-7 justify-center items-center text-[1.5rem] xl:text-[1.7rem]"
+              className="w-full flex flex-col max-w-[800px] mt-7 justify-center items-center text-[1.5rem] xl:text-[1.7rem]"
             >
               <MainContainer
-                className="flex relative bg-[#072346] rounded-md mt-10 w-11/12 sm:w-10/12 "
+                className="flex relative bg-[#072346] rounded-md  w-11/12 sm:w-10/12 "
                 title={dataText.headers.about}
                 subtitle={dataText.headers._about}
               >

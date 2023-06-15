@@ -1,13 +1,15 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import { lang } from "../../langs";
-import HeroMain from "../carrousel/Carrousel";
-import useMainContext from "../context/useMainContext";
-import Icons from "../../styles/icons/Icons";
-import Modal from "../context/modal/modal/Modal";
-import useModal from "../context/modal/useModal";
-import { ZoomableImage } from "./ZoomableImage";
-import useImagesContext from "../context/useImagesContext";
+import HeroMain from "../drafts/Carrousel";
+
+import Icons from "../../styles/Icons";
+import Modal from "../../context/modal/modal/Modal";
+import useModal from "../../context/modal/useModal";
+import { ZoomableImage } from "../ZoomableImage";
+import useMainContext from "../../context/useMainContext";
+import useImagesContext from "../../context/useImagesContext";
+
 const imagesFrom = lang.static.images;
 export default function ContainerProyects({
   title = "Semaforos ",
@@ -71,6 +73,7 @@ export default function ContainerProyects({
       t: "#fff",
     },
   ];
+  const { imageMap, isLoaded } = useImagesContext();
   const [imagesToUse, setimagesToUse] = useState<string[]>();
   const [showGroup, setshowGroup] = useState(false);
   const [loadImages, setloadImages] = useState(false);
@@ -128,7 +131,7 @@ export default function ContainerProyects({
       setshowGroup(true);
     }
   };
-  const { imageMap, isLoaded } = useImagesContext();
+
   const modal = useModal();
 
   return (

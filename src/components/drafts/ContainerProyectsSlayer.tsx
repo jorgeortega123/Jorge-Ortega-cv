@@ -5,7 +5,7 @@ import inGroupSVG from "../../../assets/svg/group.svg";
 import inSoloSVG from "../../../assets/svg/person.svg";
 import back from "../../../assets/svg/backGround/titles.svg";
 import { lang } from "../langs";
-import HeroMain from "../carrousel/Carrousel";
+import HeroMain from "./Carrousel";
 const imagesFrom = lang.static.images;
 export default function ContainerProyectsSlayer({
   title = "Semaforos ",

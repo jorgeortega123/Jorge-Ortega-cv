@@ -1,5 +1,6 @@
 import React from "react";
-import DownloadSvg from "../../assets/svg/figma/button_pdf.svg";
+
+import Icons from "../styles/Icons";
 export default function FileView({
   title = "as",
   children = "",
@@ -25,7 +26,6 @@ export default function FileView({
     // setTimeout(() => {
     //   modal.toggle()
     // }, 1500);
- 
   };
 
   return (
@@ -49,14 +49,13 @@ export default function FileView({
           data-dismiss-target="#alert-1"
           aria-label="Close"
         >
-          <img
+          <div
             onClick={() => {
               download(cv);
             }}
-            src={DownloadSvg}
-            className=""
-            alt=""
-          />
+          >
+            <Icons icon="download"></Icons>
+          </div>
         </button>
       </div>
     </a>

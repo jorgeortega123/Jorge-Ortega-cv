@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Button from "./Button";
-import Icons from "../../styles/icons/Icons";
+import Button from "../components/cycleComponents/Button";
+import Icons from "../styles/Icons";
 export default function Experience(dataText) {
   const [showTextInfo, setshowTextInfo] = useState(true);
   const togle_vanila_show_text = () => {

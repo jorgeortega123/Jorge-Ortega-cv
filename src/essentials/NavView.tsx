@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 
-import TranslateView from "../TranslateView";
-import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
-import Icons from "../../../styles/icons/Icons";
-import useScrollTo from "../../../functions/useScroll";
+ import TranslateView from "../components/drafts/TranslateView";
+
+import useScrollTo from "../functions/useScroll";
+import Icons from "../styles/Icons";
 
 export default function NavView({
   visibleContainer,

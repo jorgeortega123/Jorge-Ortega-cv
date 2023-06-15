@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import sendServer from "../../server";
+import sendServer from "../../functions/server";
 import { lang } from "../../langs";
 const data = {
   color: "#0f2d51",

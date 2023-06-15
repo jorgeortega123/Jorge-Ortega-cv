@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ContainerProyects from "../containers/ContainerProyects";
+import ContainerProyects from "../components/containers/ContainerProyects";
 
 export default function Proyects(dataText, showImage) {
   

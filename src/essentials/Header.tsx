@@ -1,14 +1,15 @@
 import React from "react";
-import { CallIcon } from "../../../assets/svg.jsx";
+import { CallIcon } from "../assets/svg.jsx";
 
-import AnimationsLoader from "../AnimationsLoader/AnimationsLoader";
-import Button from "../Button";
+import AnimationsLoader from "../components/drafts/AnimationsLoader";
+import Button from "../components/cycleComponents/Button";
 
-import CallSVG from "../../../assets/svg/call.svg";
+import CallSVG from "../assets/svg/call.svg";
 
-import useMainContext from "../../context/useMainContext";
-import Icons from "../../../styles/icons/Icons.js";
-import useImagesContext from "../../context/useImagesContext.js";
+import Icons from "../styles/Icons.js";
+import useImagesContext from "../context/useImagesContext.js";
+import useMainContext from "../context/useMainContext.js";
+import useScrollTo from "../functions/useScroll.jsx";
 
 export default function Header({
   dataText,
@@ -17,6 +18,7 @@ export default function Header({
   changeHandlerBodyLoaded,
 }) {
   const { imageMap, isLoaded } = useImagesContext();
+  const scrollToElement = useScrollTo();
   const { data, goToUrl, changeOverflowY } = useMainContext();
   // const background = useTransform(scrollYProgress, [0, 1], ["red", "blue"]);
   //w-[calc(100%_-_10rem)]
@@ -104,8 +106,7 @@ export default function Header({
               Hi, I am Jorge Ortega
             </h1>
             <div className="invisible   lg:h-full lg:visible items-center flex mr-[-20px] text-[14px] max-w-[330px] text-right">
-              <div className="bg-[#040a2c] rounded-[8px] ">
-              
+              <div className="bg-[#040a2c] backdrop-blur-lg shadow-md shadow-[#030303] rounded-[8px] ">
                 <svg
                   aria-hidden="true"
                   className="w-12 h-[0px] lg:h-12 mx-auto mt-5 text-gray-400 dark:text-gray-600"
@@ -154,7 +155,7 @@ export default function Header({
               icon={CallSVG}
               svg={true}
               onClick={() => {
-                goToUrl("#contact", "no-external");
+                scrollToElement("contact");
               }}
             >
               <CallIcon></CallIcon>

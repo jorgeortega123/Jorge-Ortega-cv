@@ -18,12 +18,12 @@
     width: 0px;
     height: 0px;
   }
-  .text-social-hidden { 
+  /* .text-social-hidden { 
     transition: all 6.4s;
     label { 
       transition: width 6.4s;
     }
-  }
+  } */
   .text-social-hidden:hover label {
     height: fit-content;
     visibility: visible;

@@ -2,16 +2,21 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const data = [
   {
     id: "animGift",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686446951/animation_640_nkdivz.gif",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788609/ezgif.com-optimize_1_qawhr7.gif",
   },
   {
     id: "react",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670805626/React-icon.svg_qqejiw.png",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
   },
   {
     id: "html",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845292/pngegg_pnsolw.png",
   },
+  {
+    id: "contact",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789367/ezgif.com-gif-maker_1_qlg1d7.png",
+  },
+
   {
     id: "css",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1667845293/k_fhm489.png",
@@ -78,7 +83,7 @@ const data = [
   },
   {
     id: "postsgres",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1672536522/postgresql_mrf5at.png",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788736/ezgif.com-resize_jkk1kr.png",
   },
   {
     id: "cloudfare-pages",
@@ -86,7 +91,7 @@ const data = [
   },
   {
     id: "mym",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686447982/Frame_1_l3ehv6.png",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788933/ezgif.com-gif-maker_rifvrf.png",
   },
   {
     id: "ctn",
@@ -94,7 +99,7 @@ const data = [
   },
   {
     id: "jm",
-    link: " https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png" 
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
   },
   {
     id: "flm",
@@ -124,18 +129,19 @@ export const ImageContext = createContext({});
 export const ImageContextProvider = ({ children }) => {
   const [imageMap, setImageMap] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
-  const [numberCharge, setnumberCharge] = useState(0)
-  const numbersImages = data.length
+  const [numberCharge, setnumberCharge] = useState(0);
+  const numbersImages = data.length;
 
   useEffect(() => {
     // Cargar las imágenes una vez
     const loadImages = async () => {
+      let num = 0
       try {
         const map = {};
 
         await Promise.all(
           data.map(async (item) => {
-            // setnumberCharge((e)=> e + 1)
+            setnumberCharge(num + 1)
             const response = await fetch(item.link);
             const blob = await response.blob();
             const url = URL.createObjectURL(blob);
@@ -155,7 +161,9 @@ export const ImageContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <ImageContext.Provider value={{ imageMap, isLoaded ,numberCharge, numbersImages }}>
+    <ImageContext.Provider
+      value={{ imageMap, isLoaded, numberCharge, numbersImages }}
+    >
       {children}
     </ImageContext.Provider>
   );
