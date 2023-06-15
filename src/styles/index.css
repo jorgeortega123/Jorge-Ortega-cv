@@ -39,7 +39,9 @@
   fill: aliceblue;
 }
 
-
+* { 
+  -webkit-tap-highlight-color: rgba(0,0,0,0); 
+}
 
 
 @keyframes charging {
