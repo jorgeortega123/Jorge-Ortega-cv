@@ -165,14 +165,22 @@ export default function ContainerProyects({
                 d="M208 48V16H16v192h32V70.627l160.687 160.686l22.626-22.626L70.627 48H208zm256 256v137.373L299.313 276.687l-22.626 22.626L441.373 464H304v32h192V304h-32z"
               />
             </svg>
-
+            
             <img
+              className=""
+              draggable={false}
+              onClick={() => imgSrc(imagesFrom[index].all[0])}
+              src={imagesFrom[index].img}
+              loading="lazy"
+              alt=""
+            /> 
+            {/* <img
               className=""
               draggable={false}
               onClick={() => imgSrc(imagesFrom[index].all[0])}
               src={imageMap[imagesFrom[index].key]}
               alt=""
-            />
+            /> */}
           </div>
           {/* {!loadImages ? (
             <HeroMain

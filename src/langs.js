@@ -24,9 +24,9 @@ export const lang = {
       _knowledge: "Tegnologias que domino",
       my_role: "¿Qué hago en mi puesto?",
       experience: "Experiencia",
-      _experience: "1 año 5 meses",
+      _experience: "2 años",
       experience_info:
-        "Tengo dos funciones en mi puesto. Uno es hablar con el cliente y adaptar lo que pide en un esquema funcional de cómo se maneja el apartado visual de la App. El otro es programar exclusivamente el frontend con React. Haciendo uso de rest-api para llamar al servidor y posteriormente pasa dichos datos, a información legible para los clientes y usuarios.",
+        "Como desarrollador en Llampukak, he sido fundamental en la creación y mejora de soluciones tecnológicas basadas en Next.js. Mi enfoque se ha centrado en la organización eficiente de datos con TypeScript, lo que ha mejorado el flujo de trabajo y la robustez de nuestras aplicaciones. Además, he desempeñado un papel activo en la realización de pruebas exhaustivas para garantizar la calidad y confiabilidad del software. Mediante el desarrollo y ejecución de casos de prueba, he identificado y solucionado proactivamente posibles problemas o errores. Mi compromiso con la excelencia en la entrega de productos de alta calidad ha contribuido al éxito de nuestro equipo y la satisfacción de nuestros clientes.",
       learning: "Actualmente estoy aprendiendo:",
       basicKnowledge: "Conocimiento básico",
       visit: "Visitar",
@@ -211,7 +211,7 @@ export const lang = {
       _knowledge: "Technologies that I use",
       my_role: "What is my role ?",
       experience: "Experience",
-      _experience: "1 year 5 months",
+      _experience: "2 years 5 months",
       experience_info:
         "I have two functions in my position. One is to talk to the client and adapt what they ask for in a functional scheme of how the visual section of the App is handled. The other is to exclusively program the frontend with React. Making use of rest-api to call the server and later passes said data, readable information for clients and users.",
       learning: "Currently I am learning:",
@@ -401,20 +401,24 @@ export const lang = {
     ],
     images: [
       {
-        title: "My money",
+        title: "JetMatch",
         key: "jm",
+        img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png"
       },
       {
         title: "My money",
         key: "mym",
+        img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1688088931/Frame_1_qdkriy.png"
       },
       {
         title: "CountDowns",
         key: "ctn",
+        img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png"
       },
       {
         title: "Files Manager",
         key: "flm",
+        img: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png"
       },
     ],
     incomingKnowledge: [

@@ -90,22 +90,6 @@ const data = [
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670806235/download_oglnre.png",
   },
   {
-    id: "mym",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788933/ezgif.com-gif-maker_rifvrf.png",
-  },
-  {
-    id: "ctn",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
-  },
-  {
-    id: "jm",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
-  },
-  {
-    id: "flm",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
-  },
-  {
     id: "services-1",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1678817561/group_r5jzkt.png",
   },
@@ -123,6 +107,25 @@ const data = [
   },
 ];
 
+var REMOVE_ARRAYS = [
+  {
+    id: "mym",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788933/ezgif.com-gif-maker_rifvrf.png",
+  },
+  {
+    id: "ctn",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1674605659/Frame_4_xzpybs.png",
+  },
+  {
+    id: "jm",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686773569/Frame_2_ixg8vx.png",
+  },
+  {
+    id: "flm",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1670433485/Frame_2_2_jvxcat.png",
+  },
+];
+
 export const ImageContext = createContext({});
 
 // Proveedor del contexto
@@ -130,24 +133,55 @@ export const ImageContextProvider = ({ children }) => {
   const [imageMap, setImageMap] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
   const [numberCharge, setnumberCharge] = useState(0);
+  const [reloadImg, setreloadImg] = useState(false);
+  const [alreadySet, setalreadySet] = useState(false)
   const numbersImages = data.length;
+  // useEffect(() => {
+  //   if (alreadySet===true) return
+  //   if (window.innerWidth < 1280) {
+  //     // Ejecutar código cuando el ancho supera los 1280 píxeles
+  //     console.log("El ancho es mayor que 1280 píxeles");
+  //     data.push();
+  //     setalreadySet(true)
+  //     // Aquí puedes poner el código que deseas ejecutar
+  //   }
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 1280) {
+  //       // Ejecutar código cuando el ancho supera los 1280 píxeles
+  //       console.log("El ancho es mayor que 1280 píxeles");
+  //       data.push({
+  //         id: "animGift",
+  //         link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788609/ezgif.com-optimize_1_qawhr7.gif",
+  //       });
+  //       setalreadySet(true)
+  //       // Aquí puedes poner el código que deseas ejecutar
+  //     }
+  //   };
+ 
 
+  //   // Agregar el evento de escucha al cargar el componente
+  //   window.addEventListener("resize", handleResize);
+
+  //   // Limpiar el evento de escucha al desmontar el componente
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   useEffect(() => {
     const loadImages = async () => {
       let num = 0;
       try {
         const map = {};
-        
-  
+
         for (const item of data) {
           setnumberCharge(++num);
-  
+
           const response = await fetch(item.link);
           const blob = await response.blob();
           const url = URL.createObjectURL(blob);
           map[item.id] = url;
         }
-  
+
         setImageMap(map);
         setIsLoaded(true);
       } catch (error) {
@@ -155,9 +189,9 @@ export const ImageContextProvider = ({ children }) => {
         setIsLoaded(true);
       }
     };
-  
+
     loadImages();
-  }, []); 
+  }, [reloadImg]);
 
   return (
     <ImageContext.Provider

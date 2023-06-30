@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/cycleComponents/Button";
+import useMainContext from "../context/useMainContext";
 import Icons from "../styles/Icons";
 export default function Experience(dataText) {
   const [showTextInfo, setshowTextInfo] = useState(true);
@@ -8,6 +9,7 @@ export default function Experience(dataText) {
       .getElementById("show-text")
       ?.classList.toggle("show-content-experience");
   };
+  const { goToUrl } = useMainContext();
   return (
     <>
       <div className="w-12/12  max-w-[700px]  container-experience ">
@@ -16,12 +18,15 @@ export default function Experience(dataText) {
             <img
               draggable={false}
               className="w-full object-cover  mx-auto md:rounded-[6px] "
-              src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1680016932/1_n3iyvx.webp"
+              src="https://res.cloudinary.com/ddcoxtm2v/image/upload/v1688088570/Screenshot_from_2023-06-29_20-23-33_ai7bzl.webp"
               alt=""
             />
 
-            <div className="absolute flex top-[-1rem] border border-[#ffffff] px-6 bg-[#ffffffa2] rounded-[8px] backdrop-blur-sm text-[1.8rem] font-bold left-3 altura-letras py-1 tracking-wider">
-              <p className="pl-2">LLK</p> 
+            <div
+              onClick={() => goToUrl("https://www.llampukaq.com/")}
+              className="cursor-pointer absolute flex top-[-1rem] border border-[#ffffff] px-6 bg-[#ffffffa2] rounded-[8px] backdrop-blur-sm text-[1.8rem] font-bold left-3 altura-letras py-1 tracking-wider"
+            >
+              <p className="pl-2">LLK</p>
               <Icons icon="link" className="rotate-[135deg]"></Icons>
             </div>
 
@@ -34,11 +39,13 @@ export default function Experience(dataText) {
             </div>
           </div>
         </div>
-      
-          <h1 id="show-text" className=" px-6 text-experience font-[400] altura-letras text-[22px] py-2">
-            {dataText.dataText.headers.experience_info}
-          </h1>
-        
+
+        <p
+          id="show-text"
+          className=" px-6 text-experience font-[600] altura-letras text-[22px] py-2"
+        >
+          {dataText.dataText.headers.experience_info}
+        </p>
       </div>
     </>
   );

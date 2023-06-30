@@ -34,6 +34,7 @@ import Modal from "./context/modal/modal/Modal";
 import useModal from "./context/modal/useModal";
 import Button from "./components/cycleComponents/Button";
 import useImagesContext from "./context/useImagesContext";
+import Stars from "./components/stars/Stars";
 
 const staticInf = lang.static;
 const CvMain = () => {
@@ -78,6 +79,7 @@ const CvMain = () => {
   }
   return (
     <div id="home" className={`main-container init relative`}>
+  
       {/* <Background /> */}
       {/* <Console></Console> */}
       <NavView
@@ -213,7 +215,7 @@ const CvMain = () => {
               <MainContainer
                 className="flex flex-col items-center"
                 title="Experiencia"
-                subtitle={dataText.headers._experience + "+"}
+                subtitle={ "+" +dataText.headers._experience }
               >
                 <Experience dataText={dataText}></Experience>
               </MainContainer>

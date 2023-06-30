@@ -10,6 +10,7 @@ import Icons from "../styles/Icons.js";
 import useImagesContext from "../context/useImagesContext.js";
 import useMainContext from "../context/useMainContext.js";
 import useScrollTo from "../functions/useScroll.jsx";
+import Stars from "../components/stars/Stars.js";
 
 export default function Header({
   dataText,
@@ -30,8 +31,11 @@ export default function Header({
       >
         <div className="wave-index absolute invisible lg:visible bg-[#040a2c] "></div>
 
-        <div className="wave-index-0 absolute invisible lg:visible  ">
-          <div className=" h-12 mx-auto invisible lg:visible ">
+        <div className="wave-index-0 absolute invisible lg:visible   ">
+          <div className=" h-12 mx-auto invisible lg:visible relative  ">
+            <div className="absolute z-[3]  w-screen h-screen ml-[250px]">
+              <Stars></Stars>
+            </div>
             <svg
               className="absolute bottom-[-90px] z-[-1] mt-12 w-[calc(180%)] "
               viewBox="0 0 1920 1080"
