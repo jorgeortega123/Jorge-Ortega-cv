@@ -46,16 +46,15 @@ export default function Header({
         className=" relative h-[60vh]  px-2 mt-[46px] flex flex-col w-full mx-auto   lg:mb-[55px]  lg:h-screen lg:w-screen items-center "
       >
         <div className="back absolute top-0 right-0 w-full h-full">
-          <div className="relative w-full h-full">
-            <div className="absolute flex items-end justify-end w-[190%] left-[-60%] sm:left-[-50%] top-[-60%] rotate-[-40deg] sm:rotate-[-34deg] h-full bg-[#040a2c]  ">
+          <div className=" relative w-full h-full">
+            <div className=" absolute flex items-end justify-end w-[190%] left-[-60%] sm:left-[-50%] top-[-60%] rotate-[-40deg] sm:rotate-[-34deg] h-full bg-[#040a2c]  ">
               <div className=" relative w-full flex justify-center ">
                 <div className="absolute w-full h-full rotate-180 ">
                   <Stars></Stars>
                 </div>
                 <div className="absolute lg:left-[-1%] top-[100%] w-[calc(120%)] lg:w-[calc(70%)]">
-               
                   <svg
-                    className=" z-[3] w-full  rotate-180"
+                    className="cursor-auto z-[-1] w-full  rotate-180 mt-[-2px]"
                     viewBox="0 0 1920 1080"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -69,7 +68,7 @@ export default function Header({
             </div>
           </div>
         </div>
-       
+
         <div className=" h-full flex flex-col justify-center lg:my-auto lg:w-8/12 lg:h-auto ">
           <div className="pl-10 lg:pl-0 w-full h-[40vh] flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-end z-[2] lg:w-10/12">
             <h1 className=" text-left max-w-[400px] lg:max-w-[500px] mt-[50px] lg:mt-auto h-auto flex-1 lg:flex-0 lg:w-12/12 text-[80px] lg:text-[14vh] text-white title-main-header right-0 lg:text-right">

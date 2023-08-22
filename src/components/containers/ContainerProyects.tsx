@@ -137,7 +137,7 @@ export default function ContainerProyects({
   return (
     <div className="transition-button-proyect-code relative pb-[46px] w-full rounded-[6px] border-[1px] border-[#0000001a] hover:border-[#0000001a]  bg-[#00000023] px-2 lg:rounded-[12px]">
       <Modal modal={modal} title={title}>
-        <ZoomableImage imageUrl={imageMap[imagesFrom[index].key]}></ZoomableImage>
+        <ZoomableImage imageUrl={[imagesFrom[index].img]}></ZoomableImage>
       </Modal>
       
       <div className=" items-center flex justify-center relative ">

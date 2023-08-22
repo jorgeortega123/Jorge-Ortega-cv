@@ -68,21 +68,24 @@ export const ZoomableImage = ({ imageUrl }) => {
   };
 
   return (
-    <div className="border relative cursor-zoom-in select-none h-[500px] active:cursor-crosshair overflow-auto justify-center items-center">
-      <canvas
-        ref={canvasRef}
-        style={{}}
-        className="max-w-[160%] min-w-[80%] overflow-hidden"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-      > <img ref={imageRef} alt="Zoomable" style={{ display: "none" }} /></canvas>
-     
-      <div className="absolute top-0">
-        {" "}
-        <button onClick={handleZoomIn}>Zoom In</button>
-        <button onClick={handleZoomOut}>Zoom Out</button>
+    <>
+      <div className=" relative cursor-move select-none h-[500px] active:cursor-crosshair overflow-auto justify-center items-center">
+        <canvas
+          ref={canvasRef}
+          style={{}}
+          className="max-w-[160%] min-w-[80%] overflow"
+          onMouseDown={handleMouseDown}
+          // onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
+          {" "}
+          <img ref={imageRef} alt="Zoomable" style={{ display: "none" }} />
+        </canvas>
       </div>
-    </div>
+      <div className=" top-0 flex gap-3">
+        <button onClick={handleZoomIn}>Aumentar zoom</button>
+        <button onClick={handleZoomOut}>Disminuir zoom</button>
+      </div>
+    </>
   );
 };

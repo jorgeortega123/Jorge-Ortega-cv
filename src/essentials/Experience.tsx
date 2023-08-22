@@ -13,6 +13,7 @@ export default function Experience(dataText) {
   return (
     <>
       <div className="w-12/12  max-w-[700px]  container-experience ">
+        
         <div className="main flex flex-col items-center justify-center">
           <div className="relative text-black  ">
             <img
