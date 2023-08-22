@@ -1,9 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 const data = [
-  {
-    id: "animGift",
-    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788609/ezgif.com-optimize_1_qawhr7.gif",
-  },
+
   {
     id: "react",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686789236/ezgif.com-resize_1_h4svpb.png",
@@ -108,6 +105,10 @@ const data = [
 ];
 
 var REMOVE_ARRAYS = [
+  {
+    id: "animGift",
+    link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788609/ezgif.com-optimize_1_qawhr7.gif",
+  },
   {
     id: "mym",
     link: "https://res.cloudinary.com/ddcoxtm2v/image/upload/v1686788933/ezgif.com-gif-maker_rifvrf.png",

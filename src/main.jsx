@@ -12,6 +12,7 @@ import "./styles/social.css";
 import "./styles/services.css";
 import "./styles/modal.css";
 import "./styles/experience.css";
+import "./styles/stars.css";
 import CvMain from "./index.jsx";
 import MainContextComponent from "./context/MainContext";
 import { ImageContextProvider } from "./context/ImagesContext";

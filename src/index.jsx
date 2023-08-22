@@ -78,7 +78,7 @@ const CvMain = () => {
     return <LoadingScreen />;
   }
   return (
-    <div id="home" className={`main-container init relative`}>
+    <div id="home" className={`main-container init relative gradient-initial`}>
   
       {/* <Background /> */}
       {/* <Console></Console> */}

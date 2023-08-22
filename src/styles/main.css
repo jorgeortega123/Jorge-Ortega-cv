@@ -66,3 +66,7 @@ img {
 .select-none {
   user-select: none;
 }
+
+.gradient-initial {
+  background: radial-gradient(circle, #24246eb7, #0f2d51);
+}

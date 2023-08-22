@@ -42,7 +42,7 @@ export default function Experience(dataText) {
 
         <p
           id="show-text"
-          className=" px-6 text-experience font-[600] altura-letras text-[22px] py-2"
+          className=" px-6 text-experience font-[200] altura-letras text-[22px] py-2"
         >
           {dataText.dataText.headers.experience_info}
         </p>

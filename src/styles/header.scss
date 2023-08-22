@@ -8,7 +8,7 @@
   color: white;
   // filter: brightness(100%);
   // filter: contrast(100%);
-  
+
   // linear-gradient(45deg, red 0 50%, blue 50% 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -51,8 +51,8 @@
 
 .wave-index {
   width: calc(100% + 500px);
-  height: calc(100% + 500px);
-  transform: rotate(152deg) translateY(70%);
+  height: calc(50%);
+  transform: rotate(-35deg) translateY(100%) translateX(-100px);
 }
 
 .wave-index-0 {
@@ -60,6 +60,39 @@
 
   transform: rotate(150deg) translateY(-360px);
 }
+
+.main-wave {
+  transform: rotate(-215deg) ;
+}
+
+
+/* SquareComponent.css */
+.square {
+  position: relative;
+
+  overflow: hidden;
+  background-color: #ddd;
+  transform: rotate(-30deg);
+  margin: 100px; /* Ajusta el margen según sea necesario */
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  text-align: center; /* Alinea el texto horizontalmente */
+}
+
+.rotated-text {
+  display: inline-block;
+  transform: rotate(-45deg); /* Inclina el texto en dirección opuesta */
+  transform-origin: left top; /* Cambia el punto de origen de la transformación */
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
 
 // .stars-container {
 //   position: relative;
@@ -79,9 +112,9 @@
 //    align-items: center;
 //    z-index: 0;
 //  }
- 
+
 //  $shooting-time: 12000ms;
- 
+
 //  .night {
 //    position: relative;
 //    width: 600px;
@@ -89,7 +122,7 @@
 //    transform: rotateZ(90deg);
 //   animation: sky 200000ms linear infinite;
 //  }
- 
+
 //  .shooting_star {
 //    z-index: 2;
 //    position: absolute;
@@ -103,7 +136,7 @@
 //    animation:
 //      tail $shooting-time ease-in-out infinite,
 //      shooting $shooting-time ease-in-out infinite;
-   
+
 //    &::before {
 //      content: '';
 //      position: absolute;
@@ -116,11 +149,11 @@
 //      border-radius: 100%;
 //      animation: shining $shooting-time ease-in-out infinite;
 //    }
- 
+
 //    &::after {
 //      // CodePen Error
 //      // @extend .shooting_star::before;
-     
+
 //      content: '';
 //      position: absolute;
 //      top: calc(50% - 1px);
@@ -133,7 +166,7 @@
 //      animation: shining $shooting-time ease-in-out infinite;
 //      transform: translateX(50%) rotateZ(-45deg);
 //    }
-   
+
 //    @for $i from 1 through 20 {
 //      &:nth-child(#{$i}) {
 //        $delay: random(9999) + 0ms;
@@ -141,7 +174,7 @@
 //        left: calc(50% - #{random(300) + 0px});
 //        animation-delay: $delay;
 //        // opacity: random(50) / 100 + 0.5;
-       
+
 //        &::before,
 //        &::after {
 //          animation-delay: $delay;
@@ -149,53 +182,51 @@
 //      }
 //    }
 //  }
- 
+
 //  @keyframes tail {
 //    0% {
 //      width: 0;
 //    }
-   
+
 //    30% {
 //      width: 100px;
 //    }
-   
+
 //    100% {
 //      width: 0;
 //    }
 //  }
- 
+
 //  @keyframes shining {
 //    0% {
 //      width: 0;
 //    }
-   
+
 //    50% {
 //      width: 30px;
 //    }
-   
+
 //    100% {
 //      width: 0;
 //    }
 //  }
- 
+
 //  @keyframes shooting {
 //    0% {
 //      transform: translateX(0);
 //    }
-   
+
 //    100% {
 //      transform: translateX(300px);
 //    }
 //  }
- 
+
 //  @keyframes sky {
 //    0% {
 //      transform: rotate(45deg);
 //    }
-   
+
 //    100% {
 //      transform: rotate(45 + 360deg);
 //    }
 //  }
- 
- 
